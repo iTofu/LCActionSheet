@@ -25,5 +25,6 @@ OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝�
 ![image](https://github.com/LeoiOS/LCActionSheet/blob/master/02.png)
 
 
-* 发现问题请lssues我，谢谢!
+
+* 发现问题请lssues我，谢谢:)
 * Email: leoios@sina.com
