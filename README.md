@@ -13,6 +13,8 @@ OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝�
 * 调用下面的方法即可:
   - `LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？" buttonTitles:@[@"确定"] redButtonIndex:0 delegate:self];`
   - `[sheet show];`
+* 监听方法(可选实现):
+  - `- (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(int)buttonIndex;`
   
 ## Tips
 - LCActionSheet是添加到UIWindow上，没适配横屏。
