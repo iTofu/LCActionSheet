@@ -18,14 +18,20 @@
 /** 注销 */
 - (IBAction)logout {
     
-    LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？" buttonTitles:@[@"确定"] redButtonIndex:0 delegate:self];
+    LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？"
+                                                   buttonTitles:@[@"确定"]
+                                                 redButtonIndex:0
+                                                       delegate:self];
     [sheet show];
 }
 
 /** 修改头像 */
 - (IBAction)changeHeader {
     
-    LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:nil buttonTitles:@[@"拍照", @"从相册选择"] redButtonIndex:-1 delegate:self];
+    LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:nil
+                                                   buttonTitles:@[@"拍照", @"从相册选择"]
+                                                 redButtonIndex:-1
+                                                       delegate:self];
     [sheet show];
 }
 
