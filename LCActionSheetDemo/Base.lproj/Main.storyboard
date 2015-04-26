@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EZ-Nx-iEk">
+                                <rect key="frame" x="10" y="255" width="580" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2yI-Va-QQ9"/>
+                                </constraints>
+                                <state key="normal" title="注销">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout" destination="BYZ-38-t0r" eventType="touchUpInside" id="xMI-r1-KHe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Z2-ue-mqD">
+                                <rect key="frame" x="10" y="315" width="580" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="lCp-gM-EDS"/>
+                                </constraints>
+                                <state key="normal" title="修改头像">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeHeader" destination="BYZ-38-t0r" eventType="touchUpInside" id="Swc-7I-UER"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="1EZ-Nx-iEk" secondAttribute="centerY" constant="30" id="4hi-7F-t7V"/>
+                            <constraint firstItem="9Z2-ue-mqD" firstAttribute="top" secondItem="1EZ-Nx-iEk" secondAttribute="bottom" constant="30" id="9ui-tB-gNJ"/>
+                            <constraint firstItem="1EZ-Nx-iEk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="GND-Kt-f14"/>
+                            <constraint firstAttribute="centerX" secondItem="9Z2-ue-mqD" secondAttribute="centerX" id="UM6-Cv-vTe"/>
+                            <constraint firstAttribute="trailing" secondItem="1EZ-Nx-iEk" secondAttribute="trailing" constant="10" id="hA2-gA-AA1"/>
+                            <constraint firstAttribute="centerX" secondItem="1EZ-Nx-iEk" secondAttribute="centerX" id="qhf-Kw-qQd"/>
+                            <constraint firstAttribute="trailing" secondItem="9Z2-ue-mqD" secondAttribute="trailing" constant="10" id="t7o-Qb-5VF"/>
+                            <constraint firstItem="9Z2-ue-mqD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="vMk-L2-X6g"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
