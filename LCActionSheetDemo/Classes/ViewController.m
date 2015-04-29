@@ -37,7 +37,7 @@
 
 #pragma mark - LCActionSheet 代理方法
 
-- (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(int)buttonIndex {
+- (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex {
     
     NSLog(@"> Clicked Index: %d", buttonIndex);
 }

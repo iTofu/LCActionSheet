@@ -9,13 +9,19 @@
 
 #import "LCActionSheet.h"
 
+// 按钮高度
 #define BUTTON_H 49.0f
+// 屏幕尺寸
 #define SCREEN_SIZE [UIScreen mainScreen].bounds.size
+// 颜色
 #define LCColor(r, g, b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0f]
 
 @interface LCActionSheet () {
+    /** 所有按钮 */
     NSArray *_buttonTitles;
+    /** 暗黑色的view */
     UIView *_darkView;
+    /** 所有按钮的底部view */
     UIView *_bottomView;
 }
 
@@ -23,7 +29,7 @@
 
 @implementation LCActionSheet
 
-- (instancetype)initWithTitle:(NSString *)title buttonTitles:(NSArray *)titles redButtonIndex:(int)buttonIndex delegate:(id<LCActionSheetDelegate>)delegate {
+- (instancetype)initWithTitle:(NSString *)title buttonTitles:(NSArray *)titles redButtonIndex:(NSInteger)buttonIndex delegate:(id<LCActionSheetDelegate>)delegate {
     
     if (self = [super init]) {
         
@@ -31,7 +37,7 @@
         
         // 暗黑色的view
         UIView *darkView = [[UIView alloc] init];
-        darkView.userInteractionEnabled = YES;
+        darkView.userInteractionEnabled = NO;
         darkView.backgroundColor = LCColor(46, 49, 50);
         darkView.alpha = 0;
         darkView.frame = (CGRect){0, 0, SCREEN_SIZE};
@@ -117,6 +123,7 @@
         self.frame = (CGRect){0, 0, SCREEN_SIZE};
         [[UIApplication sharedApplication].keyWindow addSubview:self];
     }
+    
     return self;
 }
 
@@ -166,6 +173,7 @@
                      } completion:^(BOOL finished) {
                          
                          [self removeFromSuperview];
+                         
                          if ([self.delegate respondsToSelector:@selector(actionSheet:didClickedButtonAtIndex:)]) {
                              [self.delegate actionSheet:self didClickedButtonAtIndex:_buttonTitles.count];
                          }
