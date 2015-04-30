@@ -1,4 +1,4 @@
-# LCActionSheet
+## LCActionSheet
 一个简约优雅的ActionSheet。微信和新浪微博也是采取类似的ActionSheet。
 
 ![image](https://github.com/LeoiOS/LCActionSheet/blob/master/LCActionSheetDemo.gif)
@@ -11,10 +11,15 @@ OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝�
 * 把LCActionSheet文件夹(在Demo中)拖到你的项目中。
 * 在相应位置导入头文件: `#import "LCActionSheet.h"`，遵守协议`<LCActionSheetDelegate>`。
 * 调用下面的方法即可:
-  - `LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？" buttonTitles:@[@"确定"] redButtonIndex:0 delegate:self];`
-  - `[sheet show];`
+  ```
+  - LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？" buttonTitles:@[@"确定"] redButtonIndex:0 delegate:self];`
+  - [sheet show];
+  ```
+
 * 监听方法(可选实现):
-  - `- (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(int)buttonIndex;`
+  ```
+  - (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(int)buttonIndex;
+  ```
   
 ## Tips
 - LCActionSheet是添加到UIWindow上，没适配横屏。
