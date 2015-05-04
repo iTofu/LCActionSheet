@@ -27,7 +27,7 @@ OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝�
 - buttonIndex从上到下从0依次递增。如果不想有redButton，在`redButtonIndex:`处传个`-1`即可。
 - 协议`<LCActionSheetDelegate>`能监听到点击的按钮的index，这个方法是可选实现的。
 
-## 示例 Examples
+### 示例 Examples
 ![image](https://github.com/LeoiOS/LCActionSheet/blob/master/01.png)
 ![image](https://github.com/LeoiOS/LCActionSheet/blob/master/02.png)
 
