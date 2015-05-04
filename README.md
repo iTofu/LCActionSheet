@@ -11,13 +11,13 @@ OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝�
 * 把LCActionSheet文件夹(在Demo中)拖到你的项目中。
 * 在相应位置导入头文件: `#import "LCActionSheet.h"`，遵守协议`<LCActionSheetDelegate>`。
 * 调用下面的方法即可:
-  ```
+  ```objc
   - LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？" buttonTitles:@[@"确定"] redButtonIndex:0 delegate:self];`
   - [sheet show];
   ```
 
 * 监听方法(代理方法，可选实现):
-  ```
+  ```objc
   - (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex;
   ```
   
