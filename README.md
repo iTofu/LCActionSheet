@@ -21,7 +21,7 @@ OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝�
   - (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex;
   ```
   
-### Tips
+### 提示 Tips
 - LCActionSheet是添加到当前的Window上，没适配横屏。
 - 提供了title、buttons、redButton、cancelBtn这些杂七杂八的东东，应该全了。
 - buttonIndex从上到下从0依次递增。如果不想有redButton，在`redButtonIndex:`处传个`-1`即可。
@@ -37,5 +37,5 @@ OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝�
 * Email:    leoios@sina.com
 * Website:  http://www.leodong.com/ (备案中……)
 
-### License
+### 授权 License
 本项目采用 [MIT license](http://opensource.org/licenses/MIT) 开源，你可以利用采用该协议的代码做任何事情，只需要继续继承 MIT 协议即可。
