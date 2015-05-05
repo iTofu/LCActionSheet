@@ -17,19 +17,33 @@
 #define LCColor(r, g, b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0f]
 
 @interface LCActionSheet () {
+    
     /** 所有按钮 */
     NSArray *_buttonTitles;
+    
     /** 暗黑色的view */
     UIView *_darkView;
+    
     /** 所有按钮的底部view */
     UIView *_bottomView;
+    
+    /** 代理 */
+    id<LCActionSheetDelegate> _delegate;
 }
 
 @end
 
 @implementation LCActionSheet
 
-- (instancetype)initWithTitle:(NSString *)title buttonTitles:(NSArray *)titles redButtonIndex:(NSInteger)buttonIndex delegate:(id<LCActionSheetDelegate>)delegate {
++ (instancetype)sheetWithTitle:(NSString *)title buttonTitles:(NSArray *)titles redButtonIndex:(NSInteger)buttonIndex delegate:(id<LCActionSheetDelegate>)delegate {
+    
+    return [[self alloc] initWithTitle:title buttonTitles:titles redButtonIndex:buttonIndex delegate:delegate];
+}
+
+- (instancetype)initWithTitle:(NSString *)title
+                 buttonTitles:(NSArray *)titles
+               redButtonIndex:(NSInteger)buttonIndex
+                     delegate:(id<LCActionSheetDelegate>)delegate {
     
     if (self = [super init]) {
         
@@ -37,10 +51,10 @@
         
         // 暗黑色的view
         UIView *darkView = [[UIView alloc] init];
-        darkView.userInteractionEnabled = NO;
-        darkView.backgroundColor = LCColor(46, 49, 50);
-        darkView.alpha = 0;
-        darkView.frame = (CGRect){0, 0, SCREEN_SIZE};
+        [darkView setAlpha:0];
+        [darkView setUserInteractionEnabled:NO];
+        [darkView setFrame:(CGRect){0, 0, SCREEN_SIZE}];
+        [darkView setBackgroundColor:LCColor(46, 49, 50)];
         [self addSubview:darkView];
         _darkView = darkView;
         
@@ -49,7 +63,7 @@
         
         // 所有按钮的底部view
         UIView *bottomView = [[UIView alloc] init];
-        bottomView.backgroundColor = LCColor(214, 214, 222);
+        [bottomView setBackgroundColor:LCColor(214, 214, 222)];
         [self addSubview:bottomView];
         _bottomView = bottomView;
         
@@ -57,12 +71,12 @@
             
             // 标题
             UILabel *label = [[UILabel alloc] init];
-            label.text = title;
-            label.font = [UIFont systemFontOfSize:13.0f];
-            label.textColor = LCColor(111, 111, 111);
-            label.backgroundColor = [UIColor whiteColor];
-            label.textAlignment = NSTextAlignmentCenter;
-            label.frame = CGRectMake(0, 0, SCREEN_SIZE.width, BUTTON_H);
+            [label setText:title];
+            [label setTextColor:LCColor(111, 111, 111)];
+            [label setTextAlignment:NSTextAlignmentCenter];
+            [label setFont:[UIFont systemFontOfSize:13.0f]];
+            [label setBackgroundColor:[UIColor whiteColor]];
+            [label setFrame:CGRectMake(0, 0, SCREEN_SIZE.width, BUTTON_H)];
             [bottomView addSubview:label];
         }
         
@@ -74,21 +88,27 @@
                 
                 // 所有按钮
                 UIButton *btn = [[UIButton alloc] init];
-                btn.tag = i;
-                btn.backgroundColor = [UIColor whiteColor];
-                btn.titleLabel.font = [UIFont systemFontOfSize:16.0f];
+                [btn setTag:i];
+                [btn setBackgroundColor:[UIColor whiteColor]];
                 [btn setTitle:titles[i] forState:UIControlStateNormal];
+                [[btn titleLabel] setFont:[UIFont systemFontOfSize:16.0f]];
+                
                 UIColor *titleColor = nil;
                 if (i == buttonIndex) {
+                    
                     titleColor = LCColor(255, 10, 10);
+                    
                 } else {
+                    
                     titleColor = [UIColor blackColor] ;
                 }
                 [btn setTitleColor:titleColor forState:UIControlStateNormal];
+                
                 [btn setBackgroundImage:[UIImage imageNamed:@"bgImage_HL"] forState:UIControlStateHighlighted];
                 [btn addTarget:self action:@selector(didClickBtn:) forControlEvents:UIControlEventTouchUpInside];
+                
                 CGFloat btnY = BUTTON_H * (i + (title ? 1 : 0));
-                btn.frame = CGRectMake(0, btnY, SCREEN_SIZE.width, BUTTON_H);
+                [btn setFrame:CGRectMake(0, btnY, SCREEN_SIZE.width, BUTTON_H)];
                 [bottomView addSubview:btn];
             }
             
@@ -96,31 +116,32 @@
                 
                 // 所有线条
                 UIImageView *line = [[UIImageView alloc] init];
-                line.image = [UIImage imageNamed:@"cellLine"];
-                line.contentMode = UIViewContentModeCenter;
+                [line setImage:[UIImage imageNamed:@"cellLine"]];
+                [line setContentMode:UIViewContentModeCenter];
                 CGFloat lineY = (i + (title ? 1 : 0)) * BUTTON_H;
-                line.frame = CGRectMake(0, lineY, SCREEN_SIZE.width, 1.0f);
+                [line setFrame:CGRectMake(0, lineY, SCREEN_SIZE.width, 1.0f)];
                 [bottomView addSubview:line];
             }
         }
         
         // 取消按钮
         UIButton *cancelBtn = [[UIButton alloc] init];
-        cancelBtn.tag = titles.count;
-        cancelBtn.backgroundColor = [UIColor whiteColor];
-        cancelBtn.titleLabel.font = [UIFont systemFontOfSize:16.0f];
+        [cancelBtn setTag:titles.count];
+        [cancelBtn setBackgroundColor:[UIColor whiteColor]];
         [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+        [[cancelBtn titleLabel] setFont:[UIFont systemFontOfSize:16.0f]];
         [cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [cancelBtn setBackgroundImage:[UIImage imageNamed:@"bgImage_HL"] forState:UIControlStateHighlighted];
         [cancelBtn addTarget:self action:@selector(didClickCancelBtn) forControlEvents:UIControlEventTouchUpInside];
+        
         CGFloat btnY = BUTTON_H * (titles.count + (title ? 1 : 0)) + 5.0f;
-        cancelBtn.frame = CGRectMake(0, btnY, SCREEN_SIZE.width, BUTTON_H);
+        [cancelBtn setFrame:CGRectMake(0, btnY, SCREEN_SIZE.width, BUTTON_H)];
         [bottomView addSubview:cancelBtn];
         
         CGFloat bottomH = (title ? BUTTON_H : 0) + BUTTON_H * titles.count + BUTTON_H + 5.0f;
-        bottomView.frame = CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, bottomH);
+        [bottomView setFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, bottomH)];
         
-        self.frame = (CGRect){0, 0, SCREEN_SIZE};
+        [self setFrame:(CGRect){0, 0, SCREEN_SIZE}];
         [[UIApplication sharedApplication].keyWindow addSubview:self];
     }
     
@@ -131,8 +152,9 @@
     
     [self dismiss:nil];
     
-    if ([self.delegate respondsToSelector:@selector(actionSheet:didClickedButtonAtIndex:)]) {
-        [self.delegate actionSheet:self didClickedButtonAtIndex:btn.tag];
+    if ([_delegate respondsToSelector:@selector(actionSheet:didClickedButtonAtIndex:)]) {
+        
+        [_delegate actionSheet:self didClickedButtonAtIndex:btn.tag];
     }
 }
 
@@ -143,12 +165,12 @@
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          
-                         _darkView.alpha = 0;
-                         _darkView.userInteractionEnabled = NO;
+                         [_darkView setAlpha:0];
+                         [_darkView setUserInteractionEnabled:NO];
                          
                          CGRect frame = _bottomView.frame;
                          frame.origin.y += frame.size.height;
-                         _bottomView.frame = frame;
+                         [_bottomView setFrame:frame];
                          
                      } completion:^(BOOL finished) {
                          
@@ -163,19 +185,20 @@
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          
-                         _darkView.alpha = 0;
-                         _darkView.userInteractionEnabled = NO;
+                         [_darkView setAlpha:0];
+                         [_darkView setUserInteractionEnabled:NO];
                          
                          CGRect frame = _bottomView.frame;
                          frame.origin.y += frame.size.height;
-                         _bottomView.frame = frame;
+                         [_bottomView setFrame:frame];
                          
                      } completion:^(BOOL finished) {
                          
                          [self removeFromSuperview];
                          
-                         if ([self.delegate respondsToSelector:@selector(actionSheet:didClickedButtonAtIndex:)]) {
-                             [self.delegate actionSheet:self didClickedButtonAtIndex:_buttonTitles.count];
+                         if ([_delegate respondsToSelector:@selector(actionSheet:didClickedButtonAtIndex:)]) {
+                             
+                             [_delegate actionSheet:self didClickedButtonAtIndex:_buttonTitles.count];
                          }
                      }];
 }
@@ -187,12 +210,12 @@
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          
-                         _darkView.alpha = 0.4f;
-                         _darkView.userInteractionEnabled = YES;
+                         [_darkView setAlpha:0.4f];
+                         [_darkView setUserInteractionEnabled:YES];
                          
                          CGRect frame = _bottomView.frame;
                          frame.origin.y -= frame.size.height;
-                         _bottomView.frame = frame;
+                         [_bottomView setFrame:frame];
                          
                      } completion:nil];
 }
