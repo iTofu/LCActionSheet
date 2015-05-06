@@ -50,7 +50,7 @@ OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝�
 ### 联系 Support
 * 发现问题请lssues我，谢谢:)
 * Email:leoios@sina.com
-* Blog: http://www.leodong.com/ (备案中暂请通过IP访问：http://115.28.243.22/)
+* Blog: http://www.leodong.com/
 
 
 ### 授权 License
