@@ -31,6 +31,9 @@
     id<LCActionSheetDelegate> _delegate;
 }
 
+@property (nonatomic, strong) UIWindow *backWindow;
+
+
 @end
 
 @implementation LCActionSheet
@@ -142,11 +145,23 @@
         [bottomView setFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, bottomH)];
         
         [self setFrame:(CGRect){0, 0, SCREEN_SIZE}];
-        [[UIApplication sharedApplication].keyWindow addSubview:self];
+        [self.backWindow addSubview:self];
     }
     
     return self;
 }
+
+- (UIWindow *)backWindow
+{
+    if (_backWindow == nil) {
+        _backWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _backWindow.windowLevel       = UIWindowLevelStatusBar;
+        _backWindow.backgroundColor   = [UIColor clearColor];
+        _backWindow.hidden = NO;
+    }
+    return _backWindow;
+}
+
 
 - (void)didClickBtn:(UIButton *)btn {
     
