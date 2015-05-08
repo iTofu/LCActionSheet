@@ -29,6 +29,10 @@ OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝�
   ```
 
 
+### 更新日志 2015.05.08 Update Logs
+* 修改当StatusBarStyle为UIStatusBarStyleLightContent时，背景不会遮挡 statusBar的问题。——by [陈威](https://github.com/weiwei1035)
+
+
 ### 更新日志 2015.05.05 Update Logs
 * 我还是没有适配横屏(´Д｀)
 * 增加了类方法，可以通过类方法实例化actionSheet。
