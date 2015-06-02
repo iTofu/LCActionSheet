@@ -187,7 +187,8 @@
                          frame.origin.y += frame.size.height;
                          [_bottomView setFrame:frame];
                          
-                     } completion:^(BOOL finished) {
+                     }
+                     completion:^(BOOL finished) {
                          
                          [self removeFromSuperview];
                      }];
@@ -207,7 +208,8 @@
                          frame.origin.y += frame.size.height;
                          [_bottomView setFrame:frame];
                          
-                     } completion:^(BOOL finished) {
+                     }
+                     completion:^(BOOL finished) {
                          
                          [self removeFromSuperview];
                          
@@ -232,7 +234,8 @@
                          frame.origin.y -= frame.size.height;
                          [_bottomView setFrame:frame];
                          
-                     } completion:nil];
+                     }
+                     completion:nil];
 }
 
 @end

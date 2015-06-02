@@ -42,7 +42,7 @@
 
 - (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    NSLog(@"> Clicked Index: %d", buttonIndex);
+    NSLog(@"> Clicked Index: %ld", (long)buttonIndex);
 }
 
 @end
