@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3474FF51B2027B700E081FA /* cellLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3474FF41B2027B700E081FA /* cellLine@2x.png */; };
 		B37B69301AED2D2A00C6F4C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B37B692F1AED2D2A00C6F4C9 /* main.m */; };
 		B37B69391AED2D2A00C6F4C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37B69371AED2D2A00C6F4C9 /* Main.storyboard */; };
 		B37B693B1AED2D2A00C6F4C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37B693A1AED2D2A00C6F4C9 /* Images.xcassets */; };
@@ -14,7 +15,6 @@
 		B37B694A1AED2D2A00C6F4C9 /* LCActionSheetDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B37B69491AED2D2A00C6F4C9 /* LCActionSheetDemoTests.m */; };
 		B37B69701AED45A500C6F4C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B37B69671AED45A500C6F4C9 /* AppDelegate.m */; };
 		B37B69711AED45A500C6F4C9 /* bgImage_HL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B37B696A1AED45A500C6F4C9 /* bgImage_HL@2x.png */; };
-		B37B69721AED45A500C6F4C9 /* cellLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B37B696B1AED45A500C6F4C9 /* cellLine@2x.png */; };
 		B37B69731AED45A500C6F4C9 /* LCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B37B696D1AED45A500C6F4C9 /* LCActionSheet.m */; };
 		B37B69741AED45A500C6F4C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B37B696F1AED45A500C6F4C9 /* ViewController.m */; };
 /* End PBXBuildFile section */
@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B3474FF41B2027B700E081FA /* cellLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellLine@2x.png"; sourceTree = "<group>"; };
 		B37B692A1AED2D2A00C6F4C9 /* LCActionSheetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCActionSheetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37B692E1AED2D2A00C6F4C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B37B692F1AED2D2A00C6F4C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		B37B69661AED45A500C6F4C9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B37B69671AED45A500C6F4C9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B37B696A1AED45A500C6F4C9 /* bgImage_HL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgImage_HL@2x.png"; sourceTree = "<group>"; };
-		B37B696B1AED45A500C6F4C9 /* cellLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellLine@2x.png"; sourceTree = "<group>"; };
 		B37B696C1AED45A500C6F4C9 /* LCActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionSheet.h; sourceTree = "<group>"; };
 		B37B696D1AED45A500C6F4C9 /* LCActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionSheet.m; sourceTree = "<group>"; };
 		B37B696E1AED45A500C6F4C9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				B37B696A1AED45A500C6F4C9 /* bgImage_HL@2x.png */,
-				B37B696B1AED45A500C6F4C9 /* cellLine@2x.png */,
+				B3474FF41B2027B700E081FA /* cellLine@2x.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B37B69391AED2D2A00C6F4C9 /* Main.storyboard in Resources */,
-				B37B69721AED45A500C6F4C9 /* cellLine@2x.png in Resources */,
+				B3474FF51B2027B700E081FA /* cellLine@2x.png in Resources */,
 				B37B69711AED45A500C6F4C9 /* bgImage_HL@2x.png in Resources */,
 				B37B693E1AED2D2A00C6F4C9 /* LaunchScreen.xib in Resources */,
 				B37B693B1AED2D2A00C6F4C9 /* Images.xcassets in Resources */,
