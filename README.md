@@ -30,7 +30,11 @@ OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝�
 
 
 ### 更新日志 2015.05.08 Update Logs
-* 修改当StatusBarStyle为UIStatusBarStyleLightContent时，背景不会遮挡 statusBar的问题。——by [陈威](https://github.com/weiwei1035)
+* 修复：新添加的_backWindow在某些情况下导致界面无反应的BUG。——by [kuanglijun312](https://github.com/kuanglijun312)
+
+
+### 更新日志 2015.05.08 Update Logs
+* 修复：当StatusBarStyle为UIStatusBarStyleLightContent时，背景不会遮挡 statusBar的问题。——by [陈威](https://github.com/weiwei1035)
 
 
 ### 更新日志 2015.05.05 Update Logs
