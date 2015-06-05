@@ -190,6 +190,8 @@
                      }
                      completion:^(BOOL finished) {
                          
+                         _backWindow.hidden = YES;
+                         
                          [self removeFromSuperview];
                      }];
 }
@@ -211,6 +213,8 @@
                      }
                      completion:^(BOOL finished) {
                          
+                         _backWindow.hidden = YES;
+                         
                          [self removeFromSuperview];
                          
                          if ([_delegate respondsToSelector:@selector(actionSheet:didClickedButtonAtIndex:)]) {
@@ -221,6 +225,8 @@
 }
 
 - (void)show {
+    
+    _backWindow.hidden = NO;
     
     [UIView animateWithDuration:0.3f
                           delay:0
