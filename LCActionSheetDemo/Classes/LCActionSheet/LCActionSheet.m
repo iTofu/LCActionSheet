@@ -151,9 +151,10 @@
     return self;
 }
 
-- (UIWindow *)backWindow
-{
+- (UIWindow *)backWindow {
+    
     if (_backWindow == nil) {
+        
         _backWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         _backWindow.windowLevel       = UIWindowLevelStatusBar;
         _backWindow.backgroundColor   = [UIColor clearColor];
