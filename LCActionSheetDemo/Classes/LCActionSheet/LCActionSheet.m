@@ -160,6 +160,7 @@
         _backWindow.backgroundColor   = [UIColor clearColor];
         _backWindow.hidden = NO;
     }
+    
     return _backWindow;
 }
 
