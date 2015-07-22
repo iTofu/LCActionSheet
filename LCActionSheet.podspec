@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
                    DESC
 
-  s.homepage     = "https://github.com/LeoiOS/LCNewFeature"
+  s.homepage     = "https://github.com/LeoiOS/LCActionSheet"
   #	s.screenshots  = "https://github.com/LeoiOS/LCActionSheet/blob/master/LCActionSheetDemo.gif"
 
   s.license      = "MIT"
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/LeoiOS/LCNewFeature.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/LeoiOS/LCActionSheet.git", :tag => "1.0.0" }
 
   s.source_files  = "LCActionSheetDemo/Classes/LCActionSheet"
 
