@@ -87,6 +87,8 @@
             
             _buttonTitles = titles;
             
+            NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"LCActionSheet" ofType:@"bundle"];
+            
             for (int i = 0; i < titles.count; i++) {
                 
                 // 所有按钮
@@ -107,7 +109,10 @@
                 }
                 [btn setTitleColor:titleColor forState:UIControlStateNormal];
                 
-                [btn setBackgroundImage:[UIImage imageNamed:@"bgImage_HL"] forState:UIControlStateHighlighted];
+                NSString *linePath = [bundlePath stringByAppendingPathComponent:@"bgImage_HL@2x.png"];
+                UIImage *bgImage = [UIImage imageWithContentsOfFile:linePath];
+                
+                [btn setBackgroundImage:bgImage forState:UIControlStateHighlighted];
                 [btn addTarget:self action:@selector(didClickBtn:) forControlEvents:UIControlEventTouchUpInside];
                 
                 CGFloat btnY = BUTTON_H * (i + (title ? 1 : 0));
@@ -117,9 +122,12 @@
             
             for (int i = 0; i < titles.count; i++) {
                 
+                NSString *linePath = [bundlePath stringByAppendingPathComponent:@"cellLine@2x.png"];
+                UIImage *lineImage = [UIImage imageWithContentsOfFile:linePath];
+                
                 // 所有线条
                 UIImageView *line = [[UIImageView alloc] init];
-                [line setImage:[UIImage imageNamed:@"cellLine"]];
+                [line setImage:lineImage];
                 [line setContentMode:UIViewContentModeCenter];
                 CGFloat lineY = (i + (title ? 1 : 0)) * BUTTON_H;
                 [line setFrame:CGRectMake(0, lineY, SCREEN_SIZE.width, 1.0f)];
