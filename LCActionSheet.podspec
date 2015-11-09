@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/LeoiOS/LCActionSheet.git", :tag => s.version }
 
-  s.source_files  = "LCActionSheet"
+  s.source_files  = "LCActionSheet/*"
 
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
