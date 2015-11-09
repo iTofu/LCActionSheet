@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
   
-                   Show a simple elegance action sheet with one line of code.
+                   Show a simple elegance action sheet with one line of code~
 
                    DESC
 
@@ -20,9 +20,9 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/LeoiOS/LCActionSheet.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/LeoiOS/LCActionSheet.git", :tag => s.version }
 
-  s.source_files  = "LCActionSheetDemo/Classes/LCActionSheet"
+  s.source_files  = "LCActionSheet"
 
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
