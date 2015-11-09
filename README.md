@@ -1,16 +1,17 @@
 ## LCActionSheet
-一个简约优雅的ActionSheet。微信和新浪微博也是采取类似的ActionSheet。
+一个简约优雅的 ActionSheet。微信和新浪微博也是采取类似的ActionSheet。
 
 ![image](https://github.com/LeoiOS/LCActionSheet/blob/master/LCActionSheetDemo.gif)
 
 
 ### 前言 Foreword
-OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝的其实也还看得过去)就算了，风格还跟自己的App极为不搭。
-然后看了看微信和新浪微博的ActionSheet，嗯，还不错。于是自己搞了个ActionSheet，并发扬大庇天下码农俱欢颜的精神，放上来给大家用:)
+OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝蓝的其实也还看得过去)就算了，风格还跟自己的 App 极为不搭。
+然后看了看微信和新浪微博的 ActionSheet，嗯，还不错。于是自己搞了个 ActionSheet，并发扬大庇天下码农俱欢颜的精神，放上来给大家用:)
 
 
 ### 代码 Code
-* 把LCActionSheet文件夹(在Demo中)拖到你的项目中。
+* - 方法一：CocoaPods导入：`pod 'LCActionSheet'`
+  - 方法二：把LCActionSheet文件夹(在Demo中)拖到你的项目中。
 * 在相应位置导入头文件: `#import "LCActionSheet.h"`，遵守协议`<LCActionSheetDelegate>`。
 * 调用下面的方法即可:
     ```objc
@@ -29,15 +30,19 @@ OK，这次我是看系统的UIActionSheet不爽。不能更改tintColor(蓝蓝�
   ```
 
 
-### 更新日志 2015.05.08 Update Logs
+### 更新日志 2015.11.09 Update Logs (Tag: 1.0.1)
+* 添加对 CocoaPods 的支持：`pod 'MJRefresh'`
+
+
+### 更新日志 2015.05.08 Update Logs (Tag: 1.0.0)
 * 修复：新添加的_backWindow在某些情况下导致界面无反应的BUG。——by [kuanglijun312](https://github.com/kuanglijun312)
 
 
-### 更新日志 2015.05.08 Update Logs
+### 更新日志 2015.05.08 Update Logs (Tag: 1.0.0)
 * 修复：当StatusBarStyle为UIStatusBarStyleLightContent时，背景不会遮挡 statusBar的问题。——by [陈威](https://github.com/weiwei1035)
 
 
-### 更新日志 2015.05.05 Update Logs
+### 更新日志 2015.05.05 Update Logs (Tag: 1.0.0)
 * 我还是没有适配横屏(´Д｀)
 * 增加了类方法，可以通过类方法实例化actionSheet。
 * 完善部分注释。
