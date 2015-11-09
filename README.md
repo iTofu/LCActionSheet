@@ -10,7 +10,8 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 
 ### 代码 Code
-* - 方法一：CocoaPods导入：`pod 'LCActionSheet'`
+* 
+  - 方法一：CocoaPods导入：`pod 'LCActionSheet'`
   - 方法二：把LCActionSheet文件夹(在Demo中)拖到你的项目中。
 * 在相应位置导入头文件: `#import "LCActionSheet.h"`，遵守协议`<LCActionSheetDelegate>`。
 * 调用下面的方法即可:
