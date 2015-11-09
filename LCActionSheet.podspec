@@ -19,8 +19,9 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://www.leodong.com"
 
   s.platform     = :ios, "7.0"
+  s.requires_arc = true
 
-  s.source       = { :git => "https://github.com/LeoiOS/LCActionSheet.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/LeoiOS/LCActionSheet.git", :tag => s.version.to_s }
 
   s.source_files  = "LCActionSheet/*"
 
