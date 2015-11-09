@@ -11,8 +11,8 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 ### 代码 Code
 * 
-  - 方法一：CocoaPods导入：`pod 'LCActionSheet'`
-  - 方法二：把LCActionSheet文件夹(在Demo中)拖到你的项目中。
+  - 方法一：[CocoaPods](https://cocoapods.org/) 导入：`pod 'LCActionSheet'`
+  - 方法二：把 LCActionSheet 文件夹(在 Demo 中)拖到你的项目中。
 * 在相应位置导入头文件: `#import "LCActionSheet.h"`，遵守协议`<LCActionSheetDelegate>`。
 * 调用下面的方法即可:
     ```objc
@@ -31,29 +31,29 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
   ```
 
 
-### 更新日志 2015.11.09 Update Logs (Tag: 1.0.1)
-* 添加对 CocoaPods 的支持：`pod 'MJRefresh'`
+### 更新日志 2015.11.09 Update Logs (Tag: 1.0.6)
+* 添加对 CocoaPods 的支持：`pod 'LCActionSheet'`
 
 
 ### 更新日志 2015.05.08 Update Logs (Tag: 1.0.0)
-* 修复：新添加的_backWindow在某些情况下导致界面无反应的BUG。——by [kuanglijun312](https://github.com/kuanglijun312)
+* 修复：新添加的 _backWindow 在某些情况下导致界面无反应的BUG。——by [kuanglijun312](https://github.com/kuanglijun312)
 
 
 ### 更新日志 2015.05.08 Update Logs (Tag: 1.0.0)
-* 修复：当StatusBarStyle为UIStatusBarStyleLightContent时，背景不会遮挡 statusBar的问题。——by [陈威](https://github.com/weiwei1035)
+* 修复：当 StatusBarStyle 为 UIStatusBarStyleLightContent 时，背景不会遮挡 statusBar 的问题。——by [陈威](https://github.com/weiwei1035)
 
 
 ### 更新日志 2015.05.05 Update Logs (Tag: 1.0.0)
 * 我还是没有适配横屏(´Д｀)
-* 增加了类方法，可以通过类方法实例化actionSheet。
+* 增加了类方法，可以通过类方法实例化 actionSheet。
 * 完善部分注释。
 
 
 ### 提示 Tips
-- LCActionSheet是添加到当前的Window上，没适配横屏。
-- 提供了title、buttons、redButton、cancelBtn这些杂七杂八的东东，应该全了。
-- buttonIndex从上到下从0依次递增。如果不想有redButton，在`redButtonIndex:`处传个`-1`即可。
-- 协议`<LCActionSheetDelegate>`能监听到点击的按钮的index，这个方法是可选实现的。
+- LCActionSheet 是添加到当前的 Window 上，没适配横屏。
+- 提供了 title、buttons、redButton、cancelBtn 这些杂七杂八的东东，应该全了。
+- buttonIndex 从上到下从 0 依次递增。如果不想有 redButton，在`redButtonIndex:`处传个`-1`即可。
+- 协议`<LCActionSheetDelegate>`能监听到点击的按钮的 index，这个方法是可选实现的。
 
 
 ### 示例 Examples
@@ -62,7 +62,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 
 ### 联系 Support
-* 发现问题请lssues我，谢谢:)
+* 发现问题请 lssues 我，谢谢:)
 * Email:leoios@sina.com
 * Blog: http://www.leodong.com/
 
