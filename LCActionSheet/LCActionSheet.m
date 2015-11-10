@@ -4,7 +4,7 @@
 //
 //  Email:  leoios@sina.com
 //  GitHub: http://github.com/LeoiOS
-//  如有问题或建议请给我发Email, 或在该项目的GitHub主页lssues我, 谢谢:)
+//  如有问题或建议请给我发 Email, 或在该项目的 GitHub 主页 Issues 我, 谢谢:)
 //
 
 #import "LCActionSheet.h"

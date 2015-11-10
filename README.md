@@ -62,7 +62,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 
 ### 联系 Support
-* 发现问题请 lssues 我，谢谢:)
+* 发现问题请 Issues 我，谢谢:)
 * Email:leoios@sina.com
 * Blog: http://www.leodong.com/
 
