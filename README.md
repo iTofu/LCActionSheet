@@ -32,7 +32,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 
 ### 更新日志 2015.11.09 Update Logs (Tag: 1.0.6)
-* 添加对 CocoaPods 的支持：`pod 'LCActionSheet'`
+* 添加对 [CocoaPods](https://cocoapods.org/) 的支持：`pod 'LCActionSheet'`
 
 
 ### 更新日志 2015.05.08 Update Logs (Tag: 1.0.0)
