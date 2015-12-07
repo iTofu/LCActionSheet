@@ -14,25 +14,42 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 
 ## 代码 Code
+
 * 
   - 方法一：[CocoaPods](https://cocoapods.org/) 导入：`pod 'LCActionSheet'`
-  - 方法二：把 LCActionSheet 文件夹(在 Demo 中)拖到你的项目中。
+  - 方法二：把 LCActionSheet 文件夹(在 Demo 中)拖到你的项目中
+
 * 在相应位置导入头文件: `#import "LCActionSheet.h"`，遵守协议`<LCActionSheetDelegate>`。
 * 调用下面的方法即可:
-    ```objc
-    // 1. 类方法
-    LCActionSheet *sheet = [LCActionSheet sheetWithTitle:nil buttonTitles:@[@"拍照", @"从相册选择"] redButtonIndex:-1 delegate:self];
-    [sheet show];
+````objc
+// 1. 类方法 + Block
+LCActionSheet *sheet = [LCActionSheet sheetWithTitle:nil buttonTitles:@[@"拍照", @"从相册选择"] redButtonIndex:-1 clicked:^(NSInteger buttonIndex) {
     
-    // 2. 实例方法
-    LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？" buttonTitles:@[@"确定"] redButtonIndex:0 delegate:self];
-    [sheet show];
-    ```
+    NSLog(@"Block way: %ld", (long)buttonIndex);
+}];
+
+[sheet show];
+
+
+// 2. 实例方法 + Delegate
+LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？"
+                                               buttonTitles:@[@"确定"]
+                                             redButtonIndex:0 
+                                                   delegate:self];
+
+[sheet show];
+````
 
 * 监听方法(代理方法，可选实现):
-  ```objc
-  - (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex;
-  ```
+````objc
+- (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex;
+````
+
+
+
+## 更新日志 2015.12.07 Update Logs (Tag: 1.1.0)
+* 要 Block？满足你！
+* 优化逻辑：创建 ActionSheet 时，不再添加到 window 上。
 
 
 
@@ -61,8 +78,8 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 ## 提示 Tips
 - LCActionSheet 是添加到当前的 Window 上，没适配横屏。
 - 提供了 title、buttons、redButton、cancelBtn 这些杂七杂八的东东，应该全了。
-- buttonIndex 从上到下从 0 依次递增。如果不想有 redButton，在`redButtonIndex:`处传个`-1`即可。
-- 协议`<LCActionSheetDelegate>`能监听到点击的按钮的 index，这个方法是可选实现的。
+- buttonIndex 从上到下从 0 依次递增。如果不想有 redButton，在 `redButtonIndex:` 处传 `-1` 即可。
+- 协议 `<LCActionSheetDelegate>` 能监听到点击的按钮的 index，这个方法是可选实现的。
 
 
 

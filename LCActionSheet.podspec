@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "LCActionSheet"
-  s.version      = "1.0.6"
-  s.summary      = "Show a simple elegance action sheet with one line of code."
+  s.version      = "1.1.0"
+  s.summary      = "Show a simple elegance action sheet with one line of code.  Support: http://LeoDev.me"
   s.homepage     = "https://github.com/LeoiOS/LCActionSheet"
   s.license      = "MIT"
   s.author             = { "Leo" => "leoios@sina.com" }
