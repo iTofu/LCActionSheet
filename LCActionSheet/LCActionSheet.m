@@ -16,147 +16,182 @@
 // 颜色
 #define LCColor(r, g, b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0f]
 
-@interface LCActionSheet () {
-    
-    /** 所有按钮 */
-    NSArray *_buttonTitles;
-    
-    /** 暗黑色的view */
-    UIView *_darkView;
-    
-    /** 所有按钮的底部view */
-    UIView *_bottomView;
-    
-    /** 代理 */
-    id<LCActionSheetDelegate> _delegate;
-}
+@interface LCActionSheet ()
+
+/** 所有按钮 */
+@property (nonatomic, strong) NSArray *buttonTitles;
+
+/** 暗黑色的view */
+@property (nonatomic, strong) UIView *darkView;
+
+/** 所有按钮的底部view */
+@property (nonatomic, strong) UIView *bottomView;
+
+/** 代理 */
+@property (nonatomic, weak) id<LCActionSheetDelegate> delegate;
 
 @property (nonatomic, strong) UIWindow *backWindow;
+
+@property (nonatomic, copy) LCActionSheetBlock clickedBlock;
+
+@property (nonatomic, copy) NSString *title;
+
+@property (nonatomic, assign) NSInteger redButtonIndex;
+
 
 
 @end
 
 @implementation LCActionSheet
 
-+ (instancetype)sheetWithTitle:(NSString *)title buttonTitles:(NSArray *)titles redButtonIndex:(NSInteger)buttonIndex delegate:(id<LCActionSheetDelegate>)delegate {
++ (instancetype)sheetWithTitle:(NSString *)title buttonTitles:(NSArray *)buttonTitles redButtonIndex:(NSInteger)redButtonIndex delegate:(id<LCActionSheetDelegate>)delegate {
     
-    return [[self alloc] initWithTitle:title buttonTitles:titles redButtonIndex:buttonIndex delegate:delegate];
+    return [[self alloc] initWithTitle:title buttonTitles:buttonTitles redButtonIndex:redButtonIndex delegate:delegate];
+}
+
++ (instancetype)sheetWithTitle:(NSString *)title buttonTitles:(NSArray *)buttonTitles redButtonIndex:(NSInteger)redButtonIndex clicked:(LCActionSheetBlock)clicked {
+    
+    return [[self alloc] initWithTitle:title buttonTitles:buttonTitles redButtonIndex:redButtonIndex clicked:clicked];
 }
 
 - (instancetype)initWithTitle:(NSString *)title
-                 buttonTitles:(NSArray *)titles
-               redButtonIndex:(NSInteger)buttonIndex
+                 buttonTitles:(NSArray *)buttonTitles
+               redButtonIndex:(NSInteger)redButtonIndex
                      delegate:(id<LCActionSheetDelegate>)delegate {
     
     if (self = [super init]) {
         
-        _delegate = delegate;
+        self.title = title;
+        self.buttonTitles = buttonTitles;
+        self.redButtonIndex = redButtonIndex;
+        self.delegate = delegate;
         
-        // 暗黑色的view
-        UIView *darkView = [[UIView alloc] init];
-        [darkView setAlpha:0];
-        [darkView setUserInteractionEnabled:NO];
-        [darkView setFrame:(CGRect){0, 0, SCREEN_SIZE}];
-        [darkView setBackgroundColor:LCColor(46, 49, 50)];
-        [self addSubview:darkView];
-        _darkView = darkView;
-        
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
-        [darkView addGestureRecognizer:tap];
-        
-        // 所有按钮的底部view
-        UIView *bottomView = [[UIView alloc] init];
-        [bottomView setBackgroundColor:LCColor(233, 233, 238)];
-        [self addSubview:bottomView];
-        _bottomView = bottomView;
-        
-        if (title) {
-            
-            // 标题
-            UILabel *label = [[UILabel alloc] init];
-            [label setText:title];
-            [label setTextColor:LCColor(111, 111, 111)];
-            [label setTextAlignment:NSTextAlignmentCenter];
-            [label setFont:[UIFont systemFontOfSize:13.0f]];
-            [label setBackgroundColor:[UIColor whiteColor]];
-            [label setFrame:CGRectMake(0, 0, SCREEN_SIZE.width, BUTTON_H)];
-            [bottomView addSubview:label];
-        }
-        
-        if (titles.count) {
-            
-            _buttonTitles = titles;
-            
-            NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"LCActionSheet" ofType:@"bundle"];
-            
-            for (int i = 0; i < titles.count; i++) {
-                
-                // 所有按钮
-                UIButton *btn = [[UIButton alloc] init];
-                [btn setTag:i];
-                [btn setBackgroundColor:[UIColor whiteColor]];
-                [btn setTitle:titles[i] forState:UIControlStateNormal];
-                [[btn titleLabel] setFont:[UIFont systemFontOfSize:16.0f]];
-                
-                UIColor *titleColor = nil;
-                if (i == buttonIndex) {
-                    
-                    titleColor = LCColor(255, 10, 10);
-                    
-                } else {
-                    
-                    titleColor = [UIColor blackColor] ;
-                }
-                [btn setTitleColor:titleColor forState:UIControlStateNormal];
-                
-                NSString *linePath = [bundlePath stringByAppendingPathComponent:@"bgImage_HL@2x.png"];
-                UIImage *bgImage = [UIImage imageWithContentsOfFile:linePath];
-                
-                [btn setBackgroundImage:bgImage forState:UIControlStateHighlighted];
-                [btn addTarget:self action:@selector(didClickBtn:) forControlEvents:UIControlEventTouchUpInside];
-                
-                CGFloat btnY = BUTTON_H * (i + (title ? 1 : 0));
-                [btn setFrame:CGRectMake(0, btnY, SCREEN_SIZE.width, BUTTON_H)];
-                [bottomView addSubview:btn];
-            }
-            
-            for (int i = 0; i < titles.count; i++) {
-                
-                NSString *linePath = [bundlePath stringByAppendingPathComponent:@"cellLine@2x.png"];
-                UIImage *lineImage = [UIImage imageWithContentsOfFile:linePath];
-                
-                // 所有线条
-                UIImageView *line = [[UIImageView alloc] init];
-                [line setImage:lineImage];
-                [line setContentMode:UIViewContentModeCenter];
-                CGFloat lineY = (i + (title ? 1 : 0)) * BUTTON_H;
-                [line setFrame:CGRectMake(0, lineY, SCREEN_SIZE.width, 1.0f)];
-                [bottomView addSubview:line];
-            }
-        }
-        
-        // 取消按钮
-        UIButton *cancelBtn = [[UIButton alloc] init];
-        [cancelBtn setTag:titles.count];
-        [cancelBtn setBackgroundColor:[UIColor whiteColor]];
-        [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-        [[cancelBtn titleLabel] setFont:[UIFont systemFontOfSize:16.0f]];
-        [cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [cancelBtn setBackgroundImage:[UIImage imageNamed:@"bgImage_HL"] forState:UIControlStateHighlighted];
-        [cancelBtn addTarget:self action:@selector(didClickCancelBtn) forControlEvents:UIControlEventTouchUpInside];
-        
-        CGFloat btnY = BUTTON_H * (titles.count + (title ? 1 : 0)) + 5.0f;
-        [cancelBtn setFrame:CGRectMake(0, btnY, SCREEN_SIZE.width, BUTTON_H)];
-        [bottomView addSubview:cancelBtn];
-        
-        CGFloat bottomH = (title ? BUTTON_H : 0) + BUTTON_H * titles.count + BUTTON_H + 5.0f;
-        [bottomView setFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, bottomH)];
-        
-        [self setFrame:(CGRect){0, 0, SCREEN_SIZE}];
-        [self.backWindow addSubview:self];
+        [self setupMainView];
     }
     
     return self;
+}
+
+- (instancetype)initWithTitle:(NSString *)title
+                 buttonTitles:(NSArray *)buttonTitles
+               redButtonIndex:(NSInteger)redButtonIndex
+                      clicked:(LCActionSheetBlock)clicked {
+    
+    if (self = [super init]) {
+        
+        self.title = title;
+        self.buttonTitles = buttonTitles;
+        self.redButtonIndex = redButtonIndex;
+        self.clickedBlock = clicked;
+        
+        [self setupMainView];
+    }
+    
+    return self;
+}
+
+- (void)setupMainView {
+    
+    // 暗黑色的view
+    UIView *darkView = [[UIView alloc] init];
+    [darkView setAlpha:0];
+    [darkView setUserInteractionEnabled:NO];
+    [darkView setFrame:(CGRect){0, 0, SCREEN_SIZE}];
+    [darkView setBackgroundColor:LCColor(46, 49, 50)];
+    [self addSubview:darkView];
+    _darkView = darkView;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
+    [darkView addGestureRecognizer:tap];
+    
+    // 所有按钮的底部view
+    UIView *bottomView = [[UIView alloc] init];
+    [bottomView setBackgroundColor:LCColor(233, 233, 238)];
+    [self addSubview:bottomView];
+    _bottomView = bottomView;
+    
+    if (self.title) {
+        
+        // 标题
+        UILabel *label = [[UILabel alloc] init];
+        [label setText:self.title];
+        [label setTextColor:LCColor(111, 111, 111)];
+        [label setTextAlignment:NSTextAlignmentCenter];
+        [label setFont:[UIFont systemFontOfSize:13.0f]];
+        [label setBackgroundColor:[UIColor whiteColor]];
+        [label setFrame:CGRectMake(0, 0, SCREEN_SIZE.width, BUTTON_H)];
+        [bottomView addSubview:label];
+    }
+    
+    if (self.buttonTitles.count) {
+        
+        
+        NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"LCActionSheet" ofType:@"bundle"];
+        
+        for (int i = 0; i < self.buttonTitles.count; i++) {
+            
+            // 所有按钮
+            UIButton *btn = [[UIButton alloc] init];
+            [btn setTag:i];
+            [btn setBackgroundColor:[UIColor whiteColor]];
+            [btn setTitle:self.buttonTitles[i] forState:UIControlStateNormal];
+            [[btn titleLabel] setFont:[UIFont systemFontOfSize:16.0f]];
+            
+            UIColor *titleColor = nil;
+            if (i == self.redButtonIndex) {
+                
+                titleColor = LCColor(255, 10, 10);
+                
+            } else {
+                
+                titleColor = [UIColor blackColor] ;
+            }
+            [btn setTitleColor:titleColor forState:UIControlStateNormal];
+            
+            NSString *linePath = [bundlePath stringByAppendingPathComponent:@"bgImage_HL@2x.png"];
+            UIImage *bgImage = [UIImage imageWithContentsOfFile:linePath];
+            
+            [btn setBackgroundImage:bgImage forState:UIControlStateHighlighted];
+            [btn addTarget:self action:@selector(didClickBtn:) forControlEvents:UIControlEventTouchUpInside];
+            
+            CGFloat btnY = BUTTON_H * (i + (self.title ? 1 : 0));
+            [btn setFrame:CGRectMake(0, btnY, SCREEN_SIZE.width, BUTTON_H)];
+            [bottomView addSubview:btn];
+        }
+        
+        for (int i = 0; i < self.buttonTitles.count; i++) {
+            
+            NSString *linePath = [bundlePath stringByAppendingPathComponent:@"cellLine@2x.png"];
+            UIImage *lineImage = [UIImage imageWithContentsOfFile:linePath];
+            
+            // 所有线条
+            UIImageView *line = [[UIImageView alloc] init];
+            [line setImage:lineImage];
+            [line setContentMode:UIViewContentModeCenter];
+            CGFloat lineY = (i + (self.title ? 1 : 0)) * BUTTON_H;
+            [line setFrame:CGRectMake(0, lineY, SCREEN_SIZE.width, 1.0f)];
+            [bottomView addSubview:line];
+        }
+    }
+    
+    // 取消按钮
+    UIButton *cancelBtn = [[UIButton alloc] init];
+    [cancelBtn setTag:self.buttonTitles.count];
+    [cancelBtn setBackgroundColor:[UIColor whiteColor]];
+    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [[cancelBtn titleLabel] setFont:[UIFont systemFontOfSize:16.0f]];
+    [cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [cancelBtn setBackgroundImage:[UIImage imageNamed:@"bgImage_HL"] forState:UIControlStateHighlighted];
+    [cancelBtn addTarget:self action:@selector(didClickCancelBtn) forControlEvents:UIControlEventTouchUpInside];
+    
+    CGFloat btnY = BUTTON_H * (self.buttonTitles.count + (self.title ? 1 : 0)) + 5.0f;
+    [cancelBtn setFrame:CGRectMake(0, btnY, SCREEN_SIZE.width, BUTTON_H)];
+    [bottomView addSubview:cancelBtn];
+    
+    CGFloat bottomH = (self.title ? BUTTON_H : 0) + BUTTON_H * self.buttonTitles.count + BUTTON_H + 5.0f;
+    [bottomView setFrame:CGRectMake(0, SCREEN_SIZE.height, SCREEN_SIZE.width, bottomH)];
+    
+    [self setFrame:(CGRect){0, 0, SCREEN_SIZE}];
 }
 
 - (UIWindow *)backWindow {
@@ -180,6 +215,11 @@
     if ([_delegate respondsToSelector:@selector(actionSheet:didClickedButtonAtIndex:)]) {
         
         [_delegate actionSheet:self didClickedButtonAtIndex:btn.tag];
+    }
+    
+    if (self.clickedBlock) {
+        
+        self.clickedBlock(btn.tag);
     }
 }
 
@@ -223,18 +263,26 @@
                      }
                      completion:^(BOOL finished) {
                          
-                         _backWindow.hidden = YES;
+                         if ([_delegate respondsToSelector:@selector(actionSheet:didClickedButtonAtIndex:)]) {
+                             
+                             [_delegate actionSheet:self didClickedButtonAtIndex:self.buttonTitles.count];
+                         }
+                         
+                         if (self.clickedBlock) {
+                             
+                             __weak typeof(self) weakSelf = self;
+                             self.clickedBlock(weakSelf.buttonTitles.count);
+                         }
                          
                          [self removeFromSuperview];
                          
-                         if ([_delegate respondsToSelector:@selector(actionSheet:didClickedButtonAtIndex:)]) {
-                             
-                             [_delegate actionSheet:self didClickedButtonAtIndex:_buttonTitles.count];
-                         }
+                         self.backWindow.hidden = YES;
                      }];
 }
 
 - (void)show {
+    
+    [self.backWindow addSubview:self];
     
     _backWindow.hidden = NO;
     
