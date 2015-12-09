@@ -1,14 +1,20 @@
 # LCActionSheet
+
 一个简约优雅的 ActionSheet。微信和新浪微博也是采取类似的ActionSheet。
 
 ![image](https://github.com/LeoiOS/LCActionSheet/blob/master/LCActionSheetDemo.gif)
-  ````
-  心有猛虎，细嗅蔷薇。
-  ````
+
+````
+心有猛虎，细嗅蔷薇。
+````
+
+欢迎访问 **我的博客**：http://LeoDev.me
 
 
 ## 前言 Foreword
+
 OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝蓝的其实也还看得过去)就算了，风格还跟自己的 App 极为不搭。
+
 然后看了看微信和新浪微博的 ActionSheet，嗯，还不错。于是自己搞了个 ActionSheet，并发扬大庇天下码农俱欢颜的精神，放上来给大家用:)
 
 
@@ -25,7 +31,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 // 1. 类方法 + Block
 LCActionSheet *sheet = [LCActionSheet sheetWithTitle:nil buttonTitles:@[@"拍照", @"从相册选择"] redButtonIndex:-1 clicked:^(NSInteger buttonIndex) {
     
-    NSLog(@"Block way: %ld", (long)buttonIndex);
+    NSLog(@"> Block way -> Clicked Index: %ld", (long)buttonIndex);
 }];
 
 [sheet show];
@@ -47,28 +53,47 @@ LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销
 
 
 
+## TODO
+
+* 使用 CALayer 优化性能
+* 使用约束布局
+* 支持横排
+
+
+
+## 更新日志 2015.12.09 Update Logs (Tag: 1.1.1)
+
+* 标题支持最多两行。两行时会适当调整标题的背景高度。
+
+
+
 ## 更新日志 2015.12.07 Update Logs (Tag: 1.1.0)
+
 * 要 Block？满足你！
 * 优化逻辑：创建 ActionSheet 时，不再添加到 window 上。
 
 
 
 ## 更新日志 2015.11.09 Update Logs (Tag: 1.0.6)
+
 * 添加对 [CocoaPods](https://cocoapods.org/) 的支持：`pod 'LCActionSheet'`
 
 
 
 ## 更新日志 2015.05.08 Update Logs (Tag: 1.0.0)
+
 * 修复：新添加的 _backWindow 在某些情况下导致界面无反应的BUG。——by [kuanglijun312](https://github.com/kuanglijun312)
 
 
 
 ## 更新日志 2015.05.08 Update Logs (Tag: 1.0.0)
+
 * 修复：当 StatusBarStyle 为 UIStatusBarStyleLightContent 时，背景不会遮挡 statusBar 的问题。——by [陈威](https://github.com/weiwei1035)
 
 
 
 ## 更新日志 2015.05.05 Update Logs (Tag: 1.0.0)
+
 * 我还是没有适配横屏(´Д｀)
 * 增加了类方法，可以通过类方法实例化 actionSheet。
 * 完善部分注释。
@@ -76,6 +101,7 @@ LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销
 
 
 ## 提示 Tips
+
 - LCActionSheet 是添加到当前的 Window 上，没适配横屏。
 - 提供了 title、buttons、redButton、cancelBtn 这些杂七杂八的东东，应该全了。
 - buttonIndex 从上到下从 0 依次递增。如果不想有 redButton，在 `redButtonIndex:` 处传 `-1` 即可。
@@ -93,11 +119,13 @@ LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销
 
 
 ### 联系 Support
+
 * 发现问题请 Issues 我，谢谢:)
-* Email:leoios@sina.com
-* Blog: http://www.leodong.com/
+* Email:leoios@sina.com & liucsuper@gmail.com
+* Blog: http://LeoDev.me & http://www.leodong.com/
 
 
 
 ## 授权 License
+
 本项目采用 [MIT license](http://opensource.org/licenses/MIT) 开源，你可以利用采用该协议的代码做任何事情，只需要继续继承 MIT 协议即可。

@@ -24,15 +24,17 @@
                                                  redButtonIndex:0
                                                        delegate:self];
     [sheet show];
+    
+//    [[[UIActionSheet alloc] initWithTitle:@"A very very very very very very very very very very very very very very long title" delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"OK" otherButtonTitles:@"haha", @"2333", nil] showInView:self.view];
 }
 
 /** 修改头像 */
 - (IBAction)changeHeader {
     
     // 类方法
-    LCActionSheet *sheet = [LCActionSheet sheetWithTitle:nil buttonTitles:@[@"拍照", @"从相册选择"] redButtonIndex:-1 clicked:^(NSInteger buttonIndex) {
+    LCActionSheet *sheet = [LCActionSheet sheetWithTitle:@"一个超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长的标题" buttonTitles:@[@"拍照", @"从相册选择"] redButtonIndex:-1 clicked:^(NSInteger buttonIndex) {
         
-        NSLog(@"Block way: %ld", (long)buttonIndex);
+        NSLog(@"> Block way -> Clicked Index: %ld", (long)buttonIndex);
     }];
     
     [sheet show];
@@ -42,7 +44,7 @@
 
 - (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    NSLog(@"> Clicked Index: %ld", (long)buttonIndex);
+    NSLog(@"> Delegate way -> Clicked Index: %ld", (long)buttonIndex);
 }
 
 @end
