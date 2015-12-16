@@ -35,10 +35,6 @@
 
 @property (nonatomic, strong) UIWindow *backWindow;
 
-@property (nonatomic, copy) NSString *title;
-
-@property (nonatomic, assign) NSInteger redButtonIndex;
-
 
 
 @end
