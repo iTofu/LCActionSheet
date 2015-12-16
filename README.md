@@ -21,7 +21,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 ## 代码 Code
 
-* 
+*
   - 方法一：[CocoaPods](https://cocoapods.org/) 导入：`pod 'LCActionSheet'`
   - 方法二：把 LCActionSheet 文件夹(在 Demo 中)拖到你的项目中
 
@@ -31,42 +31,50 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 ````objc
 // 1. 类方法 + Block
 LCActionSheet *sheet = [LCActionSheet sheetWithTitle:nil buttonTitles:@[@"拍照", @"从相册选择"] redButtonIndex:-1 clicked:^(NSInteger buttonIndex) {
-    
+
     NSLog(@"> Block way -> Clicked Index: %ld", (long)buttonIndex);
 }];
 
 [sheet show];
 
 
-// 2. 实例方法 + Delegate
+// 2. 实例方法 + Delegate + 添加按钮
 LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？"
-                                               buttonTitles:@[@"确定"]
-                                             redButtonIndex:0 
+                                               buttonTitles:nil
+                                             redButtonIndex:0
                                                    delegate:self];
+
+[sheet addButtonTitle:@"确定"];
 
 [sheet show];
 ````
 
-* 监听方法(代理方法，可选实现):
+* 监听方法 (代理方法，可选实现):
 
 ````objc
 - (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex;
 ````
 
+* 自定义实现 (By [zachgenius](https://github.com/zachgenius))
 ````objc
-// 3. 自定义实现
 LCActionSheet* sheet = [[LCActionSheet alloc] init];
+
 float version = [[[UIDevice currentDevice] systemVersion] floatValue];
-if (version < 8.0)
-{
-	[sheet addButtonTitle:@"iOS 7.x"];
+
+if (version < 8.0) {
+
+    [sheet addButtonTitle:@"iOS 7.x"];
+
+} else {
+
+    [sheet addButtonTitle:@"iOS 8+"];
 }
-else 
-{
-	[sheet addButtonTitle:@"iOS 8+"];
-}
+
 sheet.clickedBlock = ^(NSInteger buttonIndex) {
-							};
+
+    NSLog(@"Hello %ld!", (long)buttonIndex);
+};
+
 [sheet show];
 
 ````
@@ -77,6 +85,13 @@ sheet.clickedBlock = ^(NSInteger buttonIndex) {
 * 使用 CALayer 优化性能
 * 使用约束布局
 * 支持横排
+
+
+
+## 更新日志 2015.12.16 Update Logs (Tag: 1.1.2)
+
+* 合并 PR by [zachgenius](https://github.com/zachgenius)，致谢！
+> 增加了一些功能实现，如增加自定义添加按钮的方法，增加按钮本地化，增加自定义按钮颜色，并且优化逻辑。
 
 
 
@@ -148,5 +163,3 @@ sheet.clickedBlock = ^(NSInteger buttonIndex) {
 ## 授权 License
 
 本项目采用 [MIT license](http://opensource.org/licenses/MIT) 开源，你可以利用采用该协议的代码做任何事情，只需要继续继承 MIT 协议即可。
-
-
