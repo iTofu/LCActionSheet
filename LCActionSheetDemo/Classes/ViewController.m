@@ -19,23 +19,11 @@
 - (IBAction)logout {
     
     // 实例方法
-    LCActionSheet* sheet = [[LCActionSheet alloc] init];
-    
-    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
-    
-    if (version < 8.0) {
-        
-        [sheet addButtonTitle:@"iOS 7.x"];
-        
-    } else {
-        
-        [sheet addButtonTitle:@"iOS 8+"];
-    }
-    
-    sheet.clickedBlock = ^(NSInteger buttonIndex) {
-        
-        NSLog(@"Hello %ld!", (long)buttonIndex);
-    };
+    LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？"
+                                                   buttonTitles:nil
+                                                 redButtonIndex:0
+                                                       delegate:self];
+    [sheet addButtonTitle:@"注销"];
     
     [sheet show];
     

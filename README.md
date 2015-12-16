@@ -88,10 +88,12 @@ sheet.clickedBlock = ^(NSInteger buttonIndex) {
 
 
 
-## 更新日志 2015.12.16 Update Logs (Tag: 1.1.2)
+## 更新日志 2015.12.16 Update Logs (Tag: 1.1.3)
 
 * 合并 PR by [zachgenius](https://github.com/zachgenius)，致谢！
 > 增加了一些功能实现，如增加自定义添加按钮的方法，增加按钮本地化，增加自定义按钮颜色，并且优化逻辑。
+
+* V 1.1.2 被怪物吃掉了！👹
 
 
 
@@ -104,6 +106,7 @@ sheet.clickedBlock = ^(NSInteger buttonIndex) {
 ## 更新日志 2015.12.07 Update Logs (Tag: 1.1.0)
 
 * 要 Block？满足你！
+
 * 优化逻辑：创建 ActionSheet 时，不再添加到 window 上。
 
 
@@ -116,7 +119,7 @@ sheet.clickedBlock = ^(NSInteger buttonIndex) {
 
 ## 更新日志 2015.05.08 Update Logs (Tag: 1.0.0)
 
-* 修复：新添加的 _backWindow 在某些情况下导致界面无反应的BUG。——by [kuanglijun312](https://github.com/kuanglijun312)
+* 修复：新添加的 \_backWindow 在某些情况下导致界面无反应的BUG。——by [kuanglijun312](https://github.com/kuanglijun312)
 
 
 
@@ -154,9 +157,12 @@ sheet.clickedBlock = ^(NSInteger buttonIndex) {
 
 ### 联系 Support
 
-* 发现问题请 Issues 我，谢谢:)
+* 发现问题请 [Issues](https://github.com/LeoiOS/LCActionSheet/issues/new) 我，谢谢:)
 * Email:leoios@sina.com & liucsuper@gmail.com
-* Blog: http://LeoDev.me & http://www.leodong.com/
+* Blog: http://LeoDev.me & http://www.leodong.com
+* 土豪捐赠通道: 👇
+
+![Alipay](http://7xl8ia.com1.z0.glb.clouddn.com/alipay.png)
 
 
 
