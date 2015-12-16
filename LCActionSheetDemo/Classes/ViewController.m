@@ -20,12 +20,14 @@
     
     // 实例方法
     LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？"
-                                                   buttonTitles:@[@"确定"]
+                                                   buttonTitles:nil
                                                  redButtonIndex:0
                                                        delegate:self];
+    [sheet addButtonTitle:@"注销"];
+    
     [sheet show];
     
-//    [[[UIActionSheet alloc] initWithTitle:@"A very very very very very very very very very very very very very very long title" delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"OK" otherButtonTitles:@"haha", @"2333", nil] showInView:self.view];
+    //    [[[UIActionSheet alloc] initWithTitle:@"A very very very very very very very very very very very very very very long title" delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"OK" otherButtonTitles:@"haha", @"2333", nil] showInView:self.view];
 }
 
 /** 修改头像 */

@@ -22,7 +22,7 @@
 @interface LCActionSheet ()
 
 /** 所有按钮 */
-@property (nonatomic, strong) NSArray *buttonTitles;
+@property (nonatomic, strong) NSMutableArray *buttonTitles;
 
 /** 暗黑色的view */
 @property (nonatomic, strong) UIView *darkView;
@@ -35,18 +35,46 @@
 
 @property (nonatomic, strong) UIWindow *backWindow;
 
-@property (nonatomic, copy) LCActionSheetBlock clickedBlock;
-
-@property (nonatomic, copy) NSString *title;
-
-@property (nonatomic, assign) NSInteger redButtonIndex;
-
 
 
 @end
 
 @implementation LCActionSheet
 
+#pragma mark - getter
+
+- (NSString *)cancelText
+{
+    if (_cancelText) {
+        return _cancelText;
+    }
+    
+    _cancelText = @"取消";
+    return _cancelText;
+}
+
+- (UIFont *)textFont
+{
+    if (_textFont) {
+        return _textFont;
+    }
+    
+    _textFont = LC_ACTION_SHEET_TITLE_FONT;
+    
+    return _textFont;
+}
+
+- (UIColor *)textColor
+{
+    if (_textColor) {
+        return _textColor;
+    }
+    
+    _textColor = [UIColor blackColor];
+    return _textColor;
+}
+
+#pragma mark - methods
 + (instancetype)sheetWithTitle:(NSString *)title buttonTitles:(NSArray *)buttonTitles redButtonIndex:(NSInteger)redButtonIndex delegate:(id<LCActionSheetDelegate>)delegate {
     
     return [[self alloc] initWithTitle:title buttonTitles:buttonTitles redButtonIndex:redButtonIndex delegate:delegate];
@@ -65,11 +93,9 @@
     if (self = [super init]) {
         
         self.title = title;
-        self.buttonTitles = buttonTitles;
+        self.buttonTitles = [[NSMutableArray alloc] initWithArray:buttonTitles];
         self.redButtonIndex = redButtonIndex;
         self.delegate = delegate;
-        
-        [self setupMainView];
     }
     
     return self;
@@ -83,11 +109,9 @@
     if (self = [super init]) {
         
         self.title = title;
-        self.buttonTitles = buttonTitles;
+        self.buttonTitles = [[NSMutableArray alloc] initWithArray:buttonTitles];
         self.redButtonIndex = redButtonIndex;
         self.clickedBlock = clicked;
-        
-        [self setupMainView];
     }
     
     return self;
@@ -149,7 +173,7 @@
             [btn setTag:i];
             [btn setBackgroundColor:[UIColor whiteColor]];
             [btn setTitle:self.buttonTitles[i] forState:UIControlStateNormal];
-            [[btn titleLabel] setFont:LC_ACTION_SHEET_TITLE_FONT];
+            [[btn titleLabel] setFont:self.textFont];
             UIColor *titleColor = nil;
             if (i == self.redButtonIndex) {
                 
@@ -157,7 +181,7 @@
                 
             } else {
                 
-                titleColor = [UIColor blackColor] ;
+                titleColor = self.textColor ;
             }
             [btn setTitleColor:titleColor forState:UIControlStateNormal];
             
@@ -191,9 +215,9 @@
     UIButton *cancelBtn = [[UIButton alloc] init];
     [cancelBtn setTag:self.buttonTitles.count];
     [cancelBtn setBackgroundColor:[UIColor whiteColor]];
-    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-    [[cancelBtn titleLabel] setFont:LC_ACTION_SHEET_TITLE_FONT];
-    [cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [cancelBtn setTitle:self.cancelText forState:UIControlStateNormal];
+    [[cancelBtn titleLabel] setFont:self.textFont];
+    [cancelBtn setTitleColor:self.textColor forState:UIControlStateNormal];
     [cancelBtn setBackgroundImage:[UIImage imageNamed:@"bgImage_HL"] forState:UIControlStateHighlighted];
     [cancelBtn addTarget:self action:@selector(didClickCancelBtn) forControlEvents:UIControlEventTouchUpInside];
     
@@ -240,13 +264,13 @@
     
     [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
-         [_darkView setAlpha:0];
-         [_darkView setUserInteractionEnabled:NO];
-         
-         CGRect frame = _bottomView.frame;
-         frame.origin.y += frame.size.height;
-         [_bottomView setFrame:frame];
-         
+        [_darkView setAlpha:0];
+        [_darkView setUserInteractionEnabled:NO];
+        
+        CGRect frame = _bottomView.frame;
+        frame.origin.y += frame.size.height;
+        [_bottomView setFrame:frame];
+        
     } completion:^(BOOL finished) {
         
         [self removeFromSuperview];
@@ -259,34 +283,34 @@
     
     [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
-         [_darkView setAlpha:0];
-         [_darkView setUserInteractionEnabled:NO];
-         
-         CGRect frame = _bottomView.frame;
-         frame.origin.y += frame.size.height;
-         [_bottomView setFrame:frame];
-         
-     } completion:^(BOOL finished) {
-         
-         if ([_delegate respondsToSelector:@selector(actionSheet:didClickedButtonAtIndex:)]) {
-             
-             [_delegate actionSheet:self didClickedButtonAtIndex:self.buttonTitles.count];
-         }
-         
-         if (self.clickedBlock) {
-             
-             __weak typeof(self) weakSelf = self;
-             self.clickedBlock(weakSelf.buttonTitles.count);
-         }
-         
-         [self removeFromSuperview];
-         
-         self.backWindow.hidden = YES;
-     }];
+        [_darkView setAlpha:0];
+        [_darkView setUserInteractionEnabled:NO];
+        
+        CGRect frame = _bottomView.frame;
+        frame.origin.y += frame.size.height;
+        [_bottomView setFrame:frame];
+        
+    } completion:^(BOOL finished) {
+        
+        if ([_delegate respondsToSelector:@selector(actionSheet:didClickedButtonAtIndex:)]) {
+            
+            [_delegate actionSheet:self didClickedButtonAtIndex:self.buttonTitles.count];
+        }
+        
+        if (self.clickedBlock) {
+            
+            __weak typeof(self) weakSelf = self;
+            self.clickedBlock(weakSelf.buttonTitles.count);
+        }
+        
+        [self removeFromSuperview];
+        
+        self.backWindow.hidden = YES;
+    }];
 }
 
 - (void)show {
-    
+    [self setupMainView];
     self.backWindow.hidden = NO;
     
     [self addSubview:self.bottomView];
@@ -302,6 +326,15 @@
         [_bottomView setFrame:frame];
         
     } completion:nil];
+}
+
+- (void)addButtonTitle:(NSString *)button
+{
+    if (!_buttonTitles) {
+        _buttonTitles = [[NSMutableArray alloc] init];
+    }
+    
+    [_buttonTitles addObject:button];
 }
 
 @end

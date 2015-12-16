@@ -27,6 +27,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 * 在相应位置导入头文件: `#import "LCActionSheet.h"`，遵守协议`<LCActionSheetDelegate>`。
 * 调用下面的方法即可:
+
 ````objc
 // 1. 类方法 + Block
 LCActionSheet *sheet = [LCActionSheet sheetWithTitle:nil buttonTitles:@[@"拍照", @"从相册选择"] redButtonIndex:-1 clicked:^(NSInteger buttonIndex) {
@@ -47,10 +48,28 @@ LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销
 ````
 
 * 监听方法(代理方法，可选实现):
+
 ````objc
 - (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex;
 ````
 
+````objc
+// 3. 自定义实现
+LCActionSheet* sheet = [[LCActionSheet alloc] init];
+float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+if (version < 8.0)
+{
+	[sheet addButtonTitle:@"iOS 7.x"];
+}
+else 
+{
+	[sheet addButtonTitle:@"iOS 8+"];
+}
+sheet.clickedBlock = ^(NSInteger buttonIndex) {
+							};
+[sheet show];
+
+````
 
 
 ## TODO
@@ -129,3 +148,5 @@ LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销
 ## 授权 License
 
 本项目采用 [MIT license](http://opensource.org/licenses/MIT) 开源，你可以利用采用该协议的代码做任何事情，只需要继续继承 MIT 协议即可。
+
+
