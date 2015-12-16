@@ -27,7 +27,22 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
 
 @interface LCActionSheet : UIView
 
+@property (nonatomic, copy) LCActionSheetBlock clickedBlock;
 
+/**
+ *  localized cancel text. Default is "取消"
+ */
+@property (nonatomic, strong) NSString *cancelText;
+
+/**
+ *  Default is [UIFont systemFontOfSize:18];
+ */
+@property (nonatomic, strong) UIFont *textFont;
+
+/**
+ *  Default is Black
+ */
+@property (nonatomic, strong) UIColor *textColor;
 
 #pragma mark - Delegate Way
 
@@ -97,6 +112,15 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
                       clicked:(LCActionSheetBlock)clicked;
 
 
+#pragma mark - Custom Way
+
+/**
+ *  Add a button with callback block
+ *
+ *  @param button
+ *  @param block
+ */
+- (void) addButtonTitle:(NSString*)button;
 
 
 #pragma mark - Show
