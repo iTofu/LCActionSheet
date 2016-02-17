@@ -19,6 +19,10 @@
 
 #define LC_ACTION_SHEET_TITLE_FONT  [UIFont systemFontOfSize:18.0f]
 
+#define LC_DEFAULT_ANIMATION_DURATION 0.3f
+
+#define LC_DEFAULT_BACKGROUND_OPACITY 0.3f
+
 @interface LCActionSheet ()
 
 /** 所有按钮 */
@@ -45,33 +49,45 @@
 
 - (NSString *)cancelText
 {
-    if (_cancelText) {
-        return _cancelText;
+    if (!_cancelText) {
+        _cancelText = @"取消";
     }
     
-    _cancelText = @"取消";
     return _cancelText;
 }
 
 - (UIFont *)textFont
 {
-    if (_textFont) {
-        return _textFont;
+    if (!_textFont) {
+        _textFont = LC_ACTION_SHEET_TITLE_FONT;
     }
-    
-    _textFont = LC_ACTION_SHEET_TITLE_FONT;
     
     return _textFont;
 }
 
 - (UIColor *)textColor
 {
-    if (_textColor) {
-        return _textColor;
+    if (!_textColor) {
+        _textColor = [UIColor blackColor];
     }
     
-    _textColor = [UIColor blackColor];
     return _textColor;
+}
+
+- (CGFloat)animationDuration {
+    if (!_animationDuration) {
+        _animationDuration = LC_DEFAULT_ANIMATION_DURATION;
+    }
+    
+    return _animationDuration;
+}
+
+- (CGFloat)backgroundOpacity {
+    if (!_backgroundOpacity) {
+        _backgroundOpacity = LC_DEFAULT_BACKGROUND_OPACITY;
+    }
+    
+    return _backgroundOpacity;
 }
 
 #pragma mark - methods
@@ -262,7 +278,7 @@
 
 - (void)dismiss:(UITapGestureRecognizer *)tap {
     
-    [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:self.animationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
         [_darkView setAlpha:0];
         [_darkView setUserInteractionEnabled:NO];
@@ -281,7 +297,7 @@
 
 - (void)didClickCancelBtn {
     
-    [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:self.animationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
         [_darkView setAlpha:0];
         [_darkView setUserInteractionEnabled:NO];
@@ -316,9 +332,9 @@
     [self addSubview:self.bottomView];
     [self.backWindow addSubview:self];
     
-    [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:self.animationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
-        [_darkView setAlpha:0.3f];
+        [_darkView setAlpha:self.backgroundOpacity];
         [_darkView setUserInteractionEnabled:YES];
         
         CGRect frame = _bottomView.frame;

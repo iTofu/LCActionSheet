@@ -26,8 +26,6 @@
     [sheet addButtonTitle:@"注销"];
     
     [sheet show];
-    
-    //    [[[UIActionSheet alloc] initWithTitle:@"A very very very very very very very very very very very very very very long title" delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"OK" otherButtonTitles:@"haha", @"2333", nil] showInView:self.view];
 }
 
 /** 修改头像 */
