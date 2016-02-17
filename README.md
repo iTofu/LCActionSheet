@@ -21,63 +21,63 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 ## 代码 Code
 
-* 
+* 两个方法：
   - 方法一：[CocoaPods](https://cocoapods.org/) 导入：`pod 'LCActionSheet'`
   - 方法二：把 LCActionSheet 文件夹(在 Demo 中)拖到你的项目中
 
-* 在相应位置导入头文件：`#import "LCActionSheet.h"`，遵守协议 `<LCActionSheetDelegate>`。
+* 在相应位置导入头文件：`#import "LCActionSheet.h"`，遵守协议 `<LCActionSheetDelegate>`
 * 调用下面的方法即可：
 
-````objc
-// 1. 类方法 + Block
-LCActionSheet *sheet = [LCActionSheet sheetWithTitle:nil buttonTitles:@[@"拍照", @"从相册选择"] redButtonIndex:-1 clicked:^(NSInteger buttonIndex) {
+  ````objc
+  // 1. 类方法 + Block
+  LCActionSheet *sheet = [LCActionSheet sheetWithTitle:nil buttonTitles:@[@"拍照", @"从相册选择"] redButtonIndex:-1 clicked:^(NSInteger buttonIndex) {
 
-    NSLog(@"> Block way -> Clicked Index: %ld", (long)buttonIndex);
-}];
+      NSLog(@"> Block way -> Clicked Index: %ld", (long)buttonIndex);
+  }];
 
-[sheet show];
+  [sheet show];
 
 
-// 2. 实例方法 + Delegate + 添加按钮
-LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？"
-                                               buttonTitles:nil
-                                             redButtonIndex:0
-                                                   delegate:self];
+  // 2. 实例方法 + Delegate + 添加按钮
+  LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:@"你确定要注销吗？"
+                                                 buttonTitles:nil
+                                               redButtonIndex:0
+                                                     delegate:self];
 
-[sheet addButtonTitle:@"确定"];
+  [sheet addButtonTitle:@"确定"];
 
-[sheet show];
-````
+  [sheet show];
+  ````
 
 * 监听方法 (代理方法，可选实现):
 
-````objc
-- (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex;
-````
+  ````objc
+  - (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex;
+  ````
 
 * 自定义实现 (By [zachgenius](https://github.com/zachgenius))
-````objc
-LCActionSheet* sheet = [[LCActionSheet alloc] init];
+  ````objc
+  LCActionSheet* sheet = [[LCActionSheet alloc] init];
 
-float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+  float version = [[[UIDevice currentDevice] systemVersion] floatValue];
 
-if (version < 8.0) {
+  if (version < 8.0) {
 
-    [sheet addButtonTitle:@"iOS 7.x"];
+      [sheet addButtonTitle:@"iOS 7.x"];
 
-} else {
+  } else {
 
-    [sheet addButtonTitle:@"iOS 8+"];
-}
+      [sheet addButtonTitle:@"iOS 8+"];
+  }
 
-sheet.clickedBlock = ^(NSInteger buttonIndex) {
+  sheet.clickedBlock = ^(NSInteger buttonIndex) {
 
-    NSLog(@"Hello %ld!", (long)buttonIndex);
-};
+      NSLog(@"Hello %ld!", (long)buttonIndex);
+  };
 
-[sheet show];
+  [sheet show];
 
-````
+  ````
 
 
 ## TODO
@@ -88,48 +88,56 @@ sheet.clickedBlock = ^(NSInteger buttonIndex) {
 
 
 
-## 更新日志 2015.12.16 Update Logs (Tag: 1.1.3)
+## 更新日志 Update Logs
 
-* 合并 PR by [zachgenius](https://github.com/zachgenius)，致谢！
+### 2016.02.17 (Tag: 1.1.5)
+
+* 合并 [PR](https://github.com/LeoiOS/LCActionSheet/pull/11) by [nix1024](https://github.com/nix1024)，致谢！
+> Add background opacity & animation duration option
+>
+> 添加暗黑背景透明度和动画持续时间的设定
+
+
+### 2015.12.16 (Tag: 1.1.3)
+
+* 合并 [PR](https://github.com/LeoiOS/LCActionSheet/pull/9) by [zachgenius](https://github.com/zachgenius)，致谢！
 > 增加了一些功能实现，如增加自定义添加按钮的方法，增加按钮本地化，增加自定义按钮颜色，并且优化逻辑。
 
 * V 1.1.2 被怪物吃掉了！👹
 
 
-
-## 更新日志 2015.12.09 Update Logs (Tag: 1.1.1)
+### 2015.12.09 (Tag: 1.1.1)
 
 * 标题支持最多两行。两行时会适当调整标题的背景高度。
 
 
-
-## 更新日志 2015.12.07 Update Logs (Tag: 1.1.0)
+### 2015.12.07 (Tag: 1.1.0)
 
 * 要 Block？满足你！
 
 * 优化逻辑：创建 ActionSheet 时，不再添加到 window 上。
 
 
+### 2015.11.09 (Tag: 1.0.6)
 
-## 更新日志 2015.11.09 Update Logs (Tag: 1.0.6)
+* 添加对 [CocoaPods](https://cocoapods.org/) 的支持：
 
-* 添加对 [CocoaPods](https://cocoapods.org/) 的支持：`pod 'LCActionSheet'`
+  ````objc
+  pod 'LCActionSheet'
+  ````
 
 
-
-## 更新日志 2015.05.08 Update Logs (Tag: 1.0.0)
+### 2015.05.08 (Tag: 1.0.0)
 
 * 修复：新添加的 \_backWindow 在某些情况下导致界面无反应的BUG。——by [kuanglijun312](https://github.com/kuanglijun312)
 
 
-
-## 更新日志 2015.05.08 Update Logs (Tag: 1.0.0)
+### 2015.05.08 (Tag: 1.0.0)
 
 * 修复：当 StatusBarStyle 为 UIStatusBarStyleLightContent 时，背景不会遮挡 statusBar 的问题。——by [陈威](https://github.com/weiwei1035)
 
 
-
-## 更新日志 2015.05.05 Update Logs (Tag: 1.0.0)
+### 2015.05.05 (Tag: 1.0.0)
 
 * 我还是没有适配横屏(´Д｀)
 * 增加了类方法，可以通过类方法实例化 actionSheet。
@@ -155,11 +163,11 @@ sheet.clickedBlock = ^(NSInteger buttonIndex) {
 
 
 
-### 联系 Support
+## 联系 Support
 
 * 发现问题请 [Issues](https://github.com/LeoiOS/LCActionSheet/issues/new) 我，谢谢:)
-* Email:leoios@sina.com & liucsuper@gmail.com
-* Blog: http://LeoDev.me & http://www.leodong.com
+* Mail: devtip@163.com
+* Blog: http://LeoDev.me
 * 土豪捐赠通道: 👇
 
 ![Alipay](http://7xl8ia.com1.z0.glb.clouddn.com/alipay.png)

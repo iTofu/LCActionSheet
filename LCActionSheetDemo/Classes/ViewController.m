@@ -25,6 +25,9 @@
                                                        delegate:self];
     [sheet addButtonTitle:@"注销"];
     
+//    sheet.animationDuration = 1.0f;
+//    sheet.backgroundOpacity = 1.0f;
+    
     [sheet show];
 }
 

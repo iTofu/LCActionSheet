@@ -2,11 +2,11 @@
 //  Created by 刘超 on 15/4/26.
 //  Copyright (c) 2015年 Leo. All rights reserved.
 //
-//  Email:  leoios@sina.com
+//  Email:  devtip@163.com
 //  GitHub: http://github.com/LeoiOS
 //  如有问题或建议请给我发 Email, 或在该项目的 GitHub 主页 Issues 我, 谢谢:)
 //
-//  V 1.1.1
+//  V 1.1.5
 
 #import <UIKit/UIKit.h>
 
@@ -19,7 +19,7 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
 @optional
 
 /**
- *  点击了 buttonIndex处 的按钮
+ *  点击了 buttonIndex 处的按钮
  */
 - (void)actionSheet:(LCActionSheet *)actionSheet didClickedButtonAtIndex:(NSInteger)buttonIndex;
 
@@ -39,7 +39,7 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
 @property (nonatomic, strong) NSString *cancelText;
 
 /**
- *  Default is [UIFont systemFontOfSize:18];
+ *  Default is [UIFont systemFontOfSize:18]
  */
 @property (nonatomic, strong) UIFont *textFont;
 
@@ -58,6 +58,8 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
  */
 @property (nonatomic, assign) CGFloat backgroundOpacity;
 
+
+
 #pragma mark - Delegate Way
 
 /**
@@ -65,7 +67,7 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
  *
  *  @param title          提示标题
  *  @param buttonTitles   所有按钮的标题
- *  @param redButtonIndex 红色按钮的index
+ *  @param redButtonIndex 红色按钮的 index
  *  @param delegate       代理
  *
  *  Tip: 如果没有红色按钮, redButtonIndex 给 `-1` 即可
@@ -80,7 +82,7 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
  *
  *  @param title          提示标题
  *  @param buttonTitles   所有按钮的标题
- *  @param redButtonIndex 红色按钮的index
+ *  @param redButtonIndex 红色按钮的 index
  *  @param delegate       代理
  *
  *  Tip: 如果没有红色按钮, redButtonIndex 给 `-1` 即可
@@ -100,7 +102,7 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
  *
  *  @param title          提示标题
  *  @param buttonTitles   所有按钮的标题
- *  @param redButtonIndex 红色按钮的index
+ *  @param redButtonIndex 红色按钮的 index
  *  @param clicked        点击按钮的 block 回调
  *
  *  Tip: 如果没有红色按钮, redButtonIndex 给 `-1` 即可
@@ -115,7 +117,7 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
  *
  *  @param title          提示标题
  *  @param buttonTitles   所有按钮的标题
- *  @param redButtonIndex 红色按钮的index
+ *  @param redButtonIndex 红色按钮的 index
  *  @param clicked        点击按钮的 block 回调
  *
  *  Tip: 如果没有红色按钮, redButtonIndex 给 `-1` 即可
@@ -124,6 +126,7 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
                  buttonTitles:(NSArray *)buttonTitles
                redButtonIndex:(NSInteger)redButtonIndex
                       clicked:(LCActionSheetBlock)clicked;
+
 
 
 #pragma mark - Custom Way

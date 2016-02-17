@@ -6,7 +6,7 @@
 //  GitHub: http://github.com/LeoiOS
 //  如有问题或建议请给我发 Email, 或在该项目的 GitHub 主页 Issues 我, 谢谢:)
 //
-//  V 1.1.1
+//
 
 #import "LCActionSheet.h"
 
@@ -177,10 +177,9 @@
         [titleBgView addSubview:label];
     }
     
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"LCActionSheet" ofType:@"bundle"];
+    
     if (self.buttonTitles.count) {
-        
-        
-        NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"LCActionSheet" ofType:@"bundle"];
         
         for (int i = 0; i < self.buttonTitles.count; i++) {
             
@@ -220,21 +219,24 @@
             // 所有线条
             UIImageView *line = [[UIImageView alloc] init];
             [line setImage:lineImage];
-            [line setContentMode:UIViewContentModeCenter];
+            [line setContentMode:UIViewContentModeTop];
             CGFloat lineY = (i + (self.title ? 1 : 0)) * BUTTON_H;
             [line setFrame:CGRectMake(0, lineY, SCREEN_SIZE.width, 1.0f)];
             [bottomView addSubview:line];
         }
     }
     
+    NSString *linePath = [bundlePath stringByAppendingPathComponent:@"bgImage_HL@2x.png"];
+    UIImage *bgImage = [UIImage imageWithContentsOfFile:linePath];
+    
     // 取消按钮
-    UIButton *cancelBtn = [[UIButton alloc] init];
+    UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [cancelBtn setTag:self.buttonTitles.count];
     [cancelBtn setBackgroundColor:[UIColor whiteColor]];
     [cancelBtn setTitle:self.cancelText forState:UIControlStateNormal];
     [[cancelBtn titleLabel] setFont:self.textFont];
     [cancelBtn setTitleColor:self.textColor forState:UIControlStateNormal];
-    [cancelBtn setBackgroundImage:[UIImage imageNamed:@"bgImage_HL"] forState:UIControlStateHighlighted];
+    [cancelBtn setBackgroundImage:bgImage forState:UIControlStateHighlighted];
     [cancelBtn addTarget:self action:@selector(didClickCancelBtn) forControlEvents:UIControlEventTouchUpInside];
     
     CGFloat btnY = BUTTON_H * (self.buttonTitles.count + (self.title ? 1 : 0)) + 5.0f;
