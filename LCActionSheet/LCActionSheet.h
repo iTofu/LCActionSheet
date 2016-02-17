@@ -34,7 +34,7 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
 @property (nonatomic, copy) LCActionSheetBlock clickedBlock;
 
 /**
- *  localized cancel text. Default is "取消"
+ *  Localized cancel text. Default is "取消"
  */
 @property (nonatomic, strong) NSString *cancelText;
 
@@ -47,6 +47,16 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
  *  Default is Black
  */
 @property (nonatomic, strong) UIColor *textColor;
+
+/**
+ *  Default is 0.3 seconds
+ */
+@property (nonatomic, assign) CGFloat animationDuration;
+
+/**
+ *  Opacity of background, default is 0.3f
+ */
+@property (nonatomic, assign) CGFloat backgroundOpacity;
 
 #pragma mark - Delegate Way
 
