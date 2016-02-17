@@ -5,6 +5,8 @@
 ![image](https://github.com/LeoiOS/LCActionSheet/blob/master/LCActionSheetDemo.gif)
 
 ````
+In me the tiger sniffs the rose.
+
 心有猛虎，细嗅蔷薇。
 ````
 
