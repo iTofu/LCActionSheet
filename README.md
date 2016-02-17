@@ -93,15 +93,17 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 ### 2016.02.17 (Tag: 1.1.5)
 
 * 合并 [PR](https://github.com/LeoiOS/LCActionSheet/pull/11) by [nix1024](https://github.com/nix1024)，致谢！
-> Add background opacity & animation duration option
->
-> 添加暗黑背景透明度和动画持续时间的设定
+
+  > Add background opacity & animation duration option
+  >
+  > 添加暗黑背景透明度和动画持续时间的设定
 
 
 ### 2015.12.16 (Tag: 1.1.3)
 
 * 合并 [PR](https://github.com/LeoiOS/LCActionSheet/pull/9) by [zachgenius](https://github.com/zachgenius)，致谢！
-> 增加了一些功能实现，如增加自定义添加按钮的方法，增加按钮本地化，增加自定义按钮颜色，并且优化逻辑。
+
+  > 增加了一些功能实现，如增加自定义添加按钮的方法，增加按钮本地化，增加自定义按钮颜色，并且优化逻辑。
 
 * V 1.1.2 被怪物吃掉了！👹
 
