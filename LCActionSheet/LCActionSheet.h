@@ -137,7 +137,7 @@ typedef void(^LCActionSheetBlock)(NSInteger buttonIndex);
  *  @param button
  *  @param block
  */
-- (void) addButtonTitle:(NSString*)button;
+- (void)addButtonTitle:(NSString *)button;
 
 
 #pragma mark - Show
