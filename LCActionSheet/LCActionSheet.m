@@ -177,7 +177,7 @@
         [titleBgView addSubview:label];
     }
     
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"LCActionSheet" ofType:@"bundle"];
+    NSString *bundlePath = [[NSBundle bundleForClass:self.class] pathForResource:@"LCActionSheet" ofType:@"bundle"];
     
     if (self.buttonTitles.count) {
         
