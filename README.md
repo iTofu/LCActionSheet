@@ -92,6 +92,15 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 ## 更新日志 Update Logs
 
+### 2016.03.07 (Tag: 1.2.0)
+
+* 合并 [PR](https://github.com/LeoiOS/LCActionSheet/pull/14) by [apache2046](https://github.com/apache2046)，致谢！
+
+  > Swift bug fixed
+  >
+  > mainBundle 这种方法无法在将 LCActionSheet 作为 Framework 时正确找到资源包路径
+
+
 ### 2016.02.17 (Tag: 1.1.5)
 
 * 合并 [PR](https://github.com/LeoiOS/LCActionSheet/pull/11) by [nix1024](https://github.com/nix1024)，致谢！
@@ -157,6 +166,10 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 - 协议 `<LCActionSheetDelegate>` 能监听到点击的按钮的 index，这个方法是可选实现的。
 
 
+## 鸣谢 Thanks
+
+海纳百川，有容乃大。感谢开源社区和众攻城狮的支持！感谢众多 issues 和 pr！期待你的 [pr](https://github.com/LeoiOS/LCActionSheet/pulls)！
+
 
 ## 示例 Examples
 
@@ -164,7 +177,6 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 ---
 ![image](https://github.com/LeoiOS/LCActionSheet/blob/master/02.png)
 ---
-
 
 
 ## 联系 Support
