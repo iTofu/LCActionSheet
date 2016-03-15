@@ -1,5 +1,11 @@
 # LCActionSheet
 
+[![Travis](https://img.shields.io/travis/LeoiOS/LCActionSheet.svg?style=flat)](https://travis-ci.org/LeoiOS/LCActionSheet)
+[![CocoaPods](https://img.shields.io/cocoapods/v/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
+[![CocoaPods](https://img.shields.io/cocoapods/l/LCActionSheet.svg)](https://raw.githubusercontent.com/LeoiOS/LCActionSheet/master/LICENSE)
+[![CocoaPods](https://img.shields.io/cocoapods/p/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
+[![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](http://leodev.me)
+
 一个简约优雅的 ActionSheet。微信和新浪微博也是采取类似的ActionSheet。
 
 ![image](https://github.com/LeoiOS/LCActionSheet/blob/master/LCActionSheetDemo.gif)
