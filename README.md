@@ -6,7 +6,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/p/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
 [![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](http://leodev.me)
 
-一个简约优雅的 ActionSheet。微信和新浪微博也是采取类似的ActionSheet。
+一个简约优雅的 ActionSheet。微信和新浪微博也是采取类似的 ActionSheet。
 
 ![image](https://github.com/LeoiOS/LCActionSheet/blob/master/LCActionSheetDemo.gif)
 
