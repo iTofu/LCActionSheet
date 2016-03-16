@@ -64,6 +64,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
   ````
 
 * 自定义实现 (By [zachgenius](https://github.com/zachgenius))
+
   ````objc
   LCActionSheet* sheet = [[LCActionSheet alloc] init];
 
