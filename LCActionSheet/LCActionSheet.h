@@ -6,7 +6,7 @@
 //  GitHub: http://github.com/LeoiOS
 //  如有问题或建议请给我发 Email, 或在该项目的 GitHub 主页 Issues 我, 谢谢:)
 //
-//  V 1.2.1
+//  V 1.2.2
 
 #import <UIKit/UIKit.h>
 
