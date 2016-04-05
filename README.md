@@ -1,14 +1,14 @@
 # LCActionSheet
 
-[![Travis](https://img.shields.io/travis/LeoiOS/LCActionSheet.svg?style=flat)](https://travis-ci.org/LeoiOS/LCActionSheet)
+[![Travis](https://img.shields.io/travis/iTofu/LCActionSheet.svg?style=flat)](https://travis-ci.org/iTofu/LCActionSheet)
 [![CocoaPods](https://img.shields.io/cocoapods/v/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
-[![CocoaPods](https://img.shields.io/cocoapods/l/LCActionSheet.svg)](https://raw.githubusercontent.com/LeoiOS/LCActionSheet/master/LICENSE)
+[![CocoaPods](https://img.shields.io/cocoapods/l/LCActionSheet.svg)](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LICENSE)
 [![CocoaPods](https://img.shields.io/cocoapods/p/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
 [![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](http://leodev.me)
 
 一个简约优雅的 ActionSheet。微信和新浪微博也是采取类似的 ActionSheet。
 
-![image](https://github.com/LeoiOS/LCActionSheet/blob/master/LCActionSheetDemo.gif)
+![image](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo.gif)
 
 ````
 In me the tiger sniffs the rose.
@@ -99,9 +99,14 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 ## 更新日志 Update Logs
 
+### 2016.04.05 (Tag: 1.2.2)
+
+* 更新 CocoaPods 源地址。
+
+
 ### 2016.03.07 (Tag: 1.2.0)
 
-* 合并 [PR](https://github.com/LeoiOS/LCActionSheet/pull/14) by [apache2046](https://github.com/apache2046)，致谢！
+* 合并 [PR](https://github.com/iTofu/LCActionSheet/pull/14) by [apache2046](https://github.com/apache2046)，致谢！
 
   > Swift bug fixed
   >
@@ -110,7 +115,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 ### 2016.02.17 (Tag: 1.1.5)
 
-* 合并 [PR](https://github.com/LeoiOS/LCActionSheet/pull/11) by [nix1024](https://github.com/nix1024)，致谢！
+* 合并 [PR](https://github.com/iTofu/LCActionSheet/pull/11) by [nix1024](https://github.com/nix1024)，致谢！
 
   > Add background opacity & animation duration option
   >
@@ -119,7 +124,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 ### 2015.12.16 (Tag: 1.1.3)
 
-* 合并 [PR](https://github.com/LeoiOS/LCActionSheet/pull/9) by [zachgenius](https://github.com/zachgenius)，致谢！
+* 合并 [PR](https://github.com/iTofu/LCActionSheet/pull/9) by [zachgenius](https://github.com/zachgenius)，致谢！
 
   > 增加了一些功能实现，如增加自定义添加按钮的方法，增加按钮本地化，增加自定义按钮颜色，并且优化逻辑。
 
@@ -175,20 +180,20 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 ## 鸣谢 Thanks
 
-海纳百川，有容乃大。感谢开源社区和众攻城狮的支持！感谢众多 issues 和 pr！期待你的 [pr](https://github.com/LeoiOS/LCActionSheet/pulls)！
+海纳百川，有容乃大。感谢开源社区和众攻城狮的支持！感谢众多 issues 和 pr！期待你的 [pr](https://github.com/iTofu/LCActionSheet/pulls)！
 
 
 ## 示例 Examples
 
-![image](https://github.com/LeoiOS/LCActionSheet/blob/master/01.png)
+![image](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/01.png)
 ---
-![image](https://github.com/LeoiOS/LCActionSheet/blob/master/02.png)
+![image](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/02.png)
 ---
 
 
 ## 联系 Support
 
-* 发现问题请 [Issues](https://github.com/LeoiOS/LCActionSheet/issues/new) 我，谢谢:)
+* 发现问题请 [Issues](https://github.com/iTofu/LCActionSheet/issues/new) 我，谢谢:)
 * Mail: devtip@163.com
 * Blog: http://LeoDev.me
 * 土豪捐赠通道: 👇
@@ -203,4 +208,3 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/LeoiOS/lcactionsheet/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
