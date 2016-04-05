@@ -99,7 +99,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 ## 更新日志 Update Logs
 
-### 2016.04.05 (Tag: 1.2.2)
+### 2016.04.05 (Tag: 1.2.3)
 
 * 更新 CocoaPods 源地址。
 
