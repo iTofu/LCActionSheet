@@ -6,9 +6,9 @@
 [![CocoaPods](https://img.shields.io/cocoapods/p/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
 [![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](http://leodev.me)
 
-一个简约优雅的 ActionSheet。微信和新浪微博也是采取类似的 ActionSheet。
+☀️ 一个简约优雅的 ActionSheet。微信和新浪微博也是采取类似的 ActionSheet。
 
-![image](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo.gif)
+![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo.gif)
 
 ````
 In me the tiger sniffs the rose.
@@ -16,7 +16,7 @@ In me the tiger sniffs the rose.
 心有猛虎，细嗅蔷薇。
 ````
 
-欢迎访问 **我的博客**：http://LeoDev.me
+欢迎访问 **[我的博客](http://LeoDev.me)**：http://LeoDev.me
 
 
 ## 前言 Foreword
@@ -29,11 +29,12 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 ## 代码 Code
 
-* 两个方法：
+* 两种导入方法：
   - 方法一：[CocoaPods](https://cocoapods.org/) 导入：`pod 'LCActionSheet'`
-  - 方法二：把 LCActionSheet 文件夹(在 Demo 中)拖到你的项目中
+  - 方法二：把 LCActionSheet 文件夹(在 Demo 中)拖拽到你的项目中
 
 * 在相应位置导入头文件：`#import "LCActionSheet.h"`，遵守协议 `<LCActionSheetDelegate>`
+
 * 调用下面的方法即可：
 
   ````objc
@@ -55,6 +56,8 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
   [sheet addButtonTitle:@"确定"];
 
   [sheet show];
+  
+  // 更多方法见 `LCActionSheet.h`
   ````
 
 * 监听方法 (代理方法，可选实现):
@@ -66,7 +69,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 * 自定义实现 (By [zachgenius](https://github.com/zachgenius))
 
   ````objc
-  LCActionSheet* sheet = [[LCActionSheet alloc] init];
+  LCActionSheet *sheet = [[LCActionSheet alloc] init];
 
   float version = [[[UIDevice currentDevice] systemVersion] floatValue];
 
@@ -85,7 +88,6 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
   };
 
   [sheet show];
-
   ````
 
 
@@ -97,14 +99,14 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 
 
 
-## 更新日志 Update Logs
+## 版本 Release
 
-### 2016.04.05 (Tag: 1.2.3)
+### V 1.2.3 (2016.04.05)
 
 * 更新 CocoaPods 源地址。
 
 
-### 2016.03.07 (Tag: 1.2.0)
+### V 1.2.0 (2016.03.07)
 
 * 合并 [PR](https://github.com/iTofu/LCActionSheet/pull/14) by [apache2046](https://github.com/apache2046)，致谢！
 
@@ -113,7 +115,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
   > mainBundle 这种方法无法在将 LCActionSheet 作为 Framework 时正确找到资源包路径
 
 
-### 2016.02.17 (Tag: 1.1.5)
+### V 1.1.5 (2016.02.17)
 
 * 合并 [PR](https://github.com/iTofu/LCActionSheet/pull/11) by [nix1024](https://github.com/nix1024)，致谢！
 
@@ -122,7 +124,7 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
   > 添加暗黑背景透明度和动画持续时间的设定
 
 
-### 2015.12.16 (Tag: 1.1.3)
+### V 1.1.3 (2015.12.16)
 
 * 合并 [PR](https://github.com/iTofu/LCActionSheet/pull/9) by [zachgenius](https://github.com/zachgenius)，致谢！
 
@@ -131,19 +133,19 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
 * V 1.1.2 被怪物吃掉了！👹
 
 
-### 2015.12.09 (Tag: 1.1.1)
+### V 1.1.1 (2015.12.09)
 
 * 标题支持最多两行。两行时会适当调整标题的背景高度。
 
 
-### 2015.12.07 (Tag: 1.1.0)
+### V 1.1.0 (2015.12.07)
 
 * 要 Block？满足你！
 
 * 优化逻辑：创建 ActionSheet 时，不再添加到 window 上。
 
 
-### 2015.11.09 (Tag: 1.0.6)
+### V 1.0.6 (2015.11.09)
 
 * 添加对 [CocoaPods](https://cocoapods.org/) 的支持：
 
@@ -152,53 +154,56 @@ OK，这次我是看系统的 UIActionSheet 不爽。不能更改 tintColor (蓝
   ````
 
 
-### 2015.05.08 (Tag: 1.0.0)
+### V 1.0.0 (2015.05.08)
 
 * 修复：新添加的 \_backWindow 在某些情况下导致界面无反应的BUG。——by [kuanglijun312](https://github.com/kuanglijun312)
-
-
-### 2015.05.08 (Tag: 1.0.0)
 
 * 修复：当 StatusBarStyle 为 UIStatusBarStyleLightContent 时，背景不会遮挡 statusBar 的问题。——by [陈威](https://github.com/weiwei1035)
 
 
-### 2015.05.05 (Tag: 1.0.0)
+### V 1.0.0 pre (2015.05.05)
 
-* 我还是没有适配横屏(´Д｀)
 * 增加了类方法，可以通过类方法实例化 actionSheet。
+
 * 完善部分注释。
 
 
 
 ## 提示 Tips
 
-- LCActionSheet 是添加到当前的 Window 上，没适配横屏。
-- 提供了 title、buttons、redButton、cancelBtn 这些杂七杂八的东东，应该全了。
-- buttonIndex 从上到下从 0 依次递增。如果不想有 redButton，在 `redButtonIndex:` 处传 `-1` 即可。
-- 协议 `<LCActionSheetDelegate>` 能监听到点击的按钮的 index，这个方法是可选实现的。
+* LCActionSheet 是添加到当前的 Window 上，没适配横屏。
+
+* 提供了 title、buttons、redButton、cancelBtn 这些杂七杂八的东东，应该全了。
+
+* buttonIndex 从上到下从 0 依次递增。如果不想有 redButton，在 `redButtonIndex:` 处传 `-1` 即可。
+
+* 协议 `<LCActionSheetDelegate>` 能监听到点击的按钮的 index，这个方法是可选实现的。
 
 
 ## 鸣谢 Thanks
 
-海纳百川，有容乃大。感谢开源社区和众攻城狮的支持！感谢众多 issues 和 pr！期待你的 [pr](https://github.com/iTofu/LCActionSheet/pulls)！
+海纳百川，有容乃大。感谢开源社区和众攻城狮的支持！感谢众多 issues 和 pr！更期待你的 [pr](https://github.com/iTofu/LCActionSheet/pulls)！
 
 
 ## 示例 Examples
 
-![image](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/01.png)
+![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/01.png)
 ---
-![image](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/02.png)
+![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/02.png)
 ---
 
 
 ## 联系 Support
 
-* 发现问题请 [Issues](https://github.com/iTofu/LCActionSheet/issues/new) 我，谢谢:)
+* 发现问题请 [new issue](https://github.com/iTofu/LCActionSheet/issues/new)，谢谢:)
+
 * Mail: devtip@163.com
+
 * Blog: http://LeoDev.me
+
 * 土豪捐赠通道: 👇
 
-![Alipay](http://7xl8ia.com1.z0.glb.clouddn.com/alipay.png)
+  ![Alipay](http://7xl8ia.com1.z0.glb.clouddn.com/alipay.png)
 
 
 
