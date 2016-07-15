@@ -21,7 +21,8 @@
 
 - (IBAction)showDefaultActionSheet {
     LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Default LCActionSheet"
-                                                      delegate:self cancelButtonTitle:@"Cancel"
+                                                      delegate:self
+                                             cancelButtonTitle:@"Cancel"
                                              otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", nil];
     [actionSheet show];
 }

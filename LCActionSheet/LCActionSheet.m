@@ -166,7 +166,7 @@
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
         
-        CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 28.0f : 0) + (self.otherButtonTitles.count > 0 ? (self.scrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
+        CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 28.0f : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
         
         make.height.equalTo(@(height));
         make.bottom.equalTo(self).offset(height);
@@ -454,7 +454,7 @@
 
 - (void)updateBottomView {
     [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-        CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 30.0f : 0) + (self.otherButtonTitles.count > 0 ? (self.scrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
+        CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 30.0f : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
         make.height.equalTo(@(height));
     }];
 }
@@ -471,7 +471,7 @@
 }
 
 - (void)updateTableView {
-    if (!self.scrolling) {
+    if (!self.canScrolling) {
         [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(@(self.otherButtonTitles.count * self.buttonHeight));
         }];
@@ -542,7 +542,7 @@
         weakSelf.darkView.userInteractionEnabled = NO;
         
         [weakSelf.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-            CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 28.0f : 0) + (self.otherButtonTitles.count > 0 ? (self.scrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
+            CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 28.0f : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
             make.bottom.equalTo(self).offset(height);
         }];
         
