@@ -37,7 +37,7 @@ In me the tiger sniffs the rose.
 
 * 集百家之长，使用 [Masonry](https://github.com/SnapKit/Masonry) 进行布局，感谢 [Masonry](https://github.com/SnapKit/Masonry)。
 
-* 支持横屏，支持竖屏，支持一会横屏一会竖屏，理论上支持无数个按钮，统统支持。
+* 支持 iPad，支持横屏，支持竖屏，支持一会横屏一会竖屏，理论上支持无数个按钮，统统支持。
 
 * 有骨气。我就不改状态栏颜色，我就是这么刚。
 
