@@ -56,7 +56,10 @@
         }
         va_end(argumentList);
     }
-    return [[self alloc] initWithTitle:title delegate:delegate cancelButtonTitle:cancelButtonTitle otherButtonTitleArray:tempOtherButtonTitles];
+    return [[self alloc] initWithTitle:title
+                              delegate:delegate
+                     cancelButtonTitle:cancelButtonTitle
+                 otherButtonTitleArray:tempOtherButtonTitles];
 }
 
 + (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedBlock)clickedBlock otherButtonTitles:(NSString *)otherButtonTitles, ... {
@@ -71,7 +74,10 @@
         }
         va_end(argumentList);
     }
-    return [[self alloc] initWithTitle:title cancelButtonTitle:cancelButtonTitle clicked:clickedBlock otherButtonTitleArray:tempOtherButtonTitles];
+    return [[self alloc] initWithTitle:title
+                     cancelButtonTitle:cancelButtonTitle
+                               clicked:clickedBlock
+                 otherButtonTitleArray:tempOtherButtonTitles];
 }
 
 - (instancetype)initWithTitle:(NSString *)title delegate:(id<LCActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {
@@ -88,8 +94,8 @@
             va_end(argumentList);
         }
         
-        self.title = title;
-        self.delegate = delegate;
+        self.title             = title;
+        self.delegate          = delegate;
         self.cancelButtonTitle = cancelButtonTitle;
         self.otherButtonTitles = tempOtherButtonTitles;
         
@@ -112,9 +118,9 @@
             va_end(argumentList);
         }
         
-        self.title = title;
+        self.title             = title;
         self.cancelButtonTitle = cancelButtonTitle;
-        self.clickedBlock = clickedBlock;
+        self.clickedBlock      = clickedBlock;
         self.otherButtonTitles = tempOtherButtonTitles;
         
         [self setupView];
@@ -125,8 +131,8 @@
 - (instancetype)initWithTitle:(NSString *)title delegate:(id<LCActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitleArray:(NSArray *)otherButtonTitleArray {
     if (self = [super init]) {
         
-        self.title = title;
-        self.delegate = delegate;
+        self.title             = title;
+        self.delegate          = delegate;
         self.cancelButtonTitle = cancelButtonTitle;
         self.otherButtonTitles = otherButtonTitleArray;
         
@@ -138,9 +144,9 @@
 - (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedBlock)clickedBlock otherButtonTitleArray:(NSArray *)otherButtonTitleArray {
     if (self = [super init]) {
         
-        self.title = title;
+        self.title             = title;
         self.cancelButtonTitle = cancelButtonTitle;
-        self.clickedBlock = clickedBlock;
+        self.clickedBlock      = clickedBlock;
         self.otherButtonTitles = otherButtonTitleArray;
         
         [self setupView];
@@ -167,10 +173,10 @@
     }];
     self.bottomView = bottomView;
     
-    UIView *darkView = [[UIView alloc] init];
-    darkView.alpha = 0;
+    UIView *darkView                = [[UIView alloc] init];
+    darkView.alpha                  = 0;
     darkView.userInteractionEnabled = NO;
-    darkView.backgroundColor = LC_ACTION_SHEET_COLOR(46, 49, 50);
+    darkView.backgroundColor        = LC_ACTION_SHEET_COLOR(46, 49, 50);
     [self addSubview:darkView];
     [darkView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
@@ -179,21 +185,22 @@
     }];
     self.darkView = darkView;
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(darkViewClicked)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(darkViewClicked)];
     [darkView addGestureRecognizer:tap];
     
-    UIView *bottomBgView = [[UIView alloc] init];
+    UIView *bottomBgView         = [[UIView alloc] init];
     bottomBgView.backgroundColor = [UIColor whiteColor];
     [bottomView addSubview:bottomBgView];
     [bottomBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(bottomView);
     }];
     
-    UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.text = self.title;
-    titleLabel.font = self.titleFont;
+    UILabel *titleLabel      = [[UILabel alloc] init];
+    titleLabel.text          = self.title;
+    titleLabel.font          = self.titleFont;
     titleLabel.numberOfLines = 0;
-    titleLabel.textColor = self.titleColor;
+    titleLabel.textColor     = self.titleColor;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [bottomView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -206,10 +213,10 @@
     }];
     self.titleLabel = titleLabel;
     
-    UITableView *tableView = [[UITableView alloc] init];
+    UITableView *tableView    = [[UITableView alloc] init];
     tableView.backgroundColor = [UIColor clearColor];
-    tableView.dataSource = self;
-    tableView.delegate = self;
+    tableView.dataSource      = self;
+    tableView.delegate        = self;
     [bottomView addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);
@@ -223,13 +230,13 @@
     self.tableView = tableView;
     
     
-    NSString *bundlePath = [[NSBundle bundleForClass:self.class] pathForResource:@"LCActionSheet" ofType:@"bundle"];
-    NSString *linePath = [bundlePath stringByAppendingPathComponent:@"cellLine@2x.png"];
-    UIImage *lineImage = [UIImage imageWithContentsOfFile:linePath];
-    
-    UIImageView *lineView = [[UIImageView alloc] init];
-    lineView.image = lineImage;
-    lineView.contentMode = UIViewContentModeBottom;
+    NSString *bundlePath   = [[NSBundle bundleForClass:self.class] pathForResource:@"LCActionSheet" ofType:@"bundle"];
+    NSString *linePath     = [bundlePath stringByAppendingPathComponent:@"cellLine@2x.png"];
+    UIImage *lineImage     = [UIImage imageWithContentsOfFile:linePath];
+
+    UIImageView *lineView  = [[UIImageView alloc] init];
+    lineView.image         = lineImage;
+    lineView.contentMode   = UIViewContentModeBottom;
     lineView.clipsToBounds = YES;
     [bottomView addSubview:lineView];
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -238,8 +245,8 @@
         make.height.equalTo(@1);
     }];
     
-    UIView *divisionView = [[UIView alloc] init];
-    divisionView.alpha = 0.5f;
+    UIView *divisionView         = [[UIView alloc] init];
+    divisionView.alpha           = 0.5f;
     divisionView.backgroundColor = LC_ACTION_SHEET_COLOR(233, 233, 238);
     [bottomView addSubview:divisionView];
     [divisionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -250,10 +257,10 @@
         make.height.equalTo(@(height));
     }];
     
-    NSString *bgImagePath = [bundlePath stringByAppendingPathComponent:@"bgImage_HL@2x.png"];
-    UIImage *bgImage = [UIImage imageWithContentsOfFile:bgImagePath];
-    
-    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    NSString *bgImagePath        = [bundlePath stringByAppendingPathComponent:@"bgImage_HL@2x.png"];
+    UIImage *bgImage             = [UIImage imageWithContentsOfFile:bgImagePath];
+
+    UIButton *cancelButton       = [UIButton buttonWithType:UIButtonTypeCustom];
     cancelButton.backgroundColor = [UIColor clearColor];
     cancelButton.titleLabel.font = self.buttonFont;
     [cancelButton setTitle:self.cancelButtonTitle forState:UIControlStateNormal];
@@ -513,8 +520,8 @@
             [weakSelf.delegate didPresentActionSheet:self];
         }
         
-        if (self.didPresentBlock) {
-            self.didPresentBlock(self);
+        if (weakSelf.didPresentBlock) {
+            weakSelf.didPresentBlock(self);
         }
     }];
 }
@@ -545,12 +552,12 @@
         
         [weakSelf removeFromSuperview];
         
-        if ([self.delegate respondsToSelector:@selector(actionSheet:didDismissWithButtonIndex:)]) {
-            [self.delegate actionSheet:self didDismissWithButtonIndex:buttonIndex];
+        if ([weakSelf.delegate respondsToSelector:@selector(actionSheet:didDismissWithButtonIndex:)]) {
+            [weakSelf.delegate actionSheet:self didDismissWithButtonIndex:buttonIndex];
         }
         
-        if (self.didDismissBlock) {
-            self.didDismissBlock(self, buttonIndex);
+        if (weakSelf.didDismissBlock) {
+            weakSelf.didDismissBlock(self, buttonIndex);
         }
     }];
 }
@@ -599,7 +606,7 @@
     LCActionSheetCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
         cell = [[LCActionSheetCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        cell.titleLabel.font = self.buttonFont;
+        cell.titleLabel.font      = self.buttonFont;
         cell.titleLabel.textColor = self.buttonColor;
     }
     cell.titleLabel.text = self.otherButtonTitles[indexPath.row];
@@ -623,18 +630,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return self.buttonHeight;
-}
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-        [cell setLayoutMargins:UIEdgeInsetsZero];
-    }
-    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
-        [cell setPreservesSuperviewLayoutMargins:NO];
-    }
-    if ([cell respondsToSelector:@selector(setSeparatorInset:)]){
-        [cell setSeparatorInset:UIEdgeInsetsZero];
-    }
 }
 
 @end
