@@ -150,7 +150,7 @@ In me the tiger sniffs the rose.
 
 ### V 2.0.0 (⚠️ Important, 2016.07.16)
 
-* 彻底重构整个项目，满足目前收到的所有需求，功能只多不少，依然 MIT 共享。
+* 彻底重构整个项目，满足目前收到的所有需求，功能只多不少，依然 [MIT](http://opensource.org/licenses/MIT) 共享。
 
 * 现已加入 [Masonry](https://github.com/SnapKit/Masonry) 豪华套餐。
 
@@ -245,9 +245,14 @@ In me the tiger sniffs the rose.
 ## 示例 Examples
 
 ![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo01.png)
+
 ---
-![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo01.png)
+
+![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo02.png)
+
 ---
+
+![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo03.png)
 
 
 ## 联系 Support
