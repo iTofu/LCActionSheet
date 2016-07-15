@@ -2,11 +2,10 @@
 //  LCActionSheetDemoTests.m
 //  LCActionSheetDemoTests
 //
-//  Created by 刘超 on 15/4/26.
-//  Copyright (c) 2015年 Leo. All rights reserved.
+//  Created by Leo on 16/7/15.
+//  Copyright © 2016年 Leo（http://LeoDev.me）. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
 @interface LCActionSheetDemoTests : XCTestCase
@@ -27,7 +26,7 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
 - (void)testPerformanceExample {

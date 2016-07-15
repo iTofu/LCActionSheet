@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fnb-B0-0i1">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LCActionSheet Demo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -17,51 +17,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EZ-Nx-iEk">
-                                <rect key="frame" x="10" y="255" width="580" height="30"/>
-                                <animations/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ratchet" translatesAutoresizingMaskIntoConstraints="NO" id="M7K-vo-zgu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-3Z-g4X">
+                                <rect key="frame" x="15" y="285" width="570" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2yI-Va-QQ9"/>
+                                    <constraint firstAttribute="height" constant="30" id="iYy-VR-54u"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="注销">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Custom ActionSheet">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="logout" destination="BYZ-38-t0r" eventType="touchUpInside" id="xMI-r1-KHe"/>
+                                    <action selector="showCustomActionSheet" destination="BYZ-38-t0r" eventType="touchUpInside" id="SaC-8m-ilm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Z2-ue-mqD">
-                                <rect key="frame" x="10" y="315" width="580" height="30"/>
-                                <animations/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nt-03-dUh">
+                                <rect key="frame" x="15" y="205" width="570" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="lCp-gM-EDS"/>
+                                    <constraint firstAttribute="height" constant="30" id="VRe-VP-jve"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="修改头像">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Default ActionSheet">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="changeHeader" destination="BYZ-38-t0r" eventType="touchUpInside" id="Swc-7I-UER"/>
+                                    <action selector="showDefaultActionSheet" destination="BYZ-38-t0r" eventType="touchUpInside" id="n6v-ca-sAS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kT3-kg-cxE">
+                                <rect key="frame" x="15" y="385" width="570" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Izx-O9-4bg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Block ActionSheet">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showBlockActionSheet" destination="BYZ-38-t0r" eventType="touchUpInside" id="7cq-Pk-Ahi"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="1EZ-Nx-iEk" secondAttribute="centerY" constant="30" id="4hi-7F-t7V"/>
-                            <constraint firstItem="9Z2-ue-mqD" firstAttribute="top" secondItem="1EZ-Nx-iEk" secondAttribute="bottom" constant="30" id="9ui-tB-gNJ"/>
-                            <constraint firstItem="1EZ-Nx-iEk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="GND-Kt-f14"/>
-                            <constraint firstAttribute="centerX" secondItem="9Z2-ue-mqD" secondAttribute="centerX" id="UM6-Cv-vTe"/>
-                            <constraint firstAttribute="trailing" secondItem="1EZ-Nx-iEk" secondAttribute="trailing" constant="10" id="hA2-gA-AA1"/>
-                            <constraint firstAttribute="centerX" secondItem="1EZ-Nx-iEk" secondAttribute="centerX" id="qhf-Kw-qQd"/>
-                            <constraint firstAttribute="trailing" secondItem="9Z2-ue-mqD" secondAttribute="trailing" constant="10" id="t7o-Qb-5VF"/>
-                            <constraint firstItem="9Z2-ue-mqD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="vMk-L2-X6g"/>
+                            <constraint firstItem="M7K-vo-zgu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="1gl-Dj-DcF"/>
+                            <constraint firstItem="0nt-03-dUh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7fL-V2-nRu"/>
+                            <constraint firstItem="hdE-3Z-g4X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="AS1-fp-K0u"/>
+                            <constraint firstAttribute="trailing" secondItem="hdE-3Z-g4X" secondAttribute="trailing" constant="15" id="FtL-K1-HOE"/>
+                            <constraint firstItem="0nt-03-dUh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="I4Z-5i-oED"/>
+                            <constraint firstAttribute="trailing" secondItem="kT3-kg-cxE" secondAttribute="trailing" constant="15" id="KvB-BY-CTc"/>
+                            <constraint firstItem="0nt-03-dUh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="Odj-ER-b44"/>
+                            <constraint firstAttribute="trailing" secondItem="M7K-vo-zgu" secondAttribute="trailing" id="Q4B-y3-YYp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M7K-vo-zgu" secondAttribute="bottom" id="bMV-S9-VIW"/>
+                            <constraint firstItem="hdE-3Z-g4X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iFy-hv-5b2"/>
+                            <constraint firstAttribute="trailing" secondItem="0nt-03-dUh" secondAttribute="trailing" constant="15" id="jXv-JF-JMa"/>
+                            <constraint firstItem="kT3-kg-cxE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="m0r-kc-BPb"/>
+                            <constraint firstItem="hdE-3Z-g4X" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pkC-We-p9Z"/>
+                            <constraint firstItem="kT3-kg-cxE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="yn0-B4-XAN"/>
+                            <constraint firstItem="M7K-vo-zgu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yvm-0x-X7f"/>
+                            <constraint firstItem="kT3-kg-cxE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z64-Az-WL0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="LCActionSheet Demo" id="8Wj-cX-r4Z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1083" y="-518"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ly5-Um-js8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fnb-B0-0i1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G14-s3-bIn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="BuU-W4-1Lw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uxZ-6d-HPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="275" y="-518"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ratchet" width="256" height="341"/>
+    </resources>
 </document>

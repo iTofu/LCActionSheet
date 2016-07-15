@@ -2,8 +2,8 @@
 //  main.m
 //  LCActionSheetDemo
 //
-//  Created by 刘超 on 15/4/26.
-//  Copyright (c) 2015年 Leo. All rights reserved.
+//  Created by Leo on 16/7/15.
+//  Copyright © 2016年 Leo（http://LeoDev.me）. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
