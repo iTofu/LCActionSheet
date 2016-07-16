@@ -257,7 +257,7 @@ In me the tiger sniffs the rose.
 
 ## 联系 Support
 
-* 发现问题请前往 [New issue](https://github.com/iTofu/LCActionSheet/issues/new)，谢谢 :)
+* 有问题请前往 [New Issue](https://github.com/iTofu/LCActionSheet/issues/new)，谢谢 :)
 
 * Mail: devtip@163.com
 
