@@ -31,7 +31,7 @@ In me the tiger sniffs the rose.
 
 * 有代理，有 Block，可类方法，可实例方法，想怎样，就怎样。
 
-* 代理、Block 非常完善，可能需要用到的基本都考虑到了，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) Delegate & Block 部分。
+* 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) Delegate & Block 部分。
 
 * 重要注释完整，代码风格良好，满满的善意，便于阅读源码，照顾强迫症，拓展更多功能请前往 [PR](https://github.com/iTofu/LCActionSheet/pulls)。三个诸葛亮，顶个好工匠。
 
