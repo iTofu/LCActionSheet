@@ -251,7 +251,7 @@ In me the tiger sniffs the rose.
 
 * 点击的 buttonIndex 按 UIAlertView 的逻辑来即可，若有取消按钮则取消按钮为 0，其他从上至下递增。
 
-* scrolling 属性控制按钮过多时，是否可以滚动，默认 NO，不可滚动。visibleButtonCount 属性控制可见的按钮个数，可以是小数，必须先设置 scrolling = YES 才生效。
+* scrolling 属性控制按钮过多时，是否可以滚动，默认 NO，不可滚动。visibleButtonCount 属性控制可见的按钮个数，可以是小数，必须先设置 scrolling = YES 才生效。tableView 的 scrollsToTop 属性依然可用，可点击状态栏快速滚回顶部。
 
 
 
