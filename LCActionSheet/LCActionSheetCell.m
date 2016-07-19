@@ -47,4 +47,12 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {}
 
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    
+    if (self.tag != LC_ACTION_SHEET_CELL_TAG_INTERVAL) {
+        self.lineView.hidden = highlighted;
+    }
+}
+
 @end

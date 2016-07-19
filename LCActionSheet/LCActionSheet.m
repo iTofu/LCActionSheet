@@ -319,11 +319,11 @@
     [self.cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
 }
 
-- (void)setRedButtonIndexSet:(NSSet *)redButtonIndexSet {
-    _redButtonIndexSet = redButtonIndexSet;
+- (void)setDestructiveButtonIndexSet:(NSSet *)destructiveButtonIndexSet {
+    _destructiveButtonIndexSet = destructiveButtonIndexSet;
     
-    if ([redButtonIndexSet containsObject:@0]) {
-        [self.cancelButton setTitleColor:LC_ACTION_SHEET_RED_COLOR forState:UIControlStateNormal];
+    if ([destructiveButtonIndexSet containsObject:@0]) {
+        [self.cancelButton setTitleColor:self.destructiveButtonColor forState:UIControlStateNormal];
     } else {
         [self.cancelButton setTitleColor:self.buttonColor forState:UIControlStateNormal];
     }
@@ -331,11 +331,20 @@
     [self.tableView reloadData];
 }
 
+- (void)setRedButtonIndexSet:(NSSet *)redButtonIndexSet {
+    self.destructiveButtonIndexSet = redButtonIndexSet;
+}
+
+- (NSSet *)redButtonIndexSet {
+    return self.destructiveButtonIndexSet;
+}
+
 @synthesize titleFont;
 @synthesize buttonFont;
 @synthesize titleColor;
 @synthesize buttonColor;
 @synthesize buttonHeight;
+@synthesize destructiveButtonColor;
 
 - (void)setTitleFont:(UIFont *)aTitleFont {
     titleFont = aTitleFont;
@@ -349,6 +358,18 @@
     buttonFont = aButtonFont;
     
     self.cancelButton.titleLabel.font = aButtonFont;
+    [self.tableView reloadData];
+}
+
+- (void)setDestructiveButtonColor:(UIColor *)aDestructiveButtonColor {
+    destructiveButtonColor = aDestructiveButtonColor;
+    
+    if ([self.destructiveButtonIndexSet containsObject:@0]) {
+        [self.cancelButton setTitleColor:self.destructiveButtonColor forState:UIControlStateNormal];
+    } else {
+        [self.cancelButton setTitleColor:self.buttonColor forState:UIControlStateNormal];
+    }
+    
     [self.tableView reloadData];
 }
 
@@ -386,6 +407,13 @@
         buttonFont = LC_ACTION_SHEET_BUTTON_FONT;
     }
     return buttonFont;
+}
+
+- (UIColor *)destructiveButtonColor {
+    if (!destructiveButtonColor) {
+        destructiveButtonColor = LC_ACTION_SHEET_RED_COLOR;
+    }
+    return destructiveButtonColor;
 }
 
 - (UIColor *)titleColor {
@@ -609,17 +637,20 @@
         cell.titleLabel.font      = self.buttonFont;
         cell.titleLabel.textColor = self.buttonColor;
     }
+    
     cell.titleLabel.text = self.otherButtonTitles[indexPath.row];
     
     cell.lineView.hidden = indexPath.row == 0;
     
-    if (self.redButtonIndexSet) {
+    cell.tag = indexPath.row + LC_ACTION_SHEET_CELL_TAG_INTERVAL;
+    
+    if (self.destructiveButtonIndexSet) {
         NSInteger temp = 0;
         if (self.cancelButtonTitle.length > 0) {
             temp = 1;
         }
-        if ([self.redButtonIndexSet containsObject:[NSNumber numberWithInteger:indexPath.row + temp]]) {
-            cell.titleLabel.textColor = LC_ACTION_SHEET_RED_COLOR;
+        if ([self.destructiveButtonIndexSet containsObject:[NSNumber numberWithInteger:indexPath.row + temp]]) {
+            cell.titleLabel.textColor = self.destructiveButtonColor;
         } else {
             cell.titleLabel.textColor = self.buttonColor;
         }

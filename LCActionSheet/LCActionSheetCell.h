@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define LC_ACTION_SHEET_CELL_TAG_INTERVAL   100
+
 @interface LCActionSheetCell : UITableViewCell
 
 @property (nonatomic, weak) UILabel *titleLabel;

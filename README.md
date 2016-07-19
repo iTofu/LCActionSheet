@@ -23,7 +23,7 @@ In me the tiger sniffs the rose.
 
 ☀️ 一款简约而不失强大的 ActionSheet，微信和微博都采取了极其类似的样式。
 
-* iOS 7.0 +
+* iOS 7.0 +，Demo 需要 [CocoaPods](https://cocoapods.org/) 环境运行。
 
 * 格调高雅，风格百搭，怎么看怎么舒服。
 
@@ -76,7 +76,6 @@ In me the tiger sniffs the rose.
     actionSheet.title              = @"This is a very very very very very very very very very very very very very very very very very very very very very very very very very very very long title~";
     actionSheet.cancelButtonTitle  = @"Close";
     [actionSheet appendButtonTitles:@"Button 6", @"Button 7", nil];
-    actionSheet.redButtonIndexSet  = [NSSet setWithObjects:@0, @2, nil];
     actionSheet.titleColor         = [UIColor orangeColor];
     actionSheet.buttonColor        = [UIColor greenColor];
     actionSheet.titleFont          = [UIFont boldSystemFontOfSize:15.0f];
@@ -85,6 +84,11 @@ In me the tiger sniffs the rose.
     actionSheet.scrolling          = YES;
     actionSheet.visibleButtonCount = 3.6f;
     actionSheet.darkViewNoTaped    = YES;
+    
+    // V 2.1.0 use `destructiveButtonIndexSet` instead `redButtonIndexSet`.
+    actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
+    actionSheet.destructiveButtonColor    = [UIColor blueColor];
+    
     [actionSheet show];
     ````
 
@@ -147,6 +151,20 @@ In me the tiger sniffs the rose.
 
 
 ## 版本 Release
+
+### V 2.1.0 (2016.07.19)
+
+* 新增自定义项，[Issue 18](https://github.com/iTofu/LCActionSheet/issues/18) by [IAMJ](https://github.com/IAMJ)：
+
+  ````objc
+  destructiveButtonColor // 警示按钮颜色
+  ````
+
+* 修改一个属性命名：
+
+  ````objc
+  redButtonIndexSet -> destructiveButtonIndexSet // 与 UIActionSheet 命名保持一致，便于顺手敲出
+  ````
 
 ### V 2.0.0 (⚠️ Important, 2016.07.16)
 
@@ -227,7 +245,7 @@ In me the tiger sniffs the rose.
 
 * LCActionSheet 添加到 KeyWindow 上，已适配横屏。
 
-* 可自定义 title、buttons、redButtons、cancelButton、titleColor、titleFont、buttonColor、buttonFont、canScrolling 等等，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h)。
+* 可自定义 title、buttons、destructiveButtons、cancelButton、titleColor、titleFont、buttonColor、buttonFont、canScrolling 等等，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h)。
 
 * 点击的 buttonIndex 按 UIAlertView 的逻辑来即可，若有取消按钮则取消按钮为 0，其他从上至下递增。
 

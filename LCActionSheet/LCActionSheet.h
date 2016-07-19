@@ -8,7 +8,7 @@
 //  GitHub: http://github.com/iTofu
 //  Mail:   mailto:devtip@163.com
 //
-//  V 2.0.0
+//  V 2.1.0
 
 #import <UIKit/UIKit.h>
 
@@ -64,16 +64,26 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
 @property (nonatomic, weak) id<LCActionSheetDelegate> delegate;
 
 /**
- *  All red buttons' set. You should give it the `NSNumber` type items.
+ *  Deprecated, use `destructiveButtonIndexSet` instead.
  */
-@property (nonatomic, strong) NSSet *redButtonIndexSet;
+@property (nonatomic, strong) NSSet *redButtonIndexSet NS_DEPRECATED_IOS(2_0, 2_0, "Use destructiveButtonIndexSet");
+
+/**
+ *  All destructive buttons' set. You should give it the `NSNumber` type items.
+ */
+@property (nonatomic, strong) NSSet *destructiveButtonIndexSet;
+
+/**
+ *  Destructive button's color.
+ */
+@property (nonatomic, strong) UIColor *destructiveButtonColor;
 
 /**
  *  Title's color.
  */
 @property (nonatomic, strong) UIColor *titleColor;
 /**
- *  Buttons' color, without red buttons.
+ *  Buttons' color, without destructive buttons.
  */
 @property (nonatomic, strong) UIColor *buttonColor;
 /**

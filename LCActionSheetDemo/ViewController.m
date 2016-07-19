@@ -36,7 +36,6 @@
     actionSheet.title              = @"This is a very very very very very very very very very very very very very very very very very very very very very very very very very very very long title~";
     actionSheet.cancelButtonTitle  = @"Close";
     [actionSheet appendButtonTitles:@"Button 6", @"Button 7", nil];
-    actionSheet.redButtonIndexSet  = [NSSet setWithObjects:@0, @2, nil];
     actionSheet.titleColor         = [UIColor orangeColor];
     actionSheet.buttonColor        = [UIColor greenColor];
     actionSheet.titleFont          = [UIFont boldSystemFontOfSize:15.0f];
@@ -45,6 +44,11 @@
     actionSheet.scrolling          = YES;
     actionSheet.visibleButtonCount = 3.6f;
     actionSheet.darkViewNoTaped    = YES;
+    
+    // V 2.1.0 use `destructiveButtonIndexSet` instead `redButtonIndexSet`.
+    actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
+    actionSheet.destructiveButtonColor    = [UIColor blueColor];
+    
     [actionSheet show];
 }
 
