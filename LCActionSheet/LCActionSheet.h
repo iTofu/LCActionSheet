@@ -8,12 +8,15 @@
 //  GitHub: http://github.com/iTofu
 //  Mail:   mailto:devtip@163.com
 //
-//  V 2.1.0
+//  V 2.1.1
 
 #import <UIKit/UIKit.h>
 
 
 @class LCActionSheet;
+
+
+#pragma mark - LCActionSheet Block
 
 typedef void(^LCActionSheetClickedBlock)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 
@@ -74,28 +77,28 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
 @property (nonatomic, strong) NSSet *destructiveButtonIndexSet;
 
 /**
- *  Destructive button's color.
+ *  Destructive button's color. Default is RGB(255, 10, 10).
  */
 @property (nonatomic, strong) UIColor *destructiveButtonColor;
 
 /**
- *  Title's color.
+ *  Title's color. Default is `[UIColor blackColor]`.
  */
 @property (nonatomic, strong) UIColor *titleColor;
 /**
- *  Buttons' color, without destructive buttons.
+ *  Buttons' color, without destructive buttons. Default is `[UIColor blackColor]`.
  */
 @property (nonatomic, strong) UIColor *buttonColor;
 /**
- *  Title's font.
+ *  Title's font. Default is `[UIFont systemFontOfSize:14.0f]`.
  */
 @property (nonatomic, strong) UIFont *titleFont;
 /**
- *  All buttons' font.
+ *  All buttons' font. Default is `[UIFont systemFontOfSize:18.0f]`.
  */
 @property (nonatomic, strong) UIFont *buttonFont;
 /**
- *  All buttons' height.
+ *  All buttons' height. Default is 49.0f;
  */
 @property (nonatomic, assign) CGFloat buttonHeight;
 

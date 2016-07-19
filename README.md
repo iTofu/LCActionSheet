@@ -159,6 +159,11 @@ In me the tiger sniffs the rose.
 
 ## 版本 Release
 
+### V 2.1.1 (2016.07.19)
+
+* 完善部分注释，注明需要注明的属性的默认值。
+
+
 ### V 2.1.0 (2016.07.19)
 
 * 新增自定义项，[Issue 18](https://github.com/iTofu/LCActionSheet/issues/18) by [IAMJ](https://github.com/IAMJ)：
