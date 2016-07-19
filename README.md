@@ -85,7 +85,7 @@ In me the tiger sniffs the rose.
     actionSheet.visibleButtonCount = 3.6f;
     actionSheet.darkViewNoTaped    = YES;
     
-    // V 2.1.0 use `destructiveButtonIndexSet` instead `redButtonIndexSet`.
+    // V 2.1.0 use `destructiveButtonIndexSet` instead of `redButtonIndexSet`.
     actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
     actionSheet.destructiveButtonColor    = [UIColor blueColor];
     
@@ -163,7 +163,9 @@ In me the tiger sniffs the rose.
 * 修改一个属性命名：
 
   ````objc
-  redButtonIndexSet -> destructiveButtonIndexSet // 与 UIActionSheet 命名保持一致，便于顺手敲出
+  // 与 UIActionSheet 命名保持一致，便于顺手敲出
+  // V 2.1.0 给予 redButtonIndexSet 过期警告，下一版本将会移除该属性
+  redButtonIndexSet -> destructiveButtonIndexSet
   ````
 
 ### V 2.0.0 (⚠️ Important, 2016.07.16)
