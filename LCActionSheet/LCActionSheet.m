@@ -189,12 +189,13 @@
                                                                           action:@selector(darkViewClicked)];
     [darkView addGestureRecognizer:tap];
     
-    UIView *bottomBgView         = [[UIView alloc] init];
-    bottomBgView.backgroundColor = [UIColor whiteColor];
+    UIToolbar *bottomBgView         = [[UIToolbar alloc] init];
+//    bottomBgView.backgroundColor = [UIColor whiteColor];
     [bottomView addSubview:bottomBgView];
     [bottomBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(bottomView);
     }];
+    [bottomBgView setNeedsLayout];
     
     UILabel *titleLabel      = [[UILabel alloc] init];
     titleLabel.text          = self.title;
@@ -246,8 +247,8 @@
     }];
     
     UIView *divisionView         = [[UIView alloc] init];
-    divisionView.alpha           = 0.5f;
-    divisionView.backgroundColor = LC_ACTION_SHEET_COLOR(233, 233, 238);
+    divisionView.alpha           = 0.1f;
+    divisionView.backgroundColor = LC_ACTION_SHEET_COLOR(150, 150, 150);
     [bottomView addSubview:divisionView];
     [divisionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);

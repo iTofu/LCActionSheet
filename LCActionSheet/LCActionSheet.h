@@ -8,7 +8,7 @@
 //  GitHub: http://github.com/iTofu
 //  Mail:   mailto:devtip@163.com
 //
-//  V 2.1.1
+//  V 2.2.0
 
 #import <UIKit/UIKit.h>
 
@@ -126,6 +126,8 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
  *  If you can tap darkView to dissmiss. Defalut is NO.
  */
 @property (nonatomic, assign) BOOL darkViewNoTaped;
+
+//@property (nonatomic, assign) BOOL <#name#>;
 
 
 @property (nonatomic, copy) LCActionSheetClickedBlock clickedBlock;
