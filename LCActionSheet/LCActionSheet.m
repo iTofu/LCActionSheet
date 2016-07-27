@@ -9,6 +9,7 @@
 #import "LCActionSheet.h"
 #import "LCActionSheetCell.h"
 #import "Masonry.h"
+#import "UIView+LCActionSheet.h"
 
 
 #define LC_ACTION_SHEET_BUTTON_HEIGHT       49.0f
@@ -35,6 +36,7 @@
 @property (nonatomic, assign) CGSize titleTextSize;
 
 @property (nonatomic, weak) UIView *bottomView;
+@property (nonatomic, weak) UIImageView *bottomBgView;
 @property (nonatomic, weak) UIView *darkView;
 @property (nonatomic, weak) UILabel *titleLabel;
 @property (nonatomic, weak) UITableView *tableView;
@@ -155,6 +157,11 @@
 }
 
 - (void)setupView {
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(handleDidChangeStatusBarOrientation)
+//                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
+//                                               object:nil];
+    
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow addSubview:self];
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -189,13 +196,20 @@
                                                                           action:@selector(darkViewClicked)];
     [darkView addGestureRecognizer:tap];
     
-    UIToolbar *bottomBgView         = [[UIToolbar alloc] init];
-//    bottomBgView.backgroundColor = [UIColor whiteColor];
+    UIImageView *bottomBgView    = [[UIImageView alloc] init];
+    bottomBgView.clipsToBounds   = YES;
+    bottomBgView.backgroundColor = [UIColor whiteColor];
+    bottomBgView.contentMode     = UIViewContentModeBottom;
     [bottomView addSubview:bottomBgView];
     [bottomBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(bottomView);
     }];
     [bottomBgView setNeedsLayout];
+    self.bottomBgView = bottomBgView;
+    
+    if (!self.unBlur) {
+        [self blurBottomBgView];
+    }
     
     UILabel *titleLabel      = [[UILabel alloc] init];
     titleLabel.text          = self.title;
@@ -300,6 +314,27 @@
     [self updateTableView];
 }
 
+- (void)handleDidChangeStatusBarOrientation {
+#pragma mark TODO: Render blur effect again.
+}
+
+- (void)blurBottomBgView {
+    UIWindow *keyWindow  = [UIApplication sharedApplication].keyWindow;
+    UIGraphicsBeginImageContext(keyWindow.frame.size);
+    [keyWindow.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *windowImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.bottomBgView.image = windowImage;
+    
+    [self.bottomBgView blurWithBlurEffectStyle:UIBlurEffectStyleExtraLight andConstraints:YES];
+}
+
+- (void)unBlurBottomBgView {
+    self.bottomBgView.image = nil;
+    
+    [self.bottomBgView unBlur];
+}
+
 #pragma mark - Setter & Getter
 
 - (void)setTitle:(NSString *)title {
@@ -338,6 +373,16 @@
 
 - (NSSet *)redButtonIndexSet {
     return self.destructiveButtonIndexSet;
+}
+
+- (void)setUnBlur:(BOOL)unBlur {
+    _unBlur = unBlur;
+    
+    if (unBlur) {
+        [self unBlurBottomBgView];
+    } else {
+        [self blurBottomBgView];
+    }
 }
 
 @synthesize titleFont;

@@ -12,7 +12,14 @@
 
 @interface LCActionSheetCell : UITableViewCell
 
+/**
+ *  Title label.
+ */
 @property (nonatomic, weak) UILabel *titleLabel;
+
+/**
+ *  Line.
+ */
 @property (nonatomic, weak) UIImageView *lineView;
 
 @end

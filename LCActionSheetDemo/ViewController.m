@@ -44,6 +44,7 @@
     actionSheet.scrolling          = YES;
     actionSheet.visibleButtonCount = 3.6f;
     actionSheet.darkViewNoTaped    = YES;
+    actionSheet.unBlur             = YES;
     
     // V 2.1.0 use `destructiveButtonIndexSet` instead `redButtonIndexSet`.
     actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];

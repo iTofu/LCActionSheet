@@ -127,7 +127,10 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
  */
 @property (nonatomic, assign) BOOL darkViewNoTaped;
 
-//@property (nonatomic, assign) BOOL <#name#>;
+/**
+ *  Clear blur effect. Default is NO, don't clear blur effect.
+ */
+@property (nonatomic, assign) BOOL unBlur;
 
 
 @property (nonatomic, copy) LCActionSheetClickedBlock clickedBlock;
