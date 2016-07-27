@@ -91,6 +91,7 @@ In me the tiger sniffs the rose.
     actionSheet.scrolling          = YES;
     actionSheet.visibleButtonCount = 3.6f;
     actionSheet.darkViewNoTaped    = YES;
+    actionSheet.unBlur             = YES;
     
     // V 2.1.0 use `destructiveButtonIndexSet` instead of `redButtonIndexSet`.
     actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
@@ -161,7 +162,7 @@ In me the tiger sniffs the rose.
 
 ### V 2.2.0 (2016.07.27)
 
-* 添加高斯模糊效果（可选）。
+* 添加高斯模糊效果（可选），[Issue 19](https://github.com/iTofu/LCActionSheet/issues/19) by [guanzhendong](https://github.com/guanzhendong)。
 
 
 ### V 2.1.1 (2016.07.19)
