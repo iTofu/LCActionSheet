@@ -41,18 +41,18 @@ static int LCActionSheetBlurViewTag = 666888;
                                                               constant:0]];
             
             [self addConstraint:[NSLayoutConstraint constraintWithItem:blurEffectView
-                                                             attribute:NSLayoutAttributeLeading
+                                                             attribute:NSLayoutAttributeLeft
                                                              relatedBy:NSLayoutRelationEqual
                                                                 toItem:self
-                                                             attribute:NSLayoutAttributeLeading
+                                                             attribute:NSLayoutAttributeLeft
                                                             multiplier:1
                                                               constant:0]];
             
             [self addConstraint:[NSLayoutConstraint constraintWithItem:blurEffectView
-                                                             attribute:NSLayoutAttributeTrailing
+                                                             attribute:NSLayoutAttributeRight
                                                              relatedBy:NSLayoutRelationEqual
                                                                 toItem:self
-                                                             attribute:NSLayoutAttributeTrailing
+                                                             attribute:NSLayoutAttributeRight
                                                             multiplier:1
                                                               constant:0]];
         }

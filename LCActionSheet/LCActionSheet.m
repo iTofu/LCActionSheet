@@ -157,10 +157,10 @@
 }
 
 - (void)setupView {
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(handleDidChangeStatusBarOrientation)
-//                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
-//                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleDidChangeStatusBarOrientation)
+                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
+                                               object:nil];
     
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow addSubview:self];
@@ -315,7 +315,12 @@
 }
 
 - (void)handleDidChangeStatusBarOrientation {
-#pragma mark TODO: Render blur effect again.
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if (orientation == UIInterfaceOrientationLandscapeRight || orientation ==UIInterfaceOrientationLandscapeLeft) {
+        self.bottomBgView.contentMode = UIViewContentModeScaleAspectFill;
+    } else {
+        self.bottomBgView.contentMode = UIViewContentModeBottom;
+    }
 }
 
 - (void)blurBottomBgView {
