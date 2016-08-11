@@ -64,6 +64,14 @@
                  otherButtonTitleArray:tempOtherButtonTitles];
 }
 
++ (instancetype)sheetWithTitle:(NSString *)title delegate:(id<LCActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitleArray:(NSArray *)otherButtonTitleArray {
+    
+    return [[self alloc] initWithTitle:title
+                              delegate:delegate
+                     cancelButtonTitle:cancelButtonTitle
+                 otherButtonTitleArray:otherButtonTitleArray];
+}
+
 + (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedBlock)clickedBlock otherButtonTitles:(NSString *)otherButtonTitles, ... {
     id eachObject;
     va_list argumentList;
@@ -80,6 +88,14 @@
                      cancelButtonTitle:cancelButtonTitle
                                clicked:clickedBlock
                  otherButtonTitleArray:tempOtherButtonTitles];
+}
+
++ (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedBlock)clickedBlock otherButtonTitleArray:(NSArray *)otherButtonTitleArray {
+    
+    return [[self alloc] initWithTitle:title
+                     cancelButtonTitle:cancelButtonTitle
+                               clicked:clickedBlock
+                 otherButtonTitleArray:otherButtonTitleArray];
 }
 
 - (instancetype)initWithTitle:(NSString *)title delegate:(id<LCActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {

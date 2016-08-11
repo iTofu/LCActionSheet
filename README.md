@@ -160,6 +160,40 @@ In me the tiger sniffs the rose.
 
 ## 版本 Release
 
+### V 2.3.0 (2016.08.11)
+
+* 重新实现 V 1.x 的方法，允许使用数组而不必须是多参数来设置按钮标题：
+
+  ````objc
+  #pragma mark Delegate
+
+  + (instancetype)sheetWithTitle:(NSString *)title
+                        delegate:(id<LCActionSheetDelegate>)delegate
+               cancelButtonTitle:(NSString *)cancelButtonTitle
+           otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
+
+  - (instancetype)initWithTitle:(NSString *)title
+                     delegate:(id<LCActionSheetDelegate>)delegate
+            cancelButtonTitle:(NSString *)cancelButtonTitle
+        otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
+
+
+  #pragma mark Block
+
+  + (instancetype)sheetWithTitle:(NSString *)title
+             cancelButtonTitle:(NSString *)cancelButtonTitle
+                       clicked:(LCActionSheetClickedBlock)clickedBlock
+         otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
+
+  - (instancetype)initWithTitle:(NSString *)title
+            cancelButtonTitle:(NSString *)cancelButtonTitle
+                      clicked:(LCActionSheetClickedBlock)clickedBlock
+        otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
+  ````
+
+* 优化 UI 效果，主要是高亮状态的效果。
+
+
 ### V 2.2.0 (2016.07.27)
 
 * 添加高斯模糊效果（可选），[Issue 19](https://github.com/iTofu/LCActionSheet/issues/19) by [guanzhendong](https://github.com/guanzhendong)。

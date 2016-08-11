@@ -8,7 +8,7 @@
 //  GitHub: http://github.com/iTofu
 //  Mail:   mailto:devtip@163.com
 //
-//  V 2.2.0
+//  V 2.3.0
 
 #import <UIKit/UIKit.h>
 
@@ -142,6 +142,8 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
 
 #pragma mark - Methods
 
+#pragma mark Delegate
+
 /**
  *  Initialize an instance of LCActionSheet.
  *
@@ -160,6 +162,21 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
 /**
  *  Initialize an instance of LCActionSheet.
  *
+ *  @param title                 title
+ *  @param delegate              delegate
+ *  @param cancelButtonTitle     cancelButtonTitle
+ *  @param otherButtonTitleArray otherButtonTitleArray
+ *
+ *  @return An instance of LCActionSheet.
+ */
++ (instancetype)sheetWithTitle:(NSString *)title
+                      delegate:(id<LCActionSheetDelegate>)delegate
+             cancelButtonTitle:(NSString *)cancelButtonTitle
+         otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
+
+/**
+ *  Initialize an instance of LCActionSheet.
+ *
  *  @param title             title
  *  @param delegate          delegate
  *  @param cancelButtonTitle cancelButtonTitle
@@ -172,6 +189,23 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
             cancelButtonTitle:(NSString *)cancelButtonTitle
             otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
+/**
+ *  Initialize an instance of LCActionSheet.
+ *
+ *  @param title                 title
+ *  @param delegate              delegate
+ *  @param cancelButtonTitle     cancelButtonTitle
+ *  @param otherButtonTitleArray otherButtonTitleArray
+ *
+ *  @return An instance of LCActionSheet.
+ */
+- (instancetype)initWithTitle:(NSString *)title
+                     delegate:(id<LCActionSheetDelegate>)delegate
+            cancelButtonTitle:(NSString *)cancelButtonTitle
+        otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
+
+
+#pragma mark Block
 
 /**
  *  Initialize an instance of LCActionSheet.
@@ -191,6 +225,21 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
 /**
  *  Initialize an instance of LCActionSheet.
  *
+ *  @param title                 title
+ *  @param delegate              delegate
+ *  @param clickedBlock          clickedBlock
+ *  @param otherButtonTitleArray otherButtonTitleArray
+ *
+ *  @return An instance of LCActionSheet.
+ */
++ (instancetype)sheetWithTitle:(NSString *)title
+             cancelButtonTitle:(NSString *)cancelButtonTitle
+                       clicked:(LCActionSheetClickedBlock)clickedBlock
+         otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
+
+/**
+ *  Initialize an instance of LCActionSheet.
+ *
  *  @param title             title
  *  @param cancelButtonTitle cancelButtonTitle
  *  @param clickedBlock      clickedBlock
@@ -202,6 +251,21 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
             cancelButtonTitle:(NSString *)cancelButtonTitle
                       clicked:(LCActionSheetClickedBlock)clickedBlock
             otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+
+/**
+ *  Initialize an instance of LCActionSheet.
+ *
+ *  @param title                 title
+ *  @param delegate              delegate
+ *  @param clickedBlock          clickedBlock
+ *  @param otherButtonTitleArray otherButtonTitleArray
+ *
+ *  @return An instance of LCActionSheet.
+ */
+- (instancetype)initWithTitle:(NSString *)title
+            cancelButtonTitle:(NSString *)cancelButtonTitle
+                      clicked:(LCActionSheetClickedBlock)clickedBlock
+        otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
 
 /**
  *  Append buttons with titles.
