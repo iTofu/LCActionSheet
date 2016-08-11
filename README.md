@@ -173,25 +173,25 @@ In me the tiger sniffs the rose.
            otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
 
   - (instancetype)initWithTitle:(NSString *)title
-                     delegate:(id<LCActionSheetDelegate>)delegate
-            cancelButtonTitle:(NSString *)cancelButtonTitle
-        otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
+                       delegate:(id<LCActionSheetDelegate>)delegate
+              cancelButtonTitle:(NSString *)cancelButtonTitle
+          otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
 
 
   #pragma mark Block
 
   + (instancetype)sheetWithTitle:(NSString *)title
-             cancelButtonTitle:(NSString *)cancelButtonTitle
-                       clicked:(LCActionSheetClickedBlock)clickedBlock
-         otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
+               cancelButtonTitle:(NSString *)cancelButtonTitle
+                         clicked:(LCActionSheetClickedBlock)clickedBlock
+           otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
 
   - (instancetype)initWithTitle:(NSString *)title
-            cancelButtonTitle:(NSString *)cancelButtonTitle
-                      clicked:(LCActionSheetClickedBlock)clickedBlock
-        otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
+              cancelButtonTitle:(NSString *)cancelButtonTitle
+                        clicked:(LCActionSheetClickedBlock)clickedBlock
+          otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
   ````
 
-* 优化 UI 效果，主要是高亮状态的效果。
+* 优化一些 UI 效果，主要是高亮状态的效果。
 
 
 ### V 2.2.0 (2016.07.27)
