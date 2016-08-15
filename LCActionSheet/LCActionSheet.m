@@ -36,7 +36,7 @@
 @property (nonatomic, assign) CGSize titleTextSize;
 
 @property (nonatomic, weak) UIView *bottomView;
-@property (nonatomic, weak) UIImageView *bottomBgView;
+@property (nonatomic, weak) UIVisualEffectView *blurEffectView;
 @property (nonatomic, weak) UIView *darkView;
 @property (nonatomic, weak) UILabel *titleLabel;
 @property (nonatomic, weak) UITableView *tableView;
@@ -212,16 +212,13 @@
                                                                           action:@selector(darkViewClicked)];
     [darkView addGestureRecognizer:tap];
     
-    UIImageView *bottomBgView    = [[UIImageView alloc] init];
-    bottomBgView.clipsToBounds   = YES;
-    bottomBgView.backgroundColor = [UIColor whiteColor];
-    bottomBgView.contentMode     = UIViewContentModeBottom;
-    [bottomView addSubview:bottomBgView];
-    [bottomBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIBlurEffect *blurEffect           = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    [bottomView addSubview:blurEffectView];
+    [blurEffectView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(bottomView);
     }];
-    [bottomBgView setNeedsLayout];
-    self.bottomBgView = bottomBgView;
+    self.blurEffectView = blurEffectView;
     
     if (!self.unBlur) {
         [self blurBottomBgView];
@@ -333,27 +330,26 @@
 - (void)handleDidChangeStatusBarOrientation {
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     if (orientation == UIInterfaceOrientationLandscapeRight || orientation ==UIInterfaceOrientationLandscapeLeft) {
-        self.bottomBgView.contentMode = UIViewContentModeScaleAspectFill;
+        self.blurEffectView.contentMode = UIViewContentModeScaleAspectFill;
     } else {
-        self.bottomBgView.contentMode = UIViewContentModeBottom;
+        self.blurEffectView.contentMode = UIViewContentModeBottom;
     }
 }
 
 - (void)blurBottomBgView {
-    UIWindow *keyWindow  = [UIApplication sharedApplication].keyWindow;
-    UIGraphicsBeginImageContext(keyWindow.frame.size);
-    [keyWindow.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *windowImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    self.bottomBgView.image = windowImage;
-    
-    [self.bottomBgView blurWithBlurEffectStyle:UIBlurEffectStyleExtraLight andConstraints:YES];
+    UIBlurEffect *blurEffect           = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    [self.bottomView addSubview:blurEffectView];
+    [blurEffectView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.bottomView);
+    }];
+    self.blurEffectView = blurEffectView;
 }
 
 - (void)unBlurBottomBgView {
-    self.bottomBgView.image = nil;
     
-    [self.bottomBgView unBlur];
+    [self.blurEffectView removeFromSuperview];
+    self.blurEffectView = nil;
 }
 
 #pragma mark - Setter & Getter
