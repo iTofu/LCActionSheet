@@ -212,14 +212,6 @@
                                                                           action:@selector(darkViewClicked)];
     [darkView addGestureRecognizer:tap];
     
-    UIBlurEffect *blurEffect           = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
-    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-    [bottomView addSubview:blurEffectView];
-    [blurEffectView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(bottomView);
-    }];
-    self.blurEffectView = blurEffectView;
-    
     if (!self.unBlur) {
         [self blurBottomBgView];
     }
@@ -337,13 +329,15 @@
 }
 
 - (void)blurBottomBgView {
-    UIBlurEffect *blurEffect           = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
-    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-    [self.bottomView addSubview:blurEffectView];
-    [blurEffectView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.bottomView);
-    }];
-    self.blurEffectView = blurEffectView;
+    if (!self.blurEffectView) {
+        UIBlurEffect *blurEffect           = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        [self.bottomView addSubview:blurEffectView];
+        [blurEffectView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.bottomView);
+        }];
+        self.blurEffectView = blurEffectView;
+    }
 }
 
 - (void)unBlurBottomBgView {
