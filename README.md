@@ -92,6 +92,7 @@ In me the tiger sniffs the rose.
     actionSheet.visibleButtonCount = 3.6f;
     actionSheet.darkViewNoTaped    = YES;
     actionSheet.unBlur             = YES;
+    actionSheet.blurEffectStyle    = UIBlurEffectStyleLight;
     
     // V 2.1.0 use `destructiveButtonIndexSet` instead of `redButtonIndexSet`.
     actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
