@@ -161,6 +161,13 @@ In me the tiger sniffs the rose.
 
 ## 版本 Release
 
+### V 2.3.3 (2016.08.16)
+
+* 修复设置 `actionSheet.unBlur = YES;` 后背景透明的 Bug。
+
+* 完善注释，移除无用类。
+
+
 ### V 2.3.2 (2016.08.16)
 
 * 可以自定义 blurEffectStyle：

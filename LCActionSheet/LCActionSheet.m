@@ -41,6 +41,8 @@
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, weak) UIButton *cancelButton;
 
+@property (nonatomic, weak) UIView *whiteBgView;
+
 @end
 
 @implementation LCActionSheet
@@ -211,8 +213,18 @@
                                                                           action:@selector(darkViewClicked)];
     [darkView addGestureRecognizer:tap];
     
+    UIView *whiteBgView         = [[UIView alloc] init];
+    whiteBgView.backgroundColor = [UIColor whiteColor];
+    [bottomView addSubview:whiteBgView];
+    [whiteBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(bottomView);
+    }];
+    self.whiteBgView = whiteBgView;
+    
     if (!self.unBlur) {
         [self blurBottomBgView];
+    } else {
+        whiteBgView.hidden = NO;
     }
     
     UILabel *titleLabel      = [[UILabel alloc] init];
@@ -328,6 +340,8 @@
 }
 
 - (void)blurBottomBgView {
+    self.whiteBgView.hidden = YES;
+    
     if (!self.blurEffectView) {
         UIBlurEffect *blurEffect           = [UIBlurEffect effectWithStyle:self.blurEffectStyle];
         UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
@@ -342,6 +356,8 @@
 }
 
 - (void)unBlurBottomBgView {
+    self.whiteBgView.hidden = NO;
+    
     if (self.blurEffectView) {
         [self.blurEffectView removeFromSuperview];
         self.blurEffectView = nil;
