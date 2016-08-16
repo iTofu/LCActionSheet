@@ -9,7 +9,6 @@
 #import "LCActionSheet.h"
 #import "LCActionSheetCell.h"
 #import "Masonry.h"
-#import "UIView+LCActionSheet.h"
 
 
 #define LC_ACTION_SHEET_BUTTON_HEIGHT       49.0f
