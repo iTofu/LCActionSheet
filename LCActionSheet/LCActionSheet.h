@@ -8,7 +8,7 @@
 //  GitHub: http://github.com/iTofu
 //  Mail:   mailto:devtip@163.com
 //
-//  V 2.3.1
+//  V 2.3.2
 
 #import <UIKit/UIKit.h>
 
@@ -131,6 +131,11 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
  *  Clear blur effect. Default is NO, don't clear blur effect.
  */
 @property (nonatomic, assign) BOOL unBlur;
+
+/**
+ *  Style of blur effect. iOS 8.0 +
+ */
+@property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
 
 
 @property (nonatomic, copy) LCActionSheetClickedBlock clickedBlock;

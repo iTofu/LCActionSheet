@@ -330,20 +330,23 @@
 
 - (void)blurBottomBgView {
     if (!self.blurEffectView) {
-        UIBlurEffect *blurEffect           = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+        UIBlurEffect *blurEffect           = [UIBlurEffect effectWithStyle:self.blurEffectStyle];
         UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
         [self.bottomView addSubview:blurEffectView];
         [blurEffectView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.bottomView);
         }];
         self.blurEffectView = blurEffectView;
+        
+        [self.bottomView sendSubviewToBack:blurEffectView];
     }
 }
 
 - (void)unBlurBottomBgView {
-    
-    [self.blurEffectView removeFromSuperview];
-    self.blurEffectView = nil;
+    if (self.blurEffectView) {
+        [self.blurEffectView removeFromSuperview];
+        self.blurEffectView = nil;
+    }
 }
 
 #pragma mark - Setter & Getter
@@ -394,6 +397,13 @@
     } else {
         [self blurBottomBgView];
     }
+}
+
+- (void)setBlurEffectStyle:(UIBlurEffectStyle)blurEffectStyle {
+    _blurEffectStyle = blurEffectStyle;
+    
+    [self unBlurBottomBgView];
+    [self blurBottomBgView];
 }
 
 @synthesize titleFont;

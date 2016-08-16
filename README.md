@@ -160,6 +160,15 @@ In me the tiger sniffs the rose.
 
 ## 版本 Release
 
+### V 2.3.2 (2016.08.16)
+
+* 可以自定义 blurEffectStyle：
+
+  ````objc
+  @property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
+  ````
+
+
 ### V 2.3.1 (2016.08.15)
 
 * 静态渲染模糊改为模糊蒙板。
