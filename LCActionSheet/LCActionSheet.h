@@ -165,7 +165,7 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
              otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
- *  Initialize an instance of LCActionSheet.
+ *  Initialize an instance of LCActionSheet with title array.
  *
  *  @param title                 title
  *  @param delegate              delegate
@@ -195,7 +195,7 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
             otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
- *  Initialize an instance of LCActionSheet.
+ *  Initialize an instance of LCActionSheet with title array.
  *
  *  @param title                 title
  *  @param delegate              delegate
@@ -228,7 +228,7 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
              otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
- *  Initialize an instance of LCActionSheet.
+ *  Initialize an instance of LCActionSheet with title array.
  *
  *  @param title                 title
  *  @param delegate              delegate
@@ -258,7 +258,7 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
             otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
- *  Initialize an instance of LCActionSheet.
+ *  Initialize an instance of LCActionSheet with title array.
  *
  *  @param title                 title
  *  @param delegate              delegate
