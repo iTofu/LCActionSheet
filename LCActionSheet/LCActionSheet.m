@@ -73,7 +73,7 @@
                  otherButtonTitleArray:otherButtonTitleArray];
 }
 
-+ (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedBlock)clickedBlock otherButtonTitles:(NSString *)otherButtonTitles, ... {
++ (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandle)clickedHandle otherButtonTitles:(NSString *)otherButtonTitles, ... {
     id eachObject;
     va_list argumentList;
     NSMutableArray *tempOtherButtonTitles = nil;
@@ -87,15 +87,15 @@
     }
     return [[self alloc] initWithTitle:title
                      cancelButtonTitle:cancelButtonTitle
-                               clicked:clickedBlock
+                               clicked:clickedHandle
                  otherButtonTitleArray:tempOtherButtonTitles];
 }
 
-+ (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedBlock)clickedBlock otherButtonTitleArray:(NSArray *)otherButtonTitleArray {
++ (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandle)clickedHandle otherButtonTitleArray:(NSArray *)otherButtonTitleArray {
     
     return [[self alloc] initWithTitle:title
                      cancelButtonTitle:cancelButtonTitle
-                               clicked:clickedBlock
+                               clicked:clickedHandle
                  otherButtonTitleArray:otherButtonTitleArray];
 }
 
@@ -123,7 +123,7 @@
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedBlock)clickedBlock otherButtonTitles:(NSString *)otherButtonTitles, ... {
+- (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandle)clickedHandle otherButtonTitles:(NSString *)otherButtonTitles, ... {
     if (self = [super init]) {
         id eachObject;
         va_list argumentList;
@@ -139,7 +139,7 @@
         
         self.title             = title;
         self.cancelButtonTitle = cancelButtonTitle;
-        self.clickedBlock      = clickedBlock;
+        self.clickedHandle      = clickedHandle;
         self.otherButtonTitles = tempOtherButtonTitles;
         
         [self setupView];
@@ -160,12 +160,12 @@
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedBlock)clickedBlock otherButtonTitleArray:(NSArray *)otherButtonTitleArray {
+- (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandle)clickedHandle otherButtonTitleArray:(NSArray *)otherButtonTitleArray {
     if (self = [super init]) {
         
         self.title             = title;
         self.cancelButtonTitle = cancelButtonTitle;
-        self.clickedBlock      = clickedBlock;
+        self.clickedHandle      = clickedHandle;
         self.otherButtonTitles = otherButtonTitleArray;
         
         [self setupView];
@@ -610,8 +610,8 @@
         [self.delegate willPresentActionSheet:self];
     }
     
-    if (self.willPresentBlock) {
-        self.willPresentBlock(self);
+    if (self.willPresentHandle) {
+        self.willPresentHandle(self);
     }
     
     [self layoutIfNeeded];
@@ -634,8 +634,8 @@
             [weakSelf.delegate didPresentActionSheet:self];
         }
         
-        if (weakSelf.didPresentBlock) {
-            weakSelf.didPresentBlock(self);
+        if (weakSelf.didPresentHandle) {
+            weakSelf.didPresentHandle(self);
         }
     }];
 }
@@ -645,8 +645,8 @@
         [self.delegate actionSheet:self willDismissWithButtonIndex:buttonIndex];
     }
     
-    if (self.willDismissBlock) {
-        self.willDismissBlock(self, buttonIndex);
+    if (self.willDismissHandle) {
+        self.willDismissHandle(self, buttonIndex);
     }
     
     __weak typeof(self) weakSelf = self;
@@ -670,8 +670,8 @@
             [weakSelf.delegate actionSheet:self didDismissWithButtonIndex:buttonIndex];
         }
         
-        if (weakSelf.didDismissBlock) {
-            weakSelf.didDismissBlock(self, buttonIndex);
+        if (weakSelf.didDismissHandle) {
+            weakSelf.didDismissHandle(self, buttonIndex);
         }
     }];
 }
@@ -687,8 +687,8 @@
         [self.delegate actionSheet:self clickedButtonAtIndex:0];
     }
     
-    if (self.clickedBlock) {
-        self.clickedBlock(self, 0);
+    if (self.clickedHandle) {
+        self.clickedHandle(self, 0);
     }
     
     [self hideWithButtonIndex:0];
@@ -704,8 +704,8 @@
         [self.delegate actionSheet:self clickedButtonAtIndex:indexPath.row + temp];
     }
     
-    if (self.clickedBlock) {
-        self.clickedBlock(self, indexPath.row + temp);
+    if (self.clickedHandle) {
+        self.clickedHandle(self, indexPath.row + temp);
     }
     
     [self hideWithButtonIndex:indexPath.row + temp];

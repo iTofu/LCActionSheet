@@ -10,11 +10,11 @@
 
 ![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo.gif)
 
-````
+```
 In me the tiger sniffs the rose.
 
 心有猛虎，细嗅蔷薇。
-````
+```
 
 欢迎访问 **[我的博客](http://LeoDev.me)**：http://LeoDev.me
 
@@ -65,17 +65,17 @@ In me the tiger sniffs the rose.
 
   1. 默认样式，迅速搞定
 
-    ````objc
+    ```objc
     LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Default LCActionSheet"
                                                       delegate:self
                                              cancelButtonTitle:@"Cancel"
                                              otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", nil];
     [actionSheet show];
-    ````
+    ```
 
   2. 可自定义项，[LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) 有完整注释
 
-    ````objc
+    ```objc
     LCActionSheet *actionSheet     = [[LCActionSheet alloc] initWithTitle:nil
                                                                  delegate:self
                                                         cancelButtonTitle:@"Cancel"
@@ -99,11 +99,11 @@ In me the tiger sniffs the rose.
     actionSheet.destructiveButtonColor    = [UIColor blueColor];
     
     [actionSheet show];
-    ````
+    ```
 
   3. Block
 
-    ````objc
+    ```objc
     LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" clicked:^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
         
         NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
@@ -130,11 +130,11 @@ In me the tiger sniffs the rose.
     };
     
     [actionSheet show];
-    ````
+    ```
 
   4. Delegate，可选实现
 
-    ````objc
+    ```objc
     #pragma mark - LCActionSheet Delegate
 
     - (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -156,10 +156,39 @@ In me the tiger sniffs the rose.
     - (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
         NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
     }
-    ````
+    ```
 
 
 ## 版本 Release
+
+### V 2.5.0 (2016.09.05 ⚠️ 属性名变化)
+
+* 添加 `cancenButtonIndex` 属性。在 `cancelTitle.length > 0` 的情况下始终返回 `0`，否则返回 `-1`：
+
+  ```objc
+  @interface LCActionSheet : UIView
+
+  @property (nonatomic, assign, readonly) NSInteger cancelButtonIndex;
+  ```
+
+* 修改 Block 属性命名：
+
+  ```objc
+  @property (nonatomic, copy) LCActionSheetClickedBlock     clickedBlock;
+  @property (nonatomic, copy) LCActionSheetWillPresentBlock willPresentBlock;
+  @property (nonatomic, copy) LCActionSheetDidPresentBlock  didPresentBlock;
+  @property (nonatomic, copy) LCActionSheetWillDismissBlock willDismissBlock;
+  @property (nonatomic, copy) LCActionSheetDidDismissBlock  didDismissBlock;
+
+  ->
+
+  @property (nonatomic, copy) LCActionSheetClickedHandle     clickedHandle;
+  @property (nonatomic, copy) LCActionSheetWillPresentHandle willPresentHandle;
+  @property (nonatomic, copy) LCActionSheetDidPresentHandle  didPresentHandle;
+  @property (nonatomic, copy) LCActionSheetWillDismissHandle willDismissHandle;
+  @property (nonatomic, copy) LCActionSheetDidDismissHandle  didDismissHandle;
+  ```
+
 
 ### V 2.3.3 (2016.08.16)
 
@@ -172,9 +201,9 @@ In me the tiger sniffs the rose.
 
 * 可以自定义 blurEffectStyle：
 
-  ````objc
+  ```objc
   @property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
-  ````
+  ```
 
 
 ### V 2.3.1 (2016.08.15)
@@ -186,7 +215,7 @@ In me the tiger sniffs the rose.
 
 * 重新实现 V 1.x 的方法，允许使用数组而不必须是多参数来设置按钮标题：
 
-  ````objc
+  ```objc
   #pragma mark Delegate
 
   + (instancetype)sheetWithTitle:(NSString *)title
@@ -211,7 +240,7 @@ In me the tiger sniffs the rose.
               cancelButtonTitle:(NSString *)cancelButtonTitle
                         clicked:(LCActionSheetClickedBlock)clickedBlock
           otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
-  ````
+  ```
 
 * 优化一些 UI 效果，主要是高亮状态的效果。
 
@@ -230,19 +259,19 @@ In me the tiger sniffs the rose.
 
 * 新增自定义项，[Issue 18](https://github.com/iTofu/LCActionSheet/issues/18) by [IAMJ](https://github.com/IAMJ)：
 
-  ````objc
+  ```objc
   destructiveButtonColor // 警示按钮颜色
-  ````
+  ```
 
 * 修改一个属性命名：
 
-  ````objc
+  ```objc
   // 与 UIActionSheet 命名保持一致，便于顺手敲出
   // V 2.1.0 给予 redButtonIndexSet 过期警告，下一版本将会移除该属性
   redButtonIndexSet -> destructiveButtonIndexSet
-  ````
+  ```
 
-### V 2.0.0 (⚠️ Important, 2016.07.16)
+### V 2.0.0 (2016.07.16, ⚠️ Important)
 
 * 彻底重构整个项目，满足目前收到的所有需求，功能只多不少，依然 [MIT](http://opensource.org/licenses/MIT) 共享。
 
@@ -297,9 +326,9 @@ In me the tiger sniffs the rose.
 
 * 添加对 [CocoaPods](https://cocoapods.org/) 的支持：
 
-  ````objc
+  ```objc
   pod 'LCActionSheet'
-  ````
+  ```
 
 
 ### V 1.0.0 (2015.05.08)

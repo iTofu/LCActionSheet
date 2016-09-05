@@ -8,7 +8,7 @@
 //  GitHub: http://github.com/iTofu
 //  Mail:   mailto:devtip@163.com
 //
-//  V 2.3.3
+//  V 2.5.0
 
 #import <UIKit/UIKit.h>
 
@@ -18,13 +18,28 @@
 
 #pragma mark - LCActionSheet Block
 
-typedef void(^LCActionSheetClickedBlock)(LCActionSheet *actionSheet, NSInteger buttonIndex);
+/**
+ *  Handle click button.
+ */
+typedef void(^LCActionSheetClickedHandle)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 
-typedef void(^LCActionSheetWillPresentBlock)(LCActionSheet *actionSheet);
-typedef void(^LCActionSheetDidPresentBlock)(LCActionSheet *actionSheet);
+/**
+ *  Handle action sheet will present.
+ */
+typedef void(^LCActionSheetWillPresentHandle)(LCActionSheet *actionSheet);
+/**
+ *  Handle action sheet did present.
+ */
+typedef void(^LCActionSheetDidPresentHandle)(LCActionSheet *actionSheet);
 
-typedef void(^LCActionSheetWillDismissBlock)(LCActionSheet *actionSheet, NSInteger buttonIndex);
-typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSInteger buttonIndex);
+/**
+ *  Handle action sheet will dismiss.
+ */
+typedef void(^LCActionSheetWillDismissHandle)(LCActionSheet *actionSheet, NSInteger buttonIndex);
+/**
+ *  Handle action sheet did dismiss.
+ */
+typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 
 
 #pragma mark - LCActionSheet Delegate
@@ -143,11 +158,11 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
 @property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
 
 
-@property (nonatomic, copy) LCActionSheetClickedBlock clickedBlock;
-@property (nonatomic, copy) LCActionSheetWillPresentBlock willPresentBlock;
-@property (nonatomic, copy) LCActionSheetDidPresentBlock didPresentBlock;
-@property (nonatomic, copy) LCActionSheetWillDismissBlock willDismissBlock;
-@property (nonatomic, copy) LCActionSheetDidDismissBlock didDismissBlock;
+@property (nonatomic, copy) LCActionSheetClickedHandle     clickedHandle;
+@property (nonatomic, copy) LCActionSheetWillPresentHandle willPresentHandle;
+@property (nonatomic, copy) LCActionSheetDidPresentHandle  didPresentHandle;
+@property (nonatomic, copy) LCActionSheetWillDismissHandle willDismissHandle;
+@property (nonatomic, copy) LCActionSheetDidDismissHandle  didDismissHandle;
 
 
 #pragma mark - Methods
@@ -222,14 +237,14 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
  *
  *  @param title             title
  *  @param cancelButtonTitle cancelButtonTitle
- *  @param clickedBlock      clickedBlock
+ *  @param clickedHandle      clickedHandle
  *  @param otherButtonTitles otherButtonTitles
  *
  *  @return An instance of LCActionSheet.
  */
 + (instancetype)sheetWithTitle:(NSString *)title
              cancelButtonTitle:(NSString *)cancelButtonTitle
-                       clicked:(LCActionSheetClickedBlock)clickedBlock
+                       clicked:(LCActionSheetClickedHandle)clickedHandle
              otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
@@ -237,14 +252,14 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
  *
  *  @param title                 title
  *  @param delegate              delegate
- *  @param clickedBlock          clickedBlock
+ *  @param clickedHandle          clickedHandle
  *  @param otherButtonTitleArray otherButtonTitleArray
  *
  *  @return An instance of LCActionSheet.
  */
 + (instancetype)sheetWithTitle:(NSString *)title
              cancelButtonTitle:(NSString *)cancelButtonTitle
-                       clicked:(LCActionSheetClickedBlock)clickedBlock
+                       clicked:(LCActionSheetClickedHandle)clickedHandle
          otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
 
 /**
@@ -252,14 +267,14 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
  *
  *  @param title             title
  *  @param cancelButtonTitle cancelButtonTitle
- *  @param clickedBlock      clickedBlock
+ *  @param clickedHandle      clickedHandle
  *  @param otherButtonTitles otherButtonTitles
  *
  *  @return An instance of LCActionSheet.
  */
 - (instancetype)initWithTitle:(NSString *)title
             cancelButtonTitle:(NSString *)cancelButtonTitle
-                      clicked:(LCActionSheetClickedBlock)clickedBlock
+                      clicked:(LCActionSheetClickedHandle)clickedHandle
             otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
@@ -267,14 +282,14 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
  *
  *  @param title                 title
  *  @param delegate              delegate
- *  @param clickedBlock          clickedBlock
+ *  @param clickedHandle          clickedHandle
  *  @param otherButtonTitleArray otherButtonTitleArray
  *
  *  @return An instance of LCActionSheet.
  */
 - (instancetype)initWithTitle:(NSString *)title
             cancelButtonTitle:(NSString *)cancelButtonTitle
-                      clicked:(LCActionSheetClickedBlock)clickedBlock
+                      clicked:(LCActionSheetClickedHandle)clickedHandle
         otherButtonTitleArray:(NSArray *)otherButtonTitleArray;
 
 
