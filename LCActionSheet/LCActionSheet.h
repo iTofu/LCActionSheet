@@ -48,12 +48,27 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 
 @optional
 
+/**
+ *  Handle click button.
+ */
 - (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
 
+/**
+ *  Handle action sheet will present.
+ */
 - (void)willPresentActionSheet:(LCActionSheet *)actionSheet;
+/**
+ *  Handle action sheet did present.
+ */
 - (void)didPresentActionSheet:(LCActionSheet *)actionSheet;
 
+/**
+ *  Handle action sheet will dismiss.
+ */
 - (void)actionSheet:(LCActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex;
+/**
+ *  Handle action sheet did dismiss.
+ */
 - (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex;
 
 @end
