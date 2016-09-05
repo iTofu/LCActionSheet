@@ -62,6 +62,11 @@ typedef void(^LCActionSheetDidDismissBlock)(LCActionSheet *actionSheet, NSIntege
 @property (nonatomic, copy) NSString *cancelButtonTitle;
 
 /**
+ *  Cancel button's index.
+ */
+@property (nonatomic, assign, readonly) NSInteger cancelButtonIndex;
+
+/**
  *  LCActionSheet's delegate.
  */
 @property (nonatomic, weak) id<LCActionSheetDelegate> delegate;

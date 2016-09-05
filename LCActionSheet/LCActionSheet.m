@@ -477,6 +477,10 @@
     [self updateCancelButton];
 }
 
+- (NSInteger)cancelButtonIndex {
+    return self.cancelButtonTitle.length > 0 ? 0 : -1;
+}
+
 - (UIFont *)titleFont {
     if (!titleFont) {
         titleFont = LC_ACTION_SHEET_TITLE_FONT;
