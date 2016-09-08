@@ -161,6 +161,11 @@ In me the tiger sniffs the rose.
 
 ## 版本 Release
 
+### V 2.5.1 (2016.09.08)
+
+* 修复一个更换字体失效的 Bug。
+
+
 ### V 2.5.0 (2016.09.05 ⚠️ 属性名变化)
 
 * 添加 `cancenButtonIndex` 属性。在 `cancelTitle.length > 0` 的情况下始终返回 `0`，否则返回 `-1`：

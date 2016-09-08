@@ -720,9 +720,10 @@
     LCActionSheetCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
         cell = [[LCActionSheetCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        cell.titleLabel.font      = self.buttonFont;
-        cell.titleLabel.textColor = self.buttonColor;
     }
+    
+    cell.titleLabel.font      = self.buttonFont;
+    cell.titleLabel.textColor = self.buttonColor;
     
     cell.titleLabel.text = self.otherButtonTitles[indexPath.row];
     

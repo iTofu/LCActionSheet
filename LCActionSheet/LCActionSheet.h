@@ -8,7 +8,7 @@
 //  GitHub: http://github.com/iTofu
 //  Mail:   mailto:devtip@163.com
 //
-//  V 2.5.0
+//  V 2.5.1
 
 #import <UIKit/UIKit.h>
 
@@ -168,7 +168,7 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 @property (nonatomic, assign) BOOL unBlur;
 
 /**
- *  Style of blur effect. iOS 8.0 +
+ *  Style of blur effect. Default is `UIBlurEffectStyleExtraLight`. iOS 8.0 +
  */
 @property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
 
