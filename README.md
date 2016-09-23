@@ -45,11 +45,11 @@ In me the tiger sniffs the rose.
 
 > 💬 **告示**
 > 
-> 英文还不错的同学可以抽空帮我翻译出 README 的英文版，我好往 [CocoaControls](https://www.cocoacontrols.com/) 上扔啊~
+> 英文还不错时间又充裕的同学可以帮我翻译出 README 的英文版，我好往 [CocoaControls](https://www.cocoacontrols.com/) 上扔啊~
 >
 > 可白文翻译，使用 [Markdown](http://www.appinn.com/markdown/) 编辑更佳！义务的哦，如果翻译用心的话我个人请你喝杯咖啡 ☕️！
 > 
-> 直接 [PR](https://github.com/iTofu/LCActionSheet/pulls) 或者 [发我邮箱](mailto://devtip@163.com) ：devtip@163.com 都可！
+> 直接 [PR](https://github.com/iTofu/LCActionSheet/pulls) 或者发我邮箱：devtip@163.com 都可！
 
 ## 代码 Code
 
