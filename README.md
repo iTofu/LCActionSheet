@@ -161,7 +161,7 @@ In me the tiger sniffs the rose.
 
 ## 使用者 Cases
 
-你可以在这里查看本框架的大部分集成统计：[CocoaPods](https://cocoapods.org/pods/LCActionSheet)。
+你可以在这里查看本框架的大部分集成统计：[CocoaPods 统计](https://cocoapods.org/pods/LCActionSheet)。
 
 下表列举了使用本框架的部分 App：
 
@@ -172,9 +172,7 @@ In me the tiger sniffs the rose.
 | [揽梦云签](https://itunes.apple.com/cn/app/id1006513728) | 略 |
 | ... | ... |
 
-* ...
-
-上表仅作统计和效果参考，如果你的应用中使用了本框架并希望加入上表，请发邮件到 devtip@163.com 或者 [新建一个 Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和链接，我会尽快添加 :)
+上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 devtip@163.com 或者 [新建一个 Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
 
 
 ## 版本 Release
