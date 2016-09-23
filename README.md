@@ -163,6 +163,12 @@ In me the tiger sniffs the rose.
 
 ### V 2.5.2 (2016.09.23)
 
+* **注：** 因 CocoaPods 对 Xcode 8 的一些问题（[Issue 5661](https://github.com/CocoaPods/CocoaPods/issues/5661)、[Issue 5843](https://github.com/CocoaPods/CocoaPods/issues/5843)...），暂时无法推到 CocoaPods Repo，你需要在 Podfile 进行如下的修改，直接指向当前版本即可：
+
+  ```ruby
+  pod 'LCActionSheet', :git => 'https://github.com/iTofu/LCActionSheet.git'
+  ```
+
 * 修复一个影响用户体验的效果，详见：[Issue 25](https://github.com/iTofu/LCActionSheet/issues/25)。
 
 * 完善剩下的部分注释，主要是 Block 部分。
