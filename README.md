@@ -159,6 +159,23 @@ In me the tiger sniffs the rose.
     ```
 
 
+## 使用者 Cases
+
+你可以在这里查看本框架的大部分集成统计：[CocoaPods](https://cocoapods.org/pods/LCActionSheet)。
+
+下表列举了使用本框架的部分 App：
+
+* [PrPr直播](https://itunes.apple.com/cn/app/id1150254794)
+
+* [德玛西亚](https://itunes.apple.com/cn/app/id1067564880)
+
+* [揽梦云签](https://itunes.apple.com/cn/app/id1006513728)
+
+* ...
+
+上表仅作统计和效果参考，如果你的应用中使用了本框架并希望加入上表，请发邮件到 devtip@163.com 或者新建一个 Issue 告诉我你的应用名称和链接，我会尽快添加 :)
+
+
 ## 版本 Release
 
 ### V 2.5.2 (2016.09.23)
