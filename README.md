@@ -165,11 +165,12 @@ In me the tiger sniffs the rose.
 
 下表列举了使用本框架的部分 App：
 
-* [PrPr直播](https://itunes.apple.com/cn/app/id1150254794)
-
-* [德玛西亚](https://itunes.apple.com/cn/app/id1067564880)
-
-* [揽梦云签](https://itunes.apple.com/cn/app/id1006513728)
+| 名称 | 简介 |
+| :-:  | :--- |
+| [PrPr直播](https://itunes.apple.com/cn/app/id1150254794) | 略 |
+| [德玛西亚](https://itunes.apple.com/cn/app/id1067564880) | 略 |
+| [揽梦云签](https://itunes.apple.com/cn/app/id1006513728) | 略 |
+| ... | ... |
 
 * ...
 
