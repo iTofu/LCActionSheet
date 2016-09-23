@@ -161,6 +161,13 @@ In me the tiger sniffs the rose.
 
 ## 版本 Release
 
+### V 2.5.2 (2016.09.23)
+
+* 修复一个影响用户体验的效果，详见：[Issue 25](https://github.com/iTofu/LCActionSheet/issues/25)。
+
+* 完善剩下的部分注释，主要是 Block 部分。
+
+
 ### V 2.5.1 (2016.09.08)
 
 * 修复一个更换字体失效的 Bug。

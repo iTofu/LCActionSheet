@@ -28,7 +28,7 @@
 #define LC_ACTION_SHEET_DARK_OPACITY        0.3f
 
 
-@interface LCActionSheet () <UITableViewDataSource, UITableViewDelegate>
+@interface LCActionSheet () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSArray *otherButtonTitles;
 
@@ -256,7 +256,7 @@
         CGFloat height = self.otherButtonTitles.count * self.buttonHeight;
         make.height.equalTo(@(height));
     }];
-    tableView.scrollEnabled = NO;
+//    tableView.scrollEnabled = NO;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView = tableView;
     
@@ -526,7 +526,7 @@
 - (void)setScrolling:(BOOL)scrolling {
     _scrolling = scrolling;
     
-    self.tableView.scrollEnabled = scrolling;
+//    self.tableView.scrollEnabled = scrolling;
     
     [self updateBottomView];
     [self updateTableView];
@@ -674,6 +674,12 @@
             weakSelf.didDismissHandle(self, buttonIndex);
         }
     }];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (!self.canScrolling) {
+        scrollView.contentOffset = CGPointMake(0, 0);
+    }
 }
 
 #pragma mark - LCActionSheet & UITableView Delegate

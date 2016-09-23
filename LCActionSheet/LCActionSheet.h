@@ -8,7 +8,7 @@
 //  GitHub: http://github.com/iTofu
 //  Mail:   mailto:devtip@163.com
 //
-//  V 2.5.1
+//  V 2.5.2
 
 #import <UIKit/UIKit.h>
 
@@ -158,7 +158,7 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 @property (nonatomic, assign) CGFloat darkOpacity;
 
 /**
- *  If you can tap darkView to dissmiss. Defalut is NO.
+ *  If you can tap darkView to dismiss. Defalut is NO, you can tap dardView to dismiss.
  */
 @property (nonatomic, assign) BOOL darkViewNoTaped;
 
@@ -173,10 +173,25 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 @property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
 
 
+/**
+ *  LCActionSheet clicked handle.
+ */
 @property (nonatomic, copy) LCActionSheetClickedHandle     clickedHandle;
+/**
+ *  LCActionSheet will present handle.
+ */
 @property (nonatomic, copy) LCActionSheetWillPresentHandle willPresentHandle;
+/**
+ *  LCActionSheet did present handle.
+ */
 @property (nonatomic, copy) LCActionSheetDidPresentHandle  didPresentHandle;
+/**
+ *  LCActionSheet will dismiss handle.
+ */
 @property (nonatomic, copy) LCActionSheetWillDismissHandle willDismissHandle;
+/**
+ *  LCActionSheet did dismiss handle.
+ */
 @property (nonatomic, copy) LCActionSheetDidDismissHandle  didDismissHandle;
 
 
