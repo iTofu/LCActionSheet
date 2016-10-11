@@ -175,7 +175,7 @@ In me the tiger sniffs the rose.
 上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 devtip@163.com 或者 [新建一个 Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
 
 
-## 版本 Release & Changelog
+## 版本 ChangeLog
 
 ### V 2.5.2 (2016.09.23)
 
@@ -183,7 +183,7 @@ In me the tiger sniffs the rose.
 
   ```ruby
   # 不需要了，作者借了个 Xcode 7 的电脑去更新了……
-  pod 'LCActionSheet'# , :git => 'https://github.com/iTofu/LCActionSheet.git'
+  pod 'LCActionSheet' # , :git => 'https://github.com/iTofu/LCActionSheet.git'
   ```
 
 * 修复一个影响用户体验的效果，详见：[Issue 25](https://github.com/iTofu/LCActionSheet/issues/25)。
