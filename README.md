@@ -175,7 +175,7 @@ In me the tiger sniffs the rose.
 上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 devtip@163.com 或者 [新建一个 Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
 
 
-## 版本 Release
+## 版本 Release & Changelog
 
 ### V 2.5.2 (2016.09.23)
 
