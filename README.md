@@ -182,7 +182,7 @@ In me the tiger sniffs the rose.
 * ~~**注：** 因 CocoaPods 对 Xcode 8 的一些问题（[Issue 5661](https://github.com/CocoaPods/CocoaPods/issues/5661)、[Issue 5843](https://github.com/CocoaPods/CocoaPods/issues/5843)...），暂时无法推到 CocoaPods Repo，你需要在 Podfile 进行如下的修改，直接指向当前版本即可：~~
 
   ```ruby
-  # 不需要了，作者借了个 Xcode 7 的电脑去更新了
+  # 不需要了，作者借了个 Xcode 7 的电脑去更新了……
   pod 'LCActionSheet'# , :git => 'https://github.com/iTofu/LCActionSheet.git'
   ```
 
