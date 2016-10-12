@@ -164,10 +164,10 @@ In me the tiger sniffs the rose.
 下表列举了使用本框架的部分 App：
 
 | 名称 | 简介 |
-| :-:  | :--- |
-| [PrPr直播](https://itunes.apple.com/cn/app/id1150254794) | 略 |
-| [德玛西亚](https://itunes.apple.com/cn/app/id1067564880) | 略 |
-| [揽梦云签](https://itunes.apple.com/cn/app/id1006513728) | 略 |
+| :-: | :--: |
+| [PrPr直播](https://itunes.apple.com/cn/app/id1150254794) | 一个略萌的二次元直播平台 |
+| [德玛西亚](https://itunes.apple.com/cn/app/id1067564880) | 一款 英雄联盟<sup>&copy;</sup> 周边 App |
+| [揽梦云签](https://itunes.apple.com/cn/app/id1006513728) | 考勤打卡 + 移动办公 |
 | ... | ... |
 
 上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 devtip@163.com 或者 [新建一个 Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
