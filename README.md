@@ -33,15 +33,13 @@ In me the tiger sniffs the rose.
 
 * 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) Delegate & Block 部分。
 
-* 重要注释完整，代码风格良好，满满的善意，便于阅读源码，照顾强迫症，拓展更多功能请前往 [PR](https://github.com/iTofu/LCActionSheet/pulls)。三个诸葛亮，顶个好工匠。
+* 支持 iPad，支持横屏，支持竖屏，支持一会横屏一会竖屏，支持超长标题，理论上支持无数个按钮，统统支持。
+
+* 注释完整，代码风格良好，善意满满，便于阅读源码，照顾强迫症，拓展更多功能请前往 [PR](https://github.com/iTofu/LCActionSheet/pulls)。三个诸葛亮，顶个好工匠。
 
 * 集百家之长，使用 [Masonry](https://github.com/SnapKit/Masonry) 进行布局，感谢 [Masonry](https://github.com/SnapKit/Masonry)。
 
-* 支持 iPad，支持横屏，支持竖屏，支持一会横屏一会竖屏，理论上支持无数个按钮，统统支持。
-
-* 有骨气。我就不改状态栏颜色，我就是这么刚。
-
-* 系统的 UIActionSheet，弱爆了。
+* 有骨气。就不改状态栏颜色，就是这么刚。
 
 > 💬 **告示**
 > 
@@ -73,7 +71,7 @@ In me the tiger sniffs the rose.
     [actionSheet show];
     ```
 
-  2. 可自定义项，[LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) 有完整注释
+  2. 可自定义项，[LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) 中有完整注释
 
     ```objc
     LCActionSheet *actionSheet     = [[LCActionSheet alloc] initWithTitle:nil
