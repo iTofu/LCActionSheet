@@ -8,7 +8,9 @@
 
 ☀️ 一款简约而不失强大的 ActionSheet，微信和微博都采取了极其类似的样式。
 
-![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo.gif)
+![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemoGif02.gif)
+
+如果上图没打开，直接前往 [Demo 图地址](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemoGif02.gif)。
 
 ```
 In me the tiger sniffs the rose.
@@ -16,7 +18,7 @@ In me the tiger sniffs the rose.
 心有猛虎，细嗅蔷薇。
 ```
 
-欢迎访问 **[我的博客](http://LeoDev.me)**：http://LeoDev.me
+欢迎访问我的博客：http://LeoDev.me
 
 
 ## 介绍 Introduction
