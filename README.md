@@ -108,6 +108,8 @@ In me the tiger sniffs the rose.
         
     } otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", @"Button 4", @"Button 5", @"Button 6", nil];
     
+    // actionSheet.blurEffectStyle = UIBlurEffectStyleLight;
+    
     actionSheet.scrolling          = YES;
     actionSheet.visibleButtonCount = 3.6f;
     
