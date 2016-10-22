@@ -39,6 +39,7 @@
 @property (nonatomic, weak) UIView *darkView;
 @property (nonatomic, weak) UILabel *titleLabel;
 @property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, weak) UIView *divisionView;
 @property (nonatomic, weak) UIButton *cancelButton;
 
 @property (nonatomic, weak) UIView *whiteBgView;
@@ -139,7 +140,7 @@
         
         self.title             = title;
         self.cancelButtonTitle = cancelButtonTitle;
-        self.clickedHandle      = clickedHandle;
+        self.clickedHandle     = clickedHandle;
         self.otherButtonTitles = tempOtherButtonTitles;
         
         [self setupView];
@@ -165,7 +166,7 @@
         
         self.title             = title;
         self.cancelButtonTitle = cancelButtonTitle;
-        self.clickedHandle      = clickedHandle;
+        self.clickedHandle     = clickedHandle;
         self.otherButtonTitles = otherButtonTitleArray;
         
         [self setupView];
@@ -256,7 +257,6 @@
         CGFloat height = self.otherButtonTitles.count * self.buttonHeight;
         make.height.equalTo(@(height));
     }];
-//    tableView.scrollEnabled = NO;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView = tableView;
     
@@ -287,6 +287,7 @@
         CGFloat height = self.cancelButtonTitle.length > 0 ? 6.0f : 0;
         make.height.equalTo(@(height));
     }];
+    self.divisionView = divisionView;
     
     NSString *bgImagePath        = [bundlePath stringByAppendingPathComponent:@"bgImage_HL@2x.png"];
     UIImage *bgImage             = [UIImage imageWithContentsOfFile:bgImagePath];
@@ -302,7 +303,7 @@
     [bottomView addSubview:cancelButton];
     [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);
-        make.top.equalTo(divisionView.mas_bottom);
+        make.bottom.equalTo(bottomView);
         
         CGFloat height = self.cancelButtonTitle.length > 0 ? self.buttonHeight : 0;
         make.height.equalTo(@(height));
@@ -382,6 +383,7 @@
     _cancelButtonTitle = [cancelButtonTitle copy];
     
     [self.cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
+    [self updateCancelButton];
 }
 
 - (void)setDestructiveButtonIndexSet:(NSSet *)destructiveButtonIndexSet {
@@ -478,7 +480,7 @@
 }
 
 - (NSInteger)cancelButtonIndex {
-    return self.cancelButtonTitle.length > 0 ? 0 : -1;
+    return 0;
 }
 
 - (UIFont *)titleFont {
@@ -597,6 +599,11 @@
 }
 
 - (void)updateCancelButton {
+    [self.divisionView mas_updateConstraints:^(MASConstraintMaker *make) {
+        CGFloat height = self.cancelButtonTitle.length > 0 ? 6.0f : 0;
+        make.height.equalTo(@(height));
+    }];
+    
     [self.cancelButton mas_updateConstraints:^(MASConstraintMaker *make) {
         CGFloat height = self.cancelButtonTitle.length > 0 ? self.buttonHeight : 0;
         make.height.equalTo(@(height));
@@ -701,20 +708,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger temp = 0;
-    if (self.cancelButtonTitle.length > 0) {
-        temp = 1;
-    }
     
     if ([self.delegate respondsToSelector:@selector(actionSheet:clickedButtonAtIndex:)]) {
-        [self.delegate actionSheet:self clickedButtonAtIndex:indexPath.row + temp];
+        [self.delegate actionSheet:self clickedButtonAtIndex:indexPath.row + 1];
     }
     
     if (self.clickedHandle) {
-        self.clickedHandle(self, indexPath.row + temp);
+        self.clickedHandle(self, indexPath.row + 1);
     }
     
-    [self hideWithButtonIndex:indexPath.row + temp];
+    [self hideWithButtonIndex:indexPath.row + 1];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -738,11 +741,7 @@
     cell.tag = indexPath.row + LC_ACTION_SHEET_CELL_TAG_INTERVAL;
     
     if (self.destructiveButtonIndexSet) {
-        NSInteger temp = 0;
-        if (self.cancelButtonTitle.length > 0) {
-            temp = 1;
-        }
-        if ([self.destructiveButtonIndexSet containsObject:[NSNumber numberWithInteger:indexPath.row + temp]]) {
+        if ([self.destructiveButtonIndexSet containsObject:[NSNumber numberWithInteger:indexPath.row + 1]]) {
             cell.titleLabel.textColor = self.destructiveButtonColor;
         } else {
             cell.titleLabel.textColor = self.buttonColor;

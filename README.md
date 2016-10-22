@@ -179,12 +179,23 @@ In me the tiger sniffs the rose.
 
 ## 版本 ChangeLog
 
+### V 2.6.0 (2016.10.22)
+
+* 修复取消按钮不显示时 UI 上的一个 Bug。另外你可以通过设置 `cancelButtonTitle` 为 `nil` 或 `@""` 来不显示取消按钮，这是一个 Tip，并不是一个 Feature。。。
+
+* 修正一些逻辑：
+
+  * `cancelButtonIndex` 始终返回 `0`。
+
+  * 除取消按钮以外的按钮自上而下 Index 从 1 递增。也就是说，无论取消按钮是否显示，Index 0 始终会被取消按钮占有。
+
+
 ### V 2.5.2 (2016.09.23)
 
 * ~~**注：** 因 CocoaPods 对 Xcode 8 的一些问题（[Issue 5661](https://github.com/CocoaPods/CocoaPods/issues/5661)、[Issue 5843](https://github.com/CocoaPods/CocoaPods/issues/5843)...），暂时无法推到 CocoaPods Repo，你需要在 Podfile 进行如下的修改，直接指向当前版本即可：~~
 
   ```ruby
-  # 不需要了，作者借了个 Xcode 7 的电脑去更新了……
+  # 不需要了，作者借了个 Xcode 7 的电脑去更新了。。。
   pod 'LCActionSheet' # , :git => 'https://github.com/iTofu/LCActionSheet.git'
   ```
 
@@ -200,7 +211,7 @@ In me the tiger sniffs the rose.
 
 ### V 2.5.0 (2016.09.05 ⚠️ 属性名变化)
 
-* 添加 `cancenButtonIndex` 属性。在 `cancelTitle.length > 0` 的情况下始终返回 `0`，否则返回 `-1`：
+* 添加 `cancenButtonIndex` 属性，始终返回 `0`：
 
   ```objc
   @interface LCActionSheet : UIView
