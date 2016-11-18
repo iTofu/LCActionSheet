@@ -29,11 +29,11 @@ In me the tiger sniffs the rose.
 
 * 格调高雅，风格百搭，怎么看怎么舒服。
 
-* 高度自定义，可能需要自定义的基本都考虑到了。详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) Properties 部分。
+* 高度自定义，可能需要自定义的基本都考虑到了。详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) [Properties](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L82) 部分。
 
 * 有代理，有 Block，可类方法，可实例方法，想怎样，就怎样。
 
-* 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) Delegate & Block 部分。
+* 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L45) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L19) 部分。
 
 * 支持 iPad，支持横屏，支持竖屏，支持一会横屏一会竖屏，支持超长标题，理论上支持无数个按钮，统统支持。
 
@@ -161,20 +161,20 @@ In me the tiger sniffs the rose.
     ```
 
 
-## 使用者 Cases
+## 相关应用 Partners
 
-你可以在这里查看本框架的大部分集成统计：[CocoaPods 统计](https://cocoapods.org/pods/LCActionSheet)。
+你可以在这里查看本框架的部分集成统计：[CocoaPods 统计](https://cocoapods.org/pods/LCActionSheet)。
 
 下表列举了使用本框架的部分 App：
 
 | 名称 | 简介 |
-| :-: | :--: |
-| [PrPr直播](https://itunes.apple.com/cn/app/id1150254794) | 一个略萌的二次元直播平台 |
-| [德玛西亚](https://itunes.apple.com/cn/app/id1067564880) | 一款 英雄联盟<sup>&copy;</sup> 周边 App |
+| :-: | :-: |
+| [PrPr直播](https://itunes.apple.com/cn/app/id1150254794) | 二次元直播平台 |
+| [德玛西亚](https://itunes.apple.com/cn/app/id1067564880) | 英雄联盟<sup>&copy;</sup> 周边 App |
 | [揽梦云签](https://itunes.apple.com/cn/app/id1006513728) | 考勤打卡 + 移动办公 |
 | ... | ... |
 
-上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 devtip@163.com 或者 [新建一个 Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
+注：**本框架开源且不含任何信息上传功能代码**，上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 devtip@163.com 或者 [新建一个 Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
 
 
 ## 版本 ChangeLog
@@ -428,13 +428,13 @@ In me the tiger sniffs the rose.
 
 ## 联系 Support
 
-* 有问题请前往 [New Issue](https://github.com/iTofu/LCActionSheet/issues/new)，谢谢 :)
+* 有疑问或建议请 [New Issue](https://github.com/iTofu/LCActionSheet/issues/new)，谢谢 :)
 
 * Mail: devtip@163.com
 
 * Blog: http://LeoDev.me
 
-* 如果你觉得我的项目对你有所帮助，想要进行一些捐赠的话，我也很感谢！👇
+* 如果你觉得我的项目对你有所帮助，想要进行捐赠的话，非常感谢你的情怀~
 
   ![Leo](http://7xl8ia.com1.z0.glb.clouddn.com/alipay.png)
 
