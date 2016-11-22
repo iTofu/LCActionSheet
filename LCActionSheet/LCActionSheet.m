@@ -44,6 +44,8 @@
 
 @property (nonatomic, weak) UIView *whiteBgView;
 
+@property (nonatomic, weak) UIView *lineView;
+
 @end
 
 @implementation LCActionSheet
@@ -275,6 +277,10 @@
         make.bottom.equalTo(tableView.mas_top);
         make.height.equalTo(@1);
     }];
+    self.lineView = lineView;
+    
+    self.lineView.hidden = !self.title || self.title.length == 0;
+    
     
     UIView *divisionView         = [[UIView alloc] init];
     divisionView.alpha           = 0.1f;
@@ -377,6 +383,8 @@
     [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.titleLabel.mas_bottom).offset(self.title.length > 0 ? 14.0f : 0);
     }];
+    
+    self.lineView.hidden = !self.title || self.title.length == 0;
 }
 
 - (void)setCancelButtonTitle:(NSString *)cancelButtonTitle {

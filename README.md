@@ -179,6 +179,12 @@ In me the tiger sniffs the rose.
 
 ## 版本 ChangeLog
 
+
+### V 2.6.1 (2016.11.22)
+
+* 优化标题为空时的效果。
+
+
 ### V 2.6.0 (2016.10.22)
 
 * 修复取消按钮不显示时 UI 上的一个 Bug。另外你可以通过设置 `cancelButtonTitle` 为 `nil` 或 `@""` 来不显示取消按钮，这是一个 Tip，并不是一个 Feature。。。
