@@ -474,7 +474,7 @@
 - (void)setButtonColor:(UIColor *)aButtonColor {
     buttonColor = aButtonColor;
     
-    self.cancelButton.titleLabel.textColor = aButtonColor;
+    [self.cancelButton setTitleColor:aButtonColor forState:UIControlStateNormal];
     [self.tableView reloadData];
 }
 

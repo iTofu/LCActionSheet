@@ -8,7 +8,7 @@
 //  GitHub: http://github.com/iTofu
 //  Mail:   mailto:devtip@163.com
 //
-//  V 2.6.1
+//  V 2.6.2
 
 #import <UIKit/UIKit.h>
 
