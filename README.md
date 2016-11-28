@@ -180,6 +180,11 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
+### V 2.6.3 (2016.11.28)
+
+* 修复 Bug：Swift 调用时，destructiveButtonIndexSet 设置无效，#28 by [Abel94](https://github.com/Abel94)。
+
+
 ### V 2.6.2 (2016.11.23)
 
 * 修复更换按钮颜色对取消按钮失效的 Bug。

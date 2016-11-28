@@ -9,6 +9,7 @@
 #import "LCActionSheet.h"
 #import "LCActionSheetCell.h"
 #import "Masonry.h"
+#import "NSSet+LCActionSheet.h"
 
 
 #define LC_ACTION_SHEET_BUTTON_HEIGHT       49.0f
@@ -397,7 +398,7 @@
 - (void)setDestructiveButtonIndexSet:(NSSet *)destructiveButtonIndexSet {
     _destructiveButtonIndexSet = destructiveButtonIndexSet;
     
-    if ([destructiveButtonIndexSet containsObject:@0]) {
+    if ([destructiveButtonIndexSet lc_contains:0]) {
         [self.cancelButton setTitleColor:self.destructiveButtonColor forState:UIControlStateNormal];
     } else {
         [self.cancelButton setTitleColor:self.buttonColor forState:UIControlStateNormal];
@@ -456,7 +457,7 @@
 - (void)setDestructiveButtonColor:(UIColor *)aDestructiveButtonColor {
     destructiveButtonColor = aDestructiveButtonColor;
     
-    if ([self.destructiveButtonIndexSet containsObject:@0]) {
+    if ([self.destructiveButtonIndexSet lc_contains:0]) {
         [self.cancelButton setTitleColor:self.destructiveButtonColor forState:UIControlStateNormal];
     } else {
         [self.cancelButton setTitleColor:self.buttonColor forState:UIControlStateNormal];
@@ -749,7 +750,7 @@
     cell.tag = indexPath.row + LC_ACTION_SHEET_CELL_TAG_INTERVAL;
     
     if (self.destructiveButtonIndexSet) {
-        if ([self.destructiveButtonIndexSet containsObject:[NSNumber numberWithInteger:indexPath.row + 1]]) {
+        if ([self.destructiveButtonIndexSet lc_contains:(int)indexPath.row + 1]) {
             cell.titleLabel.textColor = self.destructiveButtonColor;
         } else {
             cell.titleLabel.textColor = self.buttonColor;
