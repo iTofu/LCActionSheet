@@ -182,7 +182,7 @@ In me the tiger sniffs the rose.
 
 ### V 2.6.3 (2016.11.28)
 
-* 修复 Bug：Swift 调用时，destructiveButtonIndexSet 设置无效，#28 by [Abel94](https://github.com/Abel94)。
+* 修复 Bug：Swift 调用时，destructiveButtonIndexSet 设置无效，[#28](https://github.com/iTofu/LCActionSheet/issues/28) by [Abel94](https://github.com/Abel94)。
 
 
 ### V 2.6.2 (2016.11.23)
