@@ -167,40 +167,40 @@ In me the tiger sniffs the rose.
     }
     ```
 
-  5. [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0) 新增 LCActionSheetConfig 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，之后你还可以修改 LCActionSheet 实例的任意参数。示例代码如下：
+* [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0) 新增 LCActionSheetConfig 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，之后你还可以修改 LCActionSheet 实例的任意参数。示例代码如下：
 
-    ```objc
-    // 统一配置 Config 作用于全局样式
-    LCActionSheetConfig *config = [LCActionSheetConfig shared];
+  ```objc
+  // 统一配置 Config 作用于全局样式
+  LCActionSheetConfig *config = [LCActionSheetConfig shared];
 
-    config.title              = @"Common Title";
-    config.cancelButtonTitle  = @"Close";
-    config.titleColor         = [UIColor orangeColor];
-    config.buttonColor        = [UIColor greenColor];
-    config.titleFont          = [UIFont boldSystemFontOfSize:15.0f];
-    config.buttonFont         = [UIFont boldSystemFontOfSize:15.0f];
-    config.buttonHeight       = 60.0f;
-    config.scrolling          = YES;
-    config.visibleButtonCount = 3.6f;
-    config.darkViewNoTaped    = YES;
-    config.unBlur             = YES;
-    config.blurEffectStyle    = UIBlurEffectStyleDark;
+  config.title              = @"Common Title";
+  config.cancelButtonTitle  = @"Close";
+  config.titleColor         = [UIColor orangeColor];
+  config.buttonColor        = [UIColor greenColor];
+  config.titleFont          = [UIFont boldSystemFontOfSize:15.0f];
+  config.buttonFont         = [UIFont boldSystemFontOfSize:15.0f];
+  config.buttonHeight       = 60.0f;
+  config.scrolling          = YES;
+  config.visibleButtonCount = 3.6f;
+  config.darkViewNoTaped    = YES;
+  config.unBlur             = YES;
+  config.blurEffectStyle    = UIBlurEffectStyleDark;
 
-    config.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
-    config.destructiveButtonColor    = [UIColor blueColor];
+  config.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
+  config.destructiveButtonColor    = [UIColor blueColor];
 
-    // 初始化 LCActionSheet, 与之前的初始化没有区别, 框架内会根据 Config 初始化
-    LCActionSheet *sheet =
-    [[LCActionSheet alloc] initWithTitle:nil
-                                delegate:self
-                       cancelButtonTitle:@"Cancel"
-                       otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", nil];
+  // 初始化 LCActionSheet, 与之前的初始化没有区别, 框架内会根据 Config 初始化
+  LCActionSheet *sheet =
+  [[LCActionSheet alloc] initWithTitle:nil
+                              delegate:self
+                     cancelButtonTitle:@"Cancel"
+                     otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", nil];
 
-    // 如果当前样式与全局样式不同, 可以继续修改参数...
-    sheet.titleColor = [UIColor orangeColor];
+  // 如果当前样式与全局样式不同, 可以继续修改参数...
+  sheet.titleColor = [UIColor orangeColor];
 
-    [sheet show];
-    ```
+  [sheet show];
+  ```
 
 
 ## 小伙伴们 Partners
