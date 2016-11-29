@@ -36,9 +36,9 @@ In me the tiger sniffs the rose.
 
 * 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L45) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L19) 部分。
 
-* 支持 iPad，支持横屏，支持竖屏，支持一会横屏一会竖屏，支持超长标题，理论上支持无数个按钮，统统支持。
-
 * 支持统一配置 Config，作用于全局样式，告别冗余代码，更易维护，详见 [V 2.6.5](https://github.com/iTofu/LCActionSheet/releases/tag/2.6.5)。
+
+* 支持 iPad，支持横屏，支持竖屏，支持一会横屏一会竖屏，支持超长标题，理论上支持无数个按钮，统统支持。
 
 * 注释完整，代码风格良好，善意满满，便于阅读源码，照顾强迫症，拓展更多功能请前往 [PR](https://github.com/iTofu/LCActionSheet/pulls)。三个诸葛亮，顶个好工匠。
 
@@ -99,7 +99,6 @@ In me the tiger sniffs the rose.
     actionSheet.unBlur             = YES;
     actionSheet.blurEffectStyle    = UIBlurEffectStyleLight;
     
-    // V 2.1.0 use `destructiveButtonIndexSet` instead of `redButtonIndexSet`.
     actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
     actionSheet.destructiveButtonColor    = [UIColor blueColor];
     
@@ -201,11 +200,11 @@ In me the tiger sniffs the rose.
     ```
 
 
-## 相关应用 Partners
+## 小伙伴们 Partners
 
 你可以在这里查看本框架的部分集成统计：[CocoaPods 统计](https://cocoapods.org/pods/LCActionSheet)。
 
-下表列举了使用本框架的部分 App：
+下表列举了集成本框架的部分项目：
 
 | 名称 | 简介 |
 | :-: | :-: |
@@ -222,7 +221,7 @@ In me the tiger sniffs the rose.
 
 ### V 2.6.5 (2016.11.29)
 
-* 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数），使用方式见 [Usage](https://github.com/iTofu/LCActionSheet#代码-usage)。── [#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)。
+* 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数），使用方式见 [Usage](https://github.com/iTofu/LCActionSheet#代码-usage)。[#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)。
 
 * 重写 LCActionSheet 初始化逻辑。
 
