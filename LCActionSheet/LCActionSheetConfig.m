@@ -44,6 +44,8 @@
         self.buttonHeight           = LC_ACTION_SHEET_BUTTON_HEIGHT;
         self.animationDuration      = LC_ACTION_SHEET_ANIMATION_DURATION;
         self.darkOpacity            = LC_ACTION_SHEET_DARK_OPACITY;
+        
+        self.titleEdgeInsets        = UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f);
     }
     return self;
 }

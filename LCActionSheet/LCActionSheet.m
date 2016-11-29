@@ -184,6 +184,7 @@
     _darkViewNoTaped           = config.darkViewNoTaped;
     _unBlur                    = config.unBlur;
     _blurEffectStyle           = config.blurEffectStyle;
+    _titleEdgeInsets           = config.titleEdgeInsets;
     
     return self;
 }
@@ -205,7 +206,10 @@
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
         
-        CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 28.0f : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
+        CGFloat height =
+        (self.title.length > 0 ? self.titleTextSize.height + 2.0f + (self.titleEdgeInsets.top + self.titleEdgeInsets.bottom) : 0) +
+        (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) +
+        (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
         
         make.height.equalTo(@(height));
         make.bottom.equalTo(self).offset(height);
@@ -250,9 +254,9 @@
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [bottomView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(bottomView).offset(self.title.length > 0 ? 14.0f : 0);
-        make.left.equalTo(bottomView).offset(15.0f);
-        make.right.equalTo(bottomView).offset(-15.0f);
+        make.top.equalTo(bottomView).offset(self.title.length > 0 ? self.titleEdgeInsets.top : 0);
+        make.left.equalTo(bottomView).offset(self.titleEdgeInsets.left);
+        make.right.equalTo(bottomView).offset(-self.titleEdgeInsets.right);
         
         CGFloat height = self.title.length > 0 ? self.titleTextSize.height + 2.0f : 0;  // Prevent omit
         make.height.equalTo(@(height));
@@ -266,7 +270,7 @@
     [bottomView addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);
-        make.top.equalTo(titleLabel.mas_bottom).offset(self.title.length > 0 ? 14.0f : 0);
+        make.top.equalTo(titleLabel.mas_bottom).offset(self.title.length > 0 ? self.titleEdgeInsets.bottom : 0);
         
         CGFloat height = self.otherButtonTitles.count * self.buttonHeight;
         make.height.equalTo(@(height));
@@ -390,7 +394,7 @@
     [self updateTitleLabel];
     
     [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(self.title.length > 0 ? 14.0f : 0);
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(self.title.length > 0 ? self.titleEdgeInsets.bottom : 0);
     }];
     
     self.lineView.hidden = !self.title || self.title.length == 0;
@@ -507,8 +511,17 @@
     [self updateTableView];
 }
 
+- (void)setTitleEdgeInsets:(UIEdgeInsets)titleEdgeInsets {
+    _titleEdgeInsets = titleEdgeInsets;
+    
+    [self updateBottomView];
+    [self updateTitleLabel];
+    [self updateTableView];
+}
+
 - (CGSize)titleTextSize {
-    CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width - 30.0f,
+    CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width -
+                             (self.titleEdgeInsets.left + self.titleEdgeInsets.right),
                              MAXFLOAT);
     
     NSStringDrawingOptions opts =
@@ -530,16 +543,16 @@
 
 - (void)updateBottomView {
     [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-        CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 30.0f : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
+        CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 2.0f + (self.titleEdgeInsets.top + self.titleEdgeInsets.bottom) : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
         make.height.equalTo(@(height));
     }];
 }
 
 - (void)updateTitleLabel {
     [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.bottomView).offset(self.title.length > 0 ? 14.0f : 0);
-        make.left.equalTo(self.bottomView).offset(15.0f);
-        make.right.equalTo(self.bottomView).offset(-15.0f);
+        make.top.equalTo(self.bottomView).offset(self.title.length > 0 ? self.titleEdgeInsets.top : 0);
+        make.left.equalTo(self.bottomView).offset(self.titleEdgeInsets.left);
+        make.right.equalTo(self.bottomView).offset(-self.titleEdgeInsets.right);
         
         CGFloat height = self.title.length > 0 ? self.titleTextSize.height + 2.0f : 0;  // Prevent omit
         make.height.equalTo(@(height));
@@ -550,17 +563,19 @@
     if (!self.canScrolling) {
         [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(@(self.otherButtonTitles.count * self.buttonHeight));
+            make.top.equalTo(self.titleLabel.mas_bottom).offset(self.title.length > 0 ? self.titleEdgeInsets.bottom : 0);
         }];
     } else {
         [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(@(MIN(self.visibleButtonCount, self.otherButtonTitles.count) * self.buttonHeight));
+            make.top.equalTo(self.titleLabel.mas_bottom).offset(self.title.length > 0 ? self.titleEdgeInsets.bottom : 0);
         }];
     }
 }
 
 - (void)updateCancelButton {
     [self.divisionView mas_updateConstraints:^(MASConstraintMaker *make) {
-        CGFloat height = self.cancelButtonTitle.length > 0 ? 6.0f : 0;
+        CGFloat height = self.cancelButtonTitle.length > 0 ? 5.0f : 0;
         make.height.equalTo(@(height));
     }];
     
@@ -623,7 +638,7 @@
         weakSelf.darkView.userInteractionEnabled = NO;
         
         [weakSelf.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-            CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 28.0f : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
+            CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 2.0f + (self.titleEdgeInsets.top + self.titleEdgeInsets.bottom) : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
             make.bottom.equalTo(self).offset(height);
         }];
         

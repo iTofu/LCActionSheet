@@ -102,6 +102,9 @@ In me the tiger sniffs the rose.
     actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
     actionSheet.destructiveButtonColor    = [UIColor blueColor];
     
+    // V 2.7.0+
+    actionSheet.titleEdgeInsets = UIEdgeInsetsMake(10, 20, 30, 40);
+    
     [actionSheet show];
     ```
 
@@ -222,6 +225,16 @@ In me the tiger sniffs the rose.
 ### V 2.7.0 (2016.11.29)
 
 * 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数），使用方式见 [Usage](https://github.com/iTofu/LCActionSheet#代码-usage)。[#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)。
+
+* 添加 `titleEdgeInsets` 属性，默认值 `UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f)`，[#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)：
+
+  ```objc
+  @interface LCActionSheet : UIView
+
+  @property (nonatomic, assign) UIEdgeInsets titleEdgeInsets;
+
+  @end
+  ```
 
 * 重写 LCActionSheet 初始化逻辑。
 

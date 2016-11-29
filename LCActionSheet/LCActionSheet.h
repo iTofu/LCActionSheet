@@ -173,6 +173,11 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
  */
 @property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
 
+/**
+ *  Title's edge insets. Default is `UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f)`.
+ */
+@property (nonatomic, assign) UIEdgeInsets titleEdgeInsets;
+
 
 /**
  *  LCActionSheet clicked handle.

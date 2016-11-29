@@ -24,7 +24,6 @@
                                                       delegate:self
                                              cancelButtonTitle:@"Cancel"
                                              otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", nil];
-    actionSheet.blurEffectStyle = UIBlurEffectStyleDark;
     [actionSheet show];
 }
 
@@ -47,9 +46,12 @@
     actionSheet.darkViewNoTaped    = YES;
     actionSheet.unBlur             = YES;
     
-    // V 2.1.0 use `destructiveButtonIndexSet` instead `redButtonIndexSet`.
+    // V 2.1.0+ use `destructiveButtonIndexSet` instead `redButtonIndexSet`.
     actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
     actionSheet.destructiveButtonColor    = [UIColor blueColor];
+    
+    // V 2.7.0+
+    actionSheet.titleEdgeInsets = UIEdgeInsetsMake(10, 20, 30, 40);
     
     [actionSheet show];
 }
