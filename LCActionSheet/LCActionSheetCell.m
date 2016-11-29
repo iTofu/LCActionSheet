@@ -8,13 +8,14 @@
 
 #import "LCActionSheetCell.h"
 #import "Masonry.h"
+#import "LCActionSheetConfig.h"
 
 @interface LCActionSheetCell ()
 
 /**
  *  Highlighted View.
  */
-@property (nonatomic, weak) UIImageView *highlightedView;
+@property (nonatomic, weak) UIView *highlightedView;
 
 @end
 
@@ -25,26 +26,6 @@
         self.clipsToBounds = YES;
         self.backgroundColor = [UIColor clearColor];
         
-        NSString *bundlePath =
-        [[NSBundle bundleForClass:self.class] pathForResource:@"LCActionSheet"
-                                                       ofType:@"bundle"];
-        
-        NSString *highlightedPath = [bundlePath stringByAppendingPathComponent:@"bgImage_HL@2x.png"];
-        UIImage *highlightedImage = [UIImage imageWithContentsOfFile:highlightedPath];
-        
-        NSString *linePath = [bundlePath stringByAppendingPathComponent:@"cellLine@2x.png"];
-        UIImage *lineImage = [UIImage imageWithContentsOfFile:linePath];
-        
-        UIImageView *highlightedView  = [[UIImageView alloc] init];
-        highlightedView.image         = highlightedImage;
-        highlightedView.clipsToBounds = YES;
-        highlightedView.hidden        = YES;
-        [self.contentView addSubview:highlightedView];
-        self.highlightedView = highlightedView;
-        [highlightedView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView);
-        }];
-        
         UILabel *titleLabel = [[UILabel alloc] init];
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:titleLabel];
@@ -53,9 +34,19 @@
             make.edges.equalTo(self.contentView);
         }];
         
-        UIImageView *lineView  = [[UIImageView alloc] init];
-        lineView.image         = lineImage;
-        lineView.contentMode   = UIViewContentModeTop;
+        UIView *highlightedView  = [[UIView alloc] init];
+        highlightedView.backgroundColor = LC_ACTION_SHEET_CELL_LINE_COLOR;
+        highlightedView.clipsToBounds = YES;
+        highlightedView.hidden        = YES;
+        [self.contentView addSubview:highlightedView];
+        self.highlightedView = highlightedView;
+        [highlightedView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView);
+        }];
+        
+        UIView *lineView  = [[UIView alloc] init];
+        lineView.backgroundColor = LC_ACTION_SHEET_CELL_LINE_COLOR;
+        lineView.contentMode   = UIViewContentModeBottom;
         lineView.clipsToBounds = YES;
         [self.contentView addSubview:lineView];
         self.lineView = lineView;
@@ -70,9 +61,11 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {}
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
-//    if (self.tag != LC_ACTION_SHEET_CELL_TAG_INTERVAL) {
-//        self.lineView.hidden = highlighted;
-//    }
+    if (self.tag == LC_ACTION_SHEET_CELL_HIDDE_LINE_TAG) {
+        self.lineView.hidden = YES;
+    } else {
+        self.lineView.hidden = highlighted;
+    }
     
     self.highlightedView.hidden = !highlighted;
 }

@@ -23,6 +23,7 @@
 		76485DAE1D38FDD5009DDCA1 /* LCActionSheet.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 76485DAD1D38FDD5009DDCA1 /* LCActionSheet.bundle */; };
 		B325A80E1DEC33BF00FC118C /* NSSet+LCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B325A80D1DEC33BF00FC118C /* NSSet+LCActionSheet.m */; };
 		B3A97EA91DED26F3005A3432 /* LCActionSheetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A97EA81DED26F3005A3432 /* LCActionSheetConfig.m */; };
+		B3A97EAC1DED399D005A3432 /* UIImage+LCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A97EAB1DED399D005A3432 /* UIImage+LCActionSheet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		B325A80D1DEC33BF00FC118C /* NSSet+LCActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+LCActionSheet.m"; sourceTree = "<group>"; };
 		B3A97EA71DED26F3005A3432 /* LCActionSheetConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionSheetConfig.h; sourceTree = "<group>"; };
 		B3A97EA81DED26F3005A3432 /* LCActionSheetConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionSheetConfig.m; sourceTree = "<group>"; };
+		B3A97EAA1DED399D005A3432 /* UIImage+LCActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LCActionSheet.h"; sourceTree = "<group>"; };
+		B3A97EAB1DED399D005A3432 /* UIImage+LCActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LCActionSheet.m"; sourceTree = "<group>"; };
 		BABF5E94C346416C78FFEB04 /* libPods-LCActionSheetDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCActionSheetDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C49ACD37EB0B1289EC1C3B /* libPods-LCActionSheetDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCActionSheetDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92F5E438C3331543AF4FC11 /* Pods-LCActionSheetDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCActionSheetDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCActionSheetDemo/Pods-LCActionSheetDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				B3A97EA81DED26F3005A3432 /* LCActionSheetConfig.m */,
 				B325A80C1DEC33BF00FC118C /* NSSet+LCActionSheet.h */,
 				B325A80D1DEC33BF00FC118C /* NSSet+LCActionSheet.m */,
+				B3A97EAA1DED399D005A3432 /* UIImage+LCActionSheet.h */,
+				B3A97EAB1DED399D005A3432 /* UIImage+LCActionSheet.m */,
 			);
 			path = LCActionSheet;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 				76485DA71D38CD7C009DDCA1 /* LCActionSheet.m in Sources */,
 				76485DAA1D38F4DA009DDCA1 /* LCActionSheetCell.m in Sources */,
 				B3A97EA91DED26F3005A3432 /* LCActionSheetConfig.m in Sources */,
+				B3A97EAC1DED399D005A3432 /* UIImage+LCActionSheet.m in Sources */,
 				76485D791D38CB51009DDCA1 /* ViewController.m in Sources */,
 				76485D761D38CB51009DDCA1 /* AppDelegate.m in Sources */,
 				76485D731D38CB51009DDCA1 /* main.m in Sources */,

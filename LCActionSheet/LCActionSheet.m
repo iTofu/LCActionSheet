@@ -10,7 +10,7 @@
 #import "LCActionSheetCell.h"
 #import "Masonry.h"
 #import "NSSet+LCActionSheet.h"
-
+#import "UIImage+LCActionSheet.h"
 
 
 @interface LCActionSheet () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
@@ -274,22 +274,16 @@
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView = tableView;
     
-    
-    NSString *bundlePath   =
-    [[NSBundle bundleForClass:self.class] pathForResource:@"LCActionSheet"
-                                                   ofType:@"bundle"];
-    NSString *linePath     = [bundlePath stringByAppendingPathComponent:@"cellLine@2x.png"];
-    UIImage *lineImage     = [UIImage imageWithContentsOfFile:linePath];
 
-    UIImageView *lineView  = [[UIImageView alloc] init];
-    lineView.image         = lineImage;
+    UIView *lineView  = [[UIView alloc] init];
+    lineView.backgroundColor = LC_ACTION_SHEET_CELL_LINE_COLOR;
     lineView.contentMode   = UIViewContentModeBottom;
     lineView.clipsToBounds = YES;
     [bottomView addSubview:lineView];
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);
         make.bottom.equalTo(tableView.mas_top);
-        make.height.equalTo(@1);
+        make.height.equalTo(@0.5f);
     }];
     self.lineView = lineView;
     
@@ -302,24 +296,25 @@
     [bottomView addSubview:divisionView];
     [divisionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);
-        make.top.equalTo(tableView.mas_bottom).offset(-1.0f);
+        make.top.equalTo(tableView.mas_bottom);
         
-        CGFloat height = self.cancelButtonTitle.length > 0 ? 6.0f : 0;
+        CGFloat height = self.cancelButtonTitle.length > 0 ? 5.0f : 0;
         make.height.equalTo(@(height));
     }];
     self.divisionView = divisionView;
-    
-    NSString *bgImagePath        = [bundlePath stringByAppendingPathComponent:@"bgImage_HL@2x.png"];
-    UIImage *bgImage             = [UIImage imageWithContentsOfFile:bgImagePath];
 
     UIButton *cancelButton       = [UIButton buttonWithType:UIButtonTypeCustom];
     cancelButton.backgroundColor = [UIColor clearColor];
     cancelButton.titleLabel.font = self.buttonFont;
     [cancelButton setTitle:self.cancelButtonTitle forState:UIControlStateNormal];
     [cancelButton setTitleColor:self.buttonColor forState:UIControlStateNormal];
-    [cancelButton setBackgroundImage:bgImage forState:UIControlStateHighlighted];
-    [cancelButton setBackgroundImage:bgImage forState:UIControlStateSelected];
-    [cancelButton addTarget:self action:@selector(cancelButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [cancelButton setBackgroundImage:[UIImage imageWithColor:LC_ACTION_SHEET_CELL_LINE_COLOR]
+                            forState:UIControlStateHighlighted];
+    [cancelButton setBackgroundImage:[UIImage imageWithColor:LC_ACTION_SHEET_CELL_LINE_COLOR]
+                            forState:UIControlStateSelected];
+    [cancelButton addTarget:self
+                     action:@selector(cancelButtonClicked)
+           forControlEvents:UIControlEventTouchUpInside];
     [bottomView addSubview:cancelButton];
     [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);
@@ -702,9 +697,13 @@
     
     cell.titleLabel.text = self.otherButtonTitles[indexPath.row];
     
-    cell.lineView.hidden = indexPath.row == MAX(self.otherButtonTitles.count - 1, 0);
+//    cell.lineView.hidden = indexPath.row == MAX(self.otherButtonTitles.count - 1, 0);
     
-    cell.tag = indexPath.row + LC_ACTION_SHEET_CELL_TAG_INTERVAL;
+    if (indexPath.row == MAX(self.otherButtonTitles.count - 1, 0)) {
+        cell.tag = LC_ACTION_SHEET_CELL_HIDDE_LINE_TAG;
+    } else {
+        cell.tag = LC_ACTION_SHEET_CELL_NO_HIDDE_LINE_TAG;
+    }
     
     if (self.destructiveButtonIndexSet) {
         if ([self.destructiveButtonIndexSet lc_contains:(int)indexPath.row + 1]) {

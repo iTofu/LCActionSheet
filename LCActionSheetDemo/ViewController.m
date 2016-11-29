@@ -24,6 +24,7 @@
                                                       delegate:self
                                              cancelButtonTitle:@"Cancel"
                                              otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", nil];
+    actionSheet.blurEffectStyle = UIBlurEffectStyleDark;
     [actionSheet show];
 }
 
