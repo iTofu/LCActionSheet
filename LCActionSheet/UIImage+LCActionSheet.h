@@ -11,7 +11,7 @@
 @interface UIImage (LCActionSheet)
 
 /**
- Create image with the color.
+ *  Create image with the color.
  */
 + (instancetype)imageWithColor:(UIColor *)color;
 

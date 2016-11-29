@@ -36,7 +36,7 @@ In me the tiger sniffs the rose.
 
 * 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L45) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L19) 部分。
 
-* 支持统一配置 Config，作用于全局样式，告别冗余代码，更易维护，详见 [V 2.6.5](https://github.com/iTofu/LCActionSheet/releases/tag/2.6.5)。
+* 支持统一配置 Config，作用于全局样式，告别冗余代码，更易维护，详见 [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)。
 
 * 支持 iPad，支持横屏，支持竖屏，支持一会横屏一会竖屏，支持超长标题，理论上支持无数个按钮，统统支持。
 
@@ -164,7 +164,7 @@ In me the tiger sniffs the rose.
     }
     ```
 
-  5. [V 2.6.5](https://github.com/iTofu/LCActionSheet/releases/tag/2.6.5) 新增 LCActionSheetConfig 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，之后你还可以修改 LCActionSheet 实例的任意参数。示例代码如下：
+  5. [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0) 新增 LCActionSheetConfig 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，之后你还可以修改 LCActionSheet 实例的任意参数。示例代码如下：
 
     ```objc
     // 统一配置 Config 作用于全局样式
@@ -219,7 +219,7 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
-### V 2.6.5 (2016.11.29)
+### V 2.7.0 (2016.11.29)
 
 * 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数），使用方式见 [Usage](https://github.com/iTofu/LCActionSheet#代码-usage)。[#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)。
 
