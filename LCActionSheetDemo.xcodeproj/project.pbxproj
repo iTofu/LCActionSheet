@@ -20,7 +20,6 @@
 		76485D971D38CB51009DDCA1 /* LCActionSheetDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76485D961D38CB51009DDCA1 /* LCActionSheetDemoUITests.m */; };
 		76485DA71D38CD7C009DDCA1 /* LCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 76485DA61D38CD7C009DDCA1 /* LCActionSheet.m */; };
 		76485DAA1D38F4DA009DDCA1 /* LCActionSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76485DA91D38F4DA009DDCA1 /* LCActionSheetCell.m */; };
-		76485DAE1D38FDD5009DDCA1 /* LCActionSheet.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 76485DAD1D38FDD5009DDCA1 /* LCActionSheet.bundle */; };
 		B325A80E1DEC33BF00FC118C /* NSSet+LCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B325A80D1DEC33BF00FC118C /* NSSet+LCActionSheet.m */; };
 		B3A97EA91DED26F3005A3432 /* LCActionSheetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A97EA81DED26F3005A3432 /* LCActionSheetConfig.m */; };
 		B3A97EAC1DED399D005A3432 /* UIImage+LCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A97EAB1DED399D005A3432 /* UIImage+LCActionSheet.m */; };
@@ -68,7 +67,6 @@
 		76485DA61D38CD7C009DDCA1 /* LCActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionSheet.m; sourceTree = "<group>"; };
 		76485DA81D38F4DA009DDCA1 /* LCActionSheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionSheetCell.h; sourceTree = "<group>"; };
 		76485DA91D38F4DA009DDCA1 /* LCActionSheetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionSheetCell.m; sourceTree = "<group>"; };
-		76485DAD1D38FDD5009DDCA1 /* LCActionSheet.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LCActionSheet.bundle; sourceTree = "<group>"; };
 		B325A80C1DEC33BF00FC118C /* NSSet+LCActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+LCActionSheet.h"; sourceTree = "<group>"; };
 		B325A80D1DEC33BF00FC118C /* NSSet+LCActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+LCActionSheet.m"; sourceTree = "<group>"; };
 		B3A97EA71DED26F3005A3432 /* LCActionSheetConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionSheetConfig.h; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 		76485DA41D38CBF3009DDCA1 /* LCActionSheet */ = {
 			isa = PBXGroup;
 			children = (
-				76485DAD1D38FDD5009DDCA1 /* LCActionSheet.bundle */,
 				76485DA51D38CD7C009DDCA1 /* LCActionSheet.h */,
 				76485DA61D38CD7C009DDCA1 /* LCActionSheet.m */,
 				76485DA81D38F4DA009DDCA1 /* LCActionSheetCell.h */,
@@ -330,7 +327,6 @@
 			files = (
 				76485D811D38CB51009DDCA1 /* LaunchScreen.storyboard in Resources */,
 				76485D7E1D38CB51009DDCA1 /* Assets.xcassets in Resources */,
-				76485DAE1D38FDD5009DDCA1 /* LCActionSheet.bundle in Resources */,
 				76485D7C1D38CB51009DDCA1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
