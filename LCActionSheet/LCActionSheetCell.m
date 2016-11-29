@@ -26,14 +26,6 @@
         self.clipsToBounds = YES;
         self.backgroundColor = [UIColor clearColor];
         
-        UILabel *titleLabel = [[UILabel alloc] init];
-        titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.contentView addSubview:titleLabel];
-        self.titleLabel = titleLabel;
-        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView);
-        }];
-        
         UIView *highlightedView  = [[UIView alloc] init];
         highlightedView.backgroundColor = LC_ACTION_SHEET_CELL_LINE_COLOR;
         highlightedView.clipsToBounds = YES;
@@ -41,6 +33,14 @@
         [self.contentView addSubview:highlightedView];
         self.highlightedView = highlightedView;
         [highlightedView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView);
+        }];
+        
+        UILabel *titleLabel = [[UILabel alloc] init];
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        [self.contentView addSubview:titleLabel];
+        self.titleLabel = titleLabel;
+        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.contentView);
         }];
         
