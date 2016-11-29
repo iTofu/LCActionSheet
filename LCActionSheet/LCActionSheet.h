@@ -1,16 +1,17 @@
 //
 //  LCActionSheet.h
-//  LCActionSheetDemo
+//  LCActionSheet
 //
-//  Created by Leo on 16/7/15.
+//  Created by Leo on 2015/4/27.
 //  Copyright © 2016年 Leo（http://LeoDev.me）. All rights reserved.
 //
 //  GitHub: http://github.com/iTofu
 //  Mail:   mailto:devtip@163.com
 //
-//  V 2.6.3
+//  V 2.6.5
 
 #import <UIKit/UIKit.h>
+#import "LCActionSheetConfig.h"
 
 
 @class LCActionSheet;

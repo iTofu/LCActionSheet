@@ -1,8 +1,8 @@
 //
 //  LCActionSheet.m
-//  LCActionSheetDemo
+//  LCActionSheet
 //
-//  Created by Leo on 16/7/15.
+//  Created by Leo on 2015/4/27.
 //  Copyright © 2016年 Leo（http://LeoDev.me）. All rights reserved.
 //
 
@@ -11,22 +11,6 @@
 #import "Masonry.h"
 #import "NSSet+LCActionSheet.h"
 
-
-#define LC_ACTION_SHEET_BUTTON_HEIGHT       49.0f
-
-#define LC_ACTION_SHEET_SCREEN_SIZE         [UIScreen mainScreen].bounds.size
-
-#define LC_ACTION_SHEET_COLOR(r, g, b)      [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0f]
-
-#define LC_ACTION_SHEET_RED_COLOR           LC_ACTION_SHEET_COLOR(255, 10, 10)
-
-#define LC_ACTION_SHEET_TITLE_FONT          [UIFont systemFontOfSize:14.0f]
-
-#define LC_ACTION_SHEET_BUTTON_FONT         [UIFont systemFontOfSize:18.0f]
-
-#define LC_ACTION_SHEET_ANIMATION_DURATION  0.3f
-
-#define LC_ACTION_SHEET_DARK_OPACITY        0.3f
 
 
 @interface LCActionSheet () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
@@ -105,6 +89,8 @@
 
 - (instancetype)initWithTitle:(NSString *)title delegate:(id<LCActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {
     if (self = [super init]) {
+        [self config:[LCActionSheetConfig shared]];
+        
         id eachObject;
         va_list argumentList;
         NSMutableArray *tempOtherButtonTitles = nil;
@@ -129,6 +115,8 @@
 
 - (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandle)clickedHandle otherButtonTitles:(NSString *)otherButtonTitles, ... {
     if (self = [super init]) {
+        [self config:[LCActionSheetConfig shared]];
+        
         id eachObject;
         va_list argumentList;
         NSMutableArray *tempOtherButtonTitles = nil;
@@ -153,6 +141,7 @@
 
 - (instancetype)initWithTitle:(NSString *)title delegate:(id<LCActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitleArray:(NSArray *)otherButtonTitleArray {
     if (self = [super init]) {
+        [self config:[LCActionSheetConfig shared]];
         
         self.title             = title;
         self.delegate          = delegate;
@@ -166,6 +155,7 @@
 
 - (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandle)clickedHandle otherButtonTitleArray:(NSArray *)otherButtonTitleArray {
     if (self = [super init]) {
+        [self config:[LCActionSheetConfig shared]];
         
         self.title             = title;
         self.cancelButtonTitle = cancelButtonTitle;
@@ -174,6 +164,27 @@
         
         [self setupView];
     }
+    return self;
+}
+
+- (instancetype)config:(LCActionSheetConfig *)config {
+    _title                     = config.title;
+    _cancelButtonTitle         = config.cancelButtonTitle;
+    _destructiveButtonIndexSet = config.destructiveButtonIndexSet;
+    _destructiveButtonColor    = config.destructiveButtonColor;
+    _titleColor                = config.titleColor;
+    _buttonColor               = config.buttonColor;
+    _titleFont                 = config.titleFont;
+    _buttonFont                = config.buttonFont;
+    _buttonHeight              = config.buttonHeight;
+    _scrolling                 = config.canScrolling;
+    _visibleButtonCount        = config.visibleButtonCount;
+    _animationDuration         = config.animationDuration;
+    _darkOpacity               = config.darkOpacity;
+    _darkViewNoTaped           = config.darkViewNoTaped;
+    _unBlur                    = config.unBlur;
+    _blurEffectStyle           = config.blurEffectStyle;
+    
     return self;
 }
 
@@ -264,7 +275,9 @@
     self.tableView = tableView;
     
     
-    NSString *bundlePath   = [[NSBundle bundleForClass:self.class] pathForResource:@"LCActionSheet" ofType:@"bundle"];
+    NSString *bundlePath   =
+    [[NSBundle bundleForClass:self.class] pathForResource:@"LCActionSheet"
+                                                   ofType:@"bundle"];
     NSString *linePath     = [bundlePath stringByAppendingPathComponent:@"cellLine@2x.png"];
     UIImage *lineImage     = [UIImage imageWithContentsOfFile:linePath];
 
@@ -432,15 +445,8 @@
     [self blurBottomBgView];
 }
 
-@synthesize titleFont;
-@synthesize buttonFont;
-@synthesize titleColor;
-@synthesize buttonColor;
-@synthesize buttonHeight;
-@synthesize destructiveButtonColor;
-
 - (void)setTitleFont:(UIFont *)aTitleFont {
-    titleFont = aTitleFont;
+    _titleFont = aTitleFont;
     
     self.titleLabel.font = aTitleFont;
     [self updateBottomView];
@@ -448,14 +454,14 @@
 }
 
 - (void)setButtonFont:(UIFont *)aButtonFont {
-    buttonFont = aButtonFont;
+    _buttonFont = aButtonFont;
     
     self.cancelButton.titleLabel.font = aButtonFont;
     [self.tableView reloadData];
 }
 
 - (void)setDestructiveButtonColor:(UIColor *)aDestructiveButtonColor {
-    destructiveButtonColor = aDestructiveButtonColor;
+    _destructiveButtonColor = aDestructiveButtonColor;
     
     if ([self.destructiveButtonIndexSet lc_contains:0]) {
         [self.cancelButton setTitleColor:self.destructiveButtonColor forState:UIControlStateNormal];
@@ -467,20 +473,20 @@
 }
 
 - (void)setTitleColor:(UIColor *)aTitleColor {
-    titleColor = aTitleColor;
+    _titleColor = aTitleColor;
     
     self.titleLabel.textColor = aTitleColor;
 }
 
 - (void)setButtonColor:(UIColor *)aButtonColor {
-    buttonColor = aButtonColor;
+    _buttonColor = aButtonColor;
     
     [self.cancelButton setTitleColor:aButtonColor forState:UIControlStateNormal];
     [self.tableView reloadData];
 }
 
 - (void)setButtonHeight:(CGFloat)aButtonHeight {
-    buttonHeight = aButtonHeight;
+    _buttonHeight = aButtonHeight;
     
     [self.tableView reloadData];
     [self updateBottomView];
@@ -492,52 +498,8 @@
     return 0;
 }
 
-- (UIFont *)titleFont {
-    if (!titleFont) {
-        titleFont = LC_ACTION_SHEET_TITLE_FONT;
-    }
-    return titleFont;
-}
-
-- (UIFont *)buttonFont {
-    if (!buttonFont) {
-        buttonFont = LC_ACTION_SHEET_BUTTON_FONT;
-    }
-    return buttonFont;
-}
-
-- (UIColor *)destructiveButtonColor {
-    if (!destructiveButtonColor) {
-        destructiveButtonColor = LC_ACTION_SHEET_RED_COLOR;
-    }
-    return destructiveButtonColor;
-}
-
-- (UIColor *)titleColor {
-    if (!titleColor) {
-        titleColor = LC_ACTION_SHEET_COLOR(111, 111, 111);
-    }
-    return titleColor;
-}
-
-- (UIColor *)buttonColor {
-    if (!buttonColor) {
-        buttonColor = [UIColor blackColor];
-    }
-    return buttonColor;
-}
-
-- (CGFloat)buttonHeight {
-    if (!buttonHeight) {
-        buttonHeight = LC_ACTION_SHEET_BUTTON_HEIGHT;
-    }
-    return buttonHeight;
-}
-
 - (void)setScrolling:(BOOL)scrolling {
     _scrolling = scrolling;
-    
-//    self.tableView.scrollEnabled = scrolling;
     
     [self updateBottomView];
     [self updateTableView];
@@ -551,28 +513,22 @@
 }
 
 - (CGSize)titleTextSize {
-    _titleTextSize = [self.title boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 30.0f, MAXFLOAT)
-                                              options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                           attributes:@{NSFontAttributeName : self.titleFont}
-                                              context:nil].size;
+    CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width - 30.0f,
+                             MAXFLOAT);
+    
+    NSStringDrawingOptions opts =
+    NSStringDrawingUsesLineFragmentOrigin |
+    NSStringDrawingUsesFontLeading;
+    
+    NSDictionary *attrs = @{NSFontAttributeName : self.titleFont};
+    
+    _titleTextSize =
+    [self.title boundingRectWithSize:size
+                             options:opts
+                          attributes:attrs
+                             context:nil].size;
     
     return _titleTextSize;
-}
-
-- (CGFloat)animationDuration {
-    if (!_animationDuration) {
-        _animationDuration = LC_ACTION_SHEET_ANIMATION_DURATION;
-    }
-    
-    return _animationDuration;
-}
-
-- (CGFloat)darkOpacity {
-    if (!_darkOpacity) {
-        _darkOpacity = LC_ACTION_SHEET_DARK_OPACITY;
-    }
-    
-    return _darkOpacity;
 }
 
 #pragma mark - Update Views
@@ -737,7 +693,8 @@
     static NSString *cellID = @"LCActionSheetCell";
     LCActionSheetCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
-        cell = [[LCActionSheetCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell = [[LCActionSheetCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                        reuseIdentifier:cellID];
     }
     
     cell.titleLabel.font      = self.buttonFont;
@@ -745,7 +702,7 @@
     
     cell.titleLabel.text = self.otherButtonTitles[indexPath.row];
     
-    cell.lineView.hidden = indexPath.row == 0;
+    cell.lineView.hidden = indexPath.row == MAX(self.otherButtonTitles.count - 1, 0);
     
     cell.tag = indexPath.row + LC_ACTION_SHEET_CELL_TAG_INTERVAL;
     

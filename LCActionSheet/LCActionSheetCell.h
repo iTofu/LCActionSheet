@@ -1,8 +1,8 @@
 //
 //  LCActionSheetCell.h
-//  LCActionSheetDemo
+//  LCActionSheet
 //
-//  Created by Leo on 16/7/15.
+//  Created by Leo on 2016/7/15.
 //  Copyright © 2016年 Leo（http://LeoDev.me）. All rights reserved.
 //
 

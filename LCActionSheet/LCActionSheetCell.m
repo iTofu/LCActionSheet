@@ -1,12 +1,13 @@
 //
 //  LCActionSheetCell.m
-//  LCActionSheetDemo
+//  LCActionSheet
 //
-//  Created by Leo on 16/7/15.
+//  Created by Leo on 2016/7/15.
 //  Copyright © 2016年 Leo（http://LeoDev.me）. All rights reserved.
 //
 
 #import "LCActionSheetCell.h"
+#import "Masonry.h"
 
 @interface LCActionSheetCell ()
 
@@ -24,7 +25,9 @@
         self.clipsToBounds = YES;
         self.backgroundColor = [UIColor clearColor];
         
-        NSString *bundlePath = [[NSBundle bundleForClass:self.class] pathForResource:@"LCActionSheet" ofType:@"bundle"];
+        NSString *bundlePath =
+        [[NSBundle bundleForClass:self.class] pathForResource:@"LCActionSheet"
+                                                       ofType:@"bundle"];
         
         NSString *highlightedPath = [bundlePath stringByAppendingPathComponent:@"bgImage_HL@2x.png"];
         UIImage *highlightedImage = [UIImage imageWithContentsOfFile:highlightedPath];
@@ -36,30 +39,32 @@
         highlightedView.image         = highlightedImage;
         highlightedView.clipsToBounds = YES;
         highlightedView.hidden        = YES;
-        [self addSubview:highlightedView];
+        [self.contentView addSubview:highlightedView];
         self.highlightedView = highlightedView;
+        [highlightedView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView);
+        }];
         
         UILabel *titleLabel = [[UILabel alloc] init];
         titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self addSubview:titleLabel];
+        [self.contentView addSubview:titleLabel];
         self.titleLabel = titleLabel;
+        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView);
+        }];
         
         UIImageView *lineView  = [[UIImageView alloc] init];
         lineView.image         = lineImage;
         lineView.contentMode   = UIViewContentModeTop;
         lineView.clipsToBounds = YES;
-        [self addSubview:lineView];
+        [self.contentView addSubview:lineView];
         self.lineView = lineView;
+        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.equalTo(self.contentView);
+            make.height.equalTo(@0.5f);
+        }];
     }
     return self;
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.highlightedView.frame = self.bounds;
-    self.titleLabel.frame      = self.bounds;
-    self.lineView.frame        = CGRectMake(0, 0, self.bounds.size.width, 1.0f);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {}

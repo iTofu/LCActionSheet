@@ -180,6 +180,45 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
+### V 2.6.5 (2016.11.29)
+
+* 新增 LCActionSheetConfig 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，之后你还可以对 LCActionSheet 实例继续修改参数。示例代码如下：
+
+  ```objc
+  // 统一配置 Config
+  LCActionSheetConfig *config = [LCActionSheetConfig shared];
+
+  config.title              = @"Common Title";
+  config.cancelButtonTitle  = @"Close";
+  config.titleColor         = [UIColor orangeColor];
+  config.buttonColor        = [UIColor greenColor];
+  config.titleFont          = [UIFont boldSystemFontOfSize:15.0f];
+  config.buttonFont         = [UIFont boldSystemFontOfSize:15.0f];
+  config.buttonHeight       = 60.0f;
+  config.scrolling          = YES;
+  config.visibleButtonCount = 3.6f;
+  config.darkViewNoTaped    = YES;
+  config.unBlur             = YES;
+  config.blurEffectStyle    = UIBlurEffectStyleDark;
+
+  config.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
+  config.destructiveButtonColor    = [UIColor blueColor];
+
+  // 初始化 LCActionSheet, 与之前的初始化没有区别, 框架内根据 Config 初始化
+  LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:nil
+                                                     delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", nil];
+
+  // 可以继续配置任何参数...
+  sheet.titleColor = [UIColor orangeColor];
+
+  [sheet show];
+  ```
+
+* 重写初始化逻辑。
+
+
 ### V 2.6.3 (2016.11.28)
 
 * 修复 Bug：Swift 调用时，destructiveButtonIndexSet 设置无效，[#28](https://github.com/iTofu/LCActionSheet/issues/28) by [Abel94](https://github.com/Abel94)。
