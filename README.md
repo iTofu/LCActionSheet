@@ -38,6 +38,8 @@ In me the tiger sniffs the rose.
 
 * 支持 iPad，支持横屏，支持竖屏，支持一会横屏一会竖屏，支持超长标题，理论上支持无数个按钮，统统支持。
 
+* 支持统一配置 Config，作用于全局样式，告别冗余代码，更易维护，详见 [V 2.6.5](https://github.com/iTofu/LCActionSheet/releases/tag/2.6.5)。
+
 * 注释完整，代码风格良好，善意满满，便于阅读源码，照顾强迫症，拓展更多功能请前往 [PR](https://github.com/iTofu/LCActionSheet/pulls)。三个诸葛亮，顶个好工匠。
 
 * 集百家之长，使用 [Masonry](https://github.com/SnapKit/Masonry) 进行布局，感谢 [Masonry](https://github.com/SnapKit/Masonry)。
@@ -163,10 +165,10 @@ In me the tiger sniffs the rose.
     }
     ```
 
-  5. [V 2.6.5](https://github.com/iTofu/LCActionSheet/releases/tag/2.6.5) 新增 LCActionSheetConfig 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，之后你还可以对 LCActionSheet 实例继续修改参数。示例代码如下：
+  5. [V 2.6.5](https://github.com/iTofu/LCActionSheet/releases/tag/2.6.5) 新增 LCActionSheetConfig 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，之后你还可以修改 LCActionSheet 实例的任意参数。示例代码如下：
 
     ```objc
-    // 统一配置 Config
+    // 统一配置 Config 作用于全局样式
     LCActionSheetConfig *config = [LCActionSheetConfig shared];
 
     config.title              = @"Common Title";
@@ -185,13 +187,14 @@ In me the tiger sniffs the rose.
     config.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
     config.destructiveButtonColor    = [UIColor blueColor];
 
-    // 初始化 LCActionSheet, 与之前的初始化没有区别, 框架内根据 Config 初始化
-    LCActionSheet *sheet = [[LCActionSheet alloc] initWithTitle:nil
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancel"
-                                              otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", nil];
+    // 初始化 LCActionSheet, 与之前的初始化没有区别, 框架内会根据 Config 初始化
+    LCActionSheet *sheet =
+    [[LCActionSheet alloc] initWithTitle:nil
+                                delegate:self
+                       cancelButtonTitle:@"Cancel"
+                       otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", nil];
 
-    // 可以继续配置任何参数...
+    // 如果当前样式与全局样式不同, 可以继续修改参数...
     sheet.titleColor = [UIColor orangeColor];
 
     [sheet show];
@@ -219,7 +222,7 @@ In me the tiger sniffs the rose.
 
 ### V 2.6.5 (2016.11.29)
 
-* 新增 LCActionSheetConfig 类，用来统一配置 LCActionSheet 的样式（参数），使用方式见 [Usage](https://github.com/iTofu/LCActionSheet#代码-usage)。
+* 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数），使用方式见 [Usage](https://github.com/iTofu/LCActionSheet#代码-usage)。── [#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)。
 
 * 重写 LCActionSheet 初始化逻辑。
 
