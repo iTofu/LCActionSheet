@@ -4,7 +4,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
 [![CocoaPods](https://img.shields.io/cocoapods/l/LCActionSheet.svg)](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LICENSE)
 [![CocoaPods](https://img.shields.io/cocoapods/p/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
-[![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](http://leodev.me)
+[![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](https://leodev.me)
 
 ☀️ 一款简约而不失强大的 ActionSheet，微信和微博都采取了极其类似的样式。
 
@@ -18,7 +18,7 @@ In me the tiger sniffs the rose.
 心有猛虎，细嗅蔷薇。
 ```
 
-欢迎访问我的博客：http://LeoDev.me
+欢迎访问我的博客：https://LeoDev.me
 
 
 
@@ -507,7 +507,7 @@ In me the tiger sniffs the rose.
 
 * 有疑问或建议请 [New Issue](https://github.com/iTofu/LCActionSheet/issues/new)，谢谢 :)
 
-* Mail: devtip@163.com
+* Mail: `echo ZGV2dGlwQDE2My5jb20K | base64 -D`
 
 * Blog: http://LeoDev.me
 
