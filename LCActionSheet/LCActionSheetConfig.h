@@ -104,6 +104,11 @@
  */
 @property (nonatomic, assign) UIEdgeInsets titleEdgeInsets;
 
+/**
+ *  Cell's separator color. Default is `RGBA(170/255.0f, 170/255.0f, 170/255.0f, 0.5f)`.
+ */
+@property (nonatomic, strong) UIColor *separatorColor;
+
 
 /**
  LCActionSheetConfig instance.

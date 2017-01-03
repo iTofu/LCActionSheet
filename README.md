@@ -105,6 +105,9 @@ In me the tiger sniffs the rose.
     // V 2.7.0+
     actionSheet.titleEdgeInsets = UIEdgeInsetsMake(10, 20, 30, 40);
     
+    // V 2.7.1+
+    actionSheet.separatorColor = [UIColor orangeColor];
+    
     [actionSheet show];
     ```
 
@@ -221,6 +224,21 @@ In me the tiger sniffs the rose.
 
 
 ## 版本 ChangeLog
+
+
+### V 2.7.1 (2017.01.03)
+
+* 新年快乐~
+
+* 添加 `separatorColor` 属性，默认值 `RGBA(170/255.0f, 170/255.0f, 170/255.0f, 0.5f)`，[#30](https://github.com/iTofu/LCActionSheet/issues/30) by [Abel94](https://github.com/Abel94)：
+
+  ```objc
+  @interface LCActionSheet : UIView
+
+  @property (nonatomic, strong) UIColor *separatorColor;
+
+  @end
+  ```
 
 
 ### V 2.7.0 (2016.11.29)

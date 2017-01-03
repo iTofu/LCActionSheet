@@ -185,6 +185,7 @@
     _unBlur                    = config.unBlur;
     _blurEffectStyle           = config.blurEffectStyle;
     _titleEdgeInsets           = config.titleEdgeInsets;
+    _separatorColor            = config.separatorColor;
     
     return self;
 }
@@ -280,7 +281,7 @@
     
 
     UIView *lineView  = [[UIView alloc] init];
-    lineView.backgroundColor = LC_ACTION_SHEET_CELL_LINE_COLOR;
+    lineView.backgroundColor = self.separatorColor;
     lineView.contentMode   = UIViewContentModeBottom;
     lineView.clipsToBounds = YES;
     [bottomView addSubview:lineView];
@@ -312,10 +313,8 @@
     cancelButton.titleLabel.font = self.buttonFont;
     [cancelButton setTitle:self.cancelButtonTitle forState:UIControlStateNormal];
     [cancelButton setTitleColor:self.buttonColor forState:UIControlStateNormal];
-    [cancelButton setBackgroundImage:[UIImage imageWithColor:LC_ACTION_SHEET_CELL_LINE_COLOR]
+    [cancelButton setBackgroundImage:[UIImage imageWithColor:self.separatorColor]
                             forState:UIControlStateHighlighted];
-    [cancelButton setBackgroundImage:[UIImage imageWithColor:LC_ACTION_SHEET_CELL_LINE_COLOR]
-                            forState:UIControlStateSelected];
     [cancelButton addTarget:self
                      action:@selector(cancelButtonClicked)
            forControlEvents:UIControlEventTouchUpInside];
@@ -519,6 +518,15 @@
     [self updateTableView];
 }
 
+- (void)setSeparatorColor:(UIColor *)separatorColor {
+    _separatorColor = separatorColor;
+    
+    self.lineView.backgroundColor = separatorColor;
+    [self.cancelButton setBackgroundImage:[UIImage imageWithColor:separatorColor]
+                                 forState:UIControlStateHighlighted];
+    [self.tableView reloadData];
+}
+
 - (CGSize)titleTextSize {
     CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width -
                              (self.titleEdgeInsets.left + self.titleEdgeInsets.right),
@@ -683,6 +691,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if ([self.delegate respondsToSelector:@selector(actionSheet:clickedButtonAtIndex:)]) {
         [self.delegate actionSheet:self clickedButtonAtIndex:indexPath.row + 1];
@@ -711,6 +720,8 @@
     cell.titleLabel.textColor = self.buttonColor;
     
     cell.titleLabel.text = self.otherButtonTitles[indexPath.row];
+    
+    cell.cellSeparatorColor = self.separatorColor;
     
 //    cell.lineView.hidden = indexPath.row == MAX(self.otherButtonTitles.count - 1, 0);
     

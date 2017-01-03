@@ -8,7 +8,7 @@
 //  GitHub: http://github.com/iTofu
 //  Mail:   mailto:devtip@163.com
 //
-//  V 2.7.0
+//  V 2.7.1
 
 #import <UIKit/UIKit.h>
 #import "LCActionSheetConfig.h"
@@ -177,6 +177,11 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
  *  Title's edge insets. Default is `UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f)`.
  */
 @property (nonatomic, assign) UIEdgeInsets titleEdgeInsets;
+
+/**
+ *  Cell's separator color. Default is `RGBA(170/255.0f, 170/255.0f, 170/255.0f, 0.5f)`.
+ */
+@property (nonatomic, strong) UIColor *separatorColor;
 
 
 /**

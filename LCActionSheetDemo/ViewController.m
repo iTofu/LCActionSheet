@@ -53,6 +53,9 @@
     // V 2.7.0+
     actionSheet.titleEdgeInsets = UIEdgeInsetsMake(10, 20, 30, 40);
     
+    // V 2.7.1+
+    actionSheet.separatorColor = [UIColor orangeColor];
+    
     [actionSheet show];
 }
 

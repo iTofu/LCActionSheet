@@ -40,12 +40,14 @@
         self.destructiveButtonColor = LC_ACTION_SHEET_RED_COLOR;
         self.titleColor             = LC_ACTION_SHEET_COLOR(111, 111, 111);
         self.buttonColor            = [UIColor blackColor];
-        
+
         self.buttonHeight           = LC_ACTION_SHEET_BUTTON_HEIGHT;
         self.animationDuration      = LC_ACTION_SHEET_ANIMATION_DURATION;
         self.darkOpacity            = LC_ACTION_SHEET_DARK_OPACITY;
-        
+
         self.titleEdgeInsets        = UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f);
+
+        self.separatorColor         = LC_ACTION_SHEET_COLOR_A(170, 170, 170, 0.5f);
     }
     return self;
 }

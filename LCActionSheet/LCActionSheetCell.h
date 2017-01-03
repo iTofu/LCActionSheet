@@ -12,8 +12,6 @@
 #define LC_ACTION_SHEET_CELL_NO_HIDDE_LINE_TAG  100
 #define LC_ACTION_SHEET_CELL_HIDDE_LINE_TAG     101
 
-#define LC_ACTION_SHEET_CELL_LINE_COLOR         LC_ACTION_SHEET_COLOR_A(170, 170, 170, 0.5f)
-
 
 @interface LCActionSheetCell : UITableViewCell
 
@@ -26,5 +24,10 @@
  *  Line.
  */
 @property (nonatomic, weak) UIView *lineView;
+
+/**
+ *  Cell's separator color.
+ */
+@property (nonatomic, strong) UIColor *cellSeparatorColor;
 
 @end
