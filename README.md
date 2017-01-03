@@ -211,6 +211,7 @@ In me the tiger sniffs the rose.
 
 | 名称 | 简介 |
 | :-: | :-: |
+| [见信](https://itunes.apple.com/cn/app/id1187571215) | 视频短信 |
 | [PrPr直播](https://itunes.apple.com/cn/app/id1150254794) | 二次元直播平台 |
 | [德玛西亚](https://itunes.apple.com/cn/app/id1067564880) | 英雄联盟<sup>&copy;</sup> 周边 App |
 | [揽梦云签](https://itunes.apple.com/cn/app/id1006513728) | 考勤打卡 + 移动办公 |
