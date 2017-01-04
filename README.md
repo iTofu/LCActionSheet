@@ -34,7 +34,7 @@ In me the tiger sniffs the rose.
 
 * 有代理，有 Block，可类方法，可实例方法，想怎样，就怎样。
 
-* 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L45) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L20) 部分。
+* 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L46) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L20) 部分。
 
 * 支持统一配置 Config，作用于全局样式，告别冗余代码，更易维护，详见 [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)。
 
