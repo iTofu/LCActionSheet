@@ -66,9 +66,9 @@ In me the tiger sniffs the rose.
 
 * 在相应位置导入头文件：`#import "LCActionSheet.h"`，遵守协议 `<LCActionSheetDelegate>`
 
-* 调用列的任意方法即可：
+* 调用下列任意方法即可：
 
-  1. 默认样式，迅速搞定
+  1. 默认样式，初始化 + Show，两行搞定
 
     ```objc
     LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Default LCActionSheet"
