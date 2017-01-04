@@ -46,7 +46,7 @@
     actionSheet.darkViewNoTaped    = YES;
     actionSheet.unBlur             = YES;
     
-    // V 2.1.0+ use `destructiveButtonIndexSet` instead `redButtonIndexSet`.
+    // V 2.1.0+ Use `destructiveButtonIndexSet` instead `redButtonIndexSet`.
     actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
     actionSheet.destructiveButtonColor    = [UIColor blueColor];
     
