@@ -13,6 +13,6 @@
 /**
  *  Check if set contains the int value.
  */
-- (BOOL)lc_contains:(int)num;
+- (BOOL)lc_contains:(long)num;
 
 @end

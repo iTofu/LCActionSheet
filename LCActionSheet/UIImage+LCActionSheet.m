@@ -1,6 +1,6 @@
 //
 //  UIImage+LCActionSheet.m
-//  LCActionSheetDemo
+//  LCActionSheet
 //
 //  Created by Leo on 2016/11/29.
 //  Copyright © 2016年 Leo（http://LeoDev.me）. All rights reserved.

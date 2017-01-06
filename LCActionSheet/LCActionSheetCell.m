@@ -38,10 +38,11 @@
         
         UILabel *titleLabel = [[UILabel alloc] init];
         titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.adjustsFontSizeToFitWidth = YES;
         [self.contentView addSubview:titleLabel];
         self.titleLabel = titleLabel;
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView);
+            make.edges.equalTo(self.contentView).insets(UIEdgeInsetsMake(0, 10.0f, 0, 10.0f));
         }];
         
         UIView *lineView  = [[UIView alloc] init];

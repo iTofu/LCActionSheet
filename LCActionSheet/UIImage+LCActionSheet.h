@@ -1,6 +1,6 @@
 //
 //  UIImage+LCActionSheet.h
-//  LCActionSheetDemo
+//  LCActionSheet
 //
 //  Created by Leo on 2016/11/29.
 //  Copyright © 2016年 Leo（http://LeoDev.me）. All rights reserved.
@@ -11,7 +11,7 @@
 @interface UIImage (LCActionSheet)
 
 /**
- *  Create image with the color.
+ *  Create a image with the color.
  */
 + (instancetype)imageWithColor:(UIColor *)color;
 

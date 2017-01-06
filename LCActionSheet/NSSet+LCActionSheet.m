@@ -10,10 +10,10 @@
 
 @implementation NSSet (LCActionSheet)
 
-- (BOOL)lc_contains:(int)num {
+- (BOOL)lc_contains:(long)num {
     BOOL contains = NO;
     for (NSNumber *setNum in self) {
-        if ([setNum intValue] == num) {
+        if ([setNum longValue] == num) {
             contains = YES;
             break;
         }
