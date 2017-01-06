@@ -226,6 +226,11 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
+### V 2.7.2 (2017.01.06)
+
+* 修正按钮 Title 过长时的 UI 效果，[#31](https://github.com/iTofu/LCActionSheet/issues/31) by [Luyu](https://github.com/LuYu001).
+
+
 ### V 2.7.1 (2017.01.03)
 
 * 新年快乐~
