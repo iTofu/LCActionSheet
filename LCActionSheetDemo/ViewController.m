@@ -23,7 +23,7 @@
     LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Default LCActionSheet"
                                                       delegate:self
                                              cancelButtonTitle:@"Cancel"
-                                             otherButtonTitles:@"Button 1", @"Button 2", nil];
+                                             otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", nil];
     [actionSheet show];
 }
 
