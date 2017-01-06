@@ -47,7 +47,7 @@
 
         self.titleEdgeInsets        = UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f);
 
-        self.separatorColor         = LC_ACTION_SHEET_COLOR_A(170, 170, 170, 0.5f);
+        self.separatorColor         = LC_ACTION_SHEET_COLOR_A(150, 150, 150, 0.3f);
     }
     return self;
 }

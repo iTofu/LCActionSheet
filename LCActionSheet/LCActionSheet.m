@@ -296,8 +296,8 @@
     
     
     UIView *divisionView         = [[UIView alloc] init];
-    divisionView.alpha           = 0.1f;
-    divisionView.backgroundColor = LC_ACTION_SHEET_COLOR(150, 150, 150);
+    divisionView.alpha           = 0.3f;
+    divisionView.backgroundColor = self.separatorColor;
     [bottomView addSubview:divisionView];
     [divisionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);
@@ -522,6 +522,7 @@
     _separatorColor = separatorColor;
     
     self.lineView.backgroundColor = separatorColor;
+    self.divisionView.backgroundColor = separatorColor;
     [self.cancelButton setBackgroundImage:[UIImage imageWithColor:separatorColor]
                                  forState:UIControlStateHighlighted];
     [self.tableView reloadData];
