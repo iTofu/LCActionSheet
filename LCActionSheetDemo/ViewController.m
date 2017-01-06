@@ -32,7 +32,7 @@
     LCActionSheet *actionSheet     = [[LCActionSheet alloc] initWithTitle:nil
                                                                  delegate:self
                                                         cancelButtonTitle:@"Cancel"
-                                                        otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", @"This is a very very very very very very long button title~", @"Button 3", @"Button 5", nil];
+                                                        otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", @"This is a very very very very very very long button title~", @"Button 5", nil];
     actionSheet.title              = @"This is a very very very very very very very very very very very very very very very very very very very very very very very very very very very long title~";
     actionSheet.cancelButtonTitle  = @"Close";
     [actionSheet appendButtonTitles:@"Button 6", @"Button 7", nil];
