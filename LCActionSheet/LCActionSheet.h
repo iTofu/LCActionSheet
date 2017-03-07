@@ -5,10 +5,11 @@
 //  Created by Leo on 2015/4/27.
 //  Copyright © 2016年 Leo（http://LeoDev.me）. All rights reserved.
 //
-//  GitHub: http://github.com/iTofu
-//  Mail:   mailto:devtip@163.com
+//  GitHub: http://github.com/iTofu/LCActionSheet
+//  Mail:   `echo ZGV2dGlwQDE2My5jb20K | base64 -D`
 //
 //  V 2.7.2
+//  
 
 #import <UIKit/UIKit.h>
 #import "LCActionSheetConfig.h"
