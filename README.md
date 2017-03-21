@@ -545,7 +545,7 @@ In me the tiger sniffs the rose.
   
   * 支付宝或微信:
   
-    <img src="https://cdnqiniu.leodev.me/donate.png?v=1" alt="Donate with Alipay or Wechat Pay" title="Donate with Alipay or Wechat Pay" width="320"/>
+    <img src="https://cdnqiniu.leodev.me/donate.png" alt="Donate with Alipay or Wechat Pay" title="Donate with Alipay or Wechat Pay" width="320"/>
     
   注：捐赠并不能会解锁额外的功能。
 
