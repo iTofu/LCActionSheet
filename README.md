@@ -8,7 +8,7 @@
 
 ☀️ 一款简约而不失强大的 ActionSheet，微信和微博都采取了极其类似的样式。
 
-![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemoGif02.gif)
+<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemoGif02.gif" alt="LCActionSheet" title="LCActionSheet" width="320"/>
 
 如果上图没打开，直接前往 [Demo 图地址](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemoGif02.gif)。
 
@@ -52,7 +52,7 @@ In me the tiger sniffs the rose.
 >
 > 可白文翻译，使用 [Markdown](http://www.appinn.com/markdown/) 编辑更佳！义务的哦，如果翻译用心的话我个人请你喝杯咖啡 ☕️！
 > 
-> 直接 [PR](https://github.com/iTofu/LCActionSheet/pulls) 或者发我邮箱：devtip@163.com 都可！
+> 直接 [PR](https://github.com/iTofu/LCActionSheet/pulls) 或者发我邮箱：leodaxia@gmail.com 都可！
 
 
 
@@ -220,7 +220,7 @@ In me the tiger sniffs the rose.
 | [揽梦云签](https://itunes.apple.com/cn/app/id1006513728) | 考勤打卡 + 移动办公 |
 | ... | ... |
 
-注：**本框架开源且不含任何信息上传功能代码**，上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 devtip@163.com 或者 [新建一个 Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
+注：**本框架开源且不含任何信息上传功能代码**，上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 leodaxia@gmail.com 或者 [新建一个 Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
 
 
 ## 版本 ChangeLog
@@ -518,29 +518,36 @@ In me the tiger sniffs the rose.
 
 ## 示例 Examples
 
-![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo01.png)
+<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo01.png" alt="LCActionSheet" title="LCActionSheet" width="320"/>
 
 ---
 
-![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo02.png)
+<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo02.png" alt="LCActionSheet" title="LCActionSheet" width="320"/>
 
 ---
 
-![LCActionSheet](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo03.png)
+<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo03.png" alt="LCActionSheet" title="LCActionSheet" width="320"/>
 
 
 ## 联系 Support
 
 * 有疑问或建议请 [New Issue](https://github.com/iTofu/LCActionSheet/issues/new)，谢谢 :)
 
-* Mail: `echo ZGV2dGlwQDE2My5jb20K | base64 -D`
+* Mail: `echo bGVvZGF4aWFAZ21haWwuY29tCg== | base64 -D` or `echo ZGV2dGlwQDE2My5jb20K | base64 -D`
 
 * Blog: http://LeoDev.me
 
-* 如果你觉得我的项目对你有所帮助，想要进行捐赠的话，非常感谢你的情怀~
-
-  ![Leo](http://7xl8ia.com1.z0.glb.clouddn.com/alipay.png)
-
+* 捐赠:
+  
+  * PayPal:
+  
+    [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=leodaxia@gmail.com&item_name=Support%20Leo)
+  
+  * 支付宝或微信:
+  
+    <img src="https://cdnqiniu.leodev.me/donate.png" alt="Donate with Alipay or Wechat Pay" title="Donate with Alipay or Wechat Pay" width="320"/>
+    
+  注：捐赠并不能会解锁额外的功能。
 
 
 ## 授权 License
