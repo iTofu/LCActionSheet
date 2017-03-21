@@ -8,7 +8,7 @@
 
 ☀️ 一款简约而不失强大的 ActionSheet，微信和微博都采取了极其类似的样式。
 
-<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemoGif02.gif" alt="LCActionSheet" title="LCActionSheet" width="320"/>
+<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemoGif02.gif" alt="LCActionSheet" title="LCActionSheet" width="640"/>
 
 如果上图没打开，直接前往 [Demo 图地址](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemoGif02.gif)。
 
