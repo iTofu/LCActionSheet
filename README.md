@@ -50,13 +50,13 @@ In me the tiger sniffs the rose.
 > 
 > 英文还不错时间又充裕的同学可以帮我翻译出 README 的英文版，我好往 [CocoaControls](https://www.cocoacontrols.com/) 上扔啊~
 >
-> 可白文翻译，使用 [Markdown](http://www.appinn.com/markdown/) 编辑更佳！义务的哦，如果翻译用心的话我个人请你喝杯咖啡 ☕️！
+> 可白文翻译，使用 [Markdown](http://www.appinn.com/markdown/) 编辑更佳！义务的哦，如果翻译用心的话我个人请你杯咖啡 ☕️！
 > 
 > 直接 [PR](https://github.com/iTofu/LCActionSheet/pulls) 或者发我邮箱：leodaxia@gmail.com 都可！
 
 
 
-## 代码 Usage
+## 使用 Usage
 
 * 两种导入方法：
 
@@ -170,7 +170,7 @@ In me the tiger sniffs the rose.
     }
     ```
 
-* [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0) 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，之后你还可以继续修改 LCActionSheet 实例的任意参数。示例代码如下：
+* [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)+ 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，当然你还可以对单个 LCActionSheet 实例再进行可覆盖的属性配置，并不会影响到 LCActionSheetConfig。示例代码如下：
 
   ```objc
   // 统一配置 Config 作用于全局样式
@@ -214,13 +214,13 @@ In me the tiger sniffs the rose.
 
 | 名称 | 简介 |
 | :-: | :-: |
-| [见信](https://itunes.apple.com/cn/app/id1187571215) | 视频短信 |
+| [见信](https://itunes.apple.com/cn/app/id1187571215) | 视频共享社交 |
 | [PrPr直播](https://itunes.apple.com/cn/app/id1150254794) | 二次元直播平台 |
 | [德玛西亚](https://itunes.apple.com/cn/app/id1067564880) | 英雄联盟<sup>&copy;</sup> 周边 App |
 | [揽梦云签](https://itunes.apple.com/cn/app/id1006513728) | 考勤打卡 + 移动办公 |
 | ... | ... |
 
-注：**本框架开源且不含任何信息上传功能代码**，上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 leodaxia@gmail.com 或者 [新建一个 Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
+注：**本框架开源且不含任何信息上传功能代码**，上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 leodaxia@gmail.com 或者 [New Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
 
 
 ## 版本 ChangeLog
@@ -320,11 +320,15 @@ In me the tiger sniffs the rose.
   @interface LCActionSheet : UIView
 
   @property (nonatomic, assign, readonly) NSInteger cancelButtonIndex;
+  
+  @end
   ```
 
 * 修改 Block 属性命名：
 
   ```objc
+  @interface LCActionSheet : UIView
+  
   @property (nonatomic, copy) LCActionSheetClickedBlock     clickedBlock;
   @property (nonatomic, copy) LCActionSheetWillPresentBlock willPresentBlock;
   @property (nonatomic, copy) LCActionSheetDidPresentBlock  didPresentBlock;
@@ -338,6 +342,8 @@ In me the tiger sniffs the rose.
   @property (nonatomic, copy) LCActionSheetDidPresentHandle  didPresentHandle;
   @property (nonatomic, copy) LCActionSheetWillDismissHandle willDismissHandle;
   @property (nonatomic, copy) LCActionSheetDidDismissHandle  didDismissHandle;
+  
+  @end
   ```
 
 
@@ -353,7 +359,11 @@ In me the tiger sniffs the rose.
 * 可以自定义 blurEffectStyle：
 
   ```objc
+  @interface LCActionSheet : UIView
+  
   @property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
+  
+  @end
   ```
 
 
@@ -477,7 +487,7 @@ In me the tiger sniffs the rose.
 
 * 添加对 [CocoaPods](https://cocoapods.org/) 的支持：
 
-  ```objc
+  ```yml
   pod 'LCActionSheet'
   ```
 
@@ -516,17 +526,9 @@ In me the tiger sniffs the rose.
 * 海纳百川，有容乃大。感谢开源社区和众攻城狮的支持！感谢众多 [Issues](https://github.com/iTofu/LCActionSheet/issues) 和 [PR](https://github.com/iTofu/LCActionSheet/pulls)！更期待你的 [PR](https://github.com/iTofu/LCActionSheet/pulls)！
 
 
-## 示例 Examples
+## 示例 Preview
 
-<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo01.png" alt="LCActionSheet" title="LCActionSheet" width="320"/>
-
----
-
-<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo02.png" alt="LCActionSheet" title="LCActionSheet" width="320"/>
-
----
-
-<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo03.png" alt="LCActionSheet" title="LCActionSheet" width="320"/>
+<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo01.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo02.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo03.png" alt="LCActionSheet" title="LCActionSheet" width="280"/>
 
 
 ## 联系 Support
