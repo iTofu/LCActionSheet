@@ -71,11 +71,11 @@ In me the tiger sniffs the rose.
 
   - 方法二：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
 
-* 在相应位置导入头文件：`#import "LCActionSheet.h"`，遵守协议 `<LCActionSheetDelegate>`
+* 在相应位置导入头文件：`#import <LCActionSheet/LCActionSheet.h>`，（可选）遵守协议 `<LCActionSheetDelegate>`
 
 * 调用下列任意方法即可：
 
-  1. 默认样式，初始化 + Show，两行搞定
+  1. 默认样式，初始化 + `show`，两行搞定
 
     ```objc
     LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Default LCActionSheet"
@@ -85,7 +85,7 @@ In me the tiger sniffs the rose.
     [actionSheet show];
     ```
 
-  2. 可自定义项，[LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) 中有完整注释
+  2. 其他可自定义项，[LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) 中有完整注释
 
     ```objc
     LCActionSheet *actionSheet     = [[LCActionSheet alloc] initWithTitle:nil
