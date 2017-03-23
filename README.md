@@ -173,9 +173,9 @@ In me the tiger sniffs the rose.
 * [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)+ 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，当然，你初始化单个 LCActionSheet 实例后，还可以对其进行可覆盖的属性设置，并且不会影响到 LCActionSheetConfig。示例代码如下：
 
   ```objc
-  // 统一配置 Config 作用于全局样式
+  // 统一配置 Config 作用于全局样式, 每个属性的默认值可以在 LCActionSheetConfig.h 里面查看
   LCActionSheetConfig *config = [LCActionSheetConfig shared];
-
+  
   config.title              = @"Common Title";
   config.cancelButtonTitle  = @"Close";
   config.titleColor         = [UIColor orangeColor];
