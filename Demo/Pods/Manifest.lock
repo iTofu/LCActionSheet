@@ -1,0 +1,19 @@
+PODS:
+  - LCActionSheet (2.7.3):
+    - Masonry (~> 1.0.2)
+  - Masonry (1.0.2)
+
+DEPENDENCIES:
+  - LCActionSheet (from `../`)
+
+EXTERNAL SOURCES:
+  LCActionSheet:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LCActionSheet: 7bc7e70b7f1ec929c21cd917c28737c3521e7e87
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+
+PODFILE CHECKSUM: 69168bdd948b94bccadca73ee1fc5a6830365fc0
+
+COCOAPODS: 1.2.0
