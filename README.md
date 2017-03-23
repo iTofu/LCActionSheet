@@ -8,9 +8,9 @@
 
 ☀️ 一款简约而不失强大的 ActionSheet，微信和微博都采取了极其类似的样式。
 
-<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemoGif02.gif" alt="LCActionSheet" title="LCActionSheet" width="640"/>
+<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemoGif02.gif" alt="LCActionSheet" title="LCActionSheet" width="640"/>
 
-如果上图没打开，直接前往 [Demo 图地址](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemoGif02.gif)。
+如果上图没打开，直接前往 [Demo 图地址](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemoGif02.gif)。
 
 ```
 In me the tiger sniffs the rose.
@@ -19,6 +19,12 @@ In me the tiger sniffs the rose.
 ```
 
 欢迎访问我的博客：https://LeoDev.me
+
+
+## 环境 Requirements
+
+* iOS 7.0+
+* Xcode 7.0+
 
 
 
@@ -30,11 +36,11 @@ In me the tiger sniffs the rose.
 
 * 格调高雅，风格百搭，怎么看怎么舒服。
 
-* 高度自定义，可能需要自定义的基本都考虑到了。详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) [Properties](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L83) 部分。
+* 高度自定义，可能需要自定义的基本都考虑到了。详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) [Properties](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L98) 部分。
 
 * 有代理，有 Block，可类方法，可实例方法，想怎样，就怎样。
 
-* 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L46) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h#L20) 部分。
+* 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L61) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L35) 部分。
 
 * 支持统一配置 Config，作用于全局样式，告别冗余代码，更易维护，详见 [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)。
 
@@ -53,6 +59,7 @@ In me the tiger sniffs the rose.
 > 可白文翻译，使用 [Markdown](http://www.appinn.com/markdown/) 编辑更佳！义务的哦，如果翻译用心的话我个人请你杯咖啡 ☕️！
 > 
 > 直接 [PR](https://github.com/iTofu/LCActionSheet/pulls) 或者发我邮箱：leodaxia@gmail.com 都可！
+
 
 
 
@@ -78,7 +85,7 @@ In me the tiger sniffs the rose.
     [actionSheet show];
     ```
 
-  2. 可自定义项，[LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h) 中有完整注释
+  2. 可自定义项，[LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) 中有完整注释
 
     ```objc
     LCActionSheet *actionSheet     = [[LCActionSheet alloc] initWithTitle:nil
@@ -170,10 +177,10 @@ In me the tiger sniffs the rose.
     }
     ```
 
-* [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)+ 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，当然，你初始化单个 LCActionSheet 实例后，还可以对其进行可覆盖的属性设置，并且不会影响到 LCActionSheetConfig。示例代码如下：
+* [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)+ 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，当然，你初始化单个 LCActionSheet 实例后，还可以对其进行可覆盖的属性设置，并且不会影响到 LCActionSheetConfig。示例代码如下：
 
   ```objc
-  // 统一配置 Config 作用于全局样式, 每个属性的默认值可以在 LCActionSheetConfig.h 里面查看
+  // 统一配置 Config 作用于全局样式, 每个属性的默认值可以在 LCActionSheetConfig 中查看
   LCActionSheetConfig *config = [LCActionSheetConfig shared];
   
   config.title              = @"Common Title";
@@ -250,7 +257,7 @@ In me the tiger sniffs the rose.
 
 ### V 2.7.0 (2016.11.29)
 
-* 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数），使用方式见 [Usage](https://github.com/iTofu/LCActionSheet#代码-usage)。[#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)。
+* 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数），使用方式见 [Usage](https://github.com/iTofu/LCActionSheet#使用-usage)。[#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)。
 
 * 添加 `titleEdgeInsets` 属性，默认值 `UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f)`，[#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)：
 
@@ -511,7 +518,7 @@ In me the tiger sniffs the rose.
 
 * LCActionSheet 添加到 KeyWindow 上，已适配横屏。
 
-* 可自定义 title、buttons、destructiveButtons、cancelButton、titleColor、titleFont、buttonColor、buttonFont、canScrolling 等等，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/LCActionSheet/LCActionSheet.h)。
+* 可自定义 title、buttons、destructiveButtons、cancelButton、titleColor、titleFont、buttonColor、buttonFont、canScrolling 等等，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h)。
 
 * `cancelButtonIndex` 始终返回 `0`，除取消按钮以外的按钮自上而下 Index 从 1 递增。也就是说，无论取消按钮是否显示，Index 0 始终会被取消按钮占有。
 
@@ -528,7 +535,7 @@ In me the tiger sniffs the rose.
 
 ## 示例 Preview
 
-<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo01.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo02.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LCActionSheetDemo03.png" alt="LCActionSheet" title="LCActionSheet" width="280"/>
+<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo01.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo02.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo03.png" alt="LCActionSheet" title="LCActionSheet" width="280"/>
 
 
 ## 联系 Support
@@ -554,5 +561,4 @@ In me the tiger sniffs the rose.
 
 ## 授权 License
 
-本项目采用 [MIT license](http://opensource.org/licenses/MIT) 开源，你可以利用采用该协议的代码做任何事情，只需要继续继承 MIT 协议即可。
-
+LCActionSheet is released under the [MIT License](https://github.com/iTofu/LCActionSheet/blob/master/LICENSE).
