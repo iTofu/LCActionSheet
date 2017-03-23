@@ -556,9 +556,9 @@ In me the tiger sniffs the rose.
   
     <img src="https://cdnqiniu.leodev.me/donate.png?v=1" alt="Donate with Alipay or Wechat Pay" title="Donate with Alipay or Wechat Pay" width="320"/>
     
-  注：（一本正经状）捐赠并不会解锁额外的功能。
+  注：（一本正经状）捐赠并不会解锁额外功能。
 
 
-## 授权 License
+## 许可 License
 
 LCActionSheet is released under the [MIT License](https://github.com/iTofu/LCActionSheet/blob/master/LICENSE).
