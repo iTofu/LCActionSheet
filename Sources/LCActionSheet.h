@@ -122,12 +122,12 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 /**
  *  Deprecated, use `destructiveButtonIndexSet` instead.
  */
-@property (nullable, nonatomic, strong) NSSet *redButtonIndexSet __deprecated_msg("Property deprecated. Use `destructiveButtonIndexSet`");
+@property (nullable, nonatomic, strong) NSSet<NSNumber *> *redButtonIndexSet __deprecated_msg("Property deprecated. Use `destructiveButtonIndexSet`");
 
 /**
  *  All destructive buttons' set. You should give it the `NSNumber` type items.
  */
-@property (nullable, nonatomic, strong) NSSet *destructiveButtonIndexSet;
+@property (nullable, nonatomic, strong) NSSet<NSNumber *> *destructiveButtonIndexSet;
 
 /**
  *  Destructive button's color. Default is RGB(255, 10, 10).
@@ -255,7 +255,7 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 + (instancetype)sheetWithTitle:(nullable NSString *)title
                       delegate:(nullable id<LCActionSheetDelegate>)delegate
              cancelButtonTitle:(nullable NSString *)cancelButtonTitle
-         otherButtonTitleArray:(nullable NSArray *)otherButtonTitleArray;
+         otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
 
 /**
  *  Initialize an instance of LCActionSheet (Delegate).
@@ -285,7 +285,7 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 - (instancetype)initWithTitle:(nullable NSString *)title
                      delegate:(nullable id<LCActionSheetDelegate>)delegate
             cancelButtonTitle:(nullable NSString *)cancelButtonTitle
-        otherButtonTitleArray:(nullable NSArray *)otherButtonTitleArray;
+        otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
 
 
 #pragma mark Block
@@ -318,7 +318,7 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 + (instancetype)sheetWithTitle:(nullable NSString *)title
              cancelButtonTitle:(nullable NSString *)cancelButtonTitle
                        clicked:(nullable LCActionSheetClickedHandle)clickedHandle
-         otherButtonTitleArray:(nullable NSArray *)otherButtonTitleArray;
+         otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
 
 /**
  *  Initialize an instance of LCActionSheet (Block).
@@ -348,7 +348,7 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 - (instancetype)initWithTitle:(nullable NSString *)title
             cancelButtonTitle:(nullable NSString *)cancelButtonTitle
                       clicked:(nullable LCActionSheetClickedHandle)clickedHandle
-        otherButtonTitleArray:(nullable NSArray *)otherButtonTitleArray;
+        otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
 
 
 #pragma mark Append & Show

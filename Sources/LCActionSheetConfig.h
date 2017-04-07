@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  All destructive buttons' set. You should give it the `NSNumber` type items.
  */
-@property (nullable, nonatomic, strong) NSSet *destructiveButtonIndexSet;
+@property (nullable, nonatomic, strong) NSSet<NSNumber *> *destructiveButtonIndexSet;
 
 /**
  *  Destructive button's color. Default is RGB(255, 10, 10).
