@@ -25,7 +25,7 @@ In me the tiger sniffs the rose.
 
 * iOS 7.0+
 * Xcode 7.0+
-
+* Objective-C & Swift
 
 
 ## 介绍 Introduction
@@ -235,11 +235,11 @@ In me the tiger sniffs the rose.
 
 ### V 2.7.3 (2017.04.07)
 
-* Nullability：
+* Nullability
 
-  > [Nullability and Objective-C - Swift Blog - Apple Developer](https://developer.apple.com/swift/blog/?id=25)
+  > 参考：[Nullability and Objective-C - Swift Blog - Apple Developer](https://developer.apple.com/swift/blog/?id=25)
 
-* 得益于 Nullability，现在 LCActionSheet 将可以更安全地在 Swift 中使用和运行。
+* 得益于 Nullability，现在 LCActionSheet 将会更安全地融入 Swift。
 
 
 ### V 2.7.2 (2017.01.06)
