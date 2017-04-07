@@ -212,6 +212,21 @@ In me the tiger sniffs the rose.
   [sheet show];
   ```
 
+* Using LCActionSheet in Swift:
+
+  ```swift
+  LCActionSheet(title: "Sign Out", cancelButtonTitle: "Cancel", clicked: { (actionSheet, buttonIndex) in
+      if buttonIndex != actionSheet.cancelButtonIndex {
+          // TODO: Enter login page...
+      }
+  }, otherButtonTitleArray: ["Sign Out"]).then({
+      $0.destructiveButtonIndexSet = [1]
+  }).show()
+  ```
+
+  > Syntactic sugar: [Then](https://github.com/devxoul/Then)
+
+
 
 ## 小伙伴们 Partners
 
