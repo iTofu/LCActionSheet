@@ -27,6 +27,9 @@
 
 #import <Foundation/Foundation.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSSet (LCActionSheet)
 
 /**
@@ -35,3 +38,5 @@
 - (BOOL)lc_contains:(long)num;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -27,11 +27,16 @@
 
 #import <UIKit/UIKit.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIImage (LCActionSheet)
 
 /**
  *  Create a image with the color.
  */
-+ (instancetype)imageWithColor:(UIColor *)color;
++ (nullable instancetype)imageWithColor:(UIColor *)color;
 
 @end
+
+NS_ASSUME_NONNULL_END

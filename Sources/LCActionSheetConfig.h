@@ -35,17 +35,19 @@
                                                             alpha:a]
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface LCActionSheetConfig : NSObject
 
 /**
  *  Title.
  */
-@property (nonatomic, copy) NSString *title;
+@property (nullable, nonatomic, copy) NSString *title;
 
 /**
  *  Cancel button's title.
  */
-@property (nonatomic, copy) NSString *cancelButtonTitle;
+@property (nullable, nonatomic, copy) NSString *cancelButtonTitle;
 
 /**
  *  Cancel button's index.
@@ -55,7 +57,7 @@
 /**
  *  All destructive buttons' set. You should give it the `NSNumber` type items.
  */
-@property (nonatomic, strong) NSSet *destructiveButtonIndexSet;
+@property (nullable, nonatomic, strong) NSSet *destructiveButtonIndexSet;
 
 /**
  *  Destructive button's color. Default is RGB(255, 10, 10).
@@ -135,3 +137,5 @@
 + (instancetype)shared;
 
 @end
+
+NS_ASSUME_NONNULL_END

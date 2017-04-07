@@ -233,6 +233,15 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
+### V 2.7.3 (2017.04.07)
+
+* Nullability：
+
+  > [Nullability and Objective-C - Swift Blog - Apple Developer](https://developer.apple.com/swift/blog/?id=25)
+
+* 得益于 Nullability，现在 LCActionSheet 将可以更安全地在 Swift 中使用和运行。
+
+
 ### V 2.7.2 (2017.01.06)
 
 * 修正按钮 Title 过长时的显示，[#31](https://github.com/iTofu/LCActionSheet/issues/31) by [Luyu](https://github.com/LuYu001).

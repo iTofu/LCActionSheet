@@ -31,6 +31,7 @@
 #define LC_ACTION_SHEET_CELL_NO_HIDDE_LINE_TAG  100
 #define LC_ACTION_SHEET_CELL_HIDDE_LINE_TAG     101
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface LCActionSheetCell : UITableViewCell
 
@@ -50,3 +51,5 @@
 @property (nonatomic, strong) UIColor *cellSeparatorColor;
 
 @end
+
+NS_ASSUME_NONNULL_END
