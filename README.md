@@ -23,14 +23,16 @@ In me the tiger sniffs the rose.
 ## 目录 Contents
 
 * [环境 Requirements](#环境-requirements)
-* [介绍 Introduction](#介绍-Introduction)
-* [使用 Usage](#使用-Usage)
-* [小伙伴们 Partners](#小伙伴们-Partners)
-* [版本 ChangeLog](#版本-ChangeLog)
-* [提示 Tips](#提示-Tips)
-* [鸣谢 Thanks](#鸣谢-Thanks)
-* [示例 Preview](#示例-Preview)
-* [联系 Support](#联系-Support)
+* [介绍 Introduction](#介绍-introduction)
+* [使用 Usage](#使用-usage)
+* [小伙伴们 Partners](#小伙伴们-partners)
+* [版本 ChangeLog](#版本-changelog)
+* [提示 Tips](#提示-tips)
+* [鸣谢 Thanks](#鸣谢-thanks)
+* [示例 Preview](#示例-preview)
+* [联系 Support](#联系-support)
+* [许可 License](#许可-license)
+
 
 
 ## 环境 Requirements
