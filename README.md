@@ -258,7 +258,7 @@ In me the tiger sniffs the rose.
 
   > 参考：[Adopting Objective-C Generics](https://miqu.me/blog/2015/06/09/adopting-objectivec-generics/)
 
-* 得益于 Nullability & Lightweight Generics，现在 LCActionSheet 将会更安全地融入 Swift。
+* 得益于 Nullability & Lightweight Generics，现在 LCActionSheet 将会更安全地完全融入 Swift。
 
 
 ### V 2.7.2 (2017.01.06)
