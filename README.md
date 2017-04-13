@@ -6,7 +6,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/p/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
 [![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](https://leodev.me)
 
-☀️ 一款简约而不失强大的 ActionSheet，微信和微博都采取了极其类似的样式，完全支持 Swift。
+☀️ 一款简约而不失强大的 ActionSheet，微博、微信和 QQ 都采用了极其类似的样式，完全支持 Swift。
 
 <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemoGif02.gif" alt="LCActionSheet" title="LCActionSheet" width="640"/>
 
@@ -44,7 +44,7 @@ In me the tiger sniffs the rose.
 
 ## 介绍 Introduction
 
-☀️ 一款简约而不失强大的 ActionSheet，微信和微博都采取了极其类似的样式。
+☀️ 一款简约而不失强大的 ActionSheet，微博、微信和 QQ 都采用了极其类似的样式，完全支持 Swift。
 
 * iOS 7.0 +，Demo 需要 [CocoaPods](https://cocoapods.org/) 环境运行。
 
