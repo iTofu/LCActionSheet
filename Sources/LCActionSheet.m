@@ -209,6 +209,10 @@
     return self;
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)setupView {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleDidChangeStatusBarOrientation)
