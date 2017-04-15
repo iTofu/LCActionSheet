@@ -261,6 +261,11 @@ In me the tiger sniffs the rose.
 
 ## 版本 ChangeLog
 
+### V 2.7.5 (2017.04.15)
+
+* 修复类别方法名可能与其他库冲突的潜在问题。[#33](https://github.com/iTofu/LCActionSheet/pull/33) by [cwwise](https://github.com/cwwise)。
+
+
 ### V 2.7.4 (2017.04.13)
 
 * 修复在 iOS 8 及以下的系统中，关闭 LCActionSheet 后旋转屏幕出现的崩溃。[#32](https://github.com/iTofu/LCActionSheet/pull/32) by [Amztion](https://github.com/Amztion)。
