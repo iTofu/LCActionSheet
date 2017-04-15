@@ -50,11 +50,11 @@ In me the tiger sniffs the rose.
 
 * 格调高雅，风格百搭，怎么看怎么舒服。
 
-* 高度自定义，可能需要自定义的基本都考虑到了。详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) [Properties](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L98) 部分。
+* 高度自定义，可能需要自定义的基本都考虑到了。详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) [Properties](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L100) 部分。
 
 * 有代理，有 Block，可类方法，可实例方法，想怎样，就怎样。
 
-* 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L61) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L35) 部分。
+* 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L63) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L37) 部分。
 
 * 支持统一配置 Config，作用于全局样式，告别冗余代码，更易维护，详见 [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)。
 
