@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSSet (LCActionSheet)
 
 /**
- *  Check if set contains the int value.
+ Check if set contains the int value.
  */
 - (BOOL)lc_contains:(long)num;
 

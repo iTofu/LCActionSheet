@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (LCActionSheet)
 
 /**
- *  Create a image with the color.
+ Create a image with the color.
  */
 + (nullable instancetype)lc_imageWithColor:(UIColor *)color;
 

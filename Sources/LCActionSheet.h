@@ -37,25 +37,25 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - LCActionSheet Block
 
 /**
- *  Handle click button.
+ Handle click button.
  */
 typedef void(^LCActionSheetClickedHandle)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 
 /**
- *  Handle action sheet will present.
+ Handle action sheet will present.
  */
 typedef void(^LCActionSheetWillPresentHandle)(LCActionSheet *actionSheet);
 /**
- *  Handle action sheet did present.
+ Handle action sheet did present.
  */
 typedef void(^LCActionSheetDidPresentHandle)(LCActionSheet *actionSheet);
 
 /**
- *  Handle action sheet will dismiss.
+ Handle action sheet will dismiss.
  */
 typedef void(^LCActionSheetWillDismissHandle)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 /**
- *  Handle action sheet did dismiss.
+ Handle action sheet did dismiss.
  */
 typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 
@@ -67,25 +67,25 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 @optional
 
 /**
- *  Handle click button.
+ Handle click button.
  */
 - (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 /**
- *  Handle action sheet will present.
+ Handle action sheet will present.
  */
 - (void)willPresentActionSheet:(LCActionSheet *)actionSheet;
 /**
- *  Handle action sheet did present.
+ Handle action sheet did present.
  */
 - (void)didPresentActionSheet:(LCActionSheet *)actionSheet;
 
 /**
- *  Handle action sheet will dismiss.
+ Handle action sheet will dismiss.
  */
 - (void)actionSheet:(LCActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex;
 /**
- *  Handle action sheet did dismiss.
+ Handle action sheet did dismiss.
  */
 - (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex;
 
@@ -100,125 +100,125 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 #pragma mark - Properties
 
 /**
- *  Title.
+ Title.
  */
 @property (nullable, nonatomic, copy) NSString *title;
 
 /**
- *  Cancel button's title.
+ Cancel button's title.
  */
 @property (nullable, nonatomic, copy) NSString *cancelButtonTitle;
 
 /**
- *  Cancel button's index.
+ Cancel button's index.
  */
 @property (nonatomic, assign, readonly) NSInteger cancelButtonIndex;
 
 /**
- *  LCActionSheet's delegate.
+ LCActionSheet's delegate.
  */
 @property (nullable, nonatomic, weak) id<LCActionSheetDelegate> delegate;
 
 /**
- *  Deprecated, use `destructiveButtonIndexSet` instead.
+ Deprecated, use `destructiveButtonIndexSet` instead.
  */
 @property (nullable, nonatomic, strong) NSSet<NSNumber *> *redButtonIndexSet __deprecated_msg("Property deprecated. Use `destructiveButtonIndexSet`");
 
 /**
- *  All destructive buttons' set. You should give it the `NSNumber` type items.
+ All destructive buttons' set. You should give it the `NSNumber` type items.
  */
 @property (nullable, nonatomic, strong) NSSet<NSNumber *> *destructiveButtonIndexSet;
 
 /**
- *  Destructive button's color. Default is RGB(255, 10, 10).
+ Destructive button's color. Default is RGB(255, 10, 10).
  */
 @property (nonatomic, strong) UIColor *destructiveButtonColor;
 
 /**
- *  Title's color. Default is `[UIColor blackColor]`.
+ Title's color. Default is `[UIColor blackColor]`.
  */
 @property (nonatomic, strong) UIColor *titleColor;
 /**
- *  Buttons' color, without destructive buttons. Default is `[UIColor blackColor]`.
+ Buttons' color, without destructive buttons. Default is `[UIColor blackColor]`.
  */
 @property (nonatomic, strong) UIColor *buttonColor;
 /**
- *  Title's font. Default is `[UIFont systemFontOfSize:14.0f]`.
+ Title's font. Default is `[UIFont systemFontOfSize:14.0f]`.
  */
 @property (nonatomic, strong) UIFont *titleFont;
 /**
- *  All buttons' font. Default is `[UIFont systemFontOfSize:18.0f]`.
+ All buttons' font. Default is `[UIFont systemFontOfSize:18.0f]`.
  */
 @property (nonatomic, strong) UIFont *buttonFont;
 /**
- *  All buttons' height. Default is 49.0f;
+ All buttons' height. Default is 49.0f;
  */
 @property (nonatomic, assign) CGFloat buttonHeight;
 
 /**
- *  If buttons' bottom view can scrolling. Default is NO.
+ If buttons' bottom view can scrolling. Default is NO.
  */
 @property (nonatomic, assign, getter=canScrolling) BOOL scrolling;
 
 /**
- *  Visible buttons' count. You have to set `scrolling = YES` if you want to set it.
+ Visible buttons' count. You have to set `scrolling = YES` if you want to set it.
  */
 @property (nonatomic, assign) CGFloat visibleButtonCount;
 
 /**
- *  Animation duration. Default is 0.3 seconds.
+ Animation duration. Default is 0.3 seconds.
  */
 @property (nonatomic, assign) CGFloat animationDuration;
 
 /**
- *  Opacity of dark background. Default is 0.3f.
+ Opacity of dark background. Default is 0.3f.
  */
 @property (nonatomic, assign) CGFloat darkOpacity;
 
 /**
- *  If you can tap darkView to dismiss. Defalut is NO, you can tap dardView to dismiss.
+ If you can tap darkView to dismiss. Defalut is NO, you can tap dardView to dismiss.
  */
 @property (nonatomic, assign) BOOL darkViewNoTaped;
 
 /**
- *  Clear blur effect. Default is NO, don't clear blur effect.
+ Clear blur effect. Default is NO, don't clear blur effect.
  */
 @property (nonatomic, assign) BOOL unBlur;
 
 /**
- *  Style of blur effect. Default is `UIBlurEffectStyleExtraLight`. iOS 8.0 +
+ Style of blur effect. Default is `UIBlurEffectStyleExtraLight`. iOS 8.0 +
  */
 @property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
 
 /**
- *  Title's edge insets. Default is `UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f)`.
+ Title's edge insets. Default is `UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f)`.
  */
 @property (nonatomic, assign) UIEdgeInsets titleEdgeInsets;
 
 /**
- *  Cell's separator color. Default is `RGBA(170/255.0f, 170/255.0f, 170/255.0f, 0.5f)`.
+ Cell's separator color. Default is `RGBA(170/255.0f, 170/255.0f, 170/255.0f, 0.5f)`.
  */
 @property (nonatomic, strong) UIColor *separatorColor;
 
 
 /**
- *  LCActionSheet clicked handle.
+ LCActionSheet clicked handle.
  */
 @property (nullable, nonatomic, copy) LCActionSheetClickedHandle     clickedHandle;
 /**
- *  LCActionSheet will present handle.
+ LCActionSheet will present handle.
  */
 @property (nullable, nonatomic, copy) LCActionSheetWillPresentHandle willPresentHandle;
 /**
- *  LCActionSheet did present handle.
+ LCActionSheet did present handle.
  */
 @property (nullable, nonatomic, copy) LCActionSheetDidPresentHandle  didPresentHandle;
 /**
- *  LCActionSheet will dismiss handle.
+ LCActionSheet will dismiss handle.
  */
 @property (nullable, nonatomic, copy) LCActionSheetWillDismissHandle willDismissHandle;
 /**
- *  LCActionSheet did dismiss handle.
+ LCActionSheet did dismiss handle.
  */
 @property (nullable, nonatomic, copy) LCActionSheetDidDismissHandle  didDismissHandle;
 
@@ -228,14 +228,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 #pragma mark Delegate
 
 /**
- *  Initialize an instance of LCActionSheet (Delegate).
- *
- *  @param title             title
- *  @param delegate          delegate
- *  @param cancelButtonTitle cancelButtonTitle
- *  @param otherButtonTitles otherButtonTitles
- *
- *  @return An instance of LCActionSheet.
+ Initialize an instance of LCActionSheet (Delegate).
+
+ @param title             title
+ @param delegate          delegate
+ @param cancelButtonTitle cancelButtonTitle
+ @param otherButtonTitles otherButtonTitles
+ 
+ @return An instance of LCActionSheet.
  */
 + (instancetype)sheetWithTitle:(nullable NSString *)title
                       delegate:(nullable id<LCActionSheetDelegate>)delegate
@@ -243,14 +243,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
              otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
- *  Initialize an instance of LCActionSheet with title array (Delegate).
- *
- *  @param title                 title
- *  @param delegate              delegate
- *  @param cancelButtonTitle     cancelButtonTitle
- *  @param otherButtonTitleArray otherButtonTitleArray
- *
- *  @return An instance of LCActionSheet.
+ Initialize an instance of LCActionSheet with title array (Delegate).
+
+ @param title                 title
+ @param delegate              delegate
+ @param cancelButtonTitle     cancelButtonTitle
+ @param otherButtonTitleArray otherButtonTitleArray
+ 
+ @return An instance of LCActionSheet.
  */
 + (instancetype)sheetWithTitle:(nullable NSString *)title
                       delegate:(nullable id<LCActionSheetDelegate>)delegate
@@ -258,14 +258,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
          otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
 
 /**
- *  Initialize an instance of LCActionSheet (Delegate).
- *
- *  @param title             title
- *  @param delegate          delegate
- *  @param cancelButtonTitle cancelButtonTitle
- *  @param otherButtonTitles otherButtonTitles
- *
- *  @return An instance of LCActionSheet.
+ Initialize an instance of LCActionSheet (Delegate).
+
+ @param title             title
+ @param delegate          delegate
+ @param cancelButtonTitle cancelButtonTitle
+ @param otherButtonTitles otherButtonTitles
+ 
+ @return An instance of LCActionSheet.
  */
 - (instancetype)initWithTitle:(nullable NSString *)title
                      delegate:(nullable id<LCActionSheetDelegate>)delegate
@@ -273,14 +273,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
             otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
- *  Initialize an instance of LCActionSheet with title array (Delegate).
- *
- *  @param title                 title
- *  @param delegate              delegate
- *  @param cancelButtonTitle     cancelButtonTitle
- *  @param otherButtonTitleArray otherButtonTitleArray
- *
- *  @return An instance of LCActionSheet.
+ Initialize an instance of LCActionSheet with title array (Delegate).
+
+ @param title                 title
+ @param delegate              delegate
+ @param cancelButtonTitle     cancelButtonTitle
+ @param otherButtonTitleArray otherButtonTitleArray
+ 
+ @return An instance of LCActionSheet.
  */
 - (instancetype)initWithTitle:(nullable NSString *)title
                      delegate:(nullable id<LCActionSheetDelegate>)delegate
@@ -291,14 +291,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 #pragma mark Block
 
 /**
- *  Initialize an instance of LCActionSheet (Block).
- *
- *  @param title             title
- *  @param cancelButtonTitle cancelButtonTitle
- *  @param clickedHandle      clickedHandle
- *  @param otherButtonTitles otherButtonTitles
- *
- *  @return An instance of LCActionSheet.
+ Initialize an instance of LCActionSheet (Block).
+
+ @param title             title
+ @param cancelButtonTitle cancelButtonTitle
+ @param clickedHandle     clickedHandle
+ @param otherButtonTitles otherButtonTitles
+ 
+ @return An instance of LCActionSheet.
  */
 + (instancetype)sheetWithTitle:(nullable NSString *)title
              cancelButtonTitle:(nullable NSString *)cancelButtonTitle
@@ -306,14 +306,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
              otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
- *  Initialize an instance of LCActionSheet with title array (Block).
- *
- *  @param title                 title
- *  @param delegate              delegate
- *  @param clickedHandle          clickedHandle
- *  @param otherButtonTitleArray otherButtonTitleArray
- *
- *  @return An instance of LCActionSheet.
+ Initialize an instance of LCActionSheet with title array (Block).
+
+ @param title                 title
+ @param cancelButtonTitle     cancelButtonTitle
+ @param clickedHandle         clickedHandle
+ @param otherButtonTitleArray otherButtonTitleArray
+ 
+ @return An instance of LCActionSheet.
  */
 + (instancetype)sheetWithTitle:(nullable NSString *)title
              cancelButtonTitle:(nullable NSString *)cancelButtonTitle
@@ -321,14 +321,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
          otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
 
 /**
- *  Initialize an instance of LCActionSheet (Block).
- *
- *  @param title             title
- *  @param cancelButtonTitle cancelButtonTitle
- *  @param clickedHandle      clickedHandle
- *  @param otherButtonTitles otherButtonTitles
- *
- *  @return An instance of LCActionSheet.
+ Initialize an instance of LCActionSheet (Block).
+
+ @param title             title
+ @param cancelButtonTitle cancelButtonTitle
+ @param clickedHandle     clickedHandle
+ @param otherButtonTitles otherButtonTitles
+ 
+ @return An instance of LCActionSheet.
  */
 - (instancetype)initWithTitle:(nullable NSString *)title
             cancelButtonTitle:(nullable NSString *)cancelButtonTitle
@@ -336,14 +336,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
             otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
- *  Initialize an instance of LCActionSheet with title array (Block).
- *
- *  @param title                 title
- *  @param delegate              delegate
- *  @param clickedHandle          clickedHandle
- *  @param otherButtonTitleArray otherButtonTitleArray
- *
- *  @return An instance of LCActionSheet.
+ Initialize an instance of LCActionSheet with title array (Block).
+
+ @param title                 title
+ @param cancelButtonTitle     cancelButtonTitle
+ @param clickedHandle         clickedHandle
+ @param otherButtonTitleArray otherButtonTitleArray
+ 
+ @return An instance of LCActionSheet.
  */
 - (instancetype)initWithTitle:(nullable NSString *)title
             cancelButtonTitle:(nullable NSString *)cancelButtonTitle
@@ -354,14 +354,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 #pragma mark Append & Show
 
 /**
- *  Append buttons with titles.
- *
- *  @param buttonTitles buttonTitles
+ Append buttons with titles.
+
+ @param buttonTitles buttonTitles
  */
 - (void)appendButtonTitles:(nullable NSString *)buttonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
- *  Show the instance of LCActionSheet.
+ Show the instance of LCActionSheet.
  */
 - (void)show;
 

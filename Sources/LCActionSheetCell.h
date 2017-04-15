@@ -36,17 +36,17 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LCActionSheetCell : UITableViewCell
 
 /**
- *  Title label.
+ Title label.
  */
 @property (nonatomic, weak) UILabel *titleLabel;
 
 /**
- *  Line.
+ Line.
  */
 @property (nonatomic, weak) UIView *lineView;
 
 /**
- *  Cell's separator color.
+ Cell's separator color.
  */
 @property (nonatomic, strong) UIColor *cellSeparatorColor;
 
