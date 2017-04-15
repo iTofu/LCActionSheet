@@ -263,7 +263,21 @@ In me the tiger sniffs the rose.
 
 ### V 2.7.5 (2017.04.15)
 
-* 修复类别方法名可能与其他库冲突的潜在问题。[#33](https://github.com/iTofu/LCActionSheet/pull/33) by [cwwise](https://github.com/cwwise)。
+* 修复 UIImage 类别中的方法名可能与其他库冲突的潜在问题。[#33](https://github.com/iTofu/LCActionSheet/pull/33) by [cwwise](https://github.com/cwwise)。
+
+  ```objc
+  @interface UIImage (LCActionSheet)
+
+  + (nullable instancetype)imageWithColor:(UIColor *)color;
+
+  // ->
+
+  + (nullable instancetype)lc_imageWithColor:(UIColor *)color;
+
+  @end
+  ```
+
+* 修正 LCActionSheet 中部分方法的注释。
 
 
 ### V 2.7.4 (2017.04.13)
