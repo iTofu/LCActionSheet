@@ -28,8 +28,8 @@ In me the tiger sniffs the rose.
 * [小伙伴们 Partners](#小伙伴们-partners)
 * [版本 ChangeLog](#版本-changelog)
 * [提示 Tips](#提示-tips)
-* [鸣谢 Thanks](#鸣谢-thanks)
 * [示例 Preview](#示例-preview)
+* [鸣谢 Thanks](#鸣谢-thanks)
 * [联系 Support](#联系-support)
 * [许可 License](#许可-license)
 
@@ -48,23 +48,23 @@ In me the tiger sniffs the rose.
 
 * iOS 7.0 +，Demo 需要 [CocoaPods](https://cocoapods.org/) 环境运行。
 
-* 格调高雅，风格百搭，怎么看怎么舒服。
+* 格调高雅，风格百搭，看起来还算不丑。
 
-* 高度自定义，可能需要自定义的基本都考虑到了。详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) [Properties](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L100) 部分。
+* 高度自定义，可能需要自定义的基本都考虑到了。详见 LCActionSheet [Properties](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L100) 部分。
 
 * 有代理，有 Block，可类方法，可实例方法，想怎样，就怎样。
 
-* 代理、Block 非常完善，从 will 到 did 都有，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L63) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L37) 部分。
+* 代理、Block 非常完善，从 will 到 did 都有，详见 LCActionSheet [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L63) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L37) 部分。
 
 * 支持统一配置 Config，作用于全局样式，告别冗余代码，更易维护，详见 [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)。
 
-* 支持 iPad，支持横屏，支持竖屏，支持一会横屏一会竖屏，支持超长标题，理论上支持无数个按钮，统统支持。
+* 适配 iPad，支持横屏，支持竖屏，支持一会横屏一会竖屏，支持超长标题，理论上支持无数个按钮，统统支持。
 
-* 注释完整，代码风格良好，善意满满，便于阅读源码，照顾强迫症，拓展更多功能请前往 [PR](https://github.com/iTofu/LCActionSheet/pulls)。三个诸葛亮，顶个好工匠。
+* 注释完整，代码风格较为良好，善意满满，便于阅读源码，照顾强迫症，拓展更多功能请前往 [PR](https://github.com/iTofu/LCActionSheet/pulls)。
 
 * 集百家之长，使用 [Masonry](https://github.com/SnapKit/Masonry) 进行布局，感谢 [Masonry](https://github.com/SnapKit/Masonry)。
 
-* 有骨气。就不改状态栏颜色，就是这么刚。
+* 有骨气。就不黑状态栏，就是这么刚。
 
 > 💬 **告示**
 > 
@@ -591,16 +591,18 @@ In me the tiger sniffs the rose.
 
 
 
+## 示例 Preview
+
+<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo01.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo02.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo03.png" alt="LCActionSheet" title="LCActionSheet" width="280"/>
+
+
+
 ## 鸣谢 Thanks
 
 * [Masonry](https://github.com/SnapKit/Masonry)
 
 * 海纳百川，有容乃大。感谢开源社区和众攻城狮的支持！感谢众多 [Issues](https://github.com/iTofu/LCActionSheet/issues) 和 [PR](https://github.com/iTofu/LCActionSheet/pulls)！更期待你的 [PR](https://github.com/iTofu/LCActionSheet/pulls)！
 
-
-## 示例 Preview
-
-<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo01.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo02.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo03.png" alt="LCActionSheet" title="LCActionSheet" width="280"/>
 
 
 ## 联系 Support
@@ -622,6 +624,7 @@ In me the tiger sniffs the rose.
     <img src="https://cdnqiniu.leodev.me/donate.png?v=1" alt="Donate with Alipay or Wechat Pay" title="Donate with Alipay or Wechat Pay" width="320"/>
     
   注：（一本正经状）捐赠并不会解锁额外功能。
+
 
 
 ## 许可 License
