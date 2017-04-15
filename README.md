@@ -593,9 +593,9 @@ In me the tiger sniffs the rose.
 
 * 有疑问或建议请 [New Issue](https://github.com/iTofu/LCActionSheet/issues/new)，谢谢 :)
 
-* Mail: `echo bGVvZGF4aWFAZ21haWwuY29tCg== | base64 -D` or `echo ZGV2dGlwQDE2My5jb20K | base64 -D`
+* Mail: `echo bGVvZGF4aWFAZ21haWwuY29tCg== | base64 -D`
 
-* Blog: http://LeoDev.me
+* Blog: https://LeoDev.me
 
 * 捐赠:
   
