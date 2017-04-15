@@ -261,7 +261,7 @@ In me the tiger sniffs the rose.
 
 ## 版本 ChangeLog
 
-### V 2.7.5 (2017.04.15)
+### V 2.7.6 (2017.04.16)
 
 * 修复 UIImage 类别中的方法名可能与其他库冲突的潜在问题。[#33](https://github.com/iTofu/LCActionSheet/pull/33) by [cwwise](https://github.com/cwwise)。
 
