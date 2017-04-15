@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Create a image with the color.
  */
-+ (nullable instancetype)imageWithColor:(UIColor *)color;
++ (nullable instancetype)lc_imageWithColor:(UIColor *)color;
 
 @end
 
