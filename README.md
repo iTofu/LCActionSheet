@@ -72,7 +72,7 @@ In me the tiger sniffs the rose.
 >
 > 可白文翻译，使用 [Markdown](http://www.appinn.com/markdown/) 编辑更佳！义务的哦，如果翻译用心的话我个人请你杯咖啡 ☕️！
 > 
-> 直接 [PR](https://github.com/iTofu/LCActionSheet/pulls) 或者发我邮箱：leodaxia@gmail.com 都可！
+> 直接 [PR](https://github.com/iTofu/LCActionSheet/pulls) 或者发我邮箱 `echo bGVvZGF4aWFAZ21haWwuY29tCg== | base64 -D` 都可！
 
 
 
