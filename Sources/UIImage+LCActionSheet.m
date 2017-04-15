@@ -29,7 +29,7 @@
 
 @implementation UIImage (LCActionSheet)
 
-+ (instancetype)imageWithColor:(UIColor *)color {
++ (instancetype)lc_imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 2.0f, 2.0f);
     
     UIGraphicsBeginImageContext(rect.size);
