@@ -295,7 +295,7 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
 
  @param title             title
  @param cancelButtonTitle cancelButtonTitle
- @param clickedHandle     clickedHandler
+ @param clickedHandler    clickedHandler
  @param otherButtonTitles otherButtonTitles
  
  @return An instance of LCActionSheet.
@@ -310,7 +310,7 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
 
  @param title                 title
  @param cancelButtonTitle     cancelButtonTitle
- @param clickedHandle         clickedHandler
+ @param clickedHandler        clickedHandler
  @param otherButtonTitleArray otherButtonTitleArray
  
  @return An instance of LCActionSheet.
@@ -325,7 +325,7 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
 
  @param title             title
  @param cancelButtonTitle cancelButtonTitle
- @param clickedHandle     clickedHandler
+ @param clickedHandler    clickedHandler
  @param otherButtonTitles otherButtonTitles
  
  @return An instance of LCActionSheet.
@@ -340,7 +340,7 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
 
  @param title                 title
  @param cancelButtonTitle     cancelButtonTitle
- @param clickedHandle         clickedHandler
+ @param clickedHandler        clickedHandler
  @param otherButtonTitleArray otherButtonTitleArray
  
  @return An instance of LCActionSheet.
