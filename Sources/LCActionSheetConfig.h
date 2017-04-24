@@ -60,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) NSSet<NSNumber *> *destructiveButtonIndexSet;
 
 /**
- Destructive button's color. Default is RGB(255, 10, 10).
+ Destructive button's color. Default is RGB(254, 67, 37).
  */
 @property (nonatomic, strong) UIColor *destructiveButtonColor;
 

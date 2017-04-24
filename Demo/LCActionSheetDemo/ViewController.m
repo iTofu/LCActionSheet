@@ -71,19 +71,19 @@
     actionSheet.scrolling          = YES;
     actionSheet.visibleButtonCount = 3.6f;
     
-    actionSheet.willPresentHandle = ^(LCActionSheet *actionSheet) {
+    actionSheet.willPresentHandler = ^(LCActionSheet *actionSheet) {
         NSLog(@"willPresentActionSheet");
     };
     
-    actionSheet.didPresentHandle = ^(LCActionSheet *actionSheet) {
+    actionSheet.didPresentHandler = ^(LCActionSheet *actionSheet) {
         NSLog(@"didPresentActionSheet");
     };
     
-    actionSheet.willDismissHandle = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
+    actionSheet.willDismissHandler = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
         NSLog(@"willDismissWithButtonIndex: %d", (int)buttonIndex);
     };
     
-    actionSheet.didDismissHandle = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
+    actionSheet.didDismissHandler = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
         NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
     };
     

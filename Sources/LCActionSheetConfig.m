@@ -30,7 +30,7 @@
 
 #define LC_ACTION_SHEET_BUTTON_HEIGHT       49.0f
 
-#define LC_ACTION_SHEET_RED_COLOR           LC_ACTION_SHEET_COLOR(255, 10, 10)
+#define LC_ACTION_SHEET_RED_COLOR           LC_ACTION_SHEET_COLOR(254, 67, 37)
 
 #define LC_ACTION_SHEET_TITLE_FONT          [UIFont systemFontOfSize:14.0f]
 

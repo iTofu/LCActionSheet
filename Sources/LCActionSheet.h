@@ -39,25 +39,25 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Handle click button.
  */
-typedef void(^LCActionSheetClickedHandle)(LCActionSheet *actionSheet, NSInteger buttonIndex);
+typedef void(^LCActionSheetClickedHandler)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 
 /**
  Handle action sheet will present.
  */
-typedef void(^LCActionSheetWillPresentHandle)(LCActionSheet *actionSheet);
+typedef void(^LCActionSheetWillPresentHandler)(LCActionSheet *actionSheet);
 /**
  Handle action sheet did present.
  */
-typedef void(^LCActionSheetDidPresentHandle)(LCActionSheet *actionSheet);
+typedef void(^LCActionSheetDidPresentHandler)(LCActionSheet *actionSheet);
 
 /**
  Handle action sheet will dismiss.
  */
-typedef void(^LCActionSheetWillDismissHandle)(LCActionSheet *actionSheet, NSInteger buttonIndex);
+typedef void(^LCActionSheetWillDismissHandler)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 /**
  Handle action sheet did dismiss.
  */
-typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteger buttonIndex);
+typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 
 
 #pragma mark - LCActionSheet Delegate
@@ -130,7 +130,7 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 @property (nullable, nonatomic, strong) NSSet<NSNumber *> *destructiveButtonIndexSet;
 
 /**
- Destructive button's color. Default is RGB(255, 10, 10).
+ Destructive button's color. Default is RGB(254, 67, 37).
  */
 @property (nonatomic, strong) UIColor *destructiveButtonColor;
 
@@ -202,25 +202,25 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 
 
 /**
- LCActionSheet clicked handle.
+ LCActionSheet clicked handler.
  */
-@property (nullable, nonatomic, copy) LCActionSheetClickedHandle     clickedHandle;
+@property (nullable, nonatomic, copy) LCActionSheetClickedHandler     clickedHandler;
 /**
- LCActionSheet will present handle.
+ LCActionSheet will present handler.
  */
-@property (nullable, nonatomic, copy) LCActionSheetWillPresentHandle willPresentHandle;
+@property (nullable, nonatomic, copy) LCActionSheetWillPresentHandler willPresentHandler;
 /**
- LCActionSheet did present handle.
+ LCActionSheet did present handler.
  */
-@property (nullable, nonatomic, copy) LCActionSheetDidPresentHandle  didPresentHandle;
+@property (nullable, nonatomic, copy) LCActionSheetDidPresentHandler  didPresentHandler;
 /**
- LCActionSheet will dismiss handle.
+ LCActionSheet will dismiss handler.
  */
-@property (nullable, nonatomic, copy) LCActionSheetWillDismissHandle willDismissHandle;
+@property (nullable, nonatomic, copy) LCActionSheetWillDismissHandler willDismissHandler;
 /**
- LCActionSheet did dismiss handle.
+ LCActionSheet did dismiss handler.
  */
-@property (nullable, nonatomic, copy) LCActionSheetDidDismissHandle  didDismissHandle;
+@property (nullable, nonatomic, copy) LCActionSheetDidDismissHandler  didDismissHandler;
 
 
 #pragma mark - Methods
@@ -295,14 +295,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 
  @param title             title
  @param cancelButtonTitle cancelButtonTitle
- @param clickedHandle     clickedHandle
+ @param clickedHandle     clickedHandler
  @param otherButtonTitles otherButtonTitles
  
  @return An instance of LCActionSheet.
  */
 + (instancetype)sheetWithTitle:(nullable NSString *)title
              cancelButtonTitle:(nullable NSString *)cancelButtonTitle
-                       clicked:(nullable LCActionSheetClickedHandle)clickedHandle
+                       clicked:(nullable LCActionSheetClickedHandler)clickedHandler
              otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
@@ -310,14 +310,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 
  @param title                 title
  @param cancelButtonTitle     cancelButtonTitle
- @param clickedHandle         clickedHandle
+ @param clickedHandle         clickedHandler
  @param otherButtonTitleArray otherButtonTitleArray
  
  @return An instance of LCActionSheet.
  */
 + (instancetype)sheetWithTitle:(nullable NSString *)title
              cancelButtonTitle:(nullable NSString *)cancelButtonTitle
-                       clicked:(nullable LCActionSheetClickedHandle)clickedHandle
+                       clicked:(nullable LCActionSheetClickedHandler)clickedHandler
          otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
 
 /**
@@ -325,14 +325,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 
  @param title             title
  @param cancelButtonTitle cancelButtonTitle
- @param clickedHandle     clickedHandle
+ @param clickedHandle     clickedHandler
  @param otherButtonTitles otherButtonTitles
  
  @return An instance of LCActionSheet.
  */
 - (instancetype)initWithTitle:(nullable NSString *)title
             cancelButtonTitle:(nullable NSString *)cancelButtonTitle
-                      clicked:(nullable LCActionSheetClickedHandle)clickedHandle
+                      clicked:(nullable LCActionSheetClickedHandler)clickedHandler
             otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
@@ -340,14 +340,14 @@ typedef void(^LCActionSheetDidDismissHandle)(LCActionSheet *actionSheet, NSInteg
 
  @param title                 title
  @param cancelButtonTitle     cancelButtonTitle
- @param clickedHandle         clickedHandle
+ @param clickedHandle         clickedHandler
  @param otherButtonTitleArray otherButtonTitleArray
  
  @return An instance of LCActionSheet.
  */
 - (instancetype)initWithTitle:(nullable NSString *)title
             cancelButtonTitle:(nullable NSString *)cancelButtonTitle
-                      clicked:(nullable LCActionSheetClickedHandle)clickedHandle
+                      clicked:(nullable LCActionSheetClickedHandler)clickedHandler
         otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
 
 

@@ -76,7 +76,7 @@
                  otherButtonTitleArray:tempOtherButtonTitles];
 }
 
-+ (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandle)clickedHandle otherButtonTitles:(NSString *)otherButtonTitles, ... {
++ (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandler)clickedHandler otherButtonTitles:(NSString *)otherButtonTitles, ... {
     id eachObject;
     va_list argumentList;
     NSMutableArray *tempOtherButtonTitles = nil;
@@ -90,7 +90,7 @@
     }
     return [[self alloc] initWithTitle:title
                      cancelButtonTitle:cancelButtonTitle
-                               clicked:clickedHandle
+                               clicked:clickedHandler
                  otherButtonTitleArray:tempOtherButtonTitles];
 }
 
@@ -102,11 +102,11 @@
                  otherButtonTitleArray:otherButtonTitleArray];
 }
 
-+ (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandle)clickedHandle otherButtonTitleArray:(NSArray<NSString *> *)otherButtonTitleArray {
++ (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandler)clickedHandler otherButtonTitleArray:(NSArray<NSString *> *)otherButtonTitleArray {
     
     return [[self alloc] initWithTitle:title
                      cancelButtonTitle:cancelButtonTitle
-                               clicked:clickedHandle
+                               clicked:clickedHandler
                  otherButtonTitleArray:otherButtonTitleArray];
 }
 
@@ -136,7 +136,7 @@
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandle)clickedHandle otherButtonTitles:(NSString *)otherButtonTitles, ... {
+- (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandler)clickedHandler otherButtonTitles:(NSString *)otherButtonTitles, ... {
     if (self = [super init]) {
         [self config:[LCActionSheetConfig shared]];
         
@@ -154,7 +154,7 @@
         
         self.title             = title;
         self.cancelButtonTitle = cancelButtonTitle;
-        self.clickedHandle     = clickedHandle;
+        self.clickedHandler    = clickedHandler;
         self.otherButtonTitles = tempOtherButtonTitles;
         
         [self setupView];
@@ -176,13 +176,13 @@
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandle)clickedHandle otherButtonTitleArray:(NSArray<NSString *> *)otherButtonTitleArray {
+- (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandler)clickedHandler otherButtonTitleArray:(NSArray<NSString *> *)otherButtonTitleArray {
     if (self = [super init]) {
         [self config:[LCActionSheetConfig shared]];
         
         self.title             = title;
         self.cancelButtonTitle = cancelButtonTitle;
-        self.clickedHandle     = clickedHandle;
+        self.clickedHandler    = clickedHandler;
         self.otherButtonTitles = otherButtonTitleArray;
         
         [self setupView];
@@ -624,8 +624,8 @@
         [self.delegate willPresentActionSheet:self];
     }
     
-    if (self.willPresentHandle) {
-        self.willPresentHandle(self);
+    if (self.willPresentHandler) {
+        self.willPresentHandler(self);
     }
     
     [self layoutIfNeeded];
@@ -648,8 +648,8 @@
             [weakSelf.delegate didPresentActionSheet:self];
         }
         
-        if (weakSelf.didPresentHandle) {
-            weakSelf.didPresentHandle(self);
+        if (weakSelf.didPresentHandler) {
+            weakSelf.didPresentHandler(self);
         }
     }];
 }
@@ -659,8 +659,8 @@
         [self.delegate actionSheet:self willDismissWithButtonIndex:buttonIndex];
     }
     
-    if (self.willDismissHandle) {
-        self.willDismissHandle(self, buttonIndex);
+    if (self.willDismissHandler) {
+        self.willDismissHandler(self, buttonIndex);
     }
     
     __weak typeof(self) weakSelf = self;
@@ -684,8 +684,8 @@
             [weakSelf.delegate actionSheet:self didDismissWithButtonIndex:buttonIndex];
         }
         
-        if (weakSelf.didDismissHandle) {
-            weakSelf.didDismissHandle(self, buttonIndex);
+        if (weakSelf.didDismissHandler) {
+            weakSelf.didDismissHandler(self, buttonIndex);
         }
     }];
 }
@@ -707,8 +707,8 @@
         [self.delegate actionSheet:self clickedButtonAtIndex:0];
     }
     
-    if (self.clickedHandle) {
-        self.clickedHandle(self, 0);
+    if (self.clickedHandler) {
+        self.clickedHandler(self, 0);
     }
     
     [self hideWithButtonIndex:0];
@@ -721,8 +721,8 @@
         [self.delegate actionSheet:self clickedButtonAtIndex:indexPath.row + 1];
     }
     
-    if (self.clickedHandle) {
-        self.clickedHandle(self, indexPath.row + 1);
+    if (self.clickedHandler) {
+        self.clickedHandler(self, indexPath.row + 1);
     }
     
     [self hideWithButtonIndex:indexPath.row + 1];
