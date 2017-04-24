@@ -268,12 +268,15 @@ In me the tiger sniffs the rose.
 
   ```
   *Handle -> *Handler
-
+  ```
+  
   如：
+  
+  ```objc
   LCActionSheetClickedHandle -> LCActionSheetClickedHandler
   ```
 
-* 调整默认警示按钮颜色：
+* 调整警示按钮默认颜色：
 
   ```
   RGB(255, 10, 10) -> RGB(254, 67, 37)
