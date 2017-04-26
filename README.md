@@ -293,8 +293,12 @@ In me the tiger sniffs the rose.
 * 下列方法已不推荐使用，建议使用新的属性代替：
 
   ```objc
+  @interface LCActionSheetConfig : NSObject
+  
   // LCActionSheetConfig shared instance.
   + (instancetype)shared __deprecated_msg("Method deprecated. Use property `config` instead.");
+
+  @end
   ```
 
 
