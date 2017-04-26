@@ -120,7 +120,10 @@ In me the tiger sniffs the rose.
     actionSheet.unBlur             = YES;
     actionSheet.blurEffectStyle    = UIBlurEffectStyleLight;
     
-    actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
+    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [indexSet addIndex:0];
+    [indexSet addIndex:2];
+    actionSheet.destructiveButtonIndexSet = indexSet;
     actionSheet.destructiveButtonColor    = [UIColor blueColor];
     
     // V 2.7.0+
@@ -128,6 +131,18 @@ In me the tiger sniffs the rose.
     
     // V 2.7.1+
     actionSheet.separatorColor = [UIColor orangeColor];
+
+    // V 3.1.0+
+    actionSheet.autoHideWhenDeviceRotated = YES;
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//        [actionSheet appendButtonWithTitle:@"WoW" atIndex:7];
+        
+        NSMutableIndexSet *set = [[NSMutableIndexSet alloc] init];
+        [set addIndex:1];
+        [set addIndex:2];
+        [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexes:set];
+    });
     
     [actionSheet show];
     ```
@@ -262,9 +277,50 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
-### V 3.0.0 (2017.04.24) (⚠️ API 变化)
+### V 3.1.0 (2017.04.26) (⚠️ API Updated)
 
-* 更正方法命名：
+* 增加新的方法：
+
+  ```objc
+  @interface LCActionSheet : UIView
+
+  // Append button at index with title.
+  - (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSUInteger)index;
+
+  // Append buttons at indexes with titles.
+  - (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexes:(NSIndexSet *)indexes;
+
+  @end
+  ```
+
+* 修改属性类型：
+
+  ```objc
+  @property (nullable, nonatomic, strong) NSSet<NSNumber *> *destructiveButtonIndexSet;
+
+  // ->
+
+  @property (nullable, nonatomic, strong) NSIndexSet *destructiveButtonIndexSet;
+  ```
+
+* 修改方法命名：
+
+  ```objc
+  @interface LCActionSheet : UIView
+
+  - (void)appendButtonTitles:(nullable NSString *)buttonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+
+  // ->
+
+  - (void)appendButtonsWithTitles:(nullable NSString *)titles, ... NS_REQUIRES_NIL_TERMINATION;
+
+  @end
+  ```
+
+
+### V 3.0.0 (2017.04.24) (⚠️ API Updated)
+
+* 修改方法命名：
 
   ```
   *Handle -> *Handler
