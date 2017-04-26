@@ -43,16 +43,20 @@
 
 @implementation LCActionSheetConfig
 
-+ (instancetype)shared {
-    static id _shared = nil;
++ (LCActionSheetConfig *)config {
+    static id _config = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _shared = [[self alloc] init];
+        _config = [[self alloc] initSharedInstance];
     });
-    return _shared;
+    return _config;
 }
 
-- (instancetype)init {
++ (instancetype)shared {
+    return self.config;
+}
+
+- (instancetype)initSharedInstance {
     if (self = [super init]) {
         self.titleFont              = LC_ACTION_SHEET_TITLE_FONT;
         self.buttonFont             = LC_ACTION_SHEET_BUTTON_FONT;
@@ -69,6 +73,10 @@
         self.separatorColor         = LC_ACTION_SHEET_COLOR_A(150, 150, 150, 0.3f);
     }
     return self;
+}
+
+- (instancetype)init {
+    return LCActionSheetConfig.config;
 }
 
 - (NSUInteger)cancelButtonIndex {

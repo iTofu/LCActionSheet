@@ -131,15 +131,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *separatorColor;
 
 /**
- Auto hide when the device rotated. Default is NO, won't auto hides.
+ Auto hide when the device rotated. Default is NO, won't auto hide.
  */
 @property (nonatomic, assign) BOOL autoHideWhenDeviceRotated;
 
+/**
+ LCActionSheetConfig shared instance.
+ */
+@property (class, nonatomic, strong, readonly) LCActionSheetConfig *config;
 
 /**
- LCActionSheetConfig instance.
+ LCActionSheetConfig shared instance.
  */
-+ (instancetype)shared;
++ (instancetype)shared __deprecated_msg("Method deprecated. Use property `config` instead.");
 
 @end
 

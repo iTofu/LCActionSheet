@@ -122,7 +122,7 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInt
 /**
  Deprecated, use `destructiveButtonIndexSet` instead.
  */
-@property (nullable, nonatomic, strong) NSIndexSet *redButtonIndexSet __deprecated_msg("Property deprecated. Use `destructiveButtonIndexSet`");
+@property (nullable, nonatomic, strong) NSIndexSet *redButtonIndexSet __deprecated_msg("Property deprecated. Use `destructiveButtonIndexSet` instead.");
 
 /**
  All destructive buttons' set. You should give it the `NSNumber` type items.
@@ -201,7 +201,7 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInt
 @property (nonatomic, strong) UIColor *separatorColor;
 
 /**
- Auto hide when the device rotated. Default is NO, won't auto hides.
+ Auto hide when the device rotated. Default is NO, won't auto hide.
  */
 @property (nonatomic, assign) BOOL autoHideWhenDeviceRotated;
 

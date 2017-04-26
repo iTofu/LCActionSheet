@@ -66,6 +66,9 @@
 }
 
 - (IBAction)showBlockActionSheet {
+//    LCActionSheetConfig *config = LCActionSheetConfig.config;
+//    config.buttonColor = [UIColor orangeColor];
+    
     LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" clicked:^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
         
         NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
