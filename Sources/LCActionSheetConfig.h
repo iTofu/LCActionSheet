@@ -130,6 +130,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong) UIColor *separatorColor;
 
+/**
+ Auto hide when the device rotated. Default is NO, won't auto hides.
+ */
+@property (nonatomic, assign) BOOL autoHideWhenDeviceRotated;
+
 
 /**
  LCActionSheetConfig instance.

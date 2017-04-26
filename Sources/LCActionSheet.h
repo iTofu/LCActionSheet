@@ -200,6 +200,11 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInt
  */
 @property (nonatomic, strong) UIColor *separatorColor;
 
+/**
+ Auto hide when the device rotated. Default is NO, won't auto hides.
+ */
+@property (nonatomic, assign) BOOL autoHideWhenDeviceRotated;
+
 
 /**
  LCActionSheet clicked handler.

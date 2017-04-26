@@ -209,15 +209,17 @@
     _blurEffectStyle           = config.blurEffectStyle;
     _titleEdgeInsets           = config.titleEdgeInsets;
     _separatorColor            = config.separatorColor;
+    _autoHideWhenDeviceRotated = config.autoHideWhenDeviceRotated;
     
     return self;
 }
 
 - (void)setupView {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleDidChangeStatusBarOrientation)
-                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
-                                               object:nil];
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self
+                           selector:@selector(handleDidChangeStatusBarOrientation)
+                               name:UIApplicationDidChangeStatusBarOrientationNotification
+                             object:nil];
     
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow addSubview:self];
@@ -412,11 +414,8 @@
 }
 
 - (void)handleDidChangeStatusBarOrientation {
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if (orientation == UIInterfaceOrientationLandscapeRight || orientation ==UIInterfaceOrientationLandscapeLeft) {
-        self.blurEffectView.contentMode = UIViewContentModeScaleAspectFill;
-    } else {
-        self.blurEffectView.contentMode = UIViewContentModeBottom;
+    if (self.autoHideWhenDeviceRotated) {
+        [self hideWithButtonIndex:self.cancelButtonIndex];
     }
 }
 

@@ -56,6 +56,9 @@
     // V 2.7.1+
     actionSheet.separatorColor = [UIColor orangeColor];
     
+    // V 3.1.0+
+    actionSheet.autoHideWhenDeviceRotated = YES;
+    
     [actionSheet show];
 }
 
@@ -92,11 +95,11 @@
     
     // Append buttons methods
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-//        [actionSheet appendButtonWithTitle:@"WoW" atIndex:1];
+//        [actionSheet appendButtonWithTitle:@"WoW" atIndex:7];
         
         NSMutableIndexSet *set = [[NSMutableIndexSet alloc] init];
-        [set addIndex:7];
-        [set addIndex:8];
+        [set addIndex:1];
+        [set addIndex:2];
         [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexes:set];
     });
 }
