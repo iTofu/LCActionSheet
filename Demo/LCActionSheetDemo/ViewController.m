@@ -103,7 +103,7 @@
         NSMutableIndexSet *set = [[NSMutableIndexSet alloc] init];
         [set addIndex:1];
         [set addIndex:2];
-        [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexSet:set];
+        [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexes:set];
     });
 }
 

@@ -374,12 +374,12 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInt
 - (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSUInteger)index;
 
 /**
- Append buttons at indexes with titles.
+ Append buttons at indexSet with titles.
 
  @param titles   titles
  @param indexSet indexSet
  */
-- (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexSet:(NSIndexSet *)indexSet;
+- (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexex:(NSIndexSet *)indexes;
 
 /**
  Show the instance of LCActionSheet.

@@ -141,7 +141,7 @@ In me the tiger sniffs the rose.
         NSMutableIndexSet *set = [[NSMutableIndexSet alloc] init];
         [set addIndex:1];
         [set addIndex:2];
-        [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexSet:set];
+        [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexes:set];
     });
     
     [actionSheet show];
@@ -288,7 +288,7 @@ In me the tiger sniffs the rose.
   - (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSUInteger)index;
   
   // Append buttons at indexes with titles.
-  - (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexSet:(NSIndexSet *)indexSet;
+  - (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexex:(NSIndexSet *)indexes;
   
   @end
   ```
