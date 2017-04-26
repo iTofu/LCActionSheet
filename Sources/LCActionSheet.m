@@ -373,8 +373,10 @@
 }
 
 - (void)appendButtonWithTitle:(NSString *)title atIndex:(NSUInteger)index {
+#ifdef DEBUG
     NSAssert(index != 0, @"Index 0 is cancel button");
     NSAssert(index <= self.otherButtonTitles.count + 1, @"Index crossed");
+#endif
     
     NSMutableArray<NSString *> *arrayM = [NSMutableArray arrayWithArray:self.otherButtonTitles];
     [arrayM insertObject:title atIndex:index - 1];
@@ -386,12 +388,16 @@
 }
 
 - (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexes:(NSIndexSet *)indexes {
+#ifdef DEBUG
     NSAssert(titles.count == indexes.count, @"Count of titles differs from count of indexs");
+#endif
     
     NSMutableIndexSet *indexSetM = [[NSMutableIndexSet alloc] init];
     [indexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+#ifdef DEBUG
         NSAssert(idx != 0, @"Index 0 is cancel button");
         NSAssert(idx <= self.otherButtonTitles.count + indexes.count, @"Index crossed");
+#endif
         
         [indexSetM addIndex:idx - 1];
     }];
