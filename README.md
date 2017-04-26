@@ -1,10 +1,13 @@
 # LCActionSheet
 
-[![Travis](https://img.shields.io/travis/iTofu/LCActionSheet.svg?style=flat)](https://travis-ci.org/iTofu/LCActionSheet)
+[![Travis](https://img.shields.io/travis/iTofu/LCActionSheet.svg)](https://travis-ci.org/iTofu/LCActionSheet)
 [![CocoaPods](https://img.shields.io/cocoapods/v/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
 [![CocoaPods](https://img.shields.io/cocoapods/l/LCActionSheet.svg)](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LICENSE)
 [![CocoaPods](https://img.shields.io/cocoapods/p/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
+[![Laguage](https://img.shields.io/badge/language-Objc%20%26%20Swift-orange.svg)](https://github.com/iTofu/LCActionSheet)
+[![CocoaPods](https://img.shields.io/cocoapods/dt/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
 [![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](https://leodev.me)
+[![GitHub stars](https://img.shields.io/github/stars/iTofu/LCActionSheet.svg?style=social&label=Star)](https://github.com/iTofu/LCActionSheet)
 
 ☀️ 一款简约而不失强大的 ActionSheet，微博、微信和 QQ 都采用了极其类似的样式，完全支持 Swift。
 
