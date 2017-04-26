@@ -288,7 +288,7 @@ In me the tiger sniffs the rose.
   - (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSUInteger)index;
   
   // Append buttons at indexes with titles.
-  - (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexex:(NSIndexSet *)indexes;
+  - (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexes:(NSIndexSet *)indexes;
   
   @end
   ```
