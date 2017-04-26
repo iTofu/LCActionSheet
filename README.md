@@ -277,6 +277,27 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
+### V 3.1.1 (2017.04.26)
+
+* 新增属性：
+
+  ```objc
+  @interface LCActionSheetConfig : NSObject
+
+  // LCActionSheetConfig shared instance.
+  @property (class, nonatomic, strong, readonly) LCActionSheetConfig *config;
+
+  @end
+  ```
+
+* 下列方法已不推荐使用，建议使用新的属性代替：
+
+  ```objc
+  // LCActionSheetConfig shared instance.
+  + (instancetype)shared __deprecated_msg("Method deprecated. Use property `config` instead.");
+  ```
+
+
 ### V 3.1.0 (2017.04.26) (⚠️ API Updated)
 
 * 新增属性和方法：
