@@ -210,7 +210,7 @@ In me the tiger sniffs the rose.
 
   ```objc
   // 统一配置 Config 作用于全局样式, 每个属性的默认值可以在 LCActionSheetConfig 中查看
-  LCActionSheetConfig *config = [LCActionSheetConfig shared];
+  LCActionSheetConfig *config = LCActionSheetConfig.config;
   
   config.title              = @"Common Title";
   config.cancelButtonTitle  = @"Close";
