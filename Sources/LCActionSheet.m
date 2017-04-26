@@ -467,10 +467,10 @@
     [self updateCancelButton];
 }
 
-- (void)setDestructiveButtonIndexSet:(NSSet *)destructiveButtonIndexSet {
+- (void)setDestructiveButtonIndexSet:(NSIndexSet *)destructiveButtonIndexSet {
     _destructiveButtonIndexSet = destructiveButtonIndexSet;
     
-    if ([destructiveButtonIndexSet lc_contains:0]) {
+    if ([destructiveButtonIndexSet containsIndex:0]) {
         [self.cancelButton setTitleColor:self.destructiveButtonColor forState:UIControlStateNormal];
     } else {
         [self.cancelButton setTitleColor:self.buttonColor forState:UIControlStateNormal];
@@ -479,11 +479,11 @@
     [self.tableView reloadData];
 }
 
-- (void)setRedButtonIndexSet:(NSSet *)redButtonIndexSet {
+- (void)setRedButtonIndexSet:(NSIndexSet *)redButtonIndexSet {
     self.destructiveButtonIndexSet = redButtonIndexSet;
 }
 
-- (NSSet *)redButtonIndexSet {
+- (NSIndexSet *)redButtonIndexSet {
     return self.destructiveButtonIndexSet;
 }
 
@@ -522,7 +522,7 @@
 - (void)setDestructiveButtonColor:(UIColor *)aDestructiveButtonColor {
     _destructiveButtonColor = aDestructiveButtonColor;
     
-    if ([self.destructiveButtonIndexSet lc_contains:0]) {
+    if ([self.destructiveButtonIndexSet containsIndex:0]) {
         [self.cancelButton setTitleColor:self.destructiveButtonColor forState:UIControlStateNormal];
     } else {
         [self.cancelButton setTitleColor:self.buttonColor forState:UIControlStateNormal];
@@ -794,7 +794,7 @@
     }
     
     if (self.destructiveButtonIndexSet) {
-        if ([self.destructiveButtonIndexSet lc_contains:(int)indexPath.row + 1]) {
+        if ([self.destructiveButtonIndexSet containsIndex:indexPath.row + 1]) {
             cell.titleLabel.textColor = self.destructiveButtonColor;
         } else {
             cell.titleLabel.textColor = self.buttonColor;

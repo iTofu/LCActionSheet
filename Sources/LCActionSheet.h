@@ -122,12 +122,12 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInt
 /**
  Deprecated, use `destructiveButtonIndexSet` instead.
  */
-@property (nullable, nonatomic, strong) NSSet<NSNumber *> *redButtonIndexSet __deprecated_msg("Property deprecated. Use `destructiveButtonIndexSet`");
+@property (nullable, nonatomic, strong) NSIndexSet *redButtonIndexSet __deprecated_msg("Property deprecated. Use `destructiveButtonIndexSet`");
 
 /**
  All destructive buttons' set. You should give it the `NSNumber` type items.
  */
-@property (nullable, nonatomic, strong) NSSet<NSNumber *> *destructiveButtonIndexSet;
+@property (nullable, nonatomic, strong) NSIndexSet *destructiveButtonIndexSet;
 
 /**
  Destructive button's color. Default is RGB(254, 67, 37).
@@ -374,7 +374,7 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInt
 - (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSUInteger)index;
 
 /**
- Append buttons at indexs with titles.
+ Append buttons at indexes with titles.
 
  @param titles  titles
  @param indexes indexes

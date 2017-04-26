@@ -47,7 +47,10 @@
     actionSheet.unBlur             = YES;
     
     // V 2.1.0+ Use `destructiveButtonIndexSet` instead `redButtonIndexSet`.
-    actionSheet.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
+    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [indexSet addIndex:0];
+    [indexSet addIndex:2];
+    actionSheet.destructiveButtonIndexSet = indexSet;
     actionSheet.destructiveButtonColor    = [UIColor blueColor];
     
     // V 2.7.0+
