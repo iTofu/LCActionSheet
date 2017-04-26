@@ -279,10 +279,13 @@ In me the tiger sniffs the rose.
 
 ### V 3.1.0 (2017.04.26) (⚠️ API Updated)
 
-* 增加新的方法：
+* 新增属性和方法：
 
   ```objc
   @interface LCActionSheet : UIView
+  
+  // Auto hide when the device rotated. Default is NO, won't auto hides.
+  @property (nonatomic, assign) BOOL autoHideWhenDeviceRotated;
   
   // Append button at index with title.
   - (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSUInteger)index;
@@ -292,6 +295,8 @@ In me the tiger sniffs the rose.
   
   @end
   ```
+  
+  [#34](https://github.com/iTofu/LCActionSheet/pull/34) & [#35](https://github.com/iTofu/LCActionSheet/pull/35) by [cochat](https://github.com/cochat).
 
 * 修改属性类型：
 
