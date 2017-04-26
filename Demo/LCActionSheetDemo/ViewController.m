@@ -35,7 +35,7 @@
                                                         otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", @"This is a very very very very very very long button title~", @"Button 5", nil];
     actionSheet.title              = @"This is a very very very very very very very very very very very very very very very very very very very very very very very very very very very long title~";
     actionSheet.cancelButtonTitle  = @"Close";
-    [actionSheet appendButtonTitles:@"Button 6", @"Button 7", nil];
+    [actionSheet appendButtonsWithTitles:@"Button 6", @"Button 7", nil];
     actionSheet.titleColor         = [UIColor orangeColor];
     actionSheet.buttonColor        = [UIColor greenColor];
     actionSheet.titleFont          = [UIFont boldSystemFontOfSize:15.0f];
@@ -60,7 +60,7 @@
 }
 
 - (IBAction)showBlockActionSheet {
-    LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" clicked:^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
+    LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" clicked:^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
         
         NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
         
@@ -79,20 +79,31 @@
         NSLog(@"didPresentActionSheet");
     };
     
-    actionSheet.willDismissHandler = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
+    actionSheet.willDismissHandler = ^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
         NSLog(@"willDismissWithButtonIndex: %d", (int)buttonIndex);
     };
     
-    actionSheet.didDismissHandler = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
+    actionSheet.didDismissHandler = ^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
         NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
     };
     
     [actionSheet show];
+    
+    
+    // Append buttons methods
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//        [actionSheet appendButtonWithTitle:@"WoW" atIndex:1];
+        
+        NSMutableIndexSet *set = [[NSMutableIndexSet alloc] init];
+        [set addIndex:7];
+        [set addIndex:8];
+        [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexes:set];
+    });
 }
 
 #pragma mark - LCActionSheet Delegate
 
-- (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSUInteger)buttonIndex {
     NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
 }
 
@@ -104,11 +115,11 @@
     NSLog(@"didPresentActionSheet");
 }
 
-- (void)actionSheet:(LCActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
+- (void)actionSheet:(LCActionSheet *)actionSheet willDismissWithButtonIndex:(NSUInteger)buttonIndex {
     NSLog(@"willDismissWithButtonIndex: %d", (int)buttonIndex);
 }
 
-- (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+- (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSUInteger)buttonIndex {
     NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
 }
 

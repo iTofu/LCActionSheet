@@ -352,13 +352,13 @@
     self.cancelButton = cancelButton;
 }
 
-- (void)appendButtonTitles:(NSString *)buttonTitles, ... {
+- (void)appendButtonsWithTitles:(NSString *)titles, ... {
     id eachObject;
     va_list argumentList;
     NSMutableArray *tempButtonTitles = nil;
-    if (buttonTitles) {
-        tempButtonTitles = [[NSMutableArray alloc] initWithObjects:buttonTitles, nil];
-        va_start(argumentList, buttonTitles);
+    if (titles) {
+        tempButtonTitles = [[NSMutableArray alloc] initWithObjects:titles, nil];
+        va_start(argumentList, titles);
         while ((eachObject = va_arg(argumentList, id))) {
             [tempButtonTitles addObject:eachObject];
         }
@@ -366,6 +366,39 @@
     }
     
     self.otherButtonTitles = [self.otherButtonTitles arrayByAddingObjectsFromArray:tempButtonTitles];
+    
+    [self.tableView reloadData];
+    [self updateBottomView];
+    [self updateTableView];
+}
+
+- (void)appendButtonWithTitle:(NSString *)title atIndex:(NSUInteger)index {
+    NSAssert(index != 0, @"Index 0 is cancel button");
+    NSAssert(index <= self.otherButtonTitles.count + 1, @"Index crossed");
+    
+    NSMutableArray<NSString *> *arrayM = [NSMutableArray arrayWithArray:self.otherButtonTitles];
+    [arrayM insertObject:title atIndex:index - 1];
+    self.otherButtonTitles = [NSArray arrayWithArray:arrayM];
+    
+    [self.tableView reloadData];
+    [self updateBottomView];
+    [self updateTableView];
+}
+
+- (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexes:(NSIndexSet *)indexes {
+    NSAssert(titles.count == indexes.count, @"Count of titles differs from count of indexs");
+    
+    NSMutableIndexSet *indexSetM = [[NSMutableIndexSet alloc] init];
+    [indexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        NSAssert(idx != 0, @"Index 0 is cancel button");
+        NSAssert(idx <= self.otherButtonTitles.count + indexes.count, @"Index crossed");
+        
+        [indexSetM addIndex:idx - 1];
+    }];
+    
+    NSMutableArray<NSString *> *arrayM = [NSMutableArray arrayWithArray:self.otherButtonTitles];
+    [arrayM insertObjects:titles atIndexes:indexSetM];
+    self.otherButtonTitles = [NSArray arrayWithArray:arrayM];
     
     [self.tableView reloadData];
     [self updateBottomView];
@@ -515,7 +548,7 @@
     [self updateCancelButton];
 }
 
-- (NSInteger)cancelButtonIndex {
+- (NSUInteger)cancelButtonIndex {
     return 0;
 }
 
@@ -654,7 +687,7 @@
     }];
 }
 
-- (void)hideWithButtonIndex:(NSInteger)buttonIndex {
+- (void)hideWithButtonIndex:(NSUInteger)buttonIndex {
     if ([self.delegate respondsToSelector:@selector(actionSheet:willDismissWithButtonIndex:)]) {
         [self.delegate actionSheet:self willDismissWithButtonIndex:buttonIndex];
     }

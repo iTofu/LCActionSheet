@@ -71,7 +71,7 @@
     return self;
 }
 
-- (NSInteger)cancelButtonIndex {
+- (NSUInteger)cancelButtonIndex {
     return 0;
 }
 

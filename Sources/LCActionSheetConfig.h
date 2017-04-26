@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Cancel button's index.
  */
-@property (nonatomic, assign, readonly) NSInteger cancelButtonIndex;
+@property (nonatomic, assign, readonly) NSUInteger cancelButtonIndex;
 
 /**
  All destructive buttons' set. You should give it the `NSNumber` type items.
