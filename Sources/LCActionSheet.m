@@ -389,16 +389,16 @@
     [self updateTableView];
 }
 
-- (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexes:(NSIndexSet *)indexes {
+- (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexSet:(NSIndexSet *)indexSet {
 #ifdef DEBUG
-    NSAssert(titles.count == indexes.count, @"Count of titles differs from count of indexs");
+    NSAssert(titles.count == indexSet.count, @"Count of titles differs from count of indexs");
 #endif
     
     NSMutableIndexSet *indexSetM = [[NSMutableIndexSet alloc] init];
-    [indexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+    [indexSet enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
 #ifdef DEBUG
         NSAssert(idx != 0, @"Index 0 is cancel button");
-        NSAssert(idx <= self.otherButtonTitles.count + indexes.count, @"Index crossed");
+        NSAssert(idx <= self.otherButtonTitles.count + indexSet.count, @"Index crossed");
 #endif
         
         [indexSetM addIndex:idx - 1];

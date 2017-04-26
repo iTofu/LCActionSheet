@@ -141,7 +141,7 @@ In me the tiger sniffs the rose.
         NSMutableIndexSet *set = [[NSMutableIndexSet alloc] init];
         [set addIndex:1];
         [set addIndex:2];
-        [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexes:set];
+        [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexSet:set];
     });
     
     [actionSheet show];
@@ -283,37 +283,41 @@ In me the tiger sniffs the rose.
 
   ```objc
   @interface LCActionSheet : UIView
-
+  
   // Append button at index with title.
   - (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSUInteger)index;
-
+  
   // Append buttons at indexes with titles.
-  - (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexes:(NSIndexSet *)indexes;
-
+  - (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexSet:(NSIndexSet *)indexSet;
+  
   @end
   ```
 
 * 修改属性类型：
 
   ```objc
+  @interface LCActionSheet : UIView
+  
   @property (nullable, nonatomic, strong) NSSet<NSNumber *> *destructiveButtonIndexSet;
-
+  
   // ->
-
+  
   @property (nullable, nonatomic, strong) NSIndexSet *destructiveButtonIndexSet;
+
+  @end
   ```
 
 * 修改方法命名：
 
   ```objc
   @interface LCActionSheet : UIView
-
+  
   - (void)appendButtonTitles:(nullable NSString *)buttonTitles, ... NS_REQUIRES_NIL_TERMINATION;
-
+  
   // ->
-
+  
   - (void)appendButtonsWithTitles:(nullable NSString *)titles, ... NS_REQUIRES_NIL_TERMINATION;
-
+  
   @end
   ```
 
