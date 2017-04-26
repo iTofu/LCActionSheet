@@ -112,7 +112,7 @@
 
 - (instancetype)initWithTitle:(NSString *)title delegate:(id<LCActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {
     if (self = [super init]) {
-        [self config:[LCActionSheetConfig shared]];
+        [self config:LCActionSheetConfig.config];
         
         id eachObject;
         va_list argumentList;
@@ -138,7 +138,7 @@
 
 - (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandler)clickedHandler otherButtonTitles:(NSString *)otherButtonTitles, ... {
     if (self = [super init]) {
-        [self config:[LCActionSheetConfig shared]];
+        [self config:LCActionSheetConfig.config];
         
         id eachObject;
         va_list argumentList;
@@ -164,7 +164,7 @@
 
 - (instancetype)initWithTitle:(NSString *)title delegate:(id<LCActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitleArray:(NSArray<NSString *> *)otherButtonTitleArray {
     if (self = [super init]) {
-        [self config:[LCActionSheetConfig shared]];
+        [self config:LCActionSheetConfig.config];
         
         self.title             = title;
         self.delegate          = delegate;
@@ -178,7 +178,7 @@
 
 - (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle clicked:(LCActionSheetClickedHandler)clickedHandler otherButtonTitleArray:(NSArray<NSString *> *)otherButtonTitleArray {
     if (self = [super init]) {
-        [self config:[LCActionSheetConfig shared]];
+        [self config:LCActionSheetConfig.config];
         
         self.title             = title;
         self.cancelButtonTitle = cancelButtonTitle;
