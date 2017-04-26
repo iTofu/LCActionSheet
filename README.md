@@ -225,7 +225,10 @@ In me the tiger sniffs the rose.
   config.unBlur             = YES;
   config.blurEffectStyle    = UIBlurEffectStyleDark;
 
-  config.destructiveButtonIndexSet = [NSSet setWithObjects:@0, @2, nil];
+  NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+  [indexSet addIndex:0];
+  [indexSet addIndex:2];
+  config.destructiveButtonIndexSet = indexSet;
   config.destructiveButtonColor    = [UIColor blueColor];
 
   // 初始化 LCActionSheet, 与之前的初始化没有区别, 框架内会根据 Config 初始化
