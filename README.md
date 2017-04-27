@@ -67,7 +67,7 @@ In me the tiger sniffs the rose.
 
 * 集百家之长，使用 [Masonry](https://github.com/SnapKit/Masonry) 进行布局，感谢 [Masonry](https://github.com/SnapKit/Masonry)。
 
-* **就不黑状态栏，就是这么刚。** 已黑。
+* *就不黑状态栏，就是这么刚。* 已黑。
 
 > 💬 **告示**
 > 
