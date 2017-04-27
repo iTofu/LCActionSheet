@@ -153,9 +153,17 @@ In me the tiger sniffs the rose.
   3. Block
 
     ```objc
+    // Clicked callback
     LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" clicked:^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
         
         NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
+        
+    } otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", @"Button 4", @"Button 5", @"Button 6", nil];
+
+    // Did dismiss callback
+    LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" didDismiss:^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
+        
+        NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
         
     } otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", @"Button 4", @"Button 5", @"Button 6", nil];
     
@@ -287,7 +295,7 @@ In me the tiger sniffs the rose.
 
 * 思来想去，还是恢复了“黑”状态栏的样式。现在 LCActionSheet 实例将会在调用 `show` 方法时，新建一个 UIWindow 实例并 `makeKeyAndVisible`，然后把 LCActionSheet 实例添加到该 UIWindow 实例之上。之前的逻辑是直接把 LCActionSheet 实例添加到 AppDelegate 的 keyWindow 上面。显然的，现在状态栏将被会灰色背景一块“黑”掉。
 
-* 新增下列方法，`didDismiss` 回调能很方便地满足 ActionSheet hide 时需要在原 keyWindow 上操作的需求：
+* 新增下列方法，`didDismiss` 回调能很方便地满足需要在 LCActionSheet hide 时，在原 keyWindow 上进行操作的需求：
 
   ```objc
   @interface LCActionSheet : UIView
