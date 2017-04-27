@@ -28,7 +28,6 @@
 #import "LCActionSheet.h"
 #import "LCActionSheetCell.h"
 #import "Masonry.h"
-#import "NSSet+LCActionSheet.h"
 #import "UIImage+LCActionSheet.h"
 
 
