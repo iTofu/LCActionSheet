@@ -5,7 +5,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/l/LCActionSheet.svg)](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LICENSE)
 [![CocoaPods](https://img.shields.io/cocoapods/p/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
 [![Laguage](https://img.shields.io/badge/language-Objc%20%26%20Swift-orange.svg)](https://github.com/iTofu/LCActionSheet)
-[![CocoaPods](https://img.shields.io/cocoapods/dt/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
+[![CocoaPods](https://img.shields.io/cocoapods/dt/LCActionSheet.svg)](https://cocoapods.org/pods/LCActionSheet)
 [![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](https://leodev.me)
 [![GitHub stars](https://img.shields.io/github/stars/iTofu/LCActionSheet.svg?style=social&label=Star)](https://github.com/iTofu/LCActionSheet)
 
