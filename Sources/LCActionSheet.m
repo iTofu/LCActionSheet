@@ -50,6 +50,8 @@
 
 @property (nonatomic, weak) UIView *lineView;
 
+@property (nonatomic, strong) UIWindow *window;
+
 @end
 
 @implementation LCActionSheet
@@ -220,12 +222,6 @@
                            selector:@selector(handleDidChangeStatusBarOrientation)
                                name:UIApplicationDidChangeStatusBarOrientationNotification
                              object:nil];
-    
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    [keyWindow addSubview:self];
-    [self mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(keyWindow);
-    }];
     
     UIView *bottomView = [[UIView alloc] init];
     [self addSubview:bottomView];
@@ -666,28 +662,39 @@
         self.willPresentHandler(self);
     }
     
-    [self layoutIfNeeded];
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    window.windowLevel = UIWindowLevelStatusBar;
+    [window addSubview:self];
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(window);
+    }];
+    [window makeKeyAndVisible];
+    self.window = window;
+    
+    [self.window layoutIfNeeded];
     
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:self.animationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         
-        weakSelf.darkView.alpha = self.darkOpacity;
-        weakSelf.darkView.userInteractionEnabled = !self.darkViewNoTaped;
+        strongSelf.darkView.alpha = strongSelf.darkOpacity;
+        strongSelf.darkView.userInteractionEnabled = !strongSelf.darkViewNoTaped;
         
-        [weakSelf.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self);
+        [strongSelf.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(strongSelf);
         }];
         
-        [weakSelf layoutIfNeeded];
+        [strongSelf layoutIfNeeded];
         
     } completion:^(BOOL finished) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         
-        if ([weakSelf.delegate respondsToSelector:@selector(didPresentActionSheet:)]) {
-            [weakSelf.delegate didPresentActionSheet:self];
+        if ([strongSelf.delegate respondsToSelector:@selector(didPresentActionSheet:)]) {
+            [strongSelf.delegate didPresentActionSheet:strongSelf];
         }
         
-        if (weakSelf.didPresentHandler) {
-            weakSelf.didPresentHandler(self);
+        if (strongSelf.didPresentHandler) {
+            strongSelf.didPresentHandler(strongSelf);
         }
     }];
 }
@@ -703,27 +710,31 @@
     
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:self.animationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         
-        weakSelf.darkView.alpha = 0;
-        weakSelf.darkView.userInteractionEnabled = NO;
+        strongSelf.darkView.alpha = 0;
+        strongSelf.darkView.userInteractionEnabled = NO;
         
-        [weakSelf.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-            CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 2.0f + (self.titleEdgeInsets.top + self.titleEdgeInsets.bottom) : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0);
-            make.bottom.equalTo(self).offset(height);
+        [strongSelf.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
+            CGFloat height = (strongSelf.title.length > 0 ? strongSelf.titleTextSize.height + 2.0f + (strongSelf.titleEdgeInsets.top + strongSelf.titleEdgeInsets.bottom) : 0) + (strongSelf.otherButtonTitles.count > 0 ? (strongSelf.canScrolling ? MIN(strongSelf.visibleButtonCount, strongSelf.otherButtonTitles.count) : strongSelf.otherButtonTitles.count) * strongSelf.buttonHeight : 0) + (strongSelf.cancelButtonTitle.length > 0 ? 5.0f + strongSelf.buttonHeight : 0);
+            make.bottom.equalTo(strongSelf).offset(height);
         }];
         
-        [weakSelf layoutIfNeeded];
+        [strongSelf layoutIfNeeded];
         
     } completion:^(BOOL finished) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         
-        [weakSelf removeFromSuperview];
+        [strongSelf removeFromSuperview];
         
-        if ([weakSelf.delegate respondsToSelector:@selector(actionSheet:didDismissWithButtonIndex:)]) {
-            [weakSelf.delegate actionSheet:self didDismissWithButtonIndex:buttonIndex];
+        strongSelf.window.hidden = YES;
+        
+        if ([strongSelf.delegate respondsToSelector:@selector(actionSheet:didDismissWithButtonIndex:)]) {
+            [strongSelf.delegate actionSheet:strongSelf didDismissWithButtonIndex:buttonIndex];
         }
         
-        if (weakSelf.didDismissHandler) {
-            weakSelf.didDismissHandler(self, buttonIndex);
+        if (strongSelf.didDismissHandler) {
+            strongSelf.didDismissHandler(strongSelf, buttonIndex);
         }
     }];
 }

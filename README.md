@@ -67,7 +67,7 @@ In me the tiger sniffs the rose.
 
 * 集百家之长，使用 [Masonry](https://github.com/SnapKit/Masonry) 进行布局，感谢 [Masonry](https://github.com/SnapKit/Masonry)。
 
-* 有骨气。就不黑状态栏，就是这么刚。
+* **就不黑状态栏，就是这么刚。** 已黑。
 
 > 💬 **告示**
 > 
@@ -281,6 +281,11 @@ In me the tiger sniffs the rose.
 
 
 ## 版本 ChangeLog
+
+
+### V 3.2.0 (2017.04.27)
+
+* 思来想去，还是恢复了“黑”状态栏的样式。现在 LCActionSheet 实例将会在调用 `show` 方法时，新建一个 UIWindow 实例并 `makeKeyAndVisible`，把 LCActionSheet 实例添加到该 UIWindow 实例之上。之前的逻辑是直接把 LCActionSheet 实例添加到 AppDelegate 的 keyWindow 上面。显然的，现在状态栏将被会灰色背景一块“黑”掉。
 
 
 ### V 3.1.1 (2017.04.26)
@@ -699,7 +704,7 @@ In me the tiger sniffs the rose.
 
 ## 提示 Tips
 
-* LCActionSheet 添加到 KeyWindow 上，已适配横屏。
+* LCActionSheet 会被添加到新建的 UIWindow 实例之上，已适配横屏。
 
 * 可自定义 title、buttons、destructiveButtons、cancelButton、titleColor、titleFont、buttonColor、buttonFont、canScrolling 等等，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h)。
 

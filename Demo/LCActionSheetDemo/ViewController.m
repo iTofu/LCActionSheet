@@ -9,14 +9,45 @@
 #import "ViewController.h"
 #import <LCActionSheet/LCActionSheet.h>
 
+#define KEY_WINDOW  [UIApplication sharedApplication].keyWindow
+
 @interface ViewController () <UIAlertViewDelegate, LCActionSheetDelegate>
 
 @end
 
 @implementation ViewController
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITextField *textField = [[UITextField alloc] init];
+    textField.leftViewMode = UITextFieldViewModeAlways;
+    textField.leftView = ({
+        UIView *view = [[UIView alloc] init];
+        view.frame = CGRectMake(0, 0, 8.0, 0);
+        view;
+    });
+    textField.placeholder = @"Tap screen to hide keyboard..";
+    textField.backgroundColor = [UIColor whiteColor];
+    textField.layer.shadowColor = [UIColor blackColor].CGColor;
+    textField.layer.shadowRadius = 2;
+    textField.layer.shadowOpacity = 0.3;
+    textField.layer.shadowOffset = CGSizeMake(0, 1.2);
+    textField.frame = CGRectMake(10.0, 25.0, [UIScreen mainScreen].bounds.size.width - 10.0 * 2, 44.0);
+    [self.view addSubview:textField];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+    NSLog(@"App's keyWindow: %p", KEY_WINDOW);
 }
 
 - (IBAction)showDefaultActionSheet {
@@ -71,7 +102,7 @@
     
     LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" clicked:^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
         
-        NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
+        NSLog(@"clickedButtonAtIndex: %d, keyWindow: %p", (int)buttonIndex, KEY_WINDOW);
         
     } otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", @"Button 4", @"Button 5", @"Button 6", nil];
     
@@ -81,19 +112,19 @@
     actionSheet.visibleButtonCount = 3.6f;
     
     actionSheet.willPresentHandler = ^(LCActionSheet *actionSheet) {
-        NSLog(@"willPresentActionSheet");
+        NSLog(@"willPresentActionSheet, keyWindow: %p", KEY_WINDOW);
     };
     
     actionSheet.didPresentHandler = ^(LCActionSheet *actionSheet) {
-        NSLog(@"didPresentActionSheet");
+        NSLog(@"didPresentActionSheet, keyWindow: %p", KEY_WINDOW);
     };
     
     actionSheet.willDismissHandler = ^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
-        NSLog(@"willDismissWithButtonIndex: %d", (int)buttonIndex);
+        NSLog(@"willDismissWithButtonIndex: %d, keyWindow: %p", (int)buttonIndex, KEY_WINDOW);
     };
     
     actionSheet.didDismissHandler = ^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
-        NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
+        NSLog(@"didDismissWithButtonIndex: %d, keyWindow: %p", (int)buttonIndex, KEY_WINDOW);
     };
     
     [actionSheet show];
@@ -113,23 +144,23 @@
 #pragma mark - LCActionSheet Delegate
 
 - (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSUInteger)buttonIndex {
-    NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
+    NSLog(@"clickedButtonAtIndex: %d, keyWindow: %p", (int)buttonIndex, KEY_WINDOW);
 }
 
 - (void)willPresentActionSheet:(LCActionSheet *)actionSheet {
-    NSLog(@"willPresentActionSheet");
+    NSLog(@"willPresentActionSheet, keyWindow: %p", KEY_WINDOW);
 }
 
 - (void)didPresentActionSheet:(LCActionSheet *)actionSheet {
-    NSLog(@"didPresentActionSheet");
+    NSLog(@"didPresentActionSheet, keyWindow: %p", KEY_WINDOW);
 }
 
 - (void)actionSheet:(LCActionSheet *)actionSheet willDismissWithButtonIndex:(NSUInteger)buttonIndex {
-    NSLog(@"willDismissWithButtonIndex: %d", (int)buttonIndex);
+    NSLog(@"willDismissWithButtonIndex: %d, keyWindow: %p", (int)buttonIndex, KEY_WINDOW);
 }
 
 - (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSUInteger)buttonIndex {
-    NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
+    NSLog(@"didDismissWithButtonIndex: %d, keyWindow: %p", (int)buttonIndex, KEY_WINDOW);
 }
 
 @end

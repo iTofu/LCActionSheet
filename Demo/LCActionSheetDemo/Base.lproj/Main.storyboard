@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ratchet" translatesAutoresizingMaskIntoConstraints="NO" id="M7K-vo-zgu">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-3Z-g4X">
                                 <rect key="frame" x="15" y="318.5" width="345" height="30"/>
@@ -66,8 +66,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="M7K-vo-zgu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="1gl-Dj-DcF"/>
                             <constraint firstItem="0nt-03-dUh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7fL-V2-nRu"/>
+                            <constraint firstItem="M7K-vo-zgu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7qy-kk-6DT"/>
                             <constraint firstItem="hdE-3Z-g4X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="AS1-fp-K0u"/>
                             <constraint firstAttribute="trailing" secondItem="hdE-3Z-g4X" secondAttribute="trailing" constant="15" id="FtL-K1-HOE"/>
                             <constraint firstItem="0nt-03-dUh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="I4Z-5i-oED"/>
