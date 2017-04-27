@@ -1,7 +1,7 @@
 {
   "name": "LCActionSheet",
-  "version": "2.7.3",
-  "summary": "A simple, ornamental, but powerful action sheet! Support: http://LeoDev.me",
+  "version": "3.2.0",
+  "summary": "A simple, ornamental, but powerful action sheet! Support: https://LeoDev.me",
   "homepage": "https://github.com/iTofu/LCActionSheet",
   "license": "MIT",
   "platforms": {
@@ -9,14 +9,14 @@
   },
   "source": {
     "git": "https://github.com/iTofu/LCActionSheet.git",
-    "tag": "2.7.3"
+    "tag": "3.2.0"
   },
   "source_files": "Sources/**/*.{h,m}",
   "requires_arc": true,
   "authors": {
     "Leo": "leodaxia@gmail.com"
   },
-  "social_media_url": "http://LeoDev.me",
+  "social_media_url": "https://LeoDev.me",
   "dependencies": {
     "Masonry": [
       "~> 1.0.2"
