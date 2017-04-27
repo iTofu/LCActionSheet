@@ -356,6 +356,68 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInt
         otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
 
 
+
+/**
+ Initialize an instance of LCActionSheet (Block).
+ 
+ @param title             title
+ @param cancelButtonTitle cancelButtonTitle
+ @param didDismissHandler didDismissHandler
+ @param otherButtonTitles otherButtonTitles
+ 
+ @return An instance of LCActionSheet.
+ */
++ (instancetype)sheetWithTitle:(nullable NSString *)title
+             cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+                    didDismiss:(nullable LCActionSheetDidDismissHandler)didDismissHandler
+             otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+
+/**
+ Initialize an instance of LCActionSheet with title array (Block).
+ 
+ @param title                 title
+ @param cancelButtonTitle     cancelButtonTitle
+ @param didDismissHandler     didDismissHandler
+ @param otherButtonTitleArray otherButtonTitleArray
+ 
+ @return An instance of LCActionSheet.
+ */
++ (instancetype)sheetWithTitle:(nullable NSString *)title
+             cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+                    didDismiss:(nullable LCActionSheetDidDismissHandler)didDismissHandler
+         otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
+
+/**
+ Initialize an instance of LCActionSheet (Block).
+ 
+ @param title             title
+ @param cancelButtonTitle cancelButtonTitle
+ @param didDismissHandler didDismissHandler
+ @param otherButtonTitles otherButtonTitles
+ 
+ @return An instance of LCActionSheet.
+ */
+- (instancetype)initWithTitle:(nullable NSString *)title
+            cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+                   didDismiss:(nullable LCActionSheetDidDismissHandler)didDismissHandler
+            otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+
+/**
+ Initialize an instance of LCActionSheet with title array (Block).
+ 
+ @param title                 title
+ @param cancelButtonTitle     cancelButtonTitle
+ @param didDismissHandler     didDismissHandler
+ @param otherButtonTitleArray otherButtonTitleArray
+ 
+ @return An instance of LCActionSheet.
+ */
+- (instancetype)initWithTitle:(nullable NSString *)title
+            cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+                   didDismiss:(nullable LCActionSheetDidDismissHandler)didDismissHandler
+        otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
+
+
 #pragma mark Append & Show
 
 /**

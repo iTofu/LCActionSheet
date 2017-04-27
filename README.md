@@ -287,6 +287,34 @@ In me the tiger sniffs the rose.
 
 * 思来想去，还是恢复了“黑”状态栏的样式。现在 LCActionSheet 实例将会在调用 `show` 方法时，新建一个 UIWindow 实例并 `makeKeyAndVisible`，把 LCActionSheet 实例添加到该 UIWindow 实例之上。之前的逻辑是直接把 LCActionSheet 实例添加到 AppDelegate 的 keyWindow 上面。显然的，现在状态栏将被会灰色背景一块“黑”掉。
 
+* 新增下列方法，`didDismiss` 回调能很方便地满足 ActionSheet hide 时需要在原 keyWindow 上操作的需求：
+
+  ```objc
+  // Initialize an instance of LCActionSheet (Block).
+  + (instancetype)sheetWithTitle:(nullable NSString *)title
+               cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+                      didDismiss:(nullable LCActionSheetDidDismissHandler)didDismissHandler
+               otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+
+  // Initialize an instance of LCActionSheet with title array (Block).
+  + (instancetype)sheetWithTitle:(nullable NSString *)title
+               cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+                      didDismiss:(nullable LCActionSheetDidDismissHandler)didDismissHandler
+           otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
+
+  // Initialize an instance of LCActionSheet (Block).
+  - (instancetype)initWithTitle:(nullable NSString *)title
+              cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+                     didDismiss:(nullable LCActionSheetDidDismissHandler)didDismissHandler
+              otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+
+  // Initialize an instance of LCActionSheet with title array (Block).
+  - (instancetype)initWithTitle:(nullable NSString *)title
+              cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+                     didDismiss:(nullable LCActionSheetDidDismissHandler)didDismissHandler
+          otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray;
+  ```
+
 
 ### V 3.1.1 (2017.04.26)
 

@@ -96,6 +96,24 @@
                  otherButtonTitleArray:tempOtherButtonTitles];
 }
 
++ (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle didDismiss:(LCActionSheetDidDismissHandler)didDismissHandler otherButtonTitles:(NSString *)otherButtonTitles, ... {
+    id eachObject;
+    va_list argumentList;
+    NSMutableArray *tempOtherButtonTitles = nil;
+    if (otherButtonTitles) {
+        tempOtherButtonTitles = [[NSMutableArray alloc] initWithObjects:otherButtonTitles, nil];
+        va_start(argumentList, otherButtonTitles);
+        while ((eachObject = va_arg(argumentList, id))) {
+            [tempOtherButtonTitles addObject:eachObject];
+        }
+        va_end(argumentList);
+    }
+    return [[self alloc] initWithTitle:title
+                     cancelButtonTitle:cancelButtonTitle
+                            didDismiss:didDismissHandler
+                 otherButtonTitleArray:tempOtherButtonTitles];
+}
+
 + (instancetype)sheetWithTitle:(NSString *)title delegate:(id<LCActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitleArray:(NSArray<NSString *> *)otherButtonTitleArray {
     
     return [[self alloc] initWithTitle:title
@@ -109,6 +127,14 @@
     return [[self alloc] initWithTitle:title
                      cancelButtonTitle:cancelButtonTitle
                                clicked:clickedHandler
+                 otherButtonTitleArray:otherButtonTitleArray];
+}
+
++ (instancetype)sheetWithTitle:(NSString *)title cancelButtonTitle:(nullable NSString *)cancelButtonTitle didDismiss:(nullable LCActionSheetDidDismissHandler)didDismissHandler otherButtonTitleArray:(nullable NSArray<NSString *> *)otherButtonTitleArray {
+    
+    return [[self alloc] initWithTitle:title
+                     cancelButtonTitle:cancelButtonTitle
+                            didDismiss:didDismissHandler
                  otherButtonTitleArray:otherButtonTitleArray];
 }
 
@@ -164,6 +190,32 @@
     return self;
 }
 
+- (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle didDismiss:(LCActionSheetDidDismissHandler)didDismissHandler otherButtonTitles:(NSString *)otherButtonTitles, ... {
+    if (self = [super init]) {
+        [self config:LCActionSheetConfig.config];
+        
+        id eachObject;
+        va_list argumentList;
+        NSMutableArray *tempOtherButtonTitles = nil;
+        if (otherButtonTitles) {
+            tempOtherButtonTitles = [[NSMutableArray alloc] initWithObjects:otherButtonTitles, nil];
+            va_start(argumentList, otherButtonTitles);
+            while ((eachObject = va_arg(argumentList, id))) {
+                [tempOtherButtonTitles addObject:eachObject];
+            }
+            va_end(argumentList);
+        }
+        
+        self.title             = title;
+        self.cancelButtonTitle = cancelButtonTitle;
+        self.didDismissHandler = didDismissHandler;
+        self.otherButtonTitles = tempOtherButtonTitles;
+        
+        [self setupView];
+    }
+    return self;
+}
+
 - (instancetype)initWithTitle:(NSString *)title delegate:(id<LCActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitleArray:(NSArray<NSString *> *)otherButtonTitleArray {
     if (self = [super init]) {
         [self config:LCActionSheetConfig.config];
@@ -185,6 +237,20 @@
         self.title             = title;
         self.cancelButtonTitle = cancelButtonTitle;
         self.clickedHandler    = clickedHandler;
+        self.otherButtonTitles = otherButtonTitleArray;
+        
+        [self setupView];
+    }
+    return self;
+}
+
+- (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle didDismiss:(LCActionSheetDidDismissHandler)didDismissHandler otherButtonTitleArray:(NSArray<NSString *> *)otherButtonTitleArray {
+    if (self = [super init]) {
+        [self config:LCActionSheetConfig.config];
+        
+        self.title             = title;
+        self.cancelButtonTitle = cancelButtonTitle;
+        self.didDismissHandler = didDismissHandler;
         self.otherButtonTitles = otherButtonTitleArray;
         
         [self setupView];
