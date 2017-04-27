@@ -27,8 +27,8 @@
 
 #import "LCActionSheet.h"
 #import "LCActionSheetCell.h"
-#import "Masonry.h"
 #import "UIImage+LCActionSheet.h"
+#import "Masonry.h"
 
 
 @interface LCActionSheet () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
