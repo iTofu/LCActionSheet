@@ -84,9 +84,9 @@ In me the tiger sniffs the rose.
 
 * 两种导入方法：
 
-  - 方法一：[CocoaPods](https://cocoapods.org/)：`pod 'LCActionSheet'`
+  * 方法一：[CocoaPods](https://cocoapods.org/)：`pod 'LCActionSheet'`
 
-  - 方法二：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
+  * 方法二：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
 
 * 在相应位置导入头文件：`#import <LCActionSheet/LCActionSheet.h>`，（可选）遵守协议 `<LCActionSheetDelegate>`
 
@@ -153,7 +153,7 @@ In me the tiger sniffs the rose.
   3. Block
 
     ```objc
-    LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" clicked:^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
+    LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" clicked:^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
         
         NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
         
@@ -172,11 +172,11 @@ In me the tiger sniffs the rose.
         NSLog(@"didPresentActionSheet");
     };
     
-    actionSheet.willDismissBlock = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
+    actionSheet.willDismissBlock = ^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
         NSLog(@"willDismissWithButtonIndex: %d", (int)buttonIndex);
     };
     
-    actionSheet.didDismissBlock = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
+    actionSheet.didDismissBlock = ^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
         NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
     };
     
@@ -188,7 +188,7 @@ In me the tiger sniffs the rose.
     ```objc
     #pragma mark - LCActionSheet Delegate
 
-    - (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    - (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSUInteger)buttonIndex {
         NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
     }
 
@@ -200,11 +200,11 @@ In me the tiger sniffs the rose.
         NSLog(@"didPresentActionSheet");
     }
 
-    - (void)actionSheet:(LCActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
+    - (void)actionSheet:(LCActionSheet *)actionSheet willDismissWithButtonIndex:(NSUInteger)buttonIndex {
         NSLog(@"willDismissWithButtonIndex: %d", (int)buttonIndex);
     }
 
-    - (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    - (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSUInteger)buttonIndex {
         NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
     }
     ```
@@ -509,7 +509,7 @@ In me the tiger sniffs the rose.
   ```objc
   @interface LCActionSheet : UIView
 
-  @property (nonatomic, assign, readonly) NSInteger cancelButtonIndex;
+  @property (nonatomic, assign, readonly) NSUInteger cancelButtonIndex;
   
   @end
   ```
