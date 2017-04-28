@@ -473,7 +473,7 @@
     [self updateBottomView];
     [self updateTableView];
 }
-
+    
 - (void)handleDidChangeStatusBarOrientation {
     if (self.autoHideWhenDeviceRotated) {
         [self hideWithButtonIndex:self.cancelButtonIndex];
@@ -729,12 +729,16 @@
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     window.windowLevel = UIWindowLevelStatusBar;
-    [window addSubview:self];
-    [self mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(window);
-    }];
     [window makeKeyAndVisible];
     self.window = window;
+    
+    UIViewController *viewController = [[UIViewController alloc] init];
+    window.rootViewController = viewController;
+    
+    [viewController.view addSubview:self];
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(viewController.view);
+    }];
     
     [self.window layoutIfNeeded];
     

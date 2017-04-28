@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <LCActionSheet/LCActionSheet.h>
+#import <Masonry/Masonry.h>
 
 #define KEY_WINDOW  [UIApplication sharedApplication].keyWindow
 
@@ -33,12 +34,18 @@
     });
     textField.placeholder = @"Tap screen to hide keyboard..";
     textField.backgroundColor = [UIColor whiteColor];
+    textField.layer.cornerRadius = 4.0;
     textField.layer.shadowColor = [UIColor blackColor].CGColor;
     textField.layer.shadowRadius = 2;
     textField.layer.shadowOpacity = 0.3;
     textField.layer.shadowOffset = CGSizeMake(0, 1.2);
-    textField.frame = CGRectMake(10.0, 25.0, [UIScreen mainScreen].bounds.size.width - 10.0 * 2, 44.0);
     [self.view addSubview:textField];
+    [textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(10.0);
+        make.right.equalTo(self.view).offset(-10.0);
+        make.top.equalTo(self.view).offset(30.0);
+        make.height.offset(44.0);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
