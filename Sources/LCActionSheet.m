@@ -796,6 +796,7 @@
         
         [strongSelf removeFromSuperview];
         
+        strongSelf.window.rootViewController = nil;
         strongSelf.window.hidden = YES;
         
         if ([strongSelf.delegate respondsToSelector:@selector(actionSheet:didDismissWithButtonIndex:)]) {
