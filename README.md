@@ -293,7 +293,7 @@ In me the tiger sniffs the rose.
 
 ### V 3.2.1 (2017.04.28)
 
-* 修复 UIWindow 引起的横屏问题。[#36](https://github.com/iTofu/LCActionSheet/pull/36) by [MourinhoLove](https://github.com/MourinhoLove).
+* 修复 UIWindow 引起的横屏适配问题。[#36](https://github.com/iTofu/LCActionSheet/pull/36) by [MourinhoLove](https://github.com/MourinhoLove)。
 
 
 ### V 3.2.0 (2017.04.27)
