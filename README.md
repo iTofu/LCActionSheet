@@ -291,6 +291,11 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
+### V 3.2.1 (2017.04.28)
+
+* 修复 UIWindow 引起的横屏问题。[#36](https://github.com/iTofu/LCActionSheet/pull/36) by [MourinhoLove](https://github.com/MourinhoLove).
+
+
 ### V 3.2.0 (2017.04.27)
 
 * 思来想去，还是恢复了“黑”状态栏的样式。现在 LCActionSheet 实例将会在调用 `show` 方法时，新建一个 UIWindow 实例并 `makeKeyAndVisible`，然后把 LCActionSheet 实例添加到该 UIWindow 实例之上。之前的逻辑是直接把 LCActionSheet 实例添加到 AppDelegate 的 keyWindow 上面。
