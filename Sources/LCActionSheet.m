@@ -49,7 +49,7 @@
 
 @property (nonatomic, weak) UIView *lineView;
 
-@property (nonatomic, strong) UIWindow *window;
+@property (nullable, nonatomic, strong) UIWindow *window;
 
 @end
 
@@ -798,6 +798,7 @@
         
         strongSelf.window.rootViewController = nil;
         strongSelf.window.hidden = YES;
+        strongSelf.window = nil;
         
         if ([strongSelf.delegate respondsToSelector:@selector(actionSheet:didDismissWithButtonIndex:)]) {
             [strongSelf.delegate actionSheet:strongSelf didDismissWithButtonIndex:buttonIndex];
