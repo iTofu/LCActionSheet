@@ -7,6 +7,7 @@ target 'LCActionSheetDemo' do
 
   # Pods for LCActionSheetDemo
   pod 'LCActionSheet', :path => '../'
+  pod 'KVOController'
   
   # pod 'Masonry'
   # pod 'LCBlur'

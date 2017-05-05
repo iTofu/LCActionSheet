@@ -1,9 +1,11 @@
 PODS:
+  - KVOController (1.2.0)
   - LCActionSheet (3.2.1):
     - Masonry (~> 1.0.2)
   - Masonry (1.0.2)
 
 DEPENDENCIES:
+  - KVOController
   - LCActionSheet (from `../`)
 
 EXTERNAL SOURCES:
@@ -11,9 +13,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   LCActionSheet: 682cee97cf7e8183281278932f8a9a74eb4f63ba
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
 
-PODFILE CHECKSUM: 69168bdd948b94bccadca73ee1fc5a6830365fc0
+PODFILE CHECKSUM: 9784f2638fe59feb0374e5f7ec6c99374d6e328a
 
 COCOAPODS: 1.2.1

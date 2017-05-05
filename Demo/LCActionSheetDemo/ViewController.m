@@ -9,10 +9,13 @@
 #import "ViewController.h"
 #import <LCActionSheet/LCActionSheet.h>
 #import <Masonry/Masonry.h>
+#import <KVOController/KVOController.h>
 
 #define KEY_WINDOW  [UIApplication sharedApplication].keyWindow
 
 @interface ViewController () <UIAlertViewDelegate, LCActionSheetDelegate>
+
+@property (nonatomic, strong) FBKVOController *KVOController;
 
 @end
 
@@ -130,22 +133,32 @@
         NSLog(@"willDismissWithButtonIndex: %d, keyWindow: %p", (int)buttonIndex, KEY_WINDOW);
     };
     
+    __weak typeof(self) weakSelf = self;
     actionSheet.didDismissHandler = ^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
         NSLog(@"didDismissWithButtonIndex: %d, keyWindow: %p", (int)buttonIndex, KEY_WINDOW);
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.KVOController unobserve:actionSheet];
     };
     
     [actionSheet show];
     
+    self.KVOController = [FBKVOController controllerWithObserver:self];
+    [self.KVOController observe:actionSheet keyPath:@"frame" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
+        NSLog(@"%@",change[NSKeyValueChangeNewKey]);
+    }];
     
-    // Append buttons methods
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-//        [actionSheet appendButtonWithTitle:@"WoW" atIndex:7];
-        
-        NSMutableIndexSet *set = [[NSMutableIndexSet alloc] init];
-        [set addIndex:1];
-        [set addIndex:2];
-        [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexes:set];
-    });
+    
+    
+//    // Append buttons methods
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+////        [actionSheet appendButtonWithTitle:@"WoW" atIndex:7];
+//        
+//        NSMutableIndexSet *set = [[NSMutableIndexSet alloc] init];
+//        [set addIndex:1];
+//        [set addIndex:2];
+//        [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexes:set];
+//    });
 }
 
 #pragma mark - LCActionSheet Delegate
