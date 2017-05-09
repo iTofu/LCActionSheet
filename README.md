@@ -262,9 +262,9 @@ In me the tiger sniffs the rose.
       if buttonIndex != actionSheet.cancelButtonIndex {
           // TODO: Enter login page...
       }
-  }, otherButtonTitleArray: ["Sign Out"]).then({
+  }, otherButtonTitleArray: ["Sign Out"]).then {
       $0.destructiveButtonIndexSet = [1]
-  }).show()
+  }.show()
   ```
 
   > Syntactic sugar: [Then](https://github.com/devxoul/Then)
