@@ -279,6 +279,7 @@ In me the tiger sniffs the rose.
 
 | 名称 | 简介 |
 | :-: | :-: |
+| [咕咕](https://itunes.apple.com/cn/app/id1214222265) | 短视频社交 |
 | [见信](https://itunes.apple.com/cn/app/id1187571215) | 视频共享社交 |
 | [PrPr直播](https://itunes.apple.com/cn/app/id1150254794) | 二次元直播平台 |
 | [德玛西亚](https://itunes.apple.com/cn/app/id1067564880) | 英雄联盟<sup>&copy;</sup> 周边 App |
