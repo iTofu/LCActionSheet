@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Handle click button.
  */
-typedef void(^LCActionSheetClickedHandler)(LCActionSheet *actionSheet, NSUInteger buttonIndex);
+typedef void(^LCActionSheetClickedHandler)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 
 /**
  Handle action sheet will present.
@@ -53,11 +53,11 @@ typedef void(^LCActionSheetDidPresentHandler)(LCActionSheet *actionSheet);
 /**
  Handle action sheet will dismiss.
  */
-typedef void(^LCActionSheetWillDismissHandler)(LCActionSheet *actionSheet, NSUInteger buttonIndex);
+typedef void(^LCActionSheetWillDismissHandler)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 /**
  Handle action sheet did dismiss.
  */
-typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInteger buttonIndex);
+typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInteger buttonIndex);
 
 
 #pragma mark - LCActionSheet Delegate
@@ -69,7 +69,7 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInt
 /**
  Handle click button.
  */
-- (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSUInteger)buttonIndex;
+- (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 /**
  Handle action sheet will present.
@@ -83,11 +83,11 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInt
 /**
  Handle action sheet will dismiss.
  */
-- (void)actionSheet:(LCActionSheet *)actionSheet willDismissWithButtonIndex:(NSUInteger)buttonIndex;
+- (void)actionSheet:(LCActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex;
 /**
  Handle action sheet did dismiss.
  */
-- (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSUInteger)buttonIndex;
+- (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex;
 
 @end
 
@@ -112,7 +112,7 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInt
 /**
  Cancel button's index.
  */
-@property (nonatomic, assign, readonly) NSUInteger cancelButtonIndex;
+@property (nonatomic, assign, readonly) NSInteger cancelButtonIndex;
 
 /**
  LCActionSheet's delegate.
@@ -433,7 +433,7 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSUInt
  @param title title
  @param index index
  */
-- (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSUInteger)index;
+- (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSInteger)index;
 
 /**
  Append buttons at indexSet with titles.

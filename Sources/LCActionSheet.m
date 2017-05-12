@@ -436,7 +436,7 @@
     [self updateTableView];
 }
 
-- (void)appendButtonWithTitle:(NSString *)title atIndex:(NSUInteger)index {
+- (void)appendButtonWithTitle:(NSString *)title atIndex:(NSInteger)index {
 #ifdef DEBUG
     NSAssert(index != 0, @"Index 0 is cancel button");
     NSAssert(index <= self.otherButtonTitles.count + 1, @"Index crossed");
@@ -615,7 +615,7 @@
     [self updateCancelButton];
 }
 
-- (NSUInteger)cancelButtonIndex {
+- (NSInteger)cancelButtonIndex {
     return 0;
 }
 
@@ -770,7 +770,7 @@
     }];
 }
 
-- (void)hideWithButtonIndex:(NSUInteger)buttonIndex {
+- (void)hideWithButtonIndex:(NSInteger)buttonIndex {
     if ([self.delegate respondsToSelector:@selector(actionSheet:willDismissWithButtonIndex:)]) {
         [self.delegate actionSheet:self willDismissWithButtonIndex:buttonIndex];
     }

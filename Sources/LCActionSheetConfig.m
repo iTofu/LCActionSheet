@@ -79,7 +79,7 @@
     return LCActionSheetConfig.config;
 }
 
-- (NSUInteger)cancelButtonIndex {
+- (NSInteger)cancelButtonIndex {
     return 0;
 }
 
