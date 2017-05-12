@@ -27,6 +27,7 @@
 
 #import "LCActionSheet.h"
 #import "LCActionSheetCell.h"
+#import "LCActionSheetViewController.h"
 #import "UIImage+LCActionSheet.h"
 #import "Masonry.h"
 
@@ -727,13 +728,14 @@
         self.willPresentHandler(self);
     }
     
+    LCActionSheetViewController *viewController = [[LCActionSheetViewController alloc] init];
+    viewController.statusBarStyle = [UIApplication sharedApplication].statusBarStyle;
+    
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     window.windowLevel = UIWindowLevelStatusBar;
+    window.rootViewController = viewController;
     [window makeKeyAndVisible];
     self.window = window;
-    
-    UIViewController *viewController = [[UIViewController alloc] init];
-    window.rootViewController = viewController;
     
     [viewController.view addSubview:self];
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
