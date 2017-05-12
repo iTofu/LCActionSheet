@@ -154,14 +154,14 @@ In me the tiger sniffs the rose.
 
     ```objc
     // Clicked callback
-    LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" clicked:^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
+    LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" clicked:^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
         
         NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
         
     } otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", @"Button 4", @"Button 5", @"Button 6", nil];
 
     // Did dismiss callback
-    LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" didDismiss:^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
+    LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" didDismiss:^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
         
         NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
         
@@ -180,11 +180,11 @@ In me the tiger sniffs the rose.
         NSLog(@"didPresentActionSheet");
     };
     
-    actionSheet.willDismissBlock = ^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
+    actionSheet.willDismissBlock = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
         NSLog(@"willDismissWithButtonIndex: %d", (int)buttonIndex);
     };
     
-    actionSheet.didDismissBlock = ^(LCActionSheet *actionSheet, NSUInteger buttonIndex) {
+    actionSheet.didDismissBlock = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
         NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
     };
     
@@ -196,7 +196,7 @@ In me the tiger sniffs the rose.
     ```objc
     #pragma mark - LCActionSheet Delegate
 
-    - (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSUInteger)buttonIndex {
+    - (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
         NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
     }
 
@@ -208,11 +208,11 @@ In me the tiger sniffs the rose.
         NSLog(@"didPresentActionSheet");
     }
 
-    - (void)actionSheet:(LCActionSheet *)actionSheet willDismissWithButtonIndex:(NSUInteger)buttonIndex {
+    - (void)actionSheet:(LCActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
         NSLog(@"willDismissWithButtonIndex: %d", (int)buttonIndex);
     }
 
-    - (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSUInteger)buttonIndex {
+    - (void)actionSheet:(LCActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
         NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
     }
     ```
@@ -290,6 +290,11 @@ In me the tiger sniffs the rose.
 
 
 ## 版本 ChangeLog
+
+
+### V 3.2.2 (2017.05.12)
+
+* 修复使用 `preferredStatusBarStyle` 方式设置状态栏样式在 LCActionSheet 中未生效的问题。[#38](https://github.com/iTofu/LCActionSheet/pull/38) by [LuYu001](https://github.com/LuYu001)。
 
 
 ### V 3.2.1 (2017.04.28)
@@ -372,7 +377,7 @@ In me the tiger sniffs the rose.
   @property (nonatomic, assign) BOOL autoHideWhenDeviceRotated;
   
   // Append button at index with title.
-  - (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSUInteger)index;
+  - (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSInteger)index;
   
   // Append buttons at indexes with titles.
   - (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexes:(NSIndexSet *)indexes;
@@ -562,7 +567,7 @@ In me the tiger sniffs the rose.
   ```objc
   @interface LCActionSheet : UIView
 
-  @property (nonatomic, assign, readonly) NSUInteger cancelButtonIndex;
+  @property (nonatomic, assign, readonly) NSInteger cancelButtonIndex;
   
   @end
   ```
