@@ -293,17 +293,17 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
-### V 3.2.2 (2017.05.12)
+### [V 3.2.2](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.2) (2017.05.12)
 
 * 修复使用 `preferredStatusBarStyle` 方式设置状态栏样式在 LCActionSheet 中未生效的问题。[#38](https://github.com/iTofu/LCActionSheet/pull/38) by [LuYu001](https://github.com/LuYu001)。
 
 
-### V 3.2.1 (2017.04.28)
+### [V 3.2.1](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.1) (2017.04.28)
 
 * 修复 UIWindow 引起的横屏适配问题。[#36](https://github.com/iTofu/LCActionSheet/pull/36) by [MourinhoLove](https://github.com/MourinhoLove)。
 
 
-### V 3.2.0 (2017.04.27)
+### [V 3.2.0](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.0) (2017.04.27)
 
 * 思来想去，还是恢复了“黑”状态栏的样式。现在 LCActionSheet 实例将会在调用 `show` 方法时，新建一个 UIWindow 实例并 `makeKeyAndVisible`，然后把 LCActionSheet 实例添加到该 UIWindow 实例之上。之前的逻辑是直接把 LCActionSheet 实例添加到 AppDelegate 的 keyWindow 上面。
   
@@ -342,7 +342,7 @@ In me the tiger sniffs the rose.
   ```
 
 
-### V 3.1.1 (2017.04.26)
+### [V 3.1.1](https://github.com/iTofu/LCActionSheet/releases/tag/3.1.1) (2017.04.26)
 
 * 新增属性：
 
@@ -367,7 +367,7 @@ In me the tiger sniffs the rose.
   ```
 
 
-### V 3.1.0 (2017.04.26) (⚠️ API Updated)
+### [V 3.1.0](https://github.com/iTofu/LCActionSheet/releases/tag/3.1.0) (2017.04.26) (⚠️ API Updated)
 
 * 新增属性和方法：
 
@@ -417,7 +417,7 @@ In me the tiger sniffs the rose.
   ```
 
 
-### V 3.0.0 (2017.04.24) (⚠️ API Updated)
+### [V 3.0.0](https://github.com/iTofu/LCActionSheet/releases/tag/3.0.0) (2017.04.24) (⚠️ API Updated)
 
 * 修改方法命名：
 
@@ -438,7 +438,7 @@ In me the tiger sniffs the rose.
   ```
 
 
-### V 2.7.6 (2017.04.16)
+### [V 2.7.6](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.6) (2017.04.16)
 
 * 修复 UIImage 类别中的方法名可能与其他库冲突的潜在问题。[#33](https://github.com/iTofu/LCActionSheet/pull/33) by [cwwise](https://github.com/cwwise)。
 
@@ -457,12 +457,12 @@ In me the tiger sniffs the rose.
 * 修正 LCActionSheet 中部分方法的注释。
 
 
-### V 2.7.4 (2017.04.13)
+### [V 2.7.4](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.4) (2017.04.13)
 
 * 修复在 iOS 8 及以下的系统中，关闭 LCActionSheet 后旋转屏幕出现的崩溃。[#32](https://github.com/iTofu/LCActionSheet/pull/32) by [Amztion](https://github.com/Amztion)。
 
 
-### V 2.7.3 (2017.04.07)
+### [V 2.7.3](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.3) (2017.04.07)
 
 * Nullability
 
@@ -475,14 +475,14 @@ In me the tiger sniffs the rose.
 * 得益于 Nullability & Lightweight Generics，现在 LCActionSheet 将会更安全地完全融入 Swift。
 
 
-### V 2.7.2 (2017.01.06)
+### [V 2.7.2](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.2) (2017.01.06)
 
 * 修正按钮 Title 过长时的显示，[#31](https://github.com/iTofu/LCActionSheet/issues/31) by [Luyu](https://github.com/LuYu001).
 
 * 优化了一些 UI 效果。
 
 
-### V 2.7.1 (2017.01.03)
+### [V 2.7.1](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.1) (2017.01.03)
 
 * 新年快乐~
 
@@ -497,7 +497,7 @@ In me the tiger sniffs the rose.
   ```
 
 
-### V 2.7.0 (2016.11.29)
+### [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0) (2016.11.29)
 
 * 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数），使用方式见 [Usage](https://github.com/iTofu/LCActionSheet#使用-usage)。[#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)。
 
@@ -516,22 +516,22 @@ In me the tiger sniffs the rose.
 * 重写线条和阴影效果，采用加载颜色而不是加载图片的方式。
 
 
-### V 2.6.3 (2016.11.28)
+### [V 2.6.3](https://github.com/iTofu/LCActionSheet/releases/tag/2.6.3) (2016.11.28)
 
 * 修复 Bug：Swift 调用时，destructiveButtonIndexSet 设置无效，[#28](https://github.com/iTofu/LCActionSheet/issues/28) by [Abel94](https://github.com/Abel94)。
 
 
-### V 2.6.2 (2016.11.23)
+### [V 2.6.2](https://github.com/iTofu/LCActionSheet/releases/tag/2.6.2) (2016.11.23)
 
 * 修复更换按钮颜色对取消按钮失效的 Bug。
 
 
-### V 2.6.1 (2016.11.22)
+### [V 2.6.1](https://github.com/iTofu/LCActionSheet/releases/tag/2.6.1) (2016.11.22)
 
 * 优化标题为空时的效果。
 
 
-### V 2.6.0 (2016.10.22)
+### [V 2.6.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.6.0) (2016.10.22)
 
 * 修复取消按钮不显示时 UI 上的一个 Bug。另外你可以通过设置 `cancelButtonTitle` 为 `nil` 或 `@""` 来不显示取消按钮，这是一个 Tip，并不是一个 Feature。。。
 
@@ -542,7 +542,7 @@ In me the tiger sniffs the rose.
   * 除取消按钮以外的按钮自上而下 Index 从 1 递增。也就是说，无论取消按钮是否显示，Index 0 始终会被取消按钮占有。
 
 
-### V 2.5.2 (2016.09.23)
+### [V 2.5.2](https://github.com/iTofu/LCActionSheet/releases/tag/2.5.2) (2016.09.23)
 
 * ~~**注：** 因 CocoaPods 对 Xcode 8 的一些问题（[Issue 5661](https://github.com/CocoaPods/CocoaPods/issues/5661)、[Issue 5843](https://github.com/CocoaPods/CocoaPods/issues/5843)...），暂时无法推到 CocoaPods Repo，你需要在 Podfile 进行如下的修改，直接指向当前版本即可：~~
 
@@ -556,12 +556,12 @@ In me the tiger sniffs the rose.
 * 完善剩下的部分注释，主要是 Block 部分。
 
 
-### V 2.5.1 (2016.09.08)
+### [V 2.5.1](https://github.com/iTofu/LCActionSheet/releases/tag/2.5.1) (2016.09.08)
 
 * 修复一个更换字体失效的 Bug。
 
 
-### V 2.5.0 (2016.09.05 ⚠️ 属性名变化)
+### [V 2.5.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.5.0) (2016.09.05 ⚠️ 属性名变化)
 
 * 添加 `cancenButtonIndex` 属性，始终返回 `0`：
 
@@ -596,14 +596,14 @@ In me the tiger sniffs the rose.
   ```
 
 
-### V 2.3.3 (2016.08.16)
+### [V 2.3.3](https://github.com/iTofu/LCActionSheet/releases/tag/2.3.3) (2016.08.16)
 
 * 修复设置 `actionSheet.unBlur = YES;` 后背景透明的 Bug。
 
 * 完善注释，移除无用类。
 
 
-### V 2.3.2 (2016.08.16)
+### [V 2.3.2](https://github.com/iTofu/LCActionSheet/releases/tag/2.3.2) (2016.08.16)
 
 * 可以自定义 blurEffectStyle：
 
@@ -616,12 +616,12 @@ In me the tiger sniffs the rose.
   ```
 
 
-### V 2.3.1 (2016.08.15)
+### [V 2.3.1](https://github.com/iTofu/LCActionSheet/releases/tag/2.3.1) (2016.08.15)
 
 * 静态渲染模糊改为模糊蒙板。
 
 
-### V 2.3.0 (2016.08.11)
+### [V 2.3.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.3.0) (2016.08.11)
 
 * 重新实现 V 1.x 的方法，允许使用数组而不必须是多参数来设置按钮标题：
 
@@ -655,17 +655,17 @@ In me the tiger sniffs the rose.
 * 优化一些 UI 效果，主要是高亮状态的效果。
 
 
-### V 2.2.0 (2016.07.27)
+### [V 2.2.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.2.0) (2016.07.27)
 
 * 添加高斯模糊效果（可选），[Issue 19](https://github.com/iTofu/LCActionSheet/issues/19) by [guanzhendong](https://github.com/guanzhendong)。
 
 
-### V 2.1.1 (2016.07.19)
+### [V 2.1.1](https://github.com/iTofu/LCActionSheet/releases/tag/2.1.1) (2016.07.19)
 
 * 完善部分注释，注明需要注明的属性的默认值。
 
 
-### V 2.1.0 (2016.07.19)
+### [V 2.1.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.1.0) (2016.07.19)
 
 * 新增自定义项，[Issue 18](https://github.com/iTofu/LCActionSheet/issues/18) by [IAMJ](https://github.com/IAMJ)：
 
@@ -681,19 +681,19 @@ In me the tiger sniffs the rose.
   redButtonIndexSet -> destructiveButtonIndexSet
   ```
 
-### V 2.0.0 (2016.07.16, ⚠️ Important)
+### [V 2.0.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.0.0) (2016.07.16, ⚠️ Important)
 
 * 彻底重构整个项目，满足目前收到的所有需求，功能只多不少，依然 [MIT](http://opensource.org/licenses/MIT) 共享。
 
 * 现已加入 [Masonry](https://github.com/SnapKit/Masonry) 豪华套餐。
 
 
-### V 1.2.3 (2016.04.05)
+### [V 1.2.3](https://github.com/iTofu/LCActionSheet/releases/tag/1.2.3) (2016.04.05)
 
 * 更新 CocoaPods 源地址。
 
 
-### V 1.2.0 (2016.03.07)
+### [V 1.2.0](https://github.com/iTofu/LCActionSheet/releases/tag/1.2.0) (2016.03.07)
 
 * 合并 [PR](https://github.com/iTofu/LCActionSheet/pull/14) by [apache2046](https://github.com/apache2046)，致谢！
 
@@ -702,7 +702,7 @@ In me the tiger sniffs the rose.
   > mainBundle 这种方法无法在将 LCActionSheet 作为 Framework 时正确找到资源包路径
 
 
-### V 1.1.5 (2016.02.17)
+### [V 1.1.5](https://github.com/iTofu/LCActionSheet/releases/tag/1.1.5) (2016.02.17)
 
 * 合并 [PR](https://github.com/iTofu/LCActionSheet/pull/11) by [nix1024](https://github.com/nix1024)，致谢！
 
@@ -711,7 +711,7 @@ In me the tiger sniffs the rose.
   > 添加暗黑背景透明度和动画持续时间的设定
 
 
-### V 1.1.3 (2015.12.16)
+### [V 1.1.3](https://github.com/iTofu/LCActionSheet/releases/tag/1.1.3) (2015.12.16)
 
 * 合并 [PR](https://github.com/iTofu/LCActionSheet/pull/9) by [zachgenius](https://github.com/zachgenius)，致谢！
 
@@ -720,19 +720,19 @@ In me the tiger sniffs the rose.
 * V 1.1.2 被怪物吃掉了！👹
 
 
-### V 1.1.1 (2015.12.09)
+### [V 1.1.1](https://github.com/iTofu/LCActionSheet/releases/tag/1.1.1) (2015.12.09)
 
 * 标题支持最多两行。两行时会适当调整标题的背景高度。
 
 
-### V 1.1.0 (2015.12.07)
+### [V 1.1.0](https://github.com/iTofu/LCActionSheet/releases/tag/1.1.0) (2015.12.07)
 
 * 要 Block？满足你！
 
 * 优化逻辑：创建 ActionSheet 时，不再添加到 window 上。
 
 
-### V 1.0.6 (2015.11.09)
+### [V 1.0.6](https://github.com/iTofu/LCActionSheet/releases/tag/1.0.6) (2015.11.09)
 
 * 添加对 [CocoaPods](https://cocoapods.org/) 的支持：
 
@@ -741,14 +741,14 @@ In me the tiger sniffs the rose.
   ```
 
 
-### V 1.0.0 (2015.05.08)
+### [V 1.0.0](https://github.com/iTofu/LCActionSheet/releases/tag/1.0.0) (2015.07.21)
 
 * 修复：新添加的 \_backWindow 在某些情况下导致界面无反应的BUG。——by [kuanglijun312](https://github.com/kuanglijun312)
 
 * 修复：当 StatusBarStyle 为 UIStatusBarStyleLightContent 时，背景不会遮挡 statusBar 的问题。——by [陈威](https://github.com/weiwei1035)
 
 
-### V 1.0.0 pre (2015.05.05)
+### V 1.0.0 alpha (2015.05.05)
 
 * 增加了类方法，可以通过类方法实例化 actionSheet。
 
