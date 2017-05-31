@@ -818,6 +818,16 @@
     }
 }
 
+- (NSString *)buttonTitleAtIndex:(NSInteger)buttonIndex {
+    NSString *buttonTitle;
+    if (buttonIndex == 0) {
+        buttonTitle = self.cancelButtonTitle;
+    } else {
+        buttonTitle = self.otherButtonTitles[buttonIndex - 1];
+    }
+    return buttonTitle;
+}
+
 #pragma mark - LCActionSheet & UITableView Delegate
 
 - (void)darkViewClicked {
