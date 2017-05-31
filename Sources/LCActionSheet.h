@@ -449,12 +449,12 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
 - (void)show;
 
 /**
- Get buttonTitle with   buttonIndex
- 
- @param buttonIndex    buttonIndex
- @return buttonTitle
+ Get button title with index
+
+ @param index index
+ @return button title
  */
-- (NSString *)buttonTitleAtIndex:(NSInteger)buttonIndex;
+- (NSString *)buttonTitleAtIndex:(NSInteger)index;
 
 @end
 
