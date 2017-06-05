@@ -739,6 +739,7 @@
     }
     
     LCActionSheetViewController *viewController = [[LCActionSheetViewController alloc] init];
+    viewController.statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
     viewController.statusBarStyle = [UIApplication sharedApplication].statusBarStyle;
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

@@ -28,6 +28,10 @@
 #import "LCActionSheetViewController.h"
 
 @implementation LCActionSheetViewController
+
+- (BOOL)prefersStatusBarHidden {
+    return self.statusBarHidden;
+}
     
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return self.statusBarStyle;

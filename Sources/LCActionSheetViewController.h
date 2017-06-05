@@ -31,6 +31,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LCActionSheetViewController : UIViewController
+
+/**
+ Status bar hidden. Same as the original.
+ */
+@property (nonatomic, assign) BOOL statusBarHidden;
     
 /**
  Status bar style. Same as the original.

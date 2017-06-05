@@ -18,12 +18,16 @@
 
 @implementation ViewController
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
-}
-    
+//- (BOOL)prefersStatusBarHidden {
+//    return YES;
+//}
+
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
 
 - (void)viewDidLoad {
@@ -56,6 +60,7 @@
     [super viewWillAppear:animated];
     
 //    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+//    [UIApplication sharedApplication].statusBarHidden = YES;
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
     NSLog(@"App's keyWindow: %p", KEY_WINDOW);
