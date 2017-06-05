@@ -293,6 +293,11 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
+### [V 3.2.3](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.3) (2017.06.05)
+
+* 修复使用 `prefersStatusBarHidden` 方式设置状态栏隐藏在 LCActionSheet 中未生效的问题。[#42](https://github.com/iTofu/LCActionSheet/pull/42) by [devjia](https://github.com/devjia)。
+
+
 ### [V 3.2.2](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.2) (2017.05.12)
 
 * 修复使用 `preferredStatusBarStyle` 方式设置状态栏样式在 LCActionSheet 中未生效的问题。[#38](https://github.com/iTofu/LCActionSheet/pull/38) by [LuYu001](https://github.com/LuYu001)。
