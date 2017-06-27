@@ -131,6 +131,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *separatorColor;
 
 /**
+ Title can be limit in titleLineNumber. Default is 0.
+ */
+@property (nonatomic, assign) NSInteger titleLineNumber;
+
+/**
  Auto hide when the device rotated. Default is NO, won't auto hide.
  */
 @property (nonatomic, assign) BOOL autoHideWhenDeviceRotated;

@@ -108,7 +108,10 @@
     
     // V 3.1.0+
     actionSheet.autoHideWhenDeviceRotated = YES;
-    
+  
+    // new feature
+    actionSheet.titleLineNumber = 2;
+  
     [actionSheet show];
 }
 
