@@ -278,7 +278,8 @@
     _titleEdgeInsets           = config.titleEdgeInsets;
     _separatorColor            = config.separatorColor;
     _autoHideWhenDeviceRotated = config.autoHideWhenDeviceRotated;
-    
+    _titleLineNumber           = config.titleLineNumber;
+  
     return self;
 }
 
@@ -651,6 +652,14 @@
     [self.tableView reloadData];
 }
 
+- (void)setTitleLineNumber:(NSInteger)titleLineNumber {
+  _titleLineNumber = titleLineNumber;
+  
+  [self updateBottomView];
+  [self updateTitleLabel];
+  [self updateTableView];
+}
+
 - (CGSize)titleTextSize {
     CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width -
                              (self.titleEdgeInsets.left + self.titleEdgeInsets.right),
@@ -667,7 +676,10 @@
                              options:opts
                           attributes:attrs
                              context:nil].size;
-    
+    if (self.titleLineNumber != 0) {
+      // with no attribute string use 'lineHeight' to acquire single line height.
+      _titleTextSize.height = MIN(_titleTextSize.height, self.titleFont.lineHeight * self.titleLineNumber);
+    }
     return _titleTextSize;
 }
 
