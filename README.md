@@ -140,6 +140,9 @@ In me the tiger sniffs the rose.
     // V 3.1.0+
     actionSheet.autoHideWhenDeviceRotated = YES;
 
+    // V 3.2.4+
+    actionSheet.titleLinesNumber = 2;
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         // [actionSheet appendButtonWithTitle:@"WoW" atIndex:7];
         
@@ -297,9 +300,25 @@ In me the tiger sniffs the rose.
 
 ### [V 3.2.4](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.4) (2017.06.29)
 
-* 添加属性来控制 title 的 numberOfLines。[#45](https://github.com/iTofu/LCActionSheet/pull/45) by [iOSleep](https://github.com/iOSleep)
+* 添加属性来控制 title 的 numberOfLines，[#45](https://github.com/iTofu/LCActionSheet/pull/45) by [iOSleep](https://github.com/iOSleep)：
 
-* 增加 Carthage 支持。[#43](https://github.com/iTofu/LCActionSheet/pull/43) by [devjia](https://github.com/devjia)。
+  ```objc
+  @interface LCActionSheetConfig : NSObject
+
+  // Title can be limit in titleLinesNumber. Default is 0.
+  @property (nonatomic, assign) NSInteger titleLinesNumber;
+
+  @end
+
+  @interface LCActionSheet : UIView
+
+  // Title can be limit in titleLinesNumber. Default is 0.
+  @property (nonatomic, assign) NSInteger titleLinesNumber;
+
+  @end
+  ```
+
+* 增加 Carthage 支持，[#43](https://github.com/iTofu/LCActionSheet/pull/43) by [devjia](https://github.com/devjia)。
 
 
 ### [V 3.2.3](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.3) (2017.06.05)
