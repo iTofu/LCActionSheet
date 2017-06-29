@@ -82,9 +82,11 @@ In me the tiger sniffs the rose.
 
 ## 使用 Usage
 
-* 两种导入方法：
+* 三种导入方法：
 
   * 方法一：[CocoaPods](https://cocoapods.org/)：`pod 'LCActionSheet'`
+
+  * 方法二：[Carthage](https://github.com/Carthage/Carthage)：`github "iTofu/LCActionSheet"`
 
   * 方法二：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
 
@@ -291,6 +293,13 @@ In me the tiger sniffs the rose.
 
 
 ## 版本 ChangeLog
+
+
+### [V 3.2.4](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.4) (2017.06.29)
+
+* 添加属性来控制 title 的 numberOfLines。[#45](https://github.com/iTofu/LCActionSheet/pull/45) by [iOSleep](https://github.com/iOSleep)
+
+* 增加 Carthage 支持。[#43](https://github.com/iTofu/LCActionSheet/pull/43) by [devjia](https://github.com/devjia)。
 
 
 ### [V 3.2.3](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.3) (2017.06.05)
