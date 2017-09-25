@@ -298,6 +298,20 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
+### [V 3.2.5](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.5) (2017.09.25)
+
+* 新增属性 `numberOfTitleLines` 取代原来的 `titleLinesNumber`：
+
+  ```objc
+  @interface LCActionSheetConfig : NSObject
+
+  @property (nonatomic, assign) NSInteger titleLinesNumber;
+  // ->
+  @property (nonatomic, assign) NSInteger numberOfTitleLines;
+
+  @end
+  ```
+
 ### [V 3.2.4](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.4) (2017.06.29)
 
 * 添加属性来控制 title 的 numberOfLines，[#45](https://github.com/iTofu/LCActionSheet/pull/45) by [iOSleep](https://github.com/iOSleep)：
