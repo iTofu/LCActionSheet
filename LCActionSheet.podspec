@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "LCActionSheet"
-  s.version      = "3.2.4"
+  s.version      = "3.3.0"
   s.summary      = "A simple, ornamental, but powerful action sheet! Support: https://LeoDev.me"
   s.homepage     = "https://github.com/iTofu/LCActionSheet"
   s.license      = "MIT"
@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
   s.author           = { "Leo" => "leodaxia@gmail.com" }
   s.social_media_url = "https://LeoDev.me"
 
-  s.dependency "Masonry", '~> 1.0.2'
+  s.dependency "Masonry", '~> 1.1.0'
 
 end

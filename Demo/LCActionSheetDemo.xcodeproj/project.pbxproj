@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F425411AF8353E2DF51D5A4 /* libPods-LCActionSheetDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BABF5E94C346416C78FFEB04 /* libPods-LCActionSheetDemoUITests.a */; };
-		4F932C95A05E7901F914D85B /* libPods-LCActionSheetDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C49ACD37EB0B1289EC1C3B /* libPods-LCActionSheetDemoTests.a */; };
+		1D3E6338B487FFD29E0C114C /* libPods-LCActionSheetDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4FF6A47C4A2805EB0D0CDB /* libPods-LCActionSheetDemoTests.a */; };
+		3944AB8468409CB4F83E11DF /* libPods-LCActionSheetDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1D01CAB1F854CA1D9D1B23 /* libPods-LCActionSheetDemoUITests.a */; };
+		4046BFEED8CC2D7ECBA42E08 /* libPods-LCActionSheetDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F83AC826A8F48995F5805216 /* libPods-LCActionSheetDemo.a */; };
 		76485D731D38CB51009DDCA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76485D721D38CB51009DDCA1 /* main.m */; };
 		76485D761D38CB51009DDCA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76485D751D38CB51009DDCA1 /* AppDelegate.m */; };
 		76485D791D38CB51009DDCA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76485D781D38CB51009DDCA1 /* ViewController.m */; };
@@ -17,7 +18,6 @@
 		76485D811D38CB51009DDCA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76485D7F1D38CB51009DDCA1 /* LaunchScreen.storyboard */; };
 		76485D8C1D38CB51009DDCA1 /* LCActionSheetDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76485D8B1D38CB51009DDCA1 /* LCActionSheetDemoTests.m */; };
 		76485D971D38CB51009DDCA1 /* LCActionSheetDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76485D961D38CB51009DDCA1 /* LCActionSheetDemoUITests.m */; };
-		B9AC734BEE851D8AD377A700 /* libPods-LCActionSheetDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA404C4262240650B7EBA030 /* libPods-LCActionSheetDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,11 +71,11 @@
 		76485D921D38CB51009DDCA1 /* LCActionSheetDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCActionSheetDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76485D961D38CB51009DDCA1 /* LCActionSheetDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCActionSheetDemoUITests.m; sourceTree = "<group>"; };
 		76485D981D38CB51009DDCA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BABF5E94C346416C78FFEB04 /* libPods-LCActionSheetDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCActionSheetDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2C49ACD37EB0B1289EC1C3B /* libPods-LCActionSheetDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCActionSheetDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92F5E438C3331543AF4FC11 /* Pods-LCActionSheetDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCActionSheetDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCActionSheetDemo/Pods-LCActionSheetDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DD1D01CAB1F854CA1D9D1B23 /* libPods-LCActionSheetDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCActionSheetDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3684EE1B93BD4A8E1D5F75 /* Pods-LCActionSheetDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCActionSheetDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCActionSheetDemoUITests/Pods-LCActionSheetDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		EA404C4262240650B7EBA030 /* libPods-LCActionSheetDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCActionSheetDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F83AC826A8F48995F5805216 /* libPods-LCActionSheetDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCActionSheetDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE4FF6A47C4A2805EB0D0CDB /* libPods-LCActionSheetDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCActionSheetDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9AC734BEE851D8AD377A700 /* libPods-LCActionSheetDemo.a in Frameworks */,
+				4046BFEED8CC2D7ECBA42E08 /* libPods-LCActionSheetDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F932C95A05E7901F914D85B /* libPods-LCActionSheetDemoTests.a in Frameworks */,
+				1D3E6338B487FFD29E0C114C /* libPods-LCActionSheetDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F425411AF8353E2DF51D5A4 /* libPods-LCActionSheetDemoUITests.a in Frameworks */,
+				3944AB8468409CB4F83E11DF /* libPods-LCActionSheetDemoUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,9 +109,9 @@
 		429DC349A7607850253B26DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EA404C4262240650B7EBA030 /* libPods-LCActionSheetDemo.a */,
-				C2C49ACD37EB0B1289EC1C3B /* libPods-LCActionSheetDemoTests.a */,
-				BABF5E94C346416C78FFEB04 /* libPods-LCActionSheetDemoUITests.a */,
+				F83AC826A8F48995F5805216 /* libPods-LCActionSheetDemo.a */,
+				FE4FF6A47C4A2805EB0D0CDB /* libPods-LCActionSheetDemoTests.a */,
+				DD1D01CAB1F854CA1D9D1B23 /* libPods-LCActionSheetDemoUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
