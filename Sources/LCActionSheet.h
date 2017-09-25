@@ -201,9 +201,9 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
 @property (nonatomic, strong) UIColor *separatorColor;
 
 /**
- Title can be limit in titleLinesNumber. Default is 0.
+ Title can be limit in numberOfTitleLines. Default is 0.
  */
-@property (nonatomic, assign) NSInteger titleLinesNumber;
+@property (nonatomic, assign) NSInteger numberOfTitleLines;
 
 /**
  Auto hide when the device rotated. Default is NO, won't auto hide.

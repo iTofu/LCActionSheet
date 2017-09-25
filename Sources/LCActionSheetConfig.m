@@ -28,17 +28,17 @@
 #import "LCActionSheetConfig.h"
 
 
-#define LC_ACTION_SHEET_BUTTON_HEIGHT       49.0f
+#define kLCActionSheetButtonHeight      49.0f
 
-#define LC_ACTION_SHEET_RED_COLOR           LC_ACTION_SHEET_COLOR(254, 67, 37)
+#define kLCActionSheetRedColor          kLCActionSheetColor(254, 67, 37)
 
-#define LC_ACTION_SHEET_TITLE_FONT          [UIFont systemFontOfSize:14.0f]
+#define kLCActionSheetTitleFont         [UIFont systemFontOfSize:14.0f]
 
-#define LC_ACTION_SHEET_BUTTON_FONT         [UIFont systemFontOfSize:18.0f]
+#define kLCActionSheetButtonFont        [UIFont systemFontOfSize:18.0f]
 
-#define LC_ACTION_SHEET_ANIMATION_DURATION  0.3f
+#define kLCActionSheetAnimationDuration 0.3f
 
-#define LC_ACTION_SHEET_DARK_OPACITY        0.3f
+#define kLCActionSheetDarkOpacity       0.3f
 
 
 @implementation LCActionSheetConfig
@@ -58,19 +58,19 @@
 
 - (instancetype)initSharedInstance {
     if (self = [super init]) {
-        self.titleFont              = LC_ACTION_SHEET_TITLE_FONT;
-        self.buttonFont             = LC_ACTION_SHEET_BUTTON_FONT;
-        self.destructiveButtonColor = LC_ACTION_SHEET_RED_COLOR;
-        self.titleColor             = LC_ACTION_SHEET_COLOR(111, 111, 111);
+        self.titleFont              = kLCActionSheetTitleFont;
+        self.buttonFont             = kLCActionSheetButtonFont;
+        self.destructiveButtonColor = kLCActionSheetRedColor;
+        self.titleColor             = kLCActionSheetColor(111, 111, 111);
         self.buttonColor            = [UIColor blackColor];
 
-        self.buttonHeight           = LC_ACTION_SHEET_BUTTON_HEIGHT;
-        self.animationDuration      = LC_ACTION_SHEET_ANIMATION_DURATION;
-        self.darkOpacity            = LC_ACTION_SHEET_DARK_OPACITY;
+        self.buttonHeight           = kLCActionSheetButtonHeight;
+        self.animationDuration      = kLCActionSheetAnimationDuration;
+        self.darkOpacity            = kLCActionSheetDarkOpacity;
 
         self.titleEdgeInsets        = UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f);
 
-        self.separatorColor         = LC_ACTION_SHEET_COLOR_A(150, 150, 150, 0.3f);
+        self.separatorColor         = kLCActionSheetColorA(150, 150, 150, 0.3f);
     }
     return self;
 }

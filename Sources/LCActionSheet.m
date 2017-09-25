@@ -278,7 +278,7 @@
     _titleEdgeInsets           = config.titleEdgeInsets;
     _separatorColor            = config.separatorColor;
     _autoHideWhenDeviceRotated = config.autoHideWhenDeviceRotated;
-    _titleLinesNumber          = config.titleLinesNumber;
+    _numberOfTitleLines        = config.numberOfTitleLines;
   
     return self;
 }
@@ -308,7 +308,7 @@
     UIView *darkView                = [[UIView alloc] init];
     darkView.alpha                  = 0;
     darkView.userInteractionEnabled = NO;
-    darkView.backgroundColor        = LC_ACTION_SHEET_COLOR(46, 49, 50);
+    darkView.backgroundColor        = kLCActionSheetColor(46, 49, 50);
     [self addSubview:darkView];
     [darkView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
@@ -652,12 +652,12 @@
     [self.tableView reloadData];
 }
 
-- (void)setTitleLinesNumber:(NSInteger)titleLinesNumber {
-  _titleLinesNumber = titleLinesNumber;
-  
-  [self updateBottomView];
-  [self updateTitleLabel];
-  [self updateTableView];
+- (void)setNumberOfTitleLines:(NSInteger)numberOfTitleLines {
+    _numberOfTitleLines = numberOfTitleLines;
+    
+    [self updateBottomView];
+    [self updateTitleLabel];
+    [self updateTableView];
 }
 
 - (CGSize)titleTextSize {
@@ -676,9 +676,9 @@
                              options:opts
                           attributes:attrs
                              context:nil].size;
-    if (self.titleLinesNumber != 0) {
+    if (self.numberOfTitleLines != 0) {
       // with no attribute string use 'lineHeight' to acquire single line height.
-      _titleTextSize.height = MIN(_titleTextSize.height, self.titleFont.lineHeight * self.titleLinesNumber);
+      _titleTextSize.height = MIN(_titleTextSize.height, self.titleFont.lineHeight * self.numberOfTitleLines);
     }
     return _titleTextSize;
 }

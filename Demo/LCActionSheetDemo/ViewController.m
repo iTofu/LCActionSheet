@@ -110,7 +110,7 @@
     actionSheet.autoHideWhenDeviceRotated = YES;
   
     // V 3.2.4+
-    actionSheet.titleLinesNumber = 2;
+    actionSheet.numberOfTitleLines = 2;
   
     [actionSheet show];
 }

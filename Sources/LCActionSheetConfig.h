@@ -28,8 +28,8 @@
 #import <UIKit/UIKit.h>
 
 
-#define LC_ACTION_SHEET_COLOR(r, g, b)      LC_ACTION_SHEET_COLOR_A(r, g, b, 1.0f)
-#define LC_ACTION_SHEET_COLOR_A(r, g, b, a) [UIColor colorWithRed:(r)/255.0f\
+#define kLCActionSheetColor(r, g, b)        kLCActionSheetColorA(r, g, b, 1.0f)
+#define kLCActionSheetColorA(r, g, b, a)    [UIColor colorWithRed:(r)/255.0f\
                                                             green:(g)/255.0f\
                                                              blue:(b)/255.0f\
                                                             alpha:a]
@@ -131,9 +131,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *separatorColor;
 
 /**
- Title can be limit in titleLinesNumber. Default is 0.
+ Title can be limit in numberOfTitleLines. Default is 0.
  */
-@property (nonatomic, assign) NSInteger titleLinesNumber;
+@property (nonatomic, assign) NSInteger numberOfTitleLines;
 
 /**
  Auto hide when the device rotated. Default is NO, won't auto hide.
