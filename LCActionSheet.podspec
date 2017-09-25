@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.author           = { "Leo" => "leodaxia@gmail.com" }
-  s.social_media_url = "https://LeoDev.me"
+  s.social_media_url = "https://twitter.com/LeoDaxia"
 
   s.dependency "Masonry", '~> 1.1.0'
 
