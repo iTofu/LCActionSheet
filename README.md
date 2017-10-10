@@ -298,6 +298,10 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
+### [V 3.3.1](https://github.com/iTofu/LCActionSheet/releases/tag/3.3.1) (2017.10.10)
+
+* 适配 iPhone X。
+
 ### [V 3.3.0](https://github.com/iTofu/LCActionSheet/releases/tag/3.3.0) (2017.09.25)
 
 * 新增属性 `numberOfTitleLines` 取代原来的 `titleLinesNumber`：

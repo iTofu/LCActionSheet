@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fnb-B0-0i1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fnb-B0-0i1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -74,7 +74,7 @@
                             <constraint firstAttribute="trailing" secondItem="kT3-kg-cxE" secondAttribute="trailing" constant="15" id="KvB-BY-CTc"/>
                             <constraint firstItem="0nt-03-dUh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="Odj-ER-b44"/>
                             <constraint firstAttribute="trailing" secondItem="M7K-vo-zgu" secondAttribute="trailing" id="Q4B-y3-YYp"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M7K-vo-zgu" secondAttribute="bottom" id="bMV-S9-VIW"/>
+                            <constraint firstAttribute="bottom" secondItem="M7K-vo-zgu" secondAttribute="bottom" id="gxq-sR-bca"/>
                             <constraint firstItem="hdE-3Z-g4X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iFy-hv-5b2"/>
                             <constraint firstAttribute="trailing" secondItem="0nt-03-dUh" secondAttribute="trailing" constant="15" id="jXv-JF-JMa"/>
                             <constraint firstItem="kT3-kg-cxE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="m0r-kc-BPb"/>
@@ -96,7 +96,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fnb-B0-0i1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G14-s3-bIn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
