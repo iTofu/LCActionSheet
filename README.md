@@ -300,7 +300,7 @@ In me the tiger sniffs the rose.
 
 ### [V 3.3.1](https://github.com/iTofu/LCActionSheet/releases/tag/3.3.1) (2017.10.10)
 
-* 适配 iPhone X。
+* 适配 iPhone Ⅹ。
 
 ### [V 3.3.0](https://github.com/iTofu/LCActionSheet/releases/tag/3.3.0) (2017.09.25)
 
