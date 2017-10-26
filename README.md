@@ -298,6 +298,11 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
+### [V 3.3.2](https://github.com/iTofu/LCActionSheet/releases/tag/3.3.2) (2017.10.26)
+
+* 修复一个小问题 for iPhone Ⅹ —— [PR49](https://github.com/iTofu/LCActionSheet/pull/49) by [lhnoah](https://github.com/lhnoah)。
+
+
 ### [V 3.3.1](https://github.com/iTofu/LCActionSheet/releases/tag/3.3.1) (2017.10.10)
 
 * 适配 iPhone Ⅹ。
