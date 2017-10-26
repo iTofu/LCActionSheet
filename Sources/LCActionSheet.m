@@ -811,7 +811,7 @@
         strongSelf.darkView.userInteractionEnabled = NO;
         
         [strongSelf.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-            CGFloat height = (strongSelf.title.length > 0 ? strongSelf.titleTextSize.height + 2.0f + (strongSelf.titleEdgeInsets.top + strongSelf.titleEdgeInsets.bottom) : 0) + (strongSelf.otherButtonTitles.count > 0 ? (strongSelf.canScrolling ? MIN(strongSelf.visibleButtonCount, strongSelf.otherButtonTitles.count) : strongSelf.otherButtonTitles.count) * strongSelf.buttonHeight : 0) + (strongSelf.cancelButtonTitle.length > 0 ? 5.0f + strongSelf.buttonHeight : 0);
+            CGFloat height = (strongSelf.title.length > 0 ? strongSelf.titleTextSize.height + 2.0f + (strongSelf.titleEdgeInsets.top + strongSelf.titleEdgeInsets.bottom) : 0) + (strongSelf.otherButtonTitles.count > 0 ? (strongSelf.canScrolling ? MIN(strongSelf.visibleButtonCount, strongSelf.otherButtonTitles.count) : strongSelf.otherButtonTitles.count) * strongSelf.buttonHeight : 0) + (strongSelf.cancelButtonTitle.length > 0 ? 5.0f + strongSelf.buttonHeight : 0) + ([[UIDevice currentDevice] lc_isX] ? 34.0 : 0);
             make.bottom.equalTo(strongSelf).offset(height);
         }];
         
