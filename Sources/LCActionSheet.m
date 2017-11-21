@@ -278,9 +278,10 @@
     _blurEffectStyle           = config.blurEffectStyle;
     _titleEdgeInsets           = config.titleEdgeInsets;
     _separatorColor            = config.separatorColor;
+    _blurBackgroundColor       = config.blurBackgroundColor;
     _autoHideWhenDeviceRotated = config.autoHideWhenDeviceRotated;
     _numberOfTitleLines        = config.numberOfTitleLines;
-  
+    
     return self;
 }
 
@@ -489,6 +490,7 @@
     if (!self.blurEffectView) {
         UIBlurEffect *blurEffect           = [UIBlurEffect effectWithStyle:self.blurEffectStyle];
         UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        blurEffectView.backgroundColor     = self.blurBackgroundColor;
         [self.bottomView addSubview:blurEffectView];
         [blurEffectView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.bottomView);
@@ -651,6 +653,12 @@
     [self.cancelButton setBackgroundImage:[UIImage lc_imageWithColor:separatorColor]
                                  forState:UIControlStateHighlighted];
     [self.tableView reloadData];
+}
+
+- (void)setBlurBackgroundColor:(UIColor *)blurBackgroundColor {
+    _blurBackgroundColor = blurBackgroundColor;
+    
+    self.blurEffectView.backgroundColor = blurBackgroundColor;
 }
 
 - (void)setNumberOfTitleLines:(NSInteger)numberOfTitleLines {
