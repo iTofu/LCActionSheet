@@ -40,7 +40,7 @@
 
 #define kLCActionSheetDarkOpacity               0.3f
 
-#define kLCActionSheetBlurBgColorNormal         [[UIColor whiteColor] colorWithAlphaComponent:0.3]
+#define kLCActionSheetBlurBgColorNormal         [[UIColor whiteColor] colorWithAlphaComponent:0.5]
 //#define kLCActionSheetBlurBgColorHighlighted    [[UIColor whiteColor] colorWithAlphaComponent:0.1]
 
 

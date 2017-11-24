@@ -1,6 +1,6 @@
 language: objective-c
 
-osx_image: xcode7.3.1
+osx_image: xcode8.2
 
 script:
   - xcodebuild -workspace Demo/LCActionSheetDemo.xcworkspace -scheme LCActionSheetDemo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO

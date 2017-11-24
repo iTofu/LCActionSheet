@@ -201,7 +201,7 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
 @property (nonatomic, strong) UIColor *separatorColor;
 
 /**
- Blur view's background color. Default is `RGBA(255.0/255.0f, 255.0/255.0f, 255.0/255.0f, 1.0 - 0.618f)`.
+ Blur view's background color. Default is `RGBA(255.0/255.0f, 255.0/255.0f, 255.0/255.0f, 0.5f)`.
  */
 @property (nonatomic, strong) UIColor *blurBackgroundColor;
 

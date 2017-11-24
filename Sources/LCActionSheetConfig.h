@@ -131,7 +131,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *separatorColor;
 
 /**
- Blur view's background color. Default is `RGBA(255.0/255.0f, 255.0/255.0f, 255.0/255.0f, 0.3f)`.
+ Blur view's background color. Default is `RGBA(255.0/255.0f, 255.0/255.0f, 255.0/255.0f, 0.5f)`.
  */
 @property (nonatomic, strong) UIColor *blurBackgroundColor;
 
