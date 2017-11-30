@@ -759,7 +759,7 @@
     if ([UIDevice currentDevice].systemVersion.intValue == 9) { // Fix bug for keyboard in iOS 9
         window.windowLevel = CGFLOAT_MAX;
     } else {
-        window.windowLevel = UIWindowLevelStatusBar;
+        window.windowLevel = UIWindowLevelAlert;
     }
     window.rootViewController = viewController;
     [window makeKeyAndVisible];
