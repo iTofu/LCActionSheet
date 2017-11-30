@@ -1,5 +1,7 @@
 language: objective-c
+
 osx_image: xcode8.2
 
-env:
-  - ACTION=test  PLATFORM=iOS     DESTINATION='platform=iOS Simulator,name=iPhone 6S'
+script:
+  - xcodebuild -workspace Demo/LCActionSheetDemo.xcworkspace -scheme LCActionSheetDemo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+

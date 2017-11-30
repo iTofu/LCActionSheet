@@ -201,6 +201,11 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
 @property (nonatomic, strong) UIColor *separatorColor;
 
 /**
+ Blur view's background color. Default is `RGBA(255.0/255.0f, 255.0/255.0f, 255.0/255.0f, 0.5f)`.
+ */
+@property (nonatomic, strong) UIColor *blurBackgroundColor;
+
+/**
  Title can be limit in numberOfTitleLines. Default is 0.
  */
 @property (nonatomic, assign) NSInteger numberOfTitleLines;

@@ -28,17 +28,20 @@
 #import "LCActionSheetConfig.h"
 
 
-#define kLCActionSheetButtonHeight      49.0f
+#define kLCActionSheetButtonHeight              49.0f
 
-#define kLCActionSheetRedColor          kLCActionSheetColor(254, 67, 37)
+#define kLCActionSheetRedColor                  kLCActionSheetColor(254, 67, 37)
 
-#define kLCActionSheetTitleFont         [UIFont systemFontOfSize:14.0f]
+#define kLCActionSheetTitleFont                 [UIFont systemFontOfSize:14.0f]
 
-#define kLCActionSheetButtonFont        [UIFont systemFontOfSize:18.0f]
+#define kLCActionSheetButtonFont                [UIFont systemFontOfSize:18.0f]
 
-#define kLCActionSheetAnimationDuration 0.3f
+#define kLCActionSheetAnimationDuration         0.3f
 
-#define kLCActionSheetDarkOpacity       0.3f
+#define kLCActionSheetDarkOpacity               0.3f
+
+#define kLCActionSheetBlurBgColorNormal         [[UIColor whiteColor] colorWithAlphaComponent:0.5]
+//#define kLCActionSheetBlurBgColorHighlighted    [[UIColor whiteColor] colorWithAlphaComponent:0.1]
 
 
 @implementation LCActionSheetConfig
@@ -63,14 +66,15 @@
         self.destructiveButtonColor = kLCActionSheetRedColor;
         self.titleColor             = kLCActionSheetColor(111, 111, 111);
         self.buttonColor            = [UIColor blackColor];
-
+        
         self.buttonHeight           = kLCActionSheetButtonHeight;
         self.animationDuration      = kLCActionSheetAnimationDuration;
         self.darkOpacity            = kLCActionSheetDarkOpacity;
-
+        
         self.titleEdgeInsets        = UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f);
-
+        
         self.separatorColor         = kLCActionSheetColorA(150, 150, 150, 0.3f);
+        self.blurBackgroundColor    = kLCActionSheetBlurBgColorNormal;
     }
     return self;
 }

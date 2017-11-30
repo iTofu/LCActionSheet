@@ -278,9 +278,10 @@
     _blurEffectStyle           = config.blurEffectStyle;
     _titleEdgeInsets           = config.titleEdgeInsets;
     _separatorColor            = config.separatorColor;
+    _blurBackgroundColor       = config.blurBackgroundColor;
     _autoHideWhenDeviceRotated = config.autoHideWhenDeviceRotated;
     _numberOfTitleLines        = config.numberOfTitleLines;
-  
+    
     return self;
 }
 
@@ -489,6 +490,7 @@
     if (!self.blurEffectView) {
         UIBlurEffect *blurEffect           = [UIBlurEffect effectWithStyle:self.blurEffectStyle];
         UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        blurEffectView.backgroundColor     = self.blurBackgroundColor;
         [self.bottomView addSubview:blurEffectView];
         [blurEffectView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.bottomView);
@@ -653,6 +655,12 @@
     [self.tableView reloadData];
 }
 
+- (void)setBlurBackgroundColor:(UIColor *)blurBackgroundColor {
+    _blurBackgroundColor = blurBackgroundColor;
+    
+    self.blurEffectView.backgroundColor = blurBackgroundColor;
+}
+
 - (void)setNumberOfTitleLines:(NSInteger)numberOfTitleLines {
     _numberOfTitleLines = numberOfTitleLines;
     
@@ -759,7 +767,7 @@
     if ([UIDevice currentDevice].systemVersion.intValue == 9) { // Fix bug for keyboard in iOS 9
         window.windowLevel = CGFLOAT_MAX;
     } else {
-        window.windowLevel = UIWindowLevelStatusBar;
+        window.windowLevel = UIWindowLevelAlert;
     }
     window.rootViewController = viewController;
     [window makeKeyAndVisible];

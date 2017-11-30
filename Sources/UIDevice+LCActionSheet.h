@@ -35,8 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Return `YES` if current device is iPhone X.
  
- iPhone X
- - Top:     +14.0pt
+ iPhone X Safe Area
+ - Top:     +24.0pt
  - Bottom:  +34.0pt
  
  @return Whether it is iPhone X

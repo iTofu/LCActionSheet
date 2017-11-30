@@ -131,6 +131,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *separatorColor;
 
 /**
+ Blur view's background color. Default is `RGBA(255.0/255.0f, 255.0/255.0f, 255.0/255.0f, 0.5f)`.
+ */
+@property (nonatomic, strong) UIColor *blurBackgroundColor;
+
+/**
  Title can be limit in numberOfTitleLines. Default is 0.
  */
 @property (nonatomic, assign) NSInteger numberOfTitleLines;
@@ -148,7 +153,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  LCActionSheetConfig shared instance.
  */
-+ (instancetype)shared __deprecated_msg("Method deprecated. Use property `config` instead.");
++ (instancetype)shared NS_DEPRECATED_IOS(2_0, 10_0, "Method deprecated. Use class property `config` instead.");
 
 @end
 
