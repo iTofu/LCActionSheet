@@ -756,7 +756,7 @@
     viewController.statusBarStyle = [UIApplication sharedApplication].statusBarStyle;
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    window.windowLevel = UIWindowLevelStatusBar;
+    window.windowLevel = CGFLOAT_MAX;
     window.rootViewController = viewController;
     [window makeKeyAndVisible];
     self.window = window;
