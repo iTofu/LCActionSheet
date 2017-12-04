@@ -40,7 +40,7 @@ Welcome to my blog: https://LeoDev.me
 
 ## Requirements
 
-* iOS 7.0+
+* iOS 8.0+
 * Xcode 7.0+
 * Objective-C & Swift
 
@@ -49,7 +49,7 @@ Welcome to my blog: https://LeoDev.me
 
 * A simple yet powerful ActionSheet, Weibo, WeChat and QQ are using a very similar style, fully support Swift.
 
-* iOS 7.0 +, Demo requires [CocoaPods](https://cocoapods.org/) to run.
+* iOS 8.0 +, Demo requires [CocoaPods](https://cocoapods.org/) to run.
 
 * Elegant style, looks a bit beautiful.
 
@@ -82,11 +82,13 @@ Welcome to my blog: https://LeoDev.me
 
 ## 使用 Usage
 
-* 两种导入方法：
+* 三种导入方法：
 
   * 方法一：[CocoaPods](https://cocoapods.org/)：`pod 'LCActionSheet'`
+  
+  * 方法二：[Carthage](https://github.com/Carthage/Carthage)：`github "iTofu/LCActionSheet"`
 
-  * 方法二：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
+  * 方法三：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
 
 * 在相应位置导入头文件：`#import <LCActionSheet/LCActionSheet.h>`，（可选）遵守协议 `<LCActionSheetDelegate>`
 

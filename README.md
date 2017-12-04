@@ -40,7 +40,7 @@ In me the tiger sniffs the rose.
 
 ## 环境 Requirements
 
-* iOS 7.0+
+* iOS 8.0+
 * Xcode 7.0+
 * Objective-C & Swift
 
@@ -49,7 +49,7 @@ In me the tiger sniffs the rose.
 
 ☀️ 一款简约而不失强大的 ActionSheet，微博、微信和 QQ 都采用了极其类似的样式，完全支持 Swift。
 
-* iOS 7.0 +，Demo 需要 [CocoaPods](https://cocoapods.org/) 环境运行。
+* iOS 8.0 +，Demo 需要 [CocoaPods](https://cocoapods.org/) 环境运行。
 
 * 格调高雅，风格百搭，看起来还算不丑。
 
@@ -82,11 +82,13 @@ In me the tiger sniffs the rose.
 
 ## 使用 Usage
 
-* 两种导入方法：
+* 三种导入方法：
 
   * 方法一：[CocoaPods](https://cocoapods.org/)：`pod 'LCActionSheet'`
+  
+  * 方法二：[Carthage](https://github.com/Carthage/Carthage)：`github "iTofu/LCActionSheet"`
 
-  * 方法二：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
+  * 方法三：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
 
 * 在相应位置导入头文件：`#import <LCActionSheet/LCActionSheet.h>`，（可选）遵守协议 `<LCActionSheetDelegate>`
 
