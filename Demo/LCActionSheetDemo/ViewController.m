@@ -55,6 +55,12 @@
         make.top.equalTo(self.view).offset(30.0 + ([[UIDevice currentDevice] lc_isX] ? 14.0 : 0));
         make.height.offset(44.0);
     }];
+    
+    [NSTimer scheduledTimerWithTimeInterval:5 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        printf("App's windows: %s\n", [[[UIApplication sharedApplication].windows description] cStringUsingEncoding:NSUTF8StringEncoding]);
+        printf("LCActionSheet isShowing: %d\n", (int)[LCActionSheet isShowing]);
+        printf("Showingsheet: %s\n", [[[LCActionSheet showingSheet] description] cStringUsingEncoding:NSUTF8StringEncoding]);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

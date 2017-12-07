@@ -51,8 +51,6 @@
 
 @property (nonatomic, weak) UIView *lineView;
 
-@property (nullable, nonatomic, strong) UIWindow *window;
-
 @end
 
 @implementation LCActionSheet
@@ -771,7 +769,7 @@
     }
     window.rootViewController = viewController;
     [window makeKeyAndVisible];
-    self.window = window;
+    _window = window;
     
     [viewController.view addSubview:self];
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -806,6 +804,10 @@
     }];
 }
 
+- (void)hide {
+    [self hideWithButtonIndex:0];
+}
+
 - (void)hideWithButtonIndex:(NSInteger)buttonIndex {
     if ([self.delegate respondsToSelector:@selector(actionSheet:willDismissWithButtonIndex:)]) {
         [self.delegate actionSheet:self willDismissWithButtonIndex:buttonIndex];
@@ -836,7 +838,7 @@
         
         strongSelf.window.rootViewController = nil;
         strongSelf.window.hidden = YES;
-        strongSelf.window = nil;
+        _window = nil;
         
         if ([strongSelf.delegate respondsToSelector:@selector(actionSheet:didDismissWithButtonIndex:)]) {
             [strongSelf.delegate actionSheet:strongSelf didDismissWithButtonIndex:buttonIndex];
@@ -852,6 +854,46 @@
     if (!self.canScrolling) {
         scrollView.contentOffset = CGPointMake(0, 0);
     }
+}
+
++ (UIWindow *)sheetWindow
+{
+    /**
+     [UIApplication sharedApplication].windows is empty, when applicationWillEnterForeground.
+     */
+    NSArray *array = [UIApplication sharedApplication].windows;
+    if (array.count > 0) {
+        for (int i = (int)array.count - 1; i >= 0; i--) {
+            UIWindow *window = [array objectAtIndex:i];
+            if ([window.rootViewController isKindOfClass:[LCActionSheetViewController class]]) {
+                return window;
+            }
+        }
+    } else {
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        if ([window.rootViewController isKindOfClass:[LCActionSheetViewController class]]) {
+            return window;
+        }
+    }
+    
+    return nil;
+}
+
++ (BOOL)isShowing
+{
+    return ([LCActionSheet sheetWindow] != nil);
+}
+
++ (instancetype)showingSheet
+{
+    UIWindow *window = [LCActionSheet sheetWindow];
+    for (UIView *view in window.rootViewController.view.subviews) {
+        if ([view isKindOfClass:[LCActionSheet class]]) {
+            return (LCActionSheet *)view;
+        }
+    }
+    
+    return nil;
 }
 
 #pragma mark - LCActionSheet & UITableView Delegate
