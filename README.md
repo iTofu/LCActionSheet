@@ -298,6 +298,11 @@ In me the tiger sniffs the rose.
 ## 版本 ChangeLog
 
 
+### [V 3.3.3](https://github.com/iTofu/LCActionSheet/releases/tag/3.3.3) (2017.12.07)
+
+* 修复在 iOS 9 上的键盘窗口问题 —— [PR52](https://github.com/iTofu/LCActionSheet/pull/52) by [lhnoah](https://github.com/lhnoah)。
+
+
 ### [V 3.3.2](https://github.com/iTofu/LCActionSheet/releases/tag/3.3.2) (2017.10.26)
 
 * 修复一个小问题 for iPhone Ⅹ —— [PR49](https://github.com/iTofu/LCActionSheet/pull/49) by [lhnoah](https://github.com/lhnoah)。
