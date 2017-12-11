@@ -1,5 +1,5 @@
 PODS:
-  - LCActionSheet (3.3.1):
+  - LCActionSheet (3.4.0):
     - Masonry (~> 1.1.0)
   - Masonry (1.1.0)
 
@@ -11,9 +11,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  LCActionSheet: c3b4c9029aef65b33e4d89ef371da95787a1fd3b
+  LCActionSheet: af918d2f3f1c4c97f5f6f62cb099e745447aff96
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 69168bdd948b94bccadca73ee1fc5a6830365fc0
+PODFILE CHECKSUM: 9e5ec66a67bd9ed1c491cc983ef2273c53b945ac
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1
