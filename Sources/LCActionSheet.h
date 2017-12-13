@@ -215,6 +215,10 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
  */
 @property (nonatomic, assign) BOOL autoHideWhenDeviceRotated;
 
+/**
+ The window, in which LCActionSheet is showing.
+ */
+@property (nullable, nonatomic, strong, readonly) UIWindow *window;
 
 /**
  LCActionSheet clicked handler.
@@ -459,12 +463,30 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
 - (void)show;
 
 /**
+ Hide the instance of LCActionSheet.
+ */
+- (void)hide;
+
+/**
  Get button title with index
  
  @param index index
  @return button title
  */
 - (NSString *)buttonTitleAtIndex:(NSInteger)index;
+
+/**
+ Is there an instance of LCActionSheet showing?
+ */
++ (BOOL)isShowing;
+
+/**
+ Get an instance of LCActionSheet, which is showing.
+ If there is no sheet showing, return nil.
+ 
+ @return An instance of LCActionSheet.
+ */
++ (instancetype)showingSheet;
 
 @end
 
