@@ -11,7 +11,7 @@
     "git": "https://github.com/iTofu/LCActionSheet.git",
     "tag": "3.4.0"
   },
-  "source_files": "Sources/**/*.{h,m}",
+  "source_files": "Source/**/*.{h,m}",
   "requires_arc": true,
   "authors": {
     "Leo": "leodaxia@gmail.com"
