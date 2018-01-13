@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210E15DEE95E49140A1AF1A3 /* libPods-LCActionSheetDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF761B82B525C8B11F02DF48 /* libPods-LCActionSheetDemo.a */; };
 		76485D731D38CB51009DDCA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76485D721D38CB51009DDCA1 /* main.m */; };
 		76485D761D38CB51009DDCA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76485D751D38CB51009DDCA1 /* AppDelegate.m */; };
 		76485D791D38CB51009DDCA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76485D781D38CB51009DDCA1 /* ViewController.m */; };
 		76485D7C1D38CB51009DDCA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76485D7A1D38CB51009DDCA1 /* Main.storyboard */; };
 		76485D7E1D38CB51009DDCA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76485D7D1D38CB51009DDCA1 /* Assets.xcassets */; };
 		76485D811D38CB51009DDCA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76485D7F1D38CB51009DDCA1 /* LaunchScreen.storyboard */; };
-		7A40CFD63F576095AC934329 /* Pods_LCActionSheetDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD8C42331E17A122BFE33A8 /* Pods_LCActionSheetDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1AD8C42331E17A122BFE33A8 /* Pods_LCActionSheetDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCActionSheetDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		414C535D1B85BFA6AFA182CC /* Pods-LCActionSheetDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCActionSheetDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCActionSheetDemo/Pods-LCActionSheetDemo.release.xcconfig"; sourceTree = "<group>"; };
 		76485D6E1D38CB51009DDCA1 /* LCActionSheetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCActionSheetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76485D721D38CB51009DDCA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -29,6 +28,7 @@
 		76485D7D1D38CB51009DDCA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76485D801D38CB51009DDCA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76485D821D38CB51009DDCA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF761B82B525C8B11F02DF48 /* libPods-LCActionSheetDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCActionSheetDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92F5E438C3331543AF4FC11 /* Pods-LCActionSheetDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCActionSheetDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCActionSheetDemo/Pods-LCActionSheetDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A40CFD63F576095AC934329 /* Pods_LCActionSheetDemo.framework in Frameworks */,
+				210E15DEE95E49140A1AF1A3 /* libPods-LCActionSheetDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +47,7 @@
 		429DC349A7607850253B26DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1AD8C42331E17A122BFE33A8 /* Pods_LCActionSheetDemo.framework */,
+				AF761B82B525C8B11F02DF48 /* libPods-LCActionSheetDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,6 +137,7 @@
 				TargetAttributes = {
 					76485D6D1D38CB51009DDCA1 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4BZ2VM448J;
 					};
 				};
 			};
@@ -366,7 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4BZ2VM448J;
 				INFOPLIST_FILE = LCActionSheetDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -381,7 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4BZ2VM448J;
 				INFOPLIST_FILE = LCActionSheetDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

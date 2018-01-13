@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "110D1B51DFADAC28BD81989A4327A246"
-               BuildableName = "Pods_LCActionSheetDemo.framework"
+               BlueprintIdentifier = "3896D47045EE671FA862B9E1107451C0"
+               BuildableName = "libPods-LCActionSheetDemo.a"
                BlueprintName = "Pods-LCActionSheetDemo"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -47,8 +47,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "110D1B51DFADAC28BD81989A4327A246"
-            BuildableName = "Pods_LCActionSheetDemo.framework"
+            BlueprintIdentifier = "3896D47045EE671FA862B9E1107451C0"
+            BuildableName = "libPods-LCActionSheetDemo.a"
             BlueprintName = "Pods-LCActionSheetDemo"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

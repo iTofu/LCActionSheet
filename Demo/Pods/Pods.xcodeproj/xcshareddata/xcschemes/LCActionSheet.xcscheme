@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A06ADC73C9100600CB9F6FF7ECDE0040"
-               BuildableName = "LCActionSheet.framework"
+               BlueprintIdentifier = "B2CA2A683BE599A018EFF3EF5C5FAF03"
+               BuildableName = "libLCActionSheet.a"
                BlueprintName = "LCActionSheet"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -47,8 +47,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A06ADC73C9100600CB9F6FF7ECDE0040"
-            BuildableName = "LCActionSheet.framework"
+            BlueprintIdentifier = "B2CA2A683BE599A018EFF3EF5C5FAF03"
+            BuildableName = "libLCActionSheet.a"
             BlueprintName = "LCActionSheet"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
