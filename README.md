@@ -11,9 +11,9 @@
 
 ☀️ 一款简约而不失强大的 ActionSheet，微博、微信和 QQ 都采用了极其类似的样式，完全支持 Swift。
 
-<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemoGif02.gif" alt="LCActionSheet" title="LCActionSheet" width="640"/>
+<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemoGif03.webp" alt="LCActionSheet" title="LCActionSheet" width="640"/>
 
-如果上图没打开，直接前往 [Demo 图地址](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemoGif02.gif)。
+如果上图没打开，直接前往 [Demo 图地址](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemoGif03.webp)。
 
 ```
 In me the tiger sniffs the rose.
