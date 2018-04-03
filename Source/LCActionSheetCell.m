@@ -66,7 +66,7 @@
         [self.contentView addSubview:titleLabel];
         self.titleLabel = titleLabel;
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView).insets(UIEdgeInsetsMake(0, 10.0f, 0, 10.0f));
+            make.edges.equalTo(self.contentView).insets(self.buttonEdgeInsets);
         }];
         
         UIView *lineView = [[UIView alloc] init];
@@ -82,6 +82,15 @@
     }
     return self;
 }
+
+- (void)setButtonEdgeInsets:(UIEdgeInsets)buttonEdgeInsets {
+    _buttonEdgeInsets = buttonEdgeInsets;
+
+    [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.contentView).insets(self.buttonEdgeInsets);
+    }];
+}
+
 
 - (void)setCellSeparatorColor:(UIColor *)cellSeparatorColor {
     _cellSeparatorColor = cellSeparatorColor;

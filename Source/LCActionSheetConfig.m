@@ -61,20 +61,28 @@
 
 - (instancetype)initSharedInstance {
     if (self = [super init]) {
-        self.titleFont              = kLCActionSheetTitleFont;
-        self.buttonFont             = kLCActionSheetButtonFont;
-        self.destructiveButtonColor = kLCActionSheetRedColor;
-        self.titleColor             = kLCActionSheetColor(111, 111, 111);
-        self.buttonColor            = [UIColor blackColor];
+        self.titleFont                = kLCActionSheetTitleFont;
+        self.buttonFont               = kLCActionSheetButtonFont;
+        self.destructiveButtonColor   = kLCActionSheetRedColor;
+        self.titleColor               = kLCActionSheetColor(111, 111, 111);
+        self.buttonColor              = [UIColor blackColor];
         
-        self.buttonHeight           = kLCActionSheetButtonHeight;
-        self.animationDuration      = kLCActionSheetAnimationDuration;
-        self.darkOpacity            = kLCActionSheetDarkOpacity;
+        self.buttonHeight             = kLCActionSheetButtonHeight;
+        self.animationDuration        = kLCActionSheetAnimationDuration;
+        self.darkOpacity              = kLCActionSheetDarkOpacity;
         
-        self.titleEdgeInsets        = UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f);
+        self.titleEdgeInsets          = UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f);
+        self.buttonEdgeInsets         = UIEdgeInsetsMake(0.0f, 10.0f, 0.0f, 10.0f);
         
-        self.separatorColor         = kLCActionSheetColorA(150, 150, 150, 0.3f);
-        self.blurBackgroundColor    = kLCActionSheetBlurBgColorNormal;
+        self.separatorColor           = kLCActionSheetColorA(150, 150, 150, 0.3f);
+        self.blurBackgroundColor      = kLCActionSheetBlurBgColorNormal;
+
+        self.cancelButtonColor        = [UIColor blackColor];
+
+        self.buttonBgColor            = [UIColor clearColor];
+        self.buttonCornerRadius       = 0.0f;
+        self.destructiveButtonBgColor = [UIColor clearColor];
+        self.cancelButtonBgColor      = [UIColor clearColor];
     }
     return self;
 }
