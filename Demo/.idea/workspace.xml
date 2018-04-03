@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/../Source/LCActionSheet.m" line="591" />
+    <bookmark url="file://$PROJECT_DIR$/../Source/LCActionSheet.m" line="596" />
     <bookmark url="file://$PROJECT_DIR$/../Source/LCActionSheetConfig.m" line="42" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db6c9b82-6403-4f82-84c0-c118e417f2c7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/LCActionSheet.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/LCActionSheetDemo.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/LCActionSheet_iOS.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Masonry.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Pods_LCActionSheetDemo.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Pods_LCActionSheetDemoTests.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Pods_LCActionSheetDemoUITests.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/LCActionSheetDemo/ViewController.m" afterPath="$PROJECT_DIR$/LCActionSheetDemo/ViewController.m" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/../Source/LCActionSheet.h" afterPath="$PROJECT_DIR$/../Source/LCActionSheet.h" />
       <change beforePath="$PROJECT_DIR$/../Source/LCActionSheet.m" afterPath="$PROJECT_DIR$/../Source/LCActionSheet.m" />
-      <change beforePath="$PROJECT_DIR$/../Source/LCActionSheetCell.h" afterPath="$PROJECT_DIR$/../Source/LCActionSheetCell.h" />
-      <change beforePath="$PROJECT_DIR$/../Source/LCActionSheetCell.m" afterPath="$PROJECT_DIR$/../Source/LCActionSheetCell.m" />
       <change beforePath="$PROJECT_DIR$/../Source/LCActionSheetConfig.h" afterPath="$PROJECT_DIR$/../Source/LCActionSheetConfig.h" />
       <change beforePath="$PROJECT_DIR$/../Source/LCActionSheetConfig.m" afterPath="$PROJECT_DIR$/../Source/LCActionSheetConfig.m" />
     </list>
@@ -37,11 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ViewController.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ViewController.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LCActionSheetDemo/ViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="91" column="65" lean-forward="false" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
+            <state relative-caret-position="456">
+              <caret line="64" column="4" lean-forward="false" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UIView.h" pinned="false" current-in-tab="false">
+        <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="541" column="38" lean-forward="false" selection-start-line="541" selection-start-column="38" selection-end-line="541" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -50,18 +49,18 @@
       <file leaf-file-name="LCActionSheet.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Source/LCActionSheet.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="129" column="52" lean-forward="false" selection-start-line="129" selection-start-column="52" selection-end-line="129" selection-end-column="52" />
+            <state relative-caret-position="536">
+              <caret line="224" column="63" lean-forward="false" selection-start-line="224" selection-start-column="63" selection-end-line="224" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LCActionSheet.m" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LCActionSheet.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../Source/LCActionSheet.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="650" column="4" lean-forward="false" selection-start-line="650" selection-start-column="4" selection-end-line="650" selection-end-column="4" />
+            <state relative-caret-position="419">
+              <caret line="390" column="43" lean-forward="false" selection-start-line="390" selection-start-column="43" selection-end-line="390" selection-end-column="43" />
               <folding>
                 <element signature="e#1225#1250#0" expanded="true" />
               </folding>
@@ -69,11 +68,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pods/Masonry/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="72" column="20" lean-forward="false" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LCActionSheetConfig.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Source/LCActionSheetConfig.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="149" column="75" lean-forward="false" selection-start-line="149" selection-start-column="75" selection-end-line="149" selection-end-column="75" />
+            <state relative-caret-position="402">
+              <caret line="150" column="64" lean-forward="false" selection-start-line="150" selection-start-column="64" selection-end-line="150" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -82,8 +91,8 @@
       <file leaf-file-name="LCActionSheetConfig.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Source/LCActionSheetConfig.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="73" column="27" lean-forward="false" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
+            <state relative-caret-position="475">
+              <caret line="75" column="63" lean-forward="false" selection-start-line="75" selection-start-column="63" selection-end-line="75" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -113,10 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>titleColor</find>
-      <find>titleLabel</find>
-      <find>UIColor blac</find>
-      <find>blackColor</find>
       <find>UIFont medi</find>
       <find>medium</find>
       <find>CGF</find>
@@ -143,6 +148,10 @@
       <find>destructiveButtonIndexSet</find>
       <find>destructiveButtonColor</find>
       <find>destructiveButtonBgColor</find>
+      <find>UITableView</find>
+      <find>addSubview:ta</find>
+      <find>edge</find>
+      <find>(superView</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,13 +160,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../Source/LCActionSheetConfig.h" />
         <option value="$PROJECT_DIR$/../Source/LCActionSheetCell.h" />
-        <option value="$PROJECT_DIR$/../Source/LCActionSheet.h" />
         <option value="$PROJECT_DIR$/../Source/LCActionSheetCell.m" />
+        <option value="$PROJECT_DIR$/LCActionSheetDemo/ViewController.m" />
+        <option value="$PROJECT_DIR$/../Source/LCActionSheet.h" />
+        <option value="$PROJECT_DIR$/../Source/LCActionSheetConfig.h" />
         <option value="$PROJECT_DIR$/../Source/LCActionSheetConfig.m" />
         <option value="$PROJECT_DIR$/../Source/LCActionSheet.m" />
-        <option value="$PROJECT_DIR$/LCActionSheetDemo/ViewController.m" />
       </list>
     </option>
   </component>
@@ -243,12 +252,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522738286268</updated>
       <workItem from="1522738289509" duration="866000" />
-      <workItem from="1522739282492" duration="9975000" />
+      <workItem from="1522739282492" duration="12156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10841000" />
+    <option name="totallyTimeSpent" value="13022000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -292,7 +301,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -331,14 +340,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="286" column="65" lean-forward="false" selection-start-line="286" selection-start-column="65" selection-end-line="286" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIFont.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
@@ -363,45 +364,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/LCActionSheetDemo/ViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="64" column="4" lean-forward="false" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="541" column="38" lean-forward="false" selection-start-line="541" selection-start-column="38" selection-end-line="541" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Source/LCActionSheet.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="224" column="63" lean-forward="false" selection-start-line="224" selection-start-column="63" selection-end-line="224" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../Source/LCActionSheetConfig.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="73" column="27" lean-forward="false" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
+        <state relative-caret-position="475">
+          <caret line="75" column="63" lean-forward="false" selection-start-line="75" selection-start-column="63" selection-end-line="75" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Source/LCActionSheetConfig.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="149" column="75" lean-forward="false" selection-start-line="149" selection-start-column="75" selection-end-line="149" selection-end-column="75" />
+        <state relative-caret-position="402">
+          <caret line="150" column="64" lean-forward="false" selection-start-line="150" selection-start-column="64" selection-end-line="150" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/Masonry/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="72" column="20" lean-forward="false" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Source/LCActionSheet.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="650" column="4" lean-forward="false" selection-start-line="650" selection-start-column="4" selection-end-line="650" selection-end-column="4" />
+        <state relative-caret-position="419">
+          <caret line="390" column="43" lean-forward="false" selection-start-line="390" selection-start-column="43" selection-end-line="390" selection-end-column="43" />
           <folding>
             <element signature="e#1225#1250#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Source/LCActionSheet.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="129" column="52" lean-forward="false" selection-start-line="129" selection-start-column="52" selection-end-line="129" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LCActionSheetDemo/ViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="91" column="65" lean-forward="false" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>

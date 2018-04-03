@@ -277,6 +277,7 @@
     _unBlur                    = config.unBlur;
     _blurEffectStyle           = config.blurEffectStyle;
     _titleEdgeInsets           = config.titleEdgeInsets;
+    _actionSheetEdgeInsets     = config.actionSheetEdgeInsets;
     _separatorColor            = config.separatorColor;
     _blurBackgroundColor       = config.blurBackgroundColor;
     _autoHideWhenDeviceRotated = config.autoHideWhenDeviceRotated;
@@ -368,10 +369,14 @@
     [bottomView addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);
-        make.top.equalTo(titleLabel.mas_bottom).offset(self.title.length > 0 ? self.titleEdgeInsets.bottom : 0);
-        
+        CGFloat topInset = self.title.length > 0 ?self.titleEdgeInsets.bottom + self.actionSheetEdgeInsets.top : self.actionSheetEdgeInsets.top;
+        CGFloat bottomInset = self.actionSheetEdgeInsets.bottom;
+        CGFloat leftInset = self.actionSheetEdgeInsets.left;
+        CGFloat rightInset = self.actionSheetEdgeInsets.right;
         CGFloat height = self.otherButtonTitles.count * self.buttonHeight;
-        make.height.equalTo(@(height));
+
+        make.top.equalTo(titleLabel.mas_bottom).offset(topInset);
+        make.height.equalTo(@(height + bottomInset));
     }];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView = tableView;

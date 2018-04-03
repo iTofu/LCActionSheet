@@ -145,7 +145,10 @@ NS_ASSUME_NONNULL_BEGIN
  Title's edge insets. Default is `UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f)`.
  */
 @property (nonatomic, assign) UIEdgeInsets titleEdgeInsets;
-
+/**
+ actionSheet's edge insets. Default is `UIEdgeInsetsMake(0.0f, 10.0f, 0.0f, 10.0f)`.
+ */
+@property (nonatomic, assign) UIEdgeInsets actionSheetEdgeInsets;
 /**
  Title's edge insets. Default is `UIEdgeInsetsMake(0.0f, 10.0f, 0.0f, 10.0f)`.
  */
