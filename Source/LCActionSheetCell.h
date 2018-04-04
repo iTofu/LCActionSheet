@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) UIView *lineView;
 
 /**
- Title's edge insets. Default is `UIEdgeInsetsMake(0.0f, 10.0f, 0.0f, 10.0f)`.
+ Button's edge insets. Default is `UIEdgeInsetsMake(8.0, 15.0, 8.0f, 15.0f)`.
  */
 @property (nonatomic, assign) UIEdgeInsets buttonEdgeInsets;
 

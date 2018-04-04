@@ -219,11 +219,11 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
  */
 @property (nonatomic, assign) UIEdgeInsets titleEdgeInsets;
 /**
- Title's edge insets. Default is `UIEdgeInsetsMake(8.0, 15.0, 8.0f, 15.0f)`.
+ Button's edge insets. Default is `UIEdgeInsetsMake(8.0, 15.0, 8.0f, 15.0f)`.
  */
 @property (nonatomic, assign) UIEdgeInsets buttonEdgeInsets;
 /**
- actionSheet's edge insets. Default is `UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)`.
+ ActionSheet's edge insets. Default is `UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)`.
  */
 @property (nonatomic, assign) UIEdgeInsets actionSheetEdgeInsets;
 
