@@ -1,19 +1,25 @@
 PODS:
-  - LCActionSheet (3.4.0):
+  - JGProgressHUD (2.0)
+  - LCActionSheet (3.5.0):
     - Masonry (~> 1.1.0)
   - Masonry (1.1.0)
+  - Reveal-SDK (13)
 
 DEPENDENCIES:
+  - JGProgressHUD
   - LCActionSheet (from `../`)
+  - Reveal-SDK
 
 EXTERNAL SOURCES:
   LCActionSheet:
     :path: ../
 
 SPEC CHECKSUMS:
-  LCActionSheet: f7666a447b77adfaf86a7175dd348d64ea8c528c
+  JGProgressHUD: c402c0f41fc291ca7e33bba2f999118d9682dd9c
+  LCActionSheet: cba7164c399d4746468d16af27b30f65c397caea
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  Reveal-SDK: ccc2b0f8014965ea448b7534a7c2c8da232b75e8
 
-PODFILE CHECKSUM: b39431b563282fcd652765b42880ae0ed18597a4
+PODFILE CHECKSUM: 61871b988ac00b6eba30c0a8594a288e29a7a5c9
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0

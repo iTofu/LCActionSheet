@@ -6,6 +6,9 @@ target 'LCActionSheetDemo' do
   # Pods for LCActionSheetDemo
   pod 'LCActionSheet', :path => '../'
   
+  pod 'Reveal-SDK', :configurations => ['Debug']
+  pod 'JGProgressHUD'
+  
   # pod 'Masonry'
   # pod 'LCBlur'
   # pod 'GPUImage', '~> 0.1.7'

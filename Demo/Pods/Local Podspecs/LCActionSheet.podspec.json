@@ -1,6 +1,6 @@
 {
   "name": "LCActionSheet",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "summary": "A simple, ornamental, but powerful action sheet! Support: https://LeoDev.me",
   "homepage": "https://github.com/iTofu/LCActionSheet",
   "license": "MIT",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/iTofu/LCActionSheet.git",
-    "tag": "3.4.0"
+    "tag": "3.5.0"
   },
   "source_files": "Source/**/*.{h,m}",
   "requires_arc": true,

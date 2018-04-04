@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fnb-B0-0i1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fnb-B0-0i1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kT3-kg-cxE">
-                                <rect key="frame" x="15" y="418.5" width="345" height="30"/>
+                                <rect key="frame" x="15" y="398.5" width="345" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Izx-O9-4bg"/>
                                 </constraints>
@@ -63,6 +63,19 @@
                                     <action selector="showBlockActionSheet" destination="BYZ-38-t0r" eventType="touchUpInside" id="7cq-Pk-Ahi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vX-zp-fjP">
+                                <rect key="frame" x="15" y="478.5" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Rea-Lf-SbZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
+                                <state key="normal" title="Change Style">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onChangeStyleAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUX-RX-35o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -72,12 +85,16 @@
                             <constraint firstAttribute="trailing" secondItem="hdE-3Z-g4X" secondAttribute="trailing" constant="15" id="FtL-K1-HOE"/>
                             <constraint firstItem="0nt-03-dUh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="I4Z-5i-oED"/>
                             <constraint firstAttribute="trailing" secondItem="kT3-kg-cxE" secondAttribute="trailing" constant="15" id="KvB-BY-CTc"/>
+                            <constraint firstItem="3vX-zp-fjP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="NFd-WG-pxH"/>
                             <constraint firstItem="0nt-03-dUh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="Odj-ER-b44"/>
                             <constraint firstAttribute="trailing" secondItem="M7K-vo-zgu" secondAttribute="trailing" id="Q4B-y3-YYp"/>
+                            <constraint firstItem="3vX-zp-fjP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="160" id="S9L-yv-YbC"/>
+                            <constraint firstAttribute="trailing" secondItem="3vX-zp-fjP" secondAttribute="trailing" constant="15" id="WbQ-pe-DES"/>
                             <constraint firstAttribute="bottom" secondItem="M7K-vo-zgu" secondAttribute="bottom" id="gxq-sR-bca"/>
                             <constraint firstItem="hdE-3Z-g4X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iFy-hv-5b2"/>
+                            <constraint firstItem="3vX-zp-fjP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j4e-tM-hZy"/>
                             <constraint firstAttribute="trailing" secondItem="0nt-03-dUh" secondAttribute="trailing" constant="15" id="jXv-JF-JMa"/>
-                            <constraint firstItem="kT3-kg-cxE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="m0r-kc-BPb"/>
+                            <constraint firstItem="kT3-kg-cxE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="80" id="m0r-kc-BPb"/>
                             <constraint firstItem="hdE-3Z-g4X" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pkC-We-p9Z"/>
                             <constraint firstItem="kT3-kg-cxE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="yn0-B4-XAN"/>
                             <constraint firstItem="M7K-vo-zgu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yvm-0x-X7f"/>
@@ -88,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1083" y="-518"/>
+            <point key="canvasLocation" x="1082.4000000000001" y="-518.59070464767615"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ly5-Um-js8">

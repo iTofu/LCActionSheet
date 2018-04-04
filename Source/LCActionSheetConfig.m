@@ -64,7 +64,7 @@
         self.titleFont                = kLCActionSheetTitleFont;
         self.buttonFont               = kLCActionSheetButtonFont;
         self.destructiveButtonColor   = kLCActionSheetRedColor;
-        self.titleColor               = kLCActionSheetColor(111, 111, 111);
+        self.titleColor               = kLCActionSheetColor(111.0f, 111.0f, 111.0f);
         self.buttonColor              = [UIColor blackColor];
         
         self.buttonHeight             = kLCActionSheetButtonHeight;
@@ -72,18 +72,17 @@
         self.darkOpacity              = kLCActionSheetDarkOpacity;
         
         self.titleEdgeInsets          = UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f);
-        self.buttonEdgeInsets         = UIEdgeInsetsMake(0.0f, 10.0f, 0.0f, 10.0f);
+        self.buttonEdgeInsets         = UIEdgeInsetsMake(8.0, 15.0, 8.0, 15.0);
         self.actionSheetEdgeInsets    = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
-
-        self.separatorColor           = kLCActionSheetColorA(150, 150, 150, 0.3f);
+        
+        self.separatorColor           = kLCActionSheetColorA(150.0f, 150.0f, 150.0f, 0.3f);
         self.blurBackgroundColor      = kLCActionSheetBlurBgColorNormal;
-
-        self.cancelButtonColor        = [UIColor blackColor];
-
-        self.buttonBgColor            = [UIColor clearColor];
-        self.buttonCornerRadius       = 0.0f;
-        self.destructiveButtonBgColor = [UIColor clearColor];
+        
+        self.cancelButtonColor        = self.buttonColor;
         self.cancelButtonBgColor      = [UIColor clearColor];
+        self.buttonBgColor            = [UIColor clearColor];
+        self.destructiveButtonBgColor = [UIColor clearColor];
+        self.buttonCornerRadius       = 0.0f;
     }
     return self;
 }
