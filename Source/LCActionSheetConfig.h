@@ -64,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong) UIColor *destructiveButtonColor;
 /**
- Destructive button's background color. Default is [UIColor clearColor].
+ Destructive button's background color. Default is `[UIColor clearColor]`.
  */
 @property (nonatomic, strong) UIColor *destructiveButtonBgColor;
 
@@ -72,14 +72,16 @@ NS_ASSUME_NONNULL_BEGIN
  Title's color. Default is `[UIColor blackColor]`.
  */
 @property (nonatomic, strong) UIColor *titleColor;
+
 /**
- cancelButton's color. Default is UIButton's title color.
+ Cancel button's color. Default is `buttonColor`.
  */
 @property (nonatomic, strong) UIColor *cancelButtonColor;
 /**
- cancelButton's background color. Default is UIButton's title color.
+ Cancel button's backgroundColor, without destructive buttons. Default is `[UIColor clarColor]`.
  */
 @property (nonatomic, strong) UIColor *cancelButtonBgColor;
+
 /**
  Buttons' color, without destructive buttons. Default is `[UIColor blackColor]`.
  */
@@ -88,6 +90,7 @@ NS_ASSUME_NONNULL_BEGIN
  Buttons' backgroundColor, without destructive buttons. Default is `[UIColor clarColor]`.
  */
 @property (nonatomic, strong) UIColor *buttonBgColor;
+
 /**
  Title's font. Default is `[UIFont systemFontOfSize:14.0f]`.
  */
@@ -146,13 +149,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) UIEdgeInsets titleEdgeInsets;
 /**
- actionSheet's edge insets. Default is `UIEdgeInsetsMake(0.0f, 10.0f, 0.0f, 10.0f)`.
- */
-@property (nonatomic, assign) UIEdgeInsets actionSheetEdgeInsets;
-/**
- Title's edge insets. Default is `UIEdgeInsetsMake(0.0f, 10.0f, 0.0f, 10.0f)`.
+ Title's edge insets. Default is `UIEdgeInsetsMake(8.0, 15.0, 8.0f, 15.0f)`.
  */
 @property (nonatomic, assign) UIEdgeInsets buttonEdgeInsets;
+/**
+ ActionSheet's edge insets. Default is `UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)`.
+ */
+@property (nonatomic, assign) UIEdgeInsets actionSheetEdgeInsets;
 
 /**
  Cell's separator color. Default is `RGBA(170/255.0f, 170/255.0f, 170/255.0f, 0.5f)`.

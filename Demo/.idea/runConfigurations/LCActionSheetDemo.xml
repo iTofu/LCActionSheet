@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="LCActionSheetDemo" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LCActionSheetDemo" TARGET_NAME="LCActionSheetDemo" CONFIG_NAME="Debug" SCHEME_NAME="LCActionSheetDemo" RUN_TARGET_PROJECT_NAME="LCActionSheetDemo" RUN_TARGET_NAME="LCActionSheetDemo" MAKE_ACTIVE="TRUE">
-    <envs />
-    <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
-      <REVEAL_SETTINGS autoInject="true" autoInstall="true" askToEnableAutoInstall="true" />
-    </EXTENSION>
-    <method />
-  </configuration>
-</component>
