@@ -68,10 +68,43 @@
 }
 
 - (IBAction)showDefaultActionSheet {
-    LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Default LCActionSheet"
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16.0f];
+
+    [LCActionSheetConfig.config setButtonHeight:64];
+    [LCActionSheetConfig.config setSeparatorColor:[UIColor clearColor]];
+    [LCActionSheetConfig.config setButtonColor:[UIColor whiteColor]];
+    [LCActionSheetConfig.config setButtonBgColor:[UIColor blackColor]];
+    [LCActionSheetConfig.config setButtonCornerRadius:3];
+    [LCActionSheetConfig.config setCancelButtonColor:[UIColor blackColor]];
+    [LCActionSheetConfig.config setButtonEdgeInsets:UIEdgeInsetsMake(10, 20, 0, 20)];
+    [LCActionSheetConfig.config setButtonFont:font];
+
+    UIColor *destructiveBgColor = [UIColor colorWithRed:234/255.0 green:71/255.0 blue:71/255.0 alpha:1/1.0];
+    [LCActionSheetConfig.config setDestructiveButtonBgColor:destructiveBgColor];
+    [LCActionSheetConfig.config setDestructiveButtonColor:[UIColor whiteColor]];
+
+    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    [indexSet addIndex:1];
+//    [indexSet addIndex:2];
+//    actionSheet.destructiveButtonIndexSet = indexSet;
+//    actionSheet.destructiveButtonColor    = [UIColor blueColor];
+
+    LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@""
                                                       delegate:self
                                              cancelButtonTitle:@"Cancel"
-                                             otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", nil];
+                                             otherButtonTitles:@"Button 1", nil];
+    actionSheet.destructiveButtonIndexSet = indexSet;
+////    [actionSheet setButtonHeight:64];
+//    [actionSheet setSeparatorColor:[UIColor clearColor]];
+//    [actionSheet setTintColor:UIColor.blackColor];
+//    [actionSheet setButtonColor:[UIColor whiteColor]];
+//    [actionSheet setButtonBgColor:[UIColor blackColor]];
+//    [actionSheet setDestructiveButtonColor:[UIColor blackColor]];
+//    [actionSheet setCancelButtonColor:[UIColor blackColor]];
+//
+//    [actionSheet setButtonFont:font];
+//    [actionSheet setButtonCornerRadius:3];
+
     [actionSheet show];
 }
 
