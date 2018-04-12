@@ -115,7 +115,6 @@
 				76485D6B1D38CB51009DDCA1 /* Frameworks */,
 				76485D6C1D38CB51009DDCA1 /* Resources */,
 				297D028FB2E660E171838655 /* [CP] Embed Pods Frameworks */,
-				0CFFD8AFCA6E4E78E953DF7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,6 +136,7 @@
 				TargetAttributes = {
 					76485D6D1D38CB51009DDCA1 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4BZ2VM448J;
 					};
 				};
 			};
@@ -172,34 +172,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CFFD8AFCA6E4E78E953DF7D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LCActionSheetDemo/Pods-LCActionSheetDemo-resources.sh",
-				"${PODS_ROOT}/JGProgressHUD/JGProgressHUD/Resources/jg_hud_error.png",
-				"${PODS_ROOT}/JGProgressHUD/JGProgressHUD/Resources/jg_hud_error@2x.png",
-				"${PODS_ROOT}/JGProgressHUD/JGProgressHUD/Resources/jg_hud_error@3x.png",
-				"${PODS_ROOT}/JGProgressHUD/JGProgressHUD/Resources/jg_hud_success.png",
-				"${PODS_ROOT}/JGProgressHUD/JGProgressHUD/Resources/jg_hud_success@2x.png",
-				"${PODS_ROOT}/JGProgressHUD/JGProgressHUD/Resources/jg_hud_success@3x.png",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jg_hud_error.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jg_hud_error@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jg_hud_error@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jg_hud_success.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jg_hud_success@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jg_hud_success@3x.png",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LCActionSheetDemo/Pods-LCActionSheetDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		297D028FB2E660E171838655 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,7 +349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4BZ2VM448J;
 				INFOPLIST_FILE = LCActionSheetDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -392,7 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4BZ2VM448J;
 				INFOPLIST_FILE = LCActionSheetDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -10,7 +10,7 @@
 #import <LCActionSheet/LCActionSheet.h>
 #import <LCActionSheet/UIDevice+LCActionSheet.h>
 #import <Masonry/Masonry.h>
-#import <JGProgressHUD/JGProgressHUD.h>
+//#import <JGProgressHUD/JGProgressHUD.h>
 
 #define KEY_WINDOW  [UIApplication sharedApplication].keyWindow
 
@@ -191,15 +191,28 @@
 //    [LCActionSheetConfig.config setButtonEdgeInsets:UIEdgeInsetsMake(10, 20, 0, 20)];
     [LCActionSheetConfig.config setButtonFont:font];
     
-    UIColor *destructiveBgColor = [UIColor colorWithRed:234/255.0 green:71/255.0 blue:71/255.0 alpha:1/1.0];
-    [LCActionSheetConfig.config setDestructiveButtonBgColor:destructiveBgColor];
-    [LCActionSheetConfig.config setDestructiveButtonColor:[UIColor whiteColor]];
+    UILabel *label = [[UILabel alloc] init];
+    label.backgroundColor = [UIColor lightGrayColor];
+    label.alpha = 0;
+    label.text = @"🤜🏻🤛🏻";
+    label.textAlignment = NSTextAlignmentCenter;
+    label.layer.cornerRadius = 8.0;
+    label.layer.masksToBounds = YES;
+    [self.view addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(150.0, 50.0));
+    }];
     
-    JGProgressHUD *hud = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
-    hud.indicatorView = [[JGProgressHUDSuccessIndicatorView alloc] init];
-    hud.textLabel.text = @"🤜🏻🤛🏻";
-    [hud showInView:self.view];
-    [hud dismissAfterDelay:2.0];
+    [UIView animateWithDuration:0.2 animations:^{
+        label.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.3 delay:2.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            label.alpha = 0;
+        } completion:^(BOOL finished) {
+            [label removeFromSuperview];
+        }];
+    }];
 }
 
 #pragma mark - LCActionSheet Delegate
