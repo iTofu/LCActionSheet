@@ -53,11 +53,11 @@ In me the tiger sniffs the rose.
 
 * 格调高雅，风格百搭，看起来还算不丑。
 
-* 高度自定义，可能需要自定义的基本都考虑到了。详见 LCActionSheet [Properties](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L100) 部分。
+* 高度自定义，可能需要自定义的基本都考虑到了。详见 LCActionSheet [Properties](https://github.com/iTofu/LCActionSheet/blob/master/Source/LCActionSheet.h#L100) 部分。
 
 * 有代理，有 Block，可类方法，可实例方法，想怎样，就怎样。
 
-* 代理、Block 非常完善，从 will 到 did 都有，详见 LCActionSheet [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L63) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h#L37) 部分。
+* 代理、Block 非常完善，从 will 到 did 都有，详见 LCActionSheet [Delegate](https://github.com/iTofu/LCActionSheet/blob/master/Source/LCActionSheet.h#L63) & [Block](https://github.com/iTofu/LCActionSheet/blob/master/Source/LCActionSheet.h#L37) 部分。
 
 * 支持统一配置 Config，作用于全局样式，告别冗余代码，更易维护，详见 [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)。
 
@@ -70,11 +70,11 @@ In me the tiger sniffs the rose.
 * ~~就不黑状态栏，就是这么刚。~~ 已黑。
 
 > 💬 **告示**
-> 
+>
 > 英文还不错时间又充裕的同学可以帮我翻译出 README 的英文版，我好往 [CocoaControls](https://www.cocoacontrols.com/) 上扔啊~
 >
 > 可白文翻译，使用 [Markdown](http://www.appinn.com/markdown/) 编辑更佳！义务的哦，如果翻译用心的话我个人请你杯咖啡 ☕️！
-> 
+>
 > 直接 [PR](https://github.com/iTofu/LCActionSheet/pulls) 或者发我邮箱 `echo bGVvZGF4aWFAZ21haWwuY29tCg== | base64 -D` 都可！
 
 
@@ -85,7 +85,7 @@ In me the tiger sniffs the rose.
 * 三种导入方法：
 
   * 方法一：[CocoaPods](https://cocoapods.org/)：`pod 'LCActionSheet'`
-  
+
   * 方法二：[Carthage](https://github.com/Carthage/Carthage) (iOS 8.0+)：`github "iTofu/LCActionSheet"`
 
   * 方法三：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
@@ -104,7 +104,7 @@ In me the tiger sniffs the rose.
         [actionSheet show];
         ```
 
-    2. 其他可自定义项，[LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h) 中有完整注释
+    2. 其他可自定义项，[LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Source/LCActionSheet.h) 中有完整注释
 
         ```objc
         LCActionSheet *actionSheet     = [[LCActionSheet alloc] initWithTitle:nil
@@ -124,34 +124,34 @@ In me the tiger sniffs the rose.
         actionSheet.darkViewNoTaped    = YES;
         actionSheet.unBlur             = YES;
         actionSheet.blurEffectStyle    = UIBlurEffectStyleLight;
-        
+
         NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
         [indexSet addIndex:0];
         [indexSet addIndex:2];
         actionSheet.destructiveButtonIndexSet = indexSet;
         actionSheet.destructiveButtonColor    = [UIColor blueColor];
-        
+
         // V 2.7.0+
         actionSheet.titleEdgeInsets = UIEdgeInsetsMake(10, 20, 30, 40);
-        
+
         // V 2.7.1+
         actionSheet.separatorColor = [UIColor orangeColor];
 
         // V 3.1.0+
         actionSheet.autoHideWhenDeviceRotated = YES;
-        
+
         // V 3.2.4+
         actionSheet.numberOfTitleLines = 2;
 
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             // [actionSheet appendButtonWithTitle:@"WoW" atIndex:7];
-            
+
             NSMutableIndexSet *set = [[NSMutableIndexSet alloc] init];
             [set addIndex:1];
             [set addIndex:2];
             [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexes:set];
         });
-        
+
         [actionSheet show];
         ```
 
@@ -160,39 +160,39 @@ In me the tiger sniffs the rose.
         ```objc
         // Clicked callback
         LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" clicked:^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
-            
+
             NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
-            
+
         } otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", @"Button 4", @"Button 5", @"Button 6", nil];
 
         // Did dismiss callback
         LCActionSheet *actionSheet = [LCActionSheet sheetWithTitle:@"Block LCActionSheet" cancelButtonTitle:@"Cancel" didDismiss:^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
-            
+
             NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
-            
+
         } otherButtonTitles:@"Button 1", @"Button 2", @"Button 3", @"Button 4", @"Button 5", @"Button 6", nil];
-        
+
         // actionSheet.blurEffectStyle = UIBlurEffectStyleLight;
-        
+
         actionSheet.scrolling          = YES;
         actionSheet.visibleButtonCount = 3.6f;
-        
+
         actionSheet.willPresentBlock = ^(LCActionSheet *actionSheet) {
             NSLog(@"willPresentActionSheet");
         };
-        
+
         actionSheet.didPresentBlock = ^(LCActionSheet *actionSheet) {
             NSLog(@"didPresentActionSheet");
         };
-        
+
         actionSheet.willDismissBlock = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
             NSLog(@"willDismissWithButtonIndex: %d", (int)buttonIndex);
         };
-        
+
         actionSheet.didDismissBlock = ^(LCActionSheet *actionSheet, NSInteger buttonIndex) {
             NSLog(@"didDismissWithButtonIndex: %d", (int)buttonIndex);
         };
-        
+
         [actionSheet show];
         ```
 
@@ -200,11 +200,11 @@ In me the tiger sniffs the rose.
 
         ```objc
         #pragma mark - LCActionSheet Delegate
-        
+
         - (void)actionSheet:(LCActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
             NSLog(@"clickedButtonAtIndex: %d", (int)buttonIndex);
         }
-        
+
         - (void)willPresentActionSheet:(LCActionSheet *)actionSheet {
             NSLog(@"willPresentActionSheet");
         }
@@ -222,12 +222,12 @@ In me the tiger sniffs the rose.
         }
         ```
 
-* [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)+ 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，当然，你初始化单个 LCActionSheet 实例后，还可以对其进行可覆盖的属性设置，并且不会影响到 LCActionSheetConfig。示例代码如下：
+* [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0)+ 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/Source/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数）。LCActionSheetConfig 提供一个单例，你应该在首次初始化 LCActionSheet 之前配置该单例以统一配置 LCActionSheet，当然，你初始化单个 LCActionSheet 实例后，还可以对其进行可覆盖的属性设置，并且不会影响到 LCActionSheetConfig。示例代码如下：
 
     ```objc
     // 统一配置 Config 作用于全局样式, 每个属性的默认值可以在 LCActionSheetConfig 中查看
     LCActionSheetConfig *config = LCActionSheetConfig.config;
-    
+
     config.title              = @"Common Title";
     config.cancelButtonTitle  = @"Close";
     config.titleColor         = [UIColor orangeColor];
@@ -381,7 +381,7 @@ In me the tiger sniffs the rose.
 ### [V 3.2.0](https://github.com/iTofu/LCActionSheet/releases/tag/3.2.0) (2017.04.27)
 
 * 思来想去，还是恢复了“黑”状态栏的样式。现在 LCActionSheet 实例将会在调用 `show` 方法时，新建一个 UIWindow 实例并 `makeKeyAndVisible`，然后把 LCActionSheet 实例添加到该 UIWindow 实例之上。之前的逻辑是直接把 LCActionSheet 实例添加到 AppDelegate 的 keyWindow 上面。
-  
+
   显然的，现在状态栏将会被灰色背景一块“黑”掉。
 
 * 新增下列方法，`didDismiss` 回调能很方便地满足在 LCActionSheet hide 时，需要在原 keyWindow 上操作的需求：
@@ -434,7 +434,7 @@ In me the tiger sniffs the rose.
 
     ```objc
     @interface LCActionSheetConfig : NSObject
-    
+
     // LCActionSheetConfig shared instance.
     + (instancetype)shared __deprecated_msg("Method deprecated. Use property `config` instead.");
 
@@ -448,30 +448,30 @@ In me the tiger sniffs the rose.
 
     ```objc
     @interface LCActionSheet : UIView
-    
+
     // Auto hide when the device rotated. Default is NO, won't auto hides.
     @property (nonatomic, assign) BOOL autoHideWhenDeviceRotated;
-    
+
     // Append button at index with title.
     - (void)appendButtonWithTitle:(nullable NSString *)title atIndex:(NSInteger)index;
-    
+
     // Append buttons at indexes with titles.
     - (void)appendButtonsWithTitles:(NSArray<NSString *> *)titles atIndexes:(NSIndexSet *)indexes;
-    
+
     @end
     ```
-  
+
   [#34](https://github.com/iTofu/LCActionSheet/pull/34) & [#35](https://github.com/iTofu/LCActionSheet/pull/35) by [cochat](https://github.com/cochat).
 
 * 修改属性类型：
 
     ```objc
     @interface LCActionSheet : UIView
-    
+
     @property (nullable, nonatomic, strong) NSSet<NSNumber *> *destructiveButtonIndexSet;
-    
+
     // ->
-    
+
     @property (nullable, nonatomic, strong) NSIndexSet *destructiveButtonIndexSet;
 
     @end
@@ -481,13 +481,13 @@ In me the tiger sniffs the rose.
 
     ```objc
     @interface LCActionSheet : UIView
-    
+
     - (void)appendButtonTitles:(nullable NSString *)buttonTitles, ... NS_REQUIRES_NIL_TERMINATION;
-    
+
     // ->
-    
+
     - (void)appendButtonsWithTitles:(nullable NSString *)titles, ... NS_REQUIRES_NIL_TERMINATION;
-    
+
     @end
     ```
 
@@ -499,9 +499,9 @@ In me the tiger sniffs the rose.
     ```
     *Handle -> *Handler
     ```
-    
+
     如：
-    
+
     ```objc
     LCActionSheetClickedHandle -> LCActionSheetClickedHandler
     ```
@@ -574,7 +574,7 @@ In me the tiger sniffs the rose.
 
 ### [V 2.7.0](https://github.com/iTofu/LCActionSheet/releases/tag/2.7.0) (2016.11.29)
 
-* 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数），使用方式见 [Usage](https://github.com/iTofu/LCActionSheet#使用-usage)。[#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)。
+* 新增 [LCActionSheetConfig](https://github.com/iTofu/LCActionSheet/blob/master/Source/LCActionSheetConfig.h) 类，用来统一配置 LCActionSheet 的样式（参数），使用方式见 [Usage](https://github.com/iTofu/LCActionSheet#使用-usage)。[#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)。
 
 * 添加 `titleEdgeInsets` 属性，默认值 `UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f)`，[#29](https://github.com/iTofu/LCActionSheet/issues/29) by [Abel94](https://github.com/Abel94)：
 
@@ -625,7 +625,7 @@ In me the tiger sniffs the rose.
     # 不需要了，作者借了个带 Xcode 7 的电脑去更新了。。。
     pod 'LCActionSheet' # , :git => 'https://github.com/iTofu/LCActionSheet.git'
     ```
-  
+
 * 修复一个影响用户体验的效果，详见：[Issue 25](https://github.com/iTofu/LCActionSheet/issues/25)。
 
 * 完善剩下的部分注释，主要是 Block 部分。
@@ -644,7 +644,7 @@ In me the tiger sniffs the rose.
     @interface LCActionSheet : UIView
 
     @property (nonatomic, assign, readonly) NSInteger cancelButtonIndex;
-    
+
     @end
     ```
 
@@ -652,7 +652,7 @@ In me the tiger sniffs the rose.
 
     ```objc
     @interface LCActionSheet : UIView
-    
+
     @property (nonatomic, copy) LCActionSheetClickedBlock     clickedBlock;
     @property (nonatomic, copy) LCActionSheetWillPresentBlock willPresentBlock;
     @property (nonatomic, copy) LCActionSheetDidPresentBlock  didPresentBlock;
@@ -666,7 +666,7 @@ In me the tiger sniffs the rose.
     @property (nonatomic, copy) LCActionSheetDidPresentHandle  didPresentHandle;
     @property (nonatomic, copy) LCActionSheetWillDismissHandle willDismissHandle;
     @property (nonatomic, copy) LCActionSheetDidDismissHandle  didDismissHandle;
-    
+
     @end
     ```
 
@@ -684,9 +684,9 @@ In me the tiger sniffs the rose.
 
     ```objc
     @interface LCActionSheet : UIView
-    
+
     @property (nonatomic, assign) UIBlurEffectStyle blurEffectStyle;
-    
+
     @end
     ```
 
@@ -835,7 +835,7 @@ In me the tiger sniffs the rose.
 
 * LCActionSheet 会被添加到新建的 UIWindow 实例之上，已适配横屏。
 
-* 可自定义 title、buttons、destructiveButtons、cancelButton、titleColor、titleFont、buttonColor、buttonFont、canScrolling 等等，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Sources/LCActionSheet.h)。
+* 可自定义 title、buttons、destructiveButtons、cancelButton、titleColor、titleFont、buttonColor、buttonFont、canScrolling 等等，详见 [LCActionSheet.h](https://github.com/iTofu/LCActionSheet/blob/master/Source/LCActionSheet.h)。
 
 * `cancelButtonIndex` 始终返回 `0`，除取消按钮以外的按钮自上而下 Index 从 1 递增。也就是说，无论取消按钮是否显示，Index 0 始终会被取消按钮占有。
 
@@ -866,15 +866,15 @@ In me the tiger sniffs the rose.
 * Blog: https://LeoDev.me
 
 * 捐赠:
-  
+
     * PayPal:
-    
+
         [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=leodaxia@gmail.com&item_name=leodaxia@gmail.com)
-    
+
     * 支付宝或微信:
-    
+
         <img src="https://cdnqiniu.leodev.me/donate.png?v=1" alt="Donate with Alipay or Wechat Pay" title="Donate with Alipay or Wechat Pay" width="320"/>
-      
+
     注：（一本正经状）捐赠并不会解锁额外功能。
 
 
