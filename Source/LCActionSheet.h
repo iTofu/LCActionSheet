@@ -222,10 +222,10 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
  Button's edge insets. Default is `UIEdgeInsetsMake(8.0, 15.0, 8.0f, 15.0f)`.
  */
 @property (nonatomic, assign) UIEdgeInsets buttonEdgeInsets;
-/**
- ActionSheet's edge insets. Default is `UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)`.
- */
-@property (nonatomic, assign) UIEdgeInsets actionSheetEdgeInsets;
+///**
+// ActionSheet's edge insets. Default is `UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)`.
+// */
+//@property (nonatomic, assign) UIEdgeInsets actionSheetEdgeInsets;
 
 /**
  Cell's separator color. Default is `RGBA(170/255.0f, 170/255.0f, 170/255.0f, 0.5f)`.

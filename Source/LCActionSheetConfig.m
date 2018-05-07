@@ -73,7 +73,7 @@
         
         self.titleEdgeInsets          = UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f);
         self.buttonEdgeInsets         = UIEdgeInsetsMake(8.0, 15.0, 8.0, 15.0);
-        self.actionSheetEdgeInsets    = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
+//        self.actionSheetEdgeInsets    = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
         
         self.separatorColor           = kLCActionSheetColorA(150.0f, 150.0f, 150.0f, 0.3f);
         self.blurBackgroundColor      = kLCActionSheetBlurBgColorNormal;

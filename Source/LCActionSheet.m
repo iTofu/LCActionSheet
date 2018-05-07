@@ -277,7 +277,7 @@
     _unBlur                    = config.unBlur;
     _blurEffectStyle           = config.blurEffectStyle;
     _titleEdgeInsets           = config.titleEdgeInsets;
-    _actionSheetEdgeInsets     = config.actionSheetEdgeInsets;
+//    _actionSheetEdgeInsets     = config.actionSheetEdgeInsets;
     _separatorColor            = config.separatorColor;
     _blurBackgroundColor       = config.blurBackgroundColor;
     _autoHideWhenDeviceRotated = config.autoHideWhenDeviceRotated;
@@ -369,14 +369,9 @@
     [bottomView addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);
-        CGFloat topInset = self.title.length > 0 ?self.titleEdgeInsets.bottom + self.actionSheetEdgeInsets.top : self.actionSheetEdgeInsets.top;
-        CGFloat bottomInset = self.actionSheetEdgeInsets.bottom;
-        CGFloat leftInset = self.actionSheetEdgeInsets.left;
-        CGFloat rightInset = self.actionSheetEdgeInsets.right;
+        make.top.equalTo(titleLabel.mas_bottom).offset(self.title.length > 0 ? self.titleEdgeInsets.bottom : 0);
         CGFloat height = self.otherButtonTitles.count * self.buttonHeight;
-
-        make.top.equalTo(titleLabel.mas_bottom).offset(topInset);
-        make.height.equalTo(@(height + bottomInset));
+        make.height.equalTo(@(height));
     }];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView = tableView;
@@ -707,7 +702,11 @@
 
 - (void)updateBottomView {
     [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-        CGFloat height = (self.title.length > 0 ? self.titleTextSize.height + 2.0f + (self.titleEdgeInsets.top + self.titleEdgeInsets.bottom) : 0) + (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) + (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0) + ([[UIDevice currentDevice] lc_isX] ? 34.0 : 0);
+        CGFloat height =
+        (self.title.length > 0 ? self.titleTextSize.height + 2.0f + (self.titleEdgeInsets.top + self.titleEdgeInsets.bottom) : 0) +
+        (self.otherButtonTitles.count > 0 ? (self.canScrolling ? MIN(self.visibleButtonCount, self.otherButtonTitles.count) : self.otherButtonTitles.count) * self.buttonHeight : 0) +
+        (self.cancelButtonTitle.length > 0 ? 5.0f + self.buttonHeight : 0) +
+        ([[UIDevice currentDevice] lc_isX] ? 34.0 : 0);
         make.height.equalTo(@(height));
     }];
 }
