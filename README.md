@@ -297,6 +297,10 @@ In me the tiger sniffs the rose.
 
 ## 版本 ChangeLog
 
+### [V 3.5.0](https://github.com/iTofu/LCActionSheet/releases/tag/3.5.0) (2018.05.07)
+
+* 增加了一些自定义设置。Thanks [PR62](https://github.com/iTofu/LCActionSheet/pull/62) by [shiweifu](https://github.com/shiweifu)。
+
 ### [V 3.4.0](https://github.com/iTofu/LCActionSheet/releases/tag/3.4.0) (2017.12.11)
 
 * 更新 Carthage 支持。Thanks [PR54](https://github.com/iTofu/LCActionSheet/pull/54) by [iOSleep](https://github.com/iOSleep)。
