@@ -278,7 +278,7 @@ In me the tiger sniffs the rose.
 
 ## 小伙伴们 Partners
 
-你可以在这里查看本框架的部分集成统计：[CocoaPods 统计](https://cocoapods.org/pods/LCActionSheet)。
+你可以在这里查看本框架的部分集成统计：[CocoaPods 统计](https://cocoapods.org/pods/LCActionSheet)，[AppSight 统计](https://www.appsight.io/sdk/lcactionsheet)。
 
 下表列举了集成本框架的部分项目：
 
