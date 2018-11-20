@@ -1,6 +1,6 @@
 # LCActionSheet
 
-[![Travis](https://img.shields.io/travis/iTofu/LCActionSheet.svg)](https://travis-ci.org/iTofu/LCActionSheet)
+<!-- [![Travis](https://img.shields.io/travis/iTofu/LCActionSheet.svg)](https://travis-ci.org/iTofu/LCActionSheet) -->
 [![CocoaPods](https://img.shields.io/cocoapods/v/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
 [![CocoaPods](https://img.shields.io/cocoapods/l/LCActionSheet.svg)](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LICENSE)
 [![CocoaPods](https://img.shields.io/cocoapods/p/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
