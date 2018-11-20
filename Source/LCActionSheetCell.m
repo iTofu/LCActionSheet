@@ -77,7 +77,7 @@
         self.lineView = lineView;
         [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.equalTo(self.contentView);
-            make.height.equalTo(@0.5f);
+            make.height.offset(1 / 3.0);
         }];
     }
     return self;

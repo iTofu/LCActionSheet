@@ -385,7 +385,7 @@
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(bottomView);
         make.bottom.equalTo(tableView.mas_top);
-        make.height.equalTo(@0.5f);
+        make.height.offset(1 / 3.0);
     }];
     self.lineView = lineView;
     

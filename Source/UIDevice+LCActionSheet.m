@@ -30,7 +30,9 @@
 
 - (BOOL)lc_isX {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    return MAX(screenSize.width, screenSize.height) == 812.0;
+    CGFloat height = MAX(screenSize.width, screenSize.height);
+    BOOL isX = height == 812.0 || height == 896.0;
+    return isX;
 }
 
 @end
