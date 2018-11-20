@@ -14,20 +14,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3359323D0C8B4EF78A6B8E5F22AD44CC"
-               BuildableName = "libPods-LCActionSheetDemo.a"
-               BlueprintName = "Pods-LCActionSheetDemo"
-               ReferencedContainer = "container:Pods/Pods.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "76485D6D1D38CB51009DDCA1"
                BuildableName = "LCActionSheetDemo.app"
                BlueprintName = "LCActionSheetDemo"
