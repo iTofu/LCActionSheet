@@ -82,9 +82,13 @@ In me the tiger sniffs the rose.
 
 * 三种导入方法：
 
-  * 方法一（🎈 推荐）：[CocoaPods](https://cocoapods.org/)：`pod 'LCActionSheet'`
+  * 方法一（🎈推荐）：[CocoaPods](https://cocoapods.org/)
+  
+    `pod 'LCActionSheet'`
 
-  * 方法二：[Carthage](https://github.com/Carthage/Carthage) (iOS 8.0+)：`github "iTofu/LCActionSheet"`
+  * 方法二：[Carthage](https://github.com/Carthage/Carthage)
+  
+    `github "iTofu/LCActionSheet"`
 
   * 方法三：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
 
