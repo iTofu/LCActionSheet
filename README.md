@@ -23,6 +23,7 @@ In me the tiger sniffs the rose.
 
 欢迎访问我的博客：https://LeoDev.me
 
+
 ## 目录 Contents
 
 * [环境 Requirements](#环境-requirements)
@@ -35,7 +36,6 @@ In me the tiger sniffs the rose.
 * [鸣谢 Thanks](#鸣谢-thanks)
 * [联系 Support](#联系-support)
 * [许可 License](#许可-license)
-
 
 
 ## 环境 Requirements
@@ -78,19 +78,17 @@ In me the tiger sniffs the rose.
 > 直接 [PR](https://github.com/iTofu/LCActionSheet/pulls) 或者发我邮箱 `echo bGVvZGF4aWFAZ21haWwuY29tCg== | base64 -D` 都可！
 
 
-
-
 ## 使用 Usage
 
 * 三种导入方法：
 
-  * 方法一：[CocoaPods](https://cocoapods.org/)：`pod 'LCActionSheet'`
+  * 方法一（🎈 推荐）：[CocoaPods](https://cocoapods.org/)：`pod 'LCActionSheet'`
 
   * 方法二：[Carthage](https://github.com/Carthage/Carthage) (iOS 8.0+)：`github "iTofu/LCActionSheet"`
 
   * 方法三：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
 
-* 在相应位置导入头文件：`#import <LCActionSheet/LCActionSheet.h>`，（可选）遵守协议 `<LCActionSheetDelegate>`
+* 在相应位置导入头文件：`#import <LCActionSheet/LCActionSheet.h>` 或 `@import LCActionSheet;`，（可选）遵守协议 `<LCActionSheetDelegate>`
 
 * 调用下列任意方法即可：
 
@@ -296,6 +294,10 @@ In me the tiger sniffs the rose.
 
 
 ## 版本 ChangeLog
+
+### [V 3.5.1](https://github.com/iTofu/LCActionSheet/releases/tag/3.5.1) (2018.11.20)
+
+* 适配 iPhone XR、iPhone XS 和 iPhone XS Max。
 
 ### [V 3.5.0](https://github.com/iTofu/LCActionSheet/releases/tag/3.5.0) (2018.05.07)
 
@@ -815,7 +817,7 @@ In me the tiger sniffs the rose.
 
 * 添加对 [CocoaPods](https://cocoapods.org/) 的支持：
 
-    ```yml
+    ```ruby
     pod 'LCActionSheet'
     ```
 
@@ -834,7 +836,6 @@ In me the tiger sniffs the rose.
 * 完善部分注释。
 
 
-
 ## 提示 Tips
 
 * LCActionSheet 会被添加到新建的 UIWindow 实例之上，已适配横屏。
@@ -846,11 +847,9 @@ In me the tiger sniffs the rose.
 * scrolling 属性控制按钮过多时，是否可以滚动，默认 NO，不可滚动。visibleButtonCount 属性控制可见的按钮个数，可以是小数，必须先设置 scrolling = YES 才生效。tableView 的 scrollsToTop 属性依然可用，可点击状态栏快速滚回顶部。
 
 
-
 ## 示例 Preview
 
 <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo01.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo02.png" alt="LCActionSheet" title="LCActionSheet" width="280"/> <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemo03.png" alt="LCActionSheet" title="LCActionSheet" width="280"/>
-
 
 
 ## 鸣谢 Thanks
@@ -858,7 +857,6 @@ In me the tiger sniffs the rose.
 * [Masonry](https://github.com/SnapKit/Masonry)
 
 * 海纳百川，有容乃大。感谢开源社区和众攻城狮的支持！感谢众多 [Issues](https://github.com/iTofu/LCActionSheet/issues) 和 [PR](https://github.com/iTofu/LCActionSheet/pulls)！更期待你的 [PR](https://github.com/iTofu/LCActionSheet/pulls)！
-
 
 
 ## 联系 Support
