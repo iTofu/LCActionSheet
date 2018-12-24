@@ -280,9 +280,9 @@ In me the tiger sniffs the rose.
 
 ## 小伙伴们 Partners
 
-你可以在这里查看本框架的部分集成统计：[CocoaPods 统计](https://cocoapods.org/pods/LCActionSheet)，[AppSight 统计](https://www.appsight.io/sdk/lcactionsheet)。
+📊 你可以在以下第三方统计平台，查看集成本框架的统计数据：[CocoaPods 统计](https://cocoapods.org/pods/LCActionSheet)，[AppSight 统计](https://www.appsight.io/sdk/lcactionsheet)。
 
-下表列举了集成本框架的部分项目：
+⭐️ 下表是与我们主动联系的部分项目：
 
 | 名称 | 简介 |
 | :-: | :-: |
@@ -294,7 +294,7 @@ In me the tiger sniffs the rose.
 | [揽梦云签](https://itunes.apple.com/cn/app/id1006513728) | 考勤打卡 + 移动办公 |
 | ... | ... |
 
-注：**本框架开源且不含任何信息上传功能代码**，上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 leodaxia@gmail.com 或者 [New Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
+> 注：**本框架开源且不含任何信息上传功能代码**，上表仅用作统计和效果参考，如果你的项目中使用了本框架并希望加入上表，请发邮件到 leodaxia@gmail.com 或者 [New Issue](https://github.com/iTofu/LCActionSheet/issues/new) 告诉我你的应用名称和应用链接，我会尽快添加 :)
 
 
 ## 版本 ChangeLog
