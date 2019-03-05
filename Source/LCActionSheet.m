@@ -699,6 +699,22 @@
     return buttonTitle;
 }
 
+- (void)setButtonTitle:(NSString *)title atIndex:(NSInteger)index {
+    if (index < 0 || index - 1 >= self.otherButtonTitles.count) {
+        return;
+    }
+    if (index == 0) {
+        self.cancelButtonTitle = title;
+    } else {
+        NSMutableArray<NSString *> *arrayM = self.otherButtonTitles.mutableCopy;
+        arrayM[index - 1] = title;
+        self.otherButtonTitles = arrayM.copy;
+        [self.tableView reloadData];
+        [self updateBottomView];
+        [self updateTableView];
+    }
+}
+
 #pragma mark - Update Views
 
 - (void)updateBottomView {

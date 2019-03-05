@@ -170,7 +170,7 @@
     
     [actionSheet show];
     
-    
+
     // Append buttons methods
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
 //        [actionSheet appendButtonWithTitle:@"WoW" atIndex:7];
@@ -179,6 +179,8 @@
         [set addIndex:1];
         [set addIndex:2];
         [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexes:set];
+
+//        [actionSheet setButtonTitle:@"New Title" atIndex:1];
     });
 }
 

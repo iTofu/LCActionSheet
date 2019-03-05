@@ -155,6 +155,8 @@ In me the tiger sniffs the rose.
             [set addIndex:1];
             [set addIndex:2];
             [actionSheet appendButtonsWithTitles:@[@"Hello", @"World"] atIndexes:set];
+
+            // [actionSheet setButtonTitle:@"New Title" atIndex:1];
         });
 
         [actionSheet show];
@@ -301,6 +303,10 @@ In me the tiger sniffs the rose.
 
 
 ## 版本 ChangeLog
+
+### [V 3.5.3](https://github.com/iTofu/LCActionSheet/releases/tag/3.5.3) (2019.03.05)
+
+* 增加 `- (void)setButtonTitle:(NSString *)title atIndex:(NSInteger)index;` 方法。
 
 ### [V 3.5.2](https://github.com/iTofu/LCActionSheet/releases/tag/3.5.2) (2019.03.05)
 
