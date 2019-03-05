@@ -691,7 +691,7 @@
 
 - (NSString *)buttonTitleAtIndex:(NSInteger)index {
     NSString *buttonTitle = nil;
-    if (index == 0) {
+    if (index == self.cancelButtonIndex) {
         buttonTitle = self.cancelButtonTitle;
     } else {
         buttonTitle = self.otherButtonTitles[index - 1];
@@ -703,7 +703,7 @@
     if (index < 0 || index - 1 >= self.otherButtonTitles.count) {
         return;
     }
-    if (index == 0) {
+    if (index == self.cancelButtonIndex) {
         self.cancelButtonTitle = title;
     } else {
         NSMutableArray<NSString *> *arrayM = self.otherButtonTitles.mutableCopy;
