@@ -130,7 +130,10 @@
   
     // V 3.2.4+
     actionSheet.numberOfTitleLines = 2;
-  
+
+//    // V 3.5.2+
+//    actionSheet.disableAutoDismissAfterClicking = YES;
+
     [actionSheet show];
 }
 

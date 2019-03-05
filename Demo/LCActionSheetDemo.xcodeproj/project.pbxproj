@@ -177,7 +177,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LCActionSheetDemo/Pods-LCActionSheetDemo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-LCActionSheetDemo/Pods-LCActionSheetDemo-frameworks.sh",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer-20/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -186,7 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LCActionSheetDemo/Pods-LCActionSheetDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LCActionSheetDemo/Pods-LCActionSheetDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4D8EB10F54F940F16EAE88E3 /* [CP] Check Pods Manifest.lock */ = {

@@ -4,7 +4,7 @@
 //
 //  Created by Leo on 2015/4/27.
 //
-//  Copyright (c) 2015-2018 Leo <leodaxia@gmail.com>
+//  Copyright (c) 2015-2019 Leo <leodaxia@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -246,6 +246,11 @@ typedef void(^LCActionSheetDidDismissHandler)(LCActionSheet *actionSheet, NSInte
  Auto hide when the device rotated. Default is NO, won't auto hide.
  */
 @property (nonatomic, assign) BOOL autoHideWhenDeviceRotated;
+
+/**
+ Disable auto dismiss after clicking. Default is NO, will auto dismiss.
+ */
+@property (nonatomic, assign) BOOL disableAutoDismissAfterClicking;
 
 
 /**

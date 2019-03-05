@@ -299,6 +299,10 @@ In me the tiger sniffs the rose.
 
 ## 版本 ChangeLog
 
+### [V 3.5.2](https://github.com/iTofu/LCActionSheet/releases/tag/3.5.2) (2019.03.05)
+
+* 增加 `disableAutoDismissAfterClicking`，控制是否在点击有效项后自动消失，默认 `NO`，自动消失。
+
 ### [V 3.5.1](https://github.com/iTofu/LCActionSheet/releases/tag/3.5.1) (2018.11.20)
 
 * 适配 iPhone XR、iPhone XS 和 iPhone XS Max。

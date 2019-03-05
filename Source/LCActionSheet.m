@@ -4,7 +4,7 @@
 //
 //  Created by Leo on 2015/4/27.
 //
-//  Copyright (c) 2015-2018 Leo <leodaxia@gmail.com>
+//  Copyright (c) 2015-2019 Leo <leodaxia@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -260,35 +260,36 @@
 }
 
 - (instancetype)config:(LCActionSheetConfig *)config {
-    _title                     = config.title;
-    _cancelButtonTitle         = config.cancelButtonTitle;
-    _destructiveButtonIndexSet = config.destructiveButtonIndexSet;
-    _destructiveButtonColor    = config.destructiveButtonColor;
-    _titleColor                = config.titleColor;
-    _buttonColor               = config.buttonColor;
-    _titleFont                 = config.titleFont;
-    _buttonFont                = config.buttonFont;
-    _buttonHeight              = config.buttonHeight;
-    _scrolling                 = config.canScrolling;
-    _visibleButtonCount        = config.visibleButtonCount;
-    _animationDuration         = config.animationDuration;
-    _darkOpacity               = config.darkOpacity;
-    _darkViewNoTaped           = config.darkViewNoTaped;
-    _unBlur                    = config.unBlur;
-    _blurEffectStyle           = config.blurEffectStyle;
-    _titleEdgeInsets           = config.titleEdgeInsets;
-//    _actionSheetEdgeInsets     = config.actionSheetEdgeInsets;
-    _separatorColor            = config.separatorColor;
-    _blurBackgroundColor       = config.blurBackgroundColor;
-    _autoHideWhenDeviceRotated = config.autoHideWhenDeviceRotated;
-    _numberOfTitleLines        = config.numberOfTitleLines;
+    _title                           = config.title;
+    _cancelButtonTitle               = config.cancelButtonTitle;
+    _destructiveButtonIndexSet       = config.destructiveButtonIndexSet;
+    _destructiveButtonColor          = config.destructiveButtonColor;
+    _titleColor                      = config.titleColor;
+    _buttonColor                     = config.buttonColor;
+    _titleFont                       = config.titleFont;
+    _buttonFont                      = config.buttonFont;
+    _buttonHeight                    = config.buttonHeight;
+    _scrolling                       = config.canScrolling;
+    _visibleButtonCount              = config.visibleButtonCount;
+    _animationDuration               = config.animationDuration;
+    _darkOpacity                     = config.darkOpacity;
+    _darkViewNoTaped                 = config.darkViewNoTaped;
+    _unBlur                          = config.unBlur;
+    _blurEffectStyle                 = config.blurEffectStyle;
+    _titleEdgeInsets                 = config.titleEdgeInsets;
+//    _actionSheetEdgeInsets           = config.actionSheetEdgeInsets;
+    _separatorColor                  = config.separatorColor;
+    _blurBackgroundColor             = config.blurBackgroundColor;
+    _autoHideWhenDeviceRotated       = config.autoHideWhenDeviceRotated;
+    _disableAutoDismissAfterClicking = config.disableAutoDismissAfterClicking;
+    _numberOfTitleLines              = config.numberOfTitleLines;
 
-    _buttonEdgeInsets          = config.buttonEdgeInsets;
-    _destructiveButtonBgColor  = config.destructiveButtonBgColor;
-    _cancelButtonColor         = config.cancelButtonColor;
-    _cancelButtonBgColor       = config.cancelButtonBgColor;
-    _buttonBgColor             = config.buttonBgColor;
-    _buttonCornerRadius        = config.buttonCornerRadius;
+    _buttonEdgeInsets                = config.buttonEdgeInsets;
+    _destructiveButtonBgColor        = config.destructiveButtonBgColor;
+    _cancelButtonColor               = config.cancelButtonColor;
+    _cancelButtonBgColor             = config.cancelButtonBgColor;
+    _buttonBgColor                   = config.buttonBgColor;
+    _buttonCornerRadius              = config.buttonCornerRadius;
 
     return self;
 }
@@ -882,8 +883,10 @@
     if (self.clickedHandler) {
         self.clickedHandler(self, indexPath.row + 1);
     }
-    
+
+  if (!self.disableAutoDismissAfterClicking) {
     [self hideWithButtonIndex:indexPath.row + 1];
+  }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
