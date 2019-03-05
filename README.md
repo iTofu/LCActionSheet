@@ -145,6 +145,9 @@ In me the tiger sniffs the rose.
         // V 3.2.4+
         actionSheet.numberOfTitleLines = 2;
 
+        // V 3.5.2+
+        actionSheet.disableAutoDismissAfterClicking = YES;
+
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             // [actionSheet appendButtonWithTitle:@"WoW" atIndex:7];
 
