@@ -28,7 +28,7 @@ pod 'LCActionSheet'
 
 ## Author
 
-iTofu, leodaxia@gmail.com
+Leo, leodaxia@gmail.com
 
 ## License
 
