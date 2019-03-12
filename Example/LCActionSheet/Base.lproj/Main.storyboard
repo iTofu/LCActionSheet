@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UYI-Em-lug">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="wQg-tq-qST">
+            <objects>
+                <viewController id="whP-gf-Uak" customClass="LCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ratchet" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Ct-qNG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-m7-kpO">
+                                <rect key="frame" x="15" y="278.5" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="XDG-em-gga"/>
+                                    <constraint firstAttribute="height" constant="30" id="o5m-OV-ap8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Custom ActionSheet">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCustomActionSheet" destination="whP-gf-Uak" eventType="touchUpInside" id="nGc-mf-K4w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJO-Uu-h0F">
+                                <rect key="frame" x="15" y="198.5" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="N1o-fd-uQl"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="VP8-CM-1bh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Default ActionSheet">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showDefaultActionSheet" destination="whP-gf-Uak" eventType="touchUpInside" id="5Rd-Cr-ETR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8na-S1-7OI">
+                                <rect key="frame" x="15" y="358.5" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="4ix-OM-aNp"/>
+                                    <constraint firstAttribute="height" constant="30" id="9s7-Fn-azj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Block ActionSheet">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showBlockActionSheet" destination="whP-gf-Uak" eventType="touchUpInside" id="OmW-oE-vo3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3n-0Q-ShG">
+                                <rect key="frame" x="15" y="438.5" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iDZ-fq-P4D"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="xDk-Lr-GxQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
+                                <state key="normal" title="Change Style">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onChangeStyleAction" destination="whP-gf-Uak" eventType="touchUpInside" id="PuF-CO-b4g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="P3n-0Q-ShG" secondAttribute="trailing" constant="15" id="4BD-XD-aHM"/>
+                            <constraint firstAttribute="trailing" secondItem="8na-S1-7OI" secondAttribute="trailing" constant="15" id="6Ew-ye-N5T"/>
+                            <constraint firstItem="P3n-0Q-ShG" firstAttribute="top" secondItem="8na-S1-7OI" secondAttribute="bottom" constant="50" id="7nR-BP-anC"/>
+                            <constraint firstItem="eJO-Uu-h0F" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="15" id="GQf-zf-0LC"/>
+                            <constraint firstItem="RjK-m7-kpO" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" constant="-40" id="Jxg-eR-hrr"/>
+                            <constraint firstItem="8na-S1-7OI" firstAttribute="top" secondItem="RjK-m7-kpO" secondAttribute="bottom" constant="50" id="Tah-zX-ic0"/>
+                            <constraint firstAttribute="trailing" secondItem="RjK-m7-kpO" secondAttribute="trailing" constant="15" id="Uie-Po-MkJ"/>
+                            <constraint firstAttribute="trailing" secondItem="O3l-Ct-qNG" secondAttribute="trailing" id="XQ0-g7-xk9"/>
+                            <constraint firstItem="O3l-Ct-qNG" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="top" id="Xig-Bc-b24"/>
+                            <constraint firstItem="RjK-m7-kpO" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="15" id="bNd-C4-Efy"/>
+                            <constraint firstItem="O3l-Ct-qNG" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="hZG-Pu-luu"/>
+                            <constraint firstItem="8na-S1-7OI" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="15" id="j5m-dV-djY"/>
+                            <constraint firstItem="P3n-0Q-ShG" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="15" id="qSc-E4-tp8"/>
+                            <constraint firstAttribute="bottom" secondItem="O3l-Ct-qNG" secondAttribute="bottom" id="qy1-kM-lNL"/>
+                            <constraint firstItem="RjK-m7-kpO" firstAttribute="top" secondItem="eJO-Uu-h0F" secondAttribute="bottom" constant="50" id="vCx-if-m4U"/>
+                            <constraint firstAttribute="trailing" secondItem="eJO-Uu-h0F" secondAttribute="trailing" constant="15" id="zN1-Rn-Fgn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jhq-c9-33V"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1244" y="432.23388305847078"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8nY-Ml-b11">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UYI-Em-lug" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6or-EB-Yu0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="OAD-c9-W9I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JsC-fu-1jk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.80000000000001" y="432.23388305847078"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ratchet" width="247.66667175292969" height="324.66665649414062"/>
+    </resources>
+</document>
