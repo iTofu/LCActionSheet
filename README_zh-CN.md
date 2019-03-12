@@ -1,9 +1,9 @@
 # LCActionSheet
 
 <!-- [![Travis](https://img.shields.io/travis/iTofu/LCActionSheet.svg)](https://travis-ci.org/iTofu/LCActionSheet) -->
-[![CocoaPods](https://img.shields.io/cocoapods/v/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
-[![CocoaPods](https://img.shields.io/cocoapods/l/LCActionSheet.svg)](https://raw.githubusercontent.com/iTofu/LCActionSheet/master/LICENSE)
-[![CocoaPods](https://img.shields.io/cocoapods/p/LCActionSheet.svg)](http://cocoadocs.org/docsets/LCActionSheet)
+[![Version](https://img.shields.io/cocoapods/v/LCActionSheet.svg?style=flat)](https://cocoapods.org/pods/LCActionSheet)
+[![License](https://img.shields.io/cocoapods/l/LCActionSheet.svg?style=flat)](https://cocoapods.org/pods/LCActionSheet)
+[![Platform](https://img.shields.io/cocoapods/p/LCActionSheet.svg?style=flat)](https://cocoapods.org/pods/LCActionSheet)
 [![Laguage](https://img.shields.io/badge/language-ObjC%20%26%20Swift-orange.svg)](https://github.com/iTofu/LCActionSheet)
 [![CocoaPods](https://img.shields.io/cocoapods/dt/LCActionSheet.svg)](https://cocoapods.org/pods/LCActionSheet)
 [![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](https://leodev.me)
