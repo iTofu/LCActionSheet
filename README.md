@@ -9,6 +9,8 @@
 [![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](https://leodev.me)
 [![GitHub stars](https://img.shields.io/github/stars/iTofu/LCActionSheet.svg?style=social&label=Star)](https://github.com/iTofu/LCActionSheet)
 
+<img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemoGif03.webp" alt="LCActionSheet" title="LCActionSheet" width="640"/>
+
 [🇨🇳中文介绍][1]
 
 ## Example
