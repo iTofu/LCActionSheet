@@ -86,7 +86,7 @@ In me the tiger sniffs the rose.
   
     `pod 'LCActionSheet'`
 
-  * 方法二：[Carthage](https://github.com/Carthage/Carthage)
+  * 方法二（第三方维护）：[Carthage](https://github.com/Carthage/Carthage)
   
     `github "iTofu/LCActionSheet"`
 
