@@ -90,11 +90,25 @@ In me the tiger sniffs the rose.
   
     `github "iTofu/LCActionSheet"`
 
-  * 方法三：直接把 LCActionSheet 文件夹（在 Demo 中）拖拽到你的项目中
+  * 方法三：直接把 LCActionSheet 文件夹拖拽到你的项目中
 
-* 在相应位置导入头文件：`#import <LCActionSheet/LCActionSheet.h>` 或 `@import LCActionSheet;`，（可选）遵守协议 `<LCActionSheetDelegate>`
+* 在相应位置导入头文件：`import LCActionSheet` 或 `#import <LCActionSheet/LCActionSheet.h>` 或 `@import LCActionSheet;`，（可选）遵守协议 `<LCActionSheetDelegate>`
 
-* 调用下列任意方法即可：
+* Using LCActionSheet in Swift:
+
+    ```swift
+    LCActionSheet(title: "Sign Out", cancelButtonTitle: "Cancel", clicked: { (actionSheet, buttonIndex) in
+        if buttonIndex != actionSheet.cancelButtonIndex {
+            // TODO: Enter login page...
+        }
+    }, otherButtonTitleArray: ["Sign Out"]).then {
+        $0.destructiveButtonIndexSet = [1]
+    }.show()
+    ```
+
+    > Syntactic sugar: [Then](https://github.com/devxoul/Then)
+
+* Using LCActionSheet in Objective-C：
 
     1. 默认样式，初始化 + `show`，两行搞定
 
@@ -267,20 +281,6 @@ In me the tiger sniffs the rose.
     [sheet show];
     ```
 
-* Using LCActionSheet in Swift:
-
-    ```swift
-    LCActionSheet(title: "Sign Out", cancelButtonTitle: "Cancel", clicked: { (actionSheet, buttonIndex) in
-        if buttonIndex != actionSheet.cancelButtonIndex {
-            // TODO: Enter login page...
-        }
-    }, otherButtonTitleArray: ["Sign Out"]).then {
-        $0.destructiveButtonIndexSet = [1]
-    }.show()
-    ```
-
-    > Syntactic sugar: [Then](https://github.com/devxoul/Then)
-
 
 
 ## 小伙伴们 Partners
@@ -291,6 +291,12 @@ In me the tiger sniffs the rose.
 
 | 名称 | 简介 |
 | :-: | :-: |
+| [Instabit](https://itunes.apple.com/us/app/id1363913318) | 3D Film Effect for Video&Photo |
+| [百度贴吧](https://itunes.apple.com/cn/app/id477927812) | 全球最大中文兴趣社区 |
+| [爱奇艺](https://itunes.apple.com/cn/app/id393765873) | 青春有你、招摇独播 |
+| [秒拍](https://itunes.apple.com/cn/app/id481587094) | 高清娱乐搞笑视频，好看视频 |
+| [掌阅漫画](https://itunes.apple.com/cn/app/id1205865478) | 高清正版海量看 |
+| [芭莎in](https://itunes.apple.com/cn/app/id532074097) | 时尚朋友圈 |
 | [造物国](https://itunes.apple.com/cn/app/id1097474450) | 与世界分享你的眼光 |
 | [咕咕](https://itunes.apple.com/cn/app/id1214222265) | 短视频社交 |
 | [见信](https://itunes.apple.com/cn/app/id1187571215) | 视频共享社交 |
