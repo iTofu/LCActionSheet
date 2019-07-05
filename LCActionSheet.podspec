@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LCActionSheet'
-  s.version          = '3.5.4'
+  s.version          = '3.5.5'
   s.summary          = 'A simple, ornamental, but powerful action sheet! Support: https://LeoDev.me'
 
 # This description is used to generate tags and improve search results.
@@ -18,8 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A simple, ornamental, but powerful action sheet! Support: https://LeoDev.me
-一款简约而不失强大的 ActionSheet，微博、微信和 QQ 都采用了极其类似的样式，完全支持 Swift。
+                       A simple, ornamental, but powerful action sheet! Support: https://LeoDev.me
+                       一款简约而不失强大的 ActionSheet，微博、微信和 QQ 都采用了极其类似的样式，完全支持 Swift。
                        DESC
 
   s.homepage         = 'https://github.com/iTofu/LCActionSheet'
@@ -28,6 +28,8 @@ A simple, ornamental, but powerful action sheet! Support: https://LeoDev.me
   s.author           = { 'Leo' => 'leodaxia@gmail.com' }
   s.source           = { :git => 'https://github.com/iTofu/LCActionSheet.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/LeoDaxia'
+
+  s.swift_version = "4.2"
 
   s.ios.deployment_target = '8.0'
 

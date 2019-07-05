@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		1C2054DE4E1EC55394A4E6F8 /* Pods_LCActionSheet_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCActionSheet_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		342E2E8E45481ACCEE377914 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		378F9F6D9D4D04F9880B171B /* LCActionSheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LCActionSheet.podspec; path = ../LCActionSheet.podspec; sourceTree = "<group>"; };
+		378F9F6D9D4D04F9880B171B /* LCActionSheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LCActionSheet.podspec; path = ../LCActionSheet.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4171614CD095677F281C0709 /* Pods-LCActionSheet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCActionSheet_Example.release.xcconfig"; path = "Target Support Files/Pods-LCActionSheet_Example/Pods-LCActionSheet_Example.release.xcconfig"; sourceTree = "<group>"; };
 		466517DB059D26184841F023 /* Pods-LCActionSheet_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCActionSheet_Tests.release.xcconfig"; path = "Target Support Files/Pods-LCActionSheet_Tests/Pods-LCActionSheet_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* LCActionSheet_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCActionSheet_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,9 +247,6 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = iTofu;
 				TargetAttributes = {
-					6003F589195388D20070C39A = {
-						DevelopmentTeam = THKJKBGKHX;
-					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -260,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -324,8 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LCActionSheet_Example/Pods-LCActionSheet_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LCActionSheet/LCActionSheet.framework",
@@ -333,8 +329,6 @@
 				"${PODS_ROOT}/Reveal-SDK/RevealServer-21/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LCActionSheet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -504,7 +498,7 @@
 			baseConfigurationReference = C80B390F29DA874CB3476E8C /* Pods-LCActionSheet_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = THKJKBGKHX;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LCActionSheet/LCActionSheet-Prefix.pch";
 				INFOPLIST_FILE = "LCActionSheet/LCActionSheet-Info.plist";
@@ -521,7 +515,7 @@
 			baseConfigurationReference = 4171614CD095677F281C0709 /* Pods-LCActionSheet_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = THKJKBGKHX;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LCActionSheet/LCActionSheet-Prefix.pch";
 				INFOPLIST_FILE = "LCActionSheet/LCActionSheet-Info.plist";

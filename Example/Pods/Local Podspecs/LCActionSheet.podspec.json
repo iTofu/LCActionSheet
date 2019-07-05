@@ -1,8 +1,8 @@
 {
   "name": "LCActionSheet",
-  "version": "3.5.3",
+  "version": "3.5.5",
   "summary": "A simple, ornamental, but powerful action sheet! Support: https://LeoDev.me",
-  "description": "A simple, ornamental, but powerful action sheet! Support: https://LeoDev.me",
+  "description": "A simple, ornamental, but powerful action sheet! Support: https://LeoDev.me\n一款简约而不失强大的 ActionSheet，微博、微信和 QQ 都采用了极其类似的样式，完全支持 Swift。",
   "homepage": "https://github.com/iTofu/LCActionSheet",
   "license": {
     "type": "MIT",
@@ -13,9 +13,10 @@
   },
   "source": {
     "git": "https://github.com/iTofu/LCActionSheet.git",
-    "tag": "3.5.3"
+    "tag": "3.5.5"
   },
   "social_media_url": "https://twitter.com/LeoDaxia",
+  "swift_versions": "4.2",
   "platforms": {
     "ios": "8.0"
   },
@@ -24,5 +25,6 @@
     "Masonry": [
       "~> 1.1.0"
     ]
-  }
+  },
+  "swift_version": "4.2"
 }

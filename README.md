@@ -19,6 +19,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+iOS 7.0+
+
 ## Installation
 
 LCActionSheet is available through [CocoaPods](https://cocoapods.org). To install
@@ -35,5 +37,6 @@ Leo, leodaxia@gmail.com
 ## License
 
 LCActionSheet is available under the MIT license. See the LICENSE file for more info.
+
 
 [1]: https://github.com/iTofu/LCActionSheet/blob/master/README_zh-CN.md

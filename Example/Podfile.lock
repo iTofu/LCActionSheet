@@ -1,5 +1,5 @@
 PODS:
-  - LCActionSheet (3.5.3):
+  - LCActionSheet (3.5.5):
     - Masonry (~> 1.1.0)
   - Masonry (1.1.0)
   - Reveal-SDK (21)
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LCActionSheet: add6785e17619ee4b981e565b4d7bc3ad171b4c0
+  LCActionSheet: e2cfc47a2438c411336fe314dd0e760d8df3d95a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Reveal-SDK: 3523e0eb7c562811c51bb71da6e523a6373702c8
 
 PODFILE CHECKSUM: d1c5359738e6459b34e6366aa6a8cd7fa303a04f
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.3
