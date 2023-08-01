@@ -9,6 +9,8 @@
 [![LeoDev](https://img.shields.io/badge/blog-LeoDev.me-brightgreen.svg)](https://leodev.me)
 [![GitHub stars](https://img.shields.io/github/stars/iTofu/LCActionSheet.svg?style=social&label=Star)](https://github.com/iTofu/LCActionSheet)
 
+A simple ActionSheet. WeChat, Weibo and QQ all use similar styles. Fully support Swift.
+
 <img src="https://raw.githubusercontent.com/iTofu/LCActionSheet/master/Preview/LCActionSheetDemoGif03.webp" alt="LCActionSheet" title="LCActionSheet" width="640"/>
 
 [🇨🇳中文介绍][1]
@@ -19,7 +21,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-iOS 7.0+
+* iOS 7.0+
+* Xcode 7.0+
+* Objective-C & Swift
 
 ## Installation
 
